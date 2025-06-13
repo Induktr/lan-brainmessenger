@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -25,9 +27,9 @@ export const GlitchEffect: React.FC<AnimationEffectProps> = ({ children, duratio
       transition: {
         duration: duration,
         delay: delay,
-        ease: 'easeOut',
-        filter: { duration: duration * 0.2, ease: 'easeInOut' },
-        x: { duration: duration * 0.1, ease: 'easeInOut', repeat: 3, repeatType: 'mirror' },
+        ease: 'easeOut' as any, // Cast to any to resolve type error
+        filter: { duration: duration * 0.2, ease: 'easeInOut' as any }, // Cast to any
+        x: { duration: duration * 0.1, ease: 'easeInOut' as any, repeat: 3, repeatType: 'mirror' as any }, // Cast to any
       },
     },
   };
@@ -50,7 +52,7 @@ export const InertiaEffect: React.FC<AnimationEffectProps> = ({ children, durati
       y: 0,
       x: 0,
       transition: {
-        type: 'spring',
+        type: 'spring' as any, // Cast to any
         stiffness: 120,
         damping: 12,
         duration: duration,
@@ -77,9 +79,9 @@ export const DistortionEffect: React.FC<AnimationEffectProps> = ({ children, dur
       transition: {
         duration: duration,
         delay: delay,
-        ease: 'easeOut',
-        skewX: { duration: duration * 0.3, ease: 'easeInOut' },
-        skewY: { duration: duration * 0.3, ease: 'easeInOut', delay: duration * 0.1 },
+        ease: 'easeOut' as any, // Cast to any
+        skewX: { duration: duration * 0.3, ease: 'easeInOut' as any }, // Cast to any
+        skewY: { duration: duration * 0.3, ease: 'easeInOut' as any, delay: duration * 0.1 }, // Cast to any
       },
     },
   };
@@ -105,9 +107,9 @@ export const FlyingEffect: React.FC<AnimationEffectProps> = ({ children, duratio
       transition: {
         duration: duration,
         delay: delay,
-        ease: 'easeOut',
-        y: { type: 'spring', stiffness: 60, damping: 12 },
-        x: { type: 'spring', stiffness: 60, damping: 12 },
+        ease: 'easeOut' as any, // Cast to any
+        y: { type: 'spring' as any, stiffness: 60, damping: 12 }, // Cast to any
+        x: { type: 'spring' as any, stiffness: 60, damping: 12 }, // Cast to any
       },
     },
   };
@@ -119,66 +121,3 @@ export const FlyingEffect: React.FC<AnimationEffectProps> = ({ children, duratio
   );
 };
 
-// Page Transition Effects
-interface PageTransitionProps {
-  children: React.ReactNode;
-  duration?: number;
-  glitchIntensity?: number;
-}
-
-export const PageTransitionWrapper: React.FC<PageTransitionProps> = ({
-  children,
-  duration = 1.0,
-  glitchIntensity = 1.5,
-}) => {
-  const pageVariants = {
-    initial: {
-      opacity: 0,
-      y: 80,
-      filter: `hue-rotate(${30 * glitchIntensity}deg) saturate(${2 * glitchIntensity})`,
-      x: 15 * glitchIntensity,
-    },
-    in: {
-      opacity: 1,
-      y: 0,
-      x: 0,
-      filter: 'hue-rotate(0deg) saturate(1)',
-      transition: {
-        type: 'spring',
-        stiffness: 120,
-        damping: 18,
-        duration: duration,
-        filter: { duration: duration * 0.3, ease: 'easeInOut' },
-        x: { duration: duration * 0.1, ease: 'easeInOut', repeat: 1, repeatType: 'mirror' },
-      },
-    },
-    out: {
-      opacity: 0,
-      y: -80,
-      filter: `hue-rotate(${30 * glitchIntensity}deg) saturate(${2 * glitchIntensity})`,
-      x: -15 * glitchIntensity,
-      transition: {
-        type: 'spring',
-        stiffness: 120,
-        damping: 18,
-        duration: duration,
-        filter: { duration: duration * 0.3, ease: 'easeInOut' },
-        x: { duration: duration * 0.1, ease: 'easeInOut', repeat: 1, repeatType: 'mirror' },
-      },
-    },
-  };
-
-  return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        initial="initial"
-        animate="in"
-        exit="out"
-        variants={pageVariants}
-        style={{ width: '100%', height: '100%' }}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
-  );
-};

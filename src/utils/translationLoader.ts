@@ -1,5 +1,5 @@
 import React from 'react';
-import { languages } from '../context/LanguageContext';
+import { languages } from '../app/context/LanguageContext'; // Corrected path
 
 const translationCache = new Map();
 
@@ -18,7 +18,7 @@ export const loadTranslations = async (language: string) => {
     // Fall back to English if the requested language is not English
     if (language !== 'en') {
       try {
-        const englishTranslations = await import('../translations/en.json');
+        const englishTranslations = await import('../../public/translations/en.json');
         console.warn(`Falling back to English translations for ${language}`);
         return englishTranslations.default;
       } catch (englishError) {

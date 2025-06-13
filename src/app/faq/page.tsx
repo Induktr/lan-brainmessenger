@@ -1,59 +1,25 @@
-import React, { useState, Component } from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { FiChevronDown } from 'react-icons/fi';
-import { useTheme } from '../context/ThemeContext';
-import { useLanguage } from '../context/LanguageContext';
-import { faqDataStructure } from '../data/faq'; // Import the new data structure
-import SvgIcon from '../components/ui/SvgIcon'; // Import SvgIcon
+import { useTheme } from '../../app/context/ThemeContext'; // Corrected path
+import { useLanguage } from '../../app/context/LanguageContext'; // Corrected path
+import { faqDataStructure, FAQCategory } from '../../data/faq'; // Corrected path and imported FAQCategory
+import SvgIcon from '../../ui/SvgIcon'; // Corrected path
+import ErrorBoundary from '../../components/ErrorBoundary'; // Import the global ErrorBoundary
 
-interface ErrorBoundaryProps {
-  children: React.ReactNode;
-}
-
-interface ErrorBoundaryState {
-  hasError: boolean;
-}
-
-class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
-  constructor(props: ErrorBoundaryProps) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  static getDerivedStateFromError(_: any): ErrorBoundaryState {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('FAQ Error:', error, errorInfo);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div className="p-4 text-[var(--text-secondary)] bg-[var(--secondary)] rounded-xl">
-          Something went wrong displaying this FAQ item.
-        </div>
-      );
-    }
-    return this.props.children;
-  }
-}
-
-interface FAQComponentProps {}
-
-// Updated interface to reflect new data structure from faq.ts
 interface DisplayableFAQQuestion {
-  id: string; // Unique ID for React key, e.g., "generalProject-q1"
-  categoryKey: string; // e.g., "generalProject"
-  questionKey: string; // Translation key for the question, e.g., "faq.questionsData.generalProject.q1.question"
-  answerKey: string; // Translation key for the answer, e.g., "faq.questionsData.generalProject.q1.answer"
+  id: string;
+  categoryKey: string;
+  questionKey: string;
+  answerKey: string;
 }
 
-const FAQComponent: React.FC<FAQComponentProps> = () => {
-  const { theme } = useTheme();
-  const { t, language, isLoading: languageIsLoading } = useLanguage(); // Renamed isLoading to avoid conflict
+const FAQPage = () => { // Renamed to FAQPage for clarity as it's a Next.js page
+  const { isDark } = useTheme(); // Corrected destructuring
+  const { t, language, isLoading: languageIsLoading } = useLanguage();
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [activeCategoryKey, setActiveCategoryKey] = useState<string>('all');
   const [expandedQuestions, setExpandedQuestions] = useState<Set<string>>(new Set());
@@ -74,7 +40,7 @@ const FAQComponent: React.FC<FAQComponentProps> = () => {
     }
 
     // Get the list of category keys from our faqDataStructure
-    const categoryKeysFromData = faqDataStructure.map(cat => cat.categoryKey);
+    const categoryKeysFromData = faqDataStructure.map((cat: FAQCategory) => cat.categoryKey);
     
     // Filter displayableCategoryKeys: only show categories that have actual translations
     // and are present in faqDataStructure
@@ -83,16 +49,16 @@ const FAQComponent: React.FC<FAQComponentProps> = () => {
       ? currentFaqCategoriesRaw as Record<string, string>
       : {};
 
-    const computedDisplayableCategoryKeys = categoryKeysFromData.filter(catKey =>
+    const computedDisplayableCategoryKeys = categoryKeysFromData.filter((catKey: string) =>
       typeof currentFaqCategories[catKey] === 'string' && currentFaqCategories[catKey].trim() !== ''
     );
 
-    const computedAllQuestions: DisplayableFAQQuestion[] = faqDataStructure.flatMap(category => {
+    const computedAllQuestions: DisplayableFAQQuestion[] = faqDataStructure.flatMap((category: FAQCategory) => {
       // Only process categories that are displayable (have a translated name)
       if (!computedDisplayableCategoryKeys.includes(category.categoryKey)) {
         return [];
       }
-      return category.questions.map(question => {
+      return category.questions.map((question: { id: string }) => {
         const questionId = question.id; // e.g., "q1"
         return {
           id: `${category.categoryKey}-${questionId}`, // e.g., "generalProject-q1"
@@ -166,7 +132,7 @@ const FAQComponent: React.FC<FAQComponentProps> = () => {
             >
               {t('faq.allQuestions')}
             </button>
-            {displayableCategoryKeys.map(catKey => (
+            {displayableCategoryKeys.map((catKey: string) => (
               <button
                 key={catKey}
                 onClick={() => setActiveCategoryKey(catKey)}
@@ -186,7 +152,7 @@ const FAQComponent: React.FC<FAQComponentProps> = () => {
         <div className="space-y-4">
           <AnimatePresence>
             {filteredQuestions.map((item) => (
-              <ErrorBoundary key={item.id}>
+              <ErrorBoundary key={item.id}> {/* Using the imported ErrorBoundary */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -246,4 +212,4 @@ const FAQComponent: React.FC<FAQComponentProps> = () => {
   );
 };
 
-export default FAQComponent;
+export default FAQPage;

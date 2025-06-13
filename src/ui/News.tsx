@@ -1,11 +1,13 @@
+'use client';
+
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import NewsCard from '../News/NewsCard';
-import { updates } from '../../data/updates';
-import { Link } from 'react-router-dom';
-import { ICONS } from '../Icons/constants';
-import { useLanguage } from '../../context/LanguageContext'; // Import useLanguage
-import SvgIcon from '../ui/SvgIcon'; // Import SvgIcon
+import NewsCard from './NewsCard'; // Corrected path
+import { updates } from '../data/updates'; // Corrected path
+import Link from 'next/link'; // Corrected import
+import { ICONS } from '../app/lib/constants'; // Corrected path
+import { useLanguage } from '../app/context/LanguageContext'; // Corrected path
+import SvgIcon from './SvgIcon'; // Corrected path
 
 interface NewsProps {} // Define an empty interface for component props
 
@@ -78,19 +80,19 @@ const News: React.FC<NewsProps> = () => {
   };
 
   return (
-    <section className="py-20">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col items-center gap-4 mb-12">
-          <h2 className="text-[24px] text-[var(--text-primary)] font-bold text-center">
-            {t('news.latestNews')} {/* Use translation key */}
+    <section className="py-24">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex flex-col items-center gap-4 mb-16">
+          <h2 className="text-[var(--font-size-h2)] text-[var(--color-text-primary)] font-bold text-center">
+            {t('news.latestNews')}
           </h2>
           <Link
-            to="/updates"
-            className="group flex items-center gap-2 text-[var(--accent-primary)] hover:text-[var(--accent-hover)] transition-colors"
-            aria-label={t('news.readMore')} // Use translation key for aria-label
+            href="/updates"
+            className="group flex items-center gap-2 text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
+            aria-label={t('news.readMore')}
           >
-            <span>{t('news.readMore')}</span> {/* Use translation key */}
-            <SvgIcon iconName="arrowRight" title={t('news.readMore')} className="w-5 h-5" />
+            <span>{t('news.readMore')}</span>
+            <SvgIcon iconName="arrowRight" title={t('news.readMore')} className="w-5 h-5 text-[var(--color-primary)] group-hover:text-[var(--color-primary)]" />
           </Link>
         </div>
 
@@ -98,27 +100,27 @@ const News: React.FC<NewsProps> = () => {
           <div className="absolute left-1/2 -translate-x-1/2 bottom-[-60px] flex items-center gap-4 z-10 mb-10">
             <button
               onClick={handlePrev}
-              className={`w-10 h-10 rounded-full flex items-center justify-center bg-[var(--secondary)] transition-colors
-                ${activeIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#3a3a3a]'}`}
+              className={`w-10 h-10 rounded-full flex items-center justify-center bg-[var(--color-surface-dark)] transition-colors
+                ${activeIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[var(--color-primary)] group'}`}
               disabled={activeIndex === 0}
             >
-              <SvgIcon iconName="arrowLeft" title="Previous" className="w-5 h-5" />
+              <SvgIcon iconName="arrowLeft" title="Previous" className="w-5 h-5 text-[var(--color-text-primary)] group-hover:text-[var(--color-background-dark)]" />
             </button>
 
             <button
               onClick={toggleAutoPlay}
-              className="w-10 h-10 rounded-full flex items-center justify-center bg-[var(--secondary)] hover:bg-[#3a3a3a] transition-colors"
+              className="w-10 h-10 rounded-full flex items-center justify-center bg-[var(--color-surface-dark)] hover:bg-[var(--color-primary)] group transition-colors"
             >
-              {isAutoPlay ? <SvgIcon iconName="pause" title="Pause Autoplay" className="w-5 h-5" /> : <SvgIcon iconName="play" title="Play Autoplay" className="w-5 h-5" />}
+              {isAutoPlay ? <SvgIcon iconName="pause" title="Pause Autoplay" className="w-5 h-5 text-[var(--color-text-primary)] group-hover:text-[var(--color-background-dark)]" /> : <SvgIcon iconName="play" title="Play Autoplay" className="w-5 h-5 text-[var(--color-text-primary)] group-hover:text-[var(--color-background-dark)]" />}
             </button>
 
             <button
               onClick={handleNext}
-              className={`w-10 h-10 rounded-full flex items-center justify-center bg-[var(--secondary)] transition-colors
-                ${activeIndex === carouselUpdates.length - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#3a3a3a]'}`}
+              className={`w-10 h-10 rounded-full flex items-center justify-center bg-[var(--color-surface-dark)] transition-colors
+                ${activeIndex === carouselUpdates.length - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[var(--color-primary)] group'}`}
               disabled={activeIndex === carouselUpdates.length - 1}
             >
-              <SvgIcon iconName="arrowRight" title="Next" className="w-5 h-5" />
+              <SvgIcon iconName="arrowRight" title="Next" className="w-5 h-5 text-[var(--color-text-primary)] group-hover:text-[var(--color-background-dark)]" />
             </button>
           </div>
 

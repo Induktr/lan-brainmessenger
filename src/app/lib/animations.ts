@@ -22,7 +22,7 @@ export const heroVariants = {
       filter: 'blur(0px)',
       transition: {
         duration: 0.8,
-        ease: [0.6, -0.05, 0.01, 0.99]
+        ease: [0.6, -0.05, 0.01, 0.99] as any // Cast to any
       }
     }
   },
@@ -37,7 +37,7 @@ export const heroVariants = {
       x: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: "easeOut" as any // Cast to any
       }
     }
   },
@@ -48,7 +48,7 @@ export const heroVariants = {
       scale: 1,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as any, // Cast to any
         stiffness: 200,
         damping: 20
       }
@@ -56,7 +56,7 @@ export const heroVariants = {
     hover: {
       scale: 1.05,
       transition: {
-        type: "spring",
+        type: "spring" as any, // Cast to any
         stiffness: 400,
         damping: 10
       }
@@ -75,7 +75,7 @@ export const heroVariants = {
       rotate: 0,
       transition: {
         duration: 0.8,
-        ease: [0.6, -0.05, 0.01, 0.99]
+        ease: [0.6, -0.05, 0.01, 0.99] as any // Cast to any
       }
     }
   },
@@ -84,7 +84,7 @@ export const heroVariants = {
     initial: {
       scale: 1,
       transition: {
-        type: "spring",
+        type: "spring" as any, // Cast to any
         stiffness: 300,
         damping: 20
       }
@@ -92,7 +92,7 @@ export const heroVariants = {
     hover: {
       scale: 1.02,
       transition: {
-        type: "spring",
+        type: "spring" as any, // Cast to any
         stiffness: 300,
         damping: 20
       }

@@ -1,33 +1,22 @@
+"use client";
+
 import React from 'react';
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../app/context/ThemeContext'; // Corrected path
 import { motion, useAnimation, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useLanguage } from '../../context/LanguageContext';
-
-interface RoadmapIconProps {
-  src: string;
-  alt: string;
-  className?: string;
-}
-
-const RoadmapIcon: React.FC<RoadmapIconProps> = ({ src, alt, className = '' }) => (
-  <img
-    src={src}
-    alt={alt}
-    className={`w-7 h-7 ${className}`}
-  />
-);
+import { useLanguage } from '../app/context/LanguageContext'; // Corrected path
+import SvgIcon from './SvgIcon'; // Import SvgIcon
 
 const ROADMAP_ICONS = {
-  projectLaunch: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734644805/the-icon-can-be-in-the-form-of-a-rocket-symbolizin_1_aqjhcb.svg',
-  security: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734709936/the-icon-can-be-in-the-form-of-a-castle-or-a-shiel_y7dvnn.svg',
-  advancedcoloboration: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734644805/abstract-circles-connected-by-lines-symbolizing-wo_1_qpcktc.svg',
-  mobile: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734645805/the-icon-can-be-in-the-form-of-a-smartphone-surrou_bzqgts.svg',
-  authentication: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734617743/Frame_15_gm8mjh.svg',
-  ai: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734722860/--a-brain-with-lines-connecting-different-points--_b2ijx1.svg',
-  global: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734708164/boldly-change-the-proportions--for-example--enlarg_tunm1s.svg',
-  ecosystem: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734644803/--a-shield-symbol-with-elements-representing-prote_1_onovon.svg',
-  future: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734644803/--the-light-bulb-as-a-symbol-of-an-idea--but-styli_1_ivsjpw.svg'
+  projectLaunch: 'rocket', // Assuming 'rocket.svg' exists in public/icons
+  security: 'shield', // Assuming 'shield.svg' exists in public/icons
+  advancedcoloboration: 'group', // Assuming 'group.svg' exists in public/icons
+  mobile: 'mobile', // Assuming 'mobile.svg' exists in public/icons
+  authentication: 'checkmark', // Assuming 'checkmark.svg' exists in public/icons
+  ai: 'brain', // Assuming 'brain.svg' exists in public/icons
+  global: 'globe', // Assuming 'globe.svg' exists in public/icons
+  ecosystem: 'castle', // Assuming 'castle.svg' exists in public/icons
+  future: 'sun' // Assuming 'sun.svg' exists in public/icons
 };
 
 interface Milestone {
@@ -35,14 +24,14 @@ interface Milestone {
   titleKey: string;
   descriptionKey: string;
   status: 'completed' | 'in-progress' | 'upcoming';
-  icon: React.ReactNode;
+  icon: string; // Changed to string for SvgIcon name
   featuresKeys: string[];
 }
 
 interface RoadmapProps {}
 
 const Roadmap: React.FC<RoadmapProps> = () => {
-  const { theme } = useTheme();
+  const { isDark } = useTheme(); // Corrected destructuring
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -62,12 +51,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
       titleKey: 'roadmap.title.projectLaunch',
       descriptionKey: 'roadmap.description.projectLaunch',
       status: 'completed',
-      icon: (
-        <RoadmapIcon
-          src={ROADMAP_ICONS.projectLaunch}
-          alt={t('roadmap.iconAlt.projectLaunch')}
-        />
-      ),
+      icon: ROADMAP_ICONS.projectLaunch,
       featuresKeys: [
         'roadmap.features.secureMessagingInfrastructure',
         'roadmap.features.crossPlatformCompatibility',
@@ -79,12 +63,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
       titleKey: 'roadmap.title.enhancedSecurity',
       descriptionKey: 'roadmap.description.enhancedSecurity',
       status: 'upcoming',
-      icon: (
-        <RoadmapIcon
-          src={ROADMAP_ICONS.security}
-          alt={t('roadmap.iconAlt.enhancedSecurity')}
-        />
-      ),
+      icon: ROADMAP_ICONS.security,
       featuresKeys: [
         'roadmap.features.endToEndEncryption',
         'roadmap.features.twoFactorAuthentication',
@@ -96,12 +75,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
       titleKey: 'roadmap.title.advancedCollaboration',
       descriptionKey: 'roadmap.description.advancedCollaboration',
       status: 'upcoming',
-      icon: (
-        <RoadmapIcon
-          src={ROADMAP_ICONS.advancedcoloboration}
-          alt={t('roadmap.iconAlt.advancedCollaboration')}
-        />
-      ),
+      icon: ROADMAP_ICONS.advancedcoloboration,
       featuresKeys: [
         'roadmap.features.teamWorkspaces',
         'roadmap.features.realTimeCollaboration',
@@ -113,12 +87,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
       titleKey: 'roadmap.title.advancedCollaboration',
       descriptionKey: 'roadmap.description.advancedCollaboration',
       status: 'upcoming',
-      icon: (
-        <RoadmapIcon
-          src={ROADMAP_ICONS.advancedcoloboration}
-          alt={t('roadmap.iconAlt.advancedCollaboration')}
-        />
-      ),
+      icon: ROADMAP_ICONS.advancedcoloboration,
       featuresKeys: [
         'roadmap.features.teamWorkspaces',
         'roadmap.features.realTimeCollaboration',
@@ -130,12 +99,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
       titleKey: 'roadmap.title.mobileEnhancement',
       descriptionKey: 'roadmap.description.mobileEnhancement',
       status: 'upcoming',
-      icon: (
-        <RoadmapIcon
-          src={ROADMAP_ICONS.mobile}
-          alt={t('roadmap.iconAlt.mobileEnhancement')}
-        />
-      ),
+      icon: ROADMAP_ICONS.mobile,
       featuresKeys: [
         'roadmap.features.nativeMobileApps',
         'roadmap.features.offlineFunctionality',
@@ -147,12 +111,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
       titleKey: 'roadmap.title.aiIntegration',
       descriptionKey: 'roadmap.description.aiIntegration',
       status: 'upcoming',
-      icon: (
-        <RoadmapIcon
-          src={ROADMAP_ICONS.ai}
-          alt={t('roadmap.iconAlt.aiIntegration')}
-        />
-      ),
+      icon: ROADMAP_ICONS.ai,
       featuresKeys: [
         'roadmap.features.smartMessageCategorization',
         'roadmap.features.automatedResponses',
@@ -164,12 +123,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
       titleKey: 'roadmap.title.globalExpansion',
       descriptionKey: 'roadmap.description.globalExpansion',
       status: 'upcoming',
-      icon: (
-        <RoadmapIcon
-          src={ROADMAP_ICONS.global}
-          alt={t('roadmap.iconAlt.globalExpansion')}
-        />
-      ),
+      icon: ROADMAP_ICONS.global,
       featuresKeys: [
         'roadmap.features.multiLanguageSupport',
         'roadmap.features.regionalDataCenters',
@@ -181,12 +135,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
       titleKey: 'roadmap.title.enterpriseSolutions',
       descriptionKey: 'roadmap.description.enterpriseSolutions',
       status: 'upcoming',
-      icon: (
-        <RoadmapIcon
-          src={ROADMAP_ICONS.ecosystem}
-          alt={t('roadmap.iconAlt.enterpriseSolutions')}
-        />
-      ),
+      icon: ROADMAP_ICONS.ecosystem,
       featuresKeys: [
         'roadmap.features.advancedAdminControls',
         'roadmap.features.customIntegrations',
@@ -198,12 +147,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
       titleKey: 'roadmap.title.futureInnovation',
       descriptionKey: 'roadmap.description.futureInnovation',
       status: 'upcoming',
-      icon: (
-        <RoadmapIcon
-          src={ROADMAP_ICONS.future}
-          alt={t('roadmap.iconAlt.futureInnovation')}
-        />
-      ),
+      icon: ROADMAP_ICONS.future,
       featuresKeys: [
         'roadmap.features.emergingTechnologies',
         'roadmap.features.communityDrivenFeatures',
@@ -333,7 +277,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
                           variants={iconVariants}
                           custom={index}
                         >
-                          {milestone.icon}
+                          <SvgIcon iconName={milestone.icon} title={t(milestone.titleKey)} className="w-7 h-7" />
                         </motion.div>
                         <h3 className="text-xl font-semibold text-[var(--text-primary)]">
                           {t(milestone.titleKey)}

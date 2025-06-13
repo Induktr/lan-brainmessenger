@@ -1,6 +1,8 @@
+"use client";
+
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLanguage } from '../../context/LanguageContext';
+import { useLanguage } from '../app/context/LanguageContext'; // Corrected path
 
 const LoadingOverlay = () => {
   const { t } = useLanguage();

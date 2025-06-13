@@ -1,7 +1,9 @@
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useScrollAnimation } from '../../hooks/useScrollAnimation';
-import { GlitchEffect, InertiaEffect, DistortionEffect, FlyingEffect } from '../Effects/AnimationEffects';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { GlitchEffect, InertiaEffect, DistortionEffect, FlyingEffect } from '../components/AnimationEffects';
 
 type AnimationType =
   | 'fadeIn'
@@ -46,7 +48,7 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
       visible: {
         opacity: 1,
         y: 0,
-        transition: { duration, delay, ease: 'easeOut' },
+        transition: { duration, delay, ease: 'easeOut' } as any,
       },
       hidden: {
         opacity: 0,
@@ -57,7 +59,7 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
       visible: {
         opacity: 1,
         y: 0,
-        transition: { duration, delay, ease: 'easeOut' },
+        transition: { duration, delay, ease: 'easeOut' } as any,
       },
       hidden: {
         opacity: 0,
@@ -68,7 +70,7 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
       visible: {
         opacity: 1,
         x: 0,
-        transition: { duration, delay, ease: 'easeOut' },
+        transition: { duration, delay, ease: 'easeOut' } as any,
       },
       hidden: {
         opacity: 0,
@@ -79,7 +81,7 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
       visible: {
         opacity: 1,
         x: 0,
-        transition: { duration, delay, ease: 'easeOut' },
+        transition: { duration, delay, ease: 'easeOut' } as any,
       },
       hidden: {
         opacity: 0,
@@ -90,7 +92,7 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
       visible: {
         opacity: 1,
         scale: 1,
-        transition: { duration, delay, ease: 'easeOut' },
+        transition: { duration, delay, ease: 'easeOut' } as any,
       },
       hidden: {
         opacity: 0,
@@ -101,7 +103,7 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
       visible: {
         opacity: 1,
         rotate: 0,
-        transition: { duration, delay, ease: 'easeOut' },
+        transition: { duration, delay, ease: 'easeOut' } as any,
       },
       hidden: {
         opacity: 0,

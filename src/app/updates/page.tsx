@@ -1,13 +1,15 @@
+"use client";
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { FiX } from 'react-icons/fi';
 import { useTheme } from '../context/ThemeContext';
-import UpdateSlider from '../components/Updates/UpdateSlider';
-import CaseStudy from '../components/Updates/CaseStudy';
-import { UpdateItem, updates as updatesData } from '../data/updates'; // Import the shared UpdateItem interface and the updates data
-import { ICONS } from '../components/Icons/constants'; // Keep imports for now, will refactor icon system later
-import { useLanguage } from '../context/LanguageContext'; // Import useLanguage
+import UpdateSlider from '../../components/Updates/UpdateSlider';
+import CaseStudy from '../../components/Updates/CaseStudy';
+import { UpdateItem, updates as updatesData } from '../../data/updates'; // Corrected path
+import { ICONS } from '../lib/constants'; // Corrected path for ICONS
+import { useLanguage } from '../../app/context/LanguageContext'; // Corrected path
 
 // Removed local updatesData declaration (lines 22-71) to use the imported one
 
@@ -117,7 +119,7 @@ interface CaseStudyItem {
 }
 
 const Updates: React.FC<UpdatesProps> = () => {
-  const { theme } = useTheme();
+  const { isDark } = useTheme(); // Corrected destructuring
   const { t } = useLanguage(); // Use the translation hook
   const [selectedUpdate, setSelectedUpdate] = useState<UpdateItem | null>(null);
 

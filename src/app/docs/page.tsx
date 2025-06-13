@@ -1,9 +1,30 @@
 import React, { useState } from 'react';
-import Container from '../components/ui/Container';
-import Section from '../components/ui/Section';
+import Container from '../../components/Container'; // Corrected path
+import Section from '../../components/Section'; // Corrected path
 import Link from 'next/link';
-import { ICONS } from '../components/Icons/constants';
-import { useLanguage } from '../context/LanguageContext';
+import { ICONS } from '../lib/constants'; // Corrected path
+import { useLanguage } from '../../app/context/LanguageContext'; // Corrected path
+import SvgIcon from '../../ui/SvgIcon'; // Explicitly add SvgIcon import
+
+interface DocSection {
+  id: string;
+  titleKey: string;
+  contentKey?: string;
+  listKey?: string;
+  outroKey?: string;
+  tableKey?: string;
+  codeExampleKey?: string;
+  codeExampleKey2?: string;
+  additionalContentKeys?: string[];
+  subSections?: DocSection[];
+}
+
+interface DocConfigItem {
+  id: string;
+  titleKey: string;
+  subtitleKey: string;
+  sections: DocSection[];
+}
 
 // Helper component to render content that might be an array or a string
 const RenderContent: React.FC<{ contentKey: string }> = ({ contentKey }) => {
@@ -875,7 +896,7 @@ const Docs: React.FC = () => {
     },
   ];
 
-  const activeDoc = docsConfig.find((doc: any) => doc.id === activeDocId);
+  const activeDoc = docsConfig.find((doc: DocConfigItem) => doc.id === activeDocId);
   const sectionsToRender = activeDoc ? activeDoc.sections : [];
 
   const renderSectionContent = (section: any) => {
@@ -966,7 +987,7 @@ const Docs: React.FC = () => {
                 </li>
                 {section.subSections && (
                     <ul className="ml-4">
-                        {section.subSections.map((subSection: any) => (
+                        {section.subSections.map((subSection: DocSection) => (
                             <li key={subSection.id} className="mb-2">
                                 <Link
                                     href={`#${subSection.id}`}
@@ -991,7 +1012,7 @@ const Docs: React.FC = () => {
             href="/"
             className="inline-flex items-center gap-2 mt-8 text-[var(--accent-primary)] hover:text-[var(--accent-hover)] transition-colors"
           >
-            {ICONS.arrowLeft}
+            <SvgIcon iconName="arrowLeft" title={t('common.backToHome')} className="w-5 h-5" />
             {t('common.backToHome')}
           </Link>
           <div className="flex items-center justify-between mt-6 mb-4">
@@ -1017,7 +1038,7 @@ const Docs: React.FC = () => {
           <Section key={section.id} id={section.id} className="mt-8">
             <h2 className="text-3xl font-bold mb-4">{t(section.titleKey)}</h2>
             {renderSectionContent(section)}
-            {section.subSections && section.subSections.map((subSection: any) => (
+            {section.subSections && section.subSections.map((subSection: DocSection) => (
                 <div key={subSection.id} id={subSection.id} className="mt-8">
                     <h3 className="text-2xl font-bold mb-4">{t(subSection.titleKey)}</h3>
                     {renderSectionContent(subSection)}

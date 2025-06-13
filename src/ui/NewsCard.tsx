@@ -1,23 +1,27 @@
+"use client";
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useTheme } from '../../context/ThemeContext';
-import { useLanguage } from '../../context/LanguageContext'; // Import useLanguage
+import { useTheme } from '../app/context/ThemeContext';
+import { useLanguage } from '../app/context/LanguageContext';
+import Image from 'next/image';
+import SvgIcon from './SvgIcon';
 
 interface NewsCardProps {
   titleKey: string;
   descriptionKey: string;
   originalTitle?: string;
-  iconUrl?: string; // iconUrl is optional based on usage
-  isMore?: boolean; // isMore has a default value
-  isActive?: boolean; // isActive has a default value
+  iconUrl?: string;
+  isMore?: boolean;
+  isActive?: boolean;
 }
 
 const NewsCard: React.FC<NewsCardProps> = ({ titleKey, descriptionKey, originalTitle, iconUrl, isMore = false, isActive = false }) => {
-  const { theme } = useTheme();
-  const { t } = useLanguage(); // Use the translation hook
-  const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 }); // Explicitly type state
+  const { isDark } = useTheme();
+  const { t } = useLanguage();
+  const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>): void => { // Add type annotations
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>): void => {
     if (!isActive) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -25,7 +29,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ titleKey, descriptionKey, originalT
     setMousePosition({ x, y });
   };
 
-  const handleMouseLeave = (): void => { // Add type annotation
+  const handleMouseLeave = (): void => {
     setMousePosition({ x: 0, y: 0 });
   };
 
@@ -51,7 +55,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ titleKey, descriptionKey, originalT
         }}
         transition={{ duration: 0.3 }}
         style={{
-          background: `radial-gradient(circle at center, var(--accent-primary-transparent), transparent 70%)`,
+          background: `radial-gradient(circle at center, var(--color-primary), transparent 70%)`,
           filter: 'blur(15px)',
           zIndex: -1
         }}
@@ -61,43 +65,40 @@ const NewsCard: React.FC<NewsCardProps> = ({ titleKey, descriptionKey, originalT
       <motion.div
         className={`relative backdrop-blur-sm rounded-xl p-6 
           ${isMore 
-            ? 'bg-[var(--accent-primary)] text-[var(--primary)] hover:bg-[var(--accent-hover)]' 
-            : 'bg-[var(--secondary)] border border-[var(--border)]'} 
+            ? 'bg-[var(--color-primary)] text-[var(--color-background-dark)] hover:bg-[var(--color-primary)]' 
+            : 'bg-[var(--color-surface-dark)] border border-[var(--color-border)]'} 
           transition-colors cursor-pointer group`}
         whileHover={{ scale: isActive ? 1.02 : 1 }}
         transition={{ duration: 0.2 }}
       >
         <div className="flex items-start gap-4">
-          <div className={`text-2xl ${isMore ? 'text-[var(--primary)]' : 'text-[var(--accent-primary)]'}`}>
+          <div className={`text-2xl ${isMore ? 'text-[var(--color-background-dark)]' : 'text-[var(--color-primary)]'}`}>
             {iconUrl && (
-              <img 
+              <Image
                 src={iconUrl}
-                alt={t(titleKey) || originalTitle}
-                className="w-8 h-8 object-contain"
-                style={{
-                  filter: titleKey === 'updates.items.performanceBoost.title'
-                    ? 'brightness(0) saturate(100%) invert(7%) sepia(0%) saturate(0%) hue-rotate(153deg) brightness(103%) contrast(96%)'
-                    : 'invert(var(--is-dark))'
-                }}
+                alt={t(titleKey) || originalTitle || ''}
+                width={32}
+                height={32}
+                className="object-contain"
               />
             )}
           </div>
           <div className="flex-1">
-            <h3 className={`font-semibold mb-2 ${isMore ? 'text-[var(--primary)]' : 'text-[var(--text-primary)]'}`}>
+            <h3 className={`font-semibold mb-2 ${isMore ? 'text-[var(--color-background-dark)]' : 'text-[var(--color-text-primary)]'}`}>
               {t(titleKey)}
             </h3>
-            <p className={isMore ? 'text-[var(--primary)]' : 'text-[var(--text-secondary)]'}>
+            <p className={isMore ? 'text-[var(--color-background-dark)]' : 'text-[var(--color-text-secondary)]'}>
               {t(descriptionKey)}
             </p>
           </div>
           {isMore && (
             <motion.div
-              className="text-[var(--primary)] text-xl"
+              className="text-[var(--color-background-dark)] text-xl"
               initial={{ x: 0 }}
               animate={{ x: isActive ? 5 : 0 }}
               transition={{ duration: 0.2 }}
             >
-              {/* <CustomArrowRight /> */}
+              <SvgIcon iconName="arrowRight" title="Read More" className="w-6 h-6" />
             </motion.div>
           )}
         </div>
