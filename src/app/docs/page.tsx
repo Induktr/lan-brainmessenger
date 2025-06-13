@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import Container from '../../components/Container'; // Corrected path
 import Section from '../../components/Section'; // Corrected path

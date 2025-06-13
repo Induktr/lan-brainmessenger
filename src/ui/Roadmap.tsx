@@ -1,22 +1,22 @@
 "use client";
 
 import React from 'react';
-import { useTheme } from '../app/context/ThemeContext'; // Corrected path
+import { useTheme } from '../app/context/ThemeContext';
 import { motion, useAnimation, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useLanguage } from '../app/context/LanguageContext'; // Corrected path
-import SvgIcon from './SvgIcon'; // Import SvgIcon
+import { useLanguage } from '../app/context/LanguageContext';
+import SvgIcon from './SvgIcon';
 
 const ROADMAP_ICONS = {
-  projectLaunch: 'rocket', // Assuming 'rocket.svg' exists in public/icons
-  security: 'shield', // Assuming 'shield.svg' exists in public/icons
-  advancedcoloboration: 'group', // Assuming 'group.svg' exists in public/icons
-  mobile: 'mobile', // Assuming 'mobile.svg' exists in public/icons
-  authentication: 'checkmark', // Assuming 'checkmark.svg' exists in public/icons
-  ai: 'brain', // Assuming 'brain.svg' exists in public/icons
-  global: 'globe', // Assuming 'globe.svg' exists in public/icons
-  ecosystem: 'castle', // Assuming 'castle.svg' exists in public/icons
-  future: 'sun' // Assuming 'sun.svg' exists in public/icons
+  projectLaunch: 'rocket',
+  security: 'shield',
+  advancedcoloboration: 'group',
+  mobile: 'mobile',
+  authentication: 'checkmark',
+  ai: 'brain',
+  global: 'globe',
+  ecosystem: 'castle',
+  future: 'sun'
 };
 
 interface Milestone {
@@ -24,14 +24,14 @@ interface Milestone {
   titleKey: string;
   descriptionKey: string;
   status: 'completed' | 'in-progress' | 'upcoming';
-  icon: string; // Changed to string for SvgIcon name
+  icon: string;
   featuresKeys: string[];
 }
 
 interface RoadmapProps {}
 
 const Roadmap: React.FC<RoadmapProps> = () => {
-  const { isDark } = useTheme(); // Corrected destructuring
+  const { isDark } = useTheme();
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -159,11 +159,11 @@ const Roadmap: React.FC<RoadmapProps> = () => {
   const getStatusColor = (status: Milestone['status']): string => {
     switch (status) {
       case 'completed':
-        return 'bg-[var(--accent-primary)]';
+        return 'bg-[var(--color-primary)]';
       case 'in-progress':
-        return 'bg-[var(--accent-red)]';
+        return 'bg-[var(--color-warning)]';
       default:
-        return 'bg-[var(--tertiary)]';
+        return 'bg-[var(--color-surface-dark)]';
     }
   };
 
@@ -199,7 +199,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
   };
 
   return (
-    <div id="roadmap" className="w-full bg-[var(--secondary)] py-20 overflow-hidden">
+    <div id="roadmap" className="w-full bg-[var(--color-background-dark)] py-24 overflow-hidden">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -223,12 +223,12 @@ const Roadmap: React.FC<RoadmapProps> = () => {
               transition: { duration: 0.6 }
             }
           }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl font-bold text-[var(--text-primary)] mb-4">
+          <h2 className="text-[var(--font-size-h2)] font-bold text-[var(--color-text-primary)] mb-4">
             {t('roadmap.title.section')}
           </h2>
-          <p className="text-[var(--text-secondary)] text-lg">
+          <p className="text-[var(--color-text-secondary)] text-[var(--font-size-base)]">
             {t('roadmap.subtitle.section')}
           </p>
         </motion.div>
@@ -245,7 +245,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
                 }
               }
             }}
-            className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full origin-top bg-gradient-to-b from-[var(--accent-primary)] to-[var(--accent-secondary)]"
+            className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full origin-top bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-primary)]"
           />
 
           <div className="relative z-10">
@@ -268,8 +268,8 @@ const Roadmap: React.FC<RoadmapProps> = () => {
                 }`}
               >
                 <div className="w-5/12">
-                  <div className={`p-6 rounded-lg bg-[var(--primary)] shadow-xl backdrop-blur-sm bg-opacity-80 transform transition-all duration-300 hover:scale-105 ${
-                    milestone.status === 'completed' ? 'border-l-4 border-[var(--accent-primary)]' : ''
+                  <div className={`p-6 rounded-lg bg-[var(--color-surface-dark)] shadow-xl backdrop-blur-sm bg-opacity-80 transform transition-all duration-300 hover:scale-105 ${
+                    milestone.status === 'completed' ? 'border-l-4 border-[var(--color-primary)]' : ''
                   }`}>
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-3">
@@ -277,17 +277,17 @@ const Roadmap: React.FC<RoadmapProps> = () => {
                           variants={iconVariants}
                           custom={index}
                         >
-                          <SvgIcon iconName={milestone.icon} title={t(milestone.titleKey)} className="w-7 h-7" />
+                          <SvgIcon iconName={milestone.icon} title={t(milestone.titleKey)} className="w-7 h-7 text-[var(--color-primary)]" />
                         </motion.div>
-                        <h3 className="text-xl font-semibold text-[var(--text-primary)]">
+                        <h3 className="text-[var(--font-size-lg)] font-semibold text-[var(--color-text-primary)]">
                           {t(milestone.titleKey)}
                         </h3>
                       </div>
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(milestone.status)} text-white`}>
+                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(milestone.status)} text-[var(--color-background-dark)]`}>
                         {getTranslatedStatus(milestone.status)}
                       </span>
                     </div>
-                    <p className="text-[var(--text-secondary)] mb-4">
+                    <p className="text-[var(--color-text-secondary)] text-[var(--font-size-base)] mb-4">
                       {t(milestone.descriptionKey)}
                     </p>
                     <ul className="space-y-2">
@@ -305,9 +305,9 @@ const Roadmap: React.FC<RoadmapProps> = () => {
                                 }
                               }
                             }}
-                            className="flex items-center gap-2 text-[var(--text-secondary)]"
+                            className="flex items-center gap-2 text-[var(--color-text-secondary)] text-[var(--font-size-sm)]"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-primary)]" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]" />
                             {t(featureKey)}
                           </motion.li>
                         ))}
@@ -330,7 +330,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
                       className="relative"
                     >
                       <div className={`w-6 h-6 rounded-full ${getStatusColor(milestone.status)} shadow-lg`} />
-                      <div className="absolute -inset-2 bg-[var(--accent-primary)] rounded-full opacity-20 animate-ping" />
+                      <div className="absolute -inset-2 bg-[var(--color-primary)] rounded-full opacity-20 animate-ping" />
                     </motion.div>
                   </div>
 
@@ -346,7 +346,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
                           }
                         }
                       }}
-                      className="text-[var(--text-primary)] font-semibold bg-[var(--primary)] px-4 py-2 rounded-full shadow-md"
+                      className="text-[var(--color-text-primary)] text-[var(--font-size-base)] font-semibold bg-[var(--color-surface-dark)] px-4 py-2 rounded-full shadow-md"
                     >
                       {t(milestone.dateKey)}
                     </motion.span>
