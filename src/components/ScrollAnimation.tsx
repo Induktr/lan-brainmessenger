@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Transition } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { GlitchEffect, InertiaEffect, DistortionEffect, FlyingEffect } from '../components/AnimationEffects';
 
@@ -48,7 +48,7 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
       visible: {
         opacity: 1,
         y: 0,
-        transition: { duration, delay, ease: 'easeOut' } as any,
+        transition: { duration, delay, ease: 'easeOut' } as Transition,
       },
       hidden: {
         opacity: 0,
@@ -59,7 +59,7 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
       visible: {
         opacity: 1,
         y: 0,
-        transition: { duration, delay, ease: 'easeOut' } as any,
+        transition: { duration, delay, ease: 'easeOut' } as Transition,
       },
       hidden: {
         opacity: 0,
@@ -70,7 +70,7 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
       visible: {
         opacity: 1,
         x: 0,
-        transition: { duration, delay, ease: 'easeOut' } as any,
+        transition: { duration, delay, ease: 'easeOut' } as Transition,
       },
       hidden: {
         opacity: 0,
@@ -81,7 +81,7 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
       visible: {
         opacity: 1,
         x: 0,
-        transition: { duration, delay, ease: 'easeOut' } as any,
+        transition: { duration, delay, ease: 'easeOut' } as Transition,
       },
       hidden: {
         opacity: 0,
@@ -92,7 +92,7 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
       visible: {
         opacity: 1,
         scale: 1,
-        transition: { duration, delay, ease: 'easeOut' } as any,
+        transition: { duration, delay, ease: 'easeOut' } as Transition,
       },
       hidden: {
         opacity: 0,
@@ -103,7 +103,7 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
       visible: {
         opacity: 1,
         rotate: 0,
-        transition: { duration, delay, ease: 'easeOut' } as any,
+        transition: { duration, delay, ease: 'easeOut' } as Transition,
       },
       hidden: {
         opacity: 0,

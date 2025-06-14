@@ -3,15 +3,14 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image'; // Import Image component
 import { FiX } from 'react-icons/fi';
 import { useTheme } from '../context/ThemeContext';
 import UpdateSlider from '../../components/Updates/UpdateSlider';
 import CaseStudy from '../../components/Updates/CaseStudy';
-import { UpdateItem, updates as updatesData } from '../../data/updates'; // Corrected path
-import { ICONS } from '../lib/constants'; // Corrected path for ICONS
-import { useLanguage } from '../../app/context/LanguageContext'; // Corrected path
-
-// Removed local updatesData declaration (lines 22-71) to use the imported one
+import { UpdateItem, updates as updatesData } from '../../data/updates';
+import { ICONS } from '../lib/constants';
+import { useLanguage } from '../../app/context/LanguageContext';
 
 interface UpdateModalProps {
   update: UpdateItem | null;
@@ -19,7 +18,7 @@ interface UpdateModalProps {
 }
 
 const UpdateModal: React.FC<UpdateModalProps> = ({ update, onClose }) => {
-  const { t } = useLanguage(); // Use the translation hook
+  const { t } = useLanguage();
   if (!update) return null;
 
   return (
@@ -28,67 +27,74 @@ const UpdateModal: React.FC<UpdateModalProps> = ({ update, onClose }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       onClick={onClose}
-      className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+      className="update-modal-overlay"
     >
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
         onClick={e => e.stopPropagation()}
-        className="bg-[var(--primary)] rounded-xl p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto relative"
+        className="update-modal-content"
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+          className="update-modal-close-button"
         >
           <FiX size={24} />
         </button>
 
-        <div className="flex items-center gap-4 mb-6">
-          <div className="p-3 rounded-full bg-[var(--accent-primary)] text-[var(--primary)]">
-            {/* Render icon using img tag and iconUrl */}
-            {update.iconUrl && <img src={update.iconUrl} alt={t(update.titleKey) || update.originalTitle} className="w-6 h-6" />}
+        <div className="update-modal-header">
+          <div className="update-modal-icon-wrapper">
+            {update.iconUrl && (
+              <Image
+                src={update.iconUrl}
+                alt={t(update.titleKey) || update.originalTitle}
+                width={24} // Specify width
+                height={24} // Specify height
+                className="update-modal-icon"
+              />
+            )}
           </div>
           <div>
-            <h3 className="text-2xl font-bold text-[var(--text-primary)]">{t(update.titleKey)}</h3>
-            <p className="text-[var(--text-secondary)]">{t(update.dateKey)}</p>
+            <h3 className="update-modal-title">{t(update.titleKey)}</h3>
+            <p className="update-modal-date">{t(update.dateKey)}</p>
           </div>
         </div>
 
-        <div className="prose prose-invert max-w-none">
-          <p className="text-[var(--text-secondary)] mb-6">{t(update.descriptionKey)}</p>
+        <div className="update-modal-prose">
+          <p className="update-modal-description">{t(update.descriptionKey)}</p>
 
-          <div className="space-y-6">
+          <div className="update-modal-section-spacing">
             <div>
-              <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-2">{t('updates.modal.keyFeaturesTitle')}</h4> {/* Use translation key */}
-              <ul className="list-disc pl-6 text-[var(--text-secondary)]">
-                <li>{t('updates.modal.placeholder')}</li> {/* Use translation key for placeholder */}
-                <li>{t('updates.modal.placeholder')}</li> {/* Use translation key for placeholder */}
-                <li>{t('updates.modal.placeholder')}</li> {/* Use translation key for placeholder */}
+              <h4 className="update-modal-section-title">{t('updates.modal.keyFeaturesTitle')}</h4>
+              <ul className="update-modal-list">
+                <li>{t('updates.modal.placeholder')}</li>
+                <li>{t('updates.modal.placeholder')}</li>
+                <li>{t('updates.modal.placeholder')}</li>
               </ul>
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-2">{t('updates.modal.impactMetricsTitle')}</h4> {/* Use translation key */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="bg-[var(--secondary)] p-4 rounded-lg text-center">
-                  <div className="text-2xl font-bold text-[var(--accent-primary)]">{t('updates.modal.placeholder')}</div> {/* Use translation key for placeholder */}
-                  <div className="text-sm text-[var(--text-secondary)]">{t('updates.modal.placeholder')}</div> {/* Use translation key for placeholder */}
+              <h4 className="update-modal-section-title">{t('updates.modal.impactMetricsTitle')}</h4>
+              <div className="update-modal-grid">
+                <div className="update-modal-grid-item">
+                  <div className="update-modal-grid-value">{t('updates.modal.placeholder')}</div>
+                  <div className="update-modal-grid-label">{t('updates.modal.placeholder')}</div>
                 </div>
-                <div className="bg-[var(--secondary)] p-4 rounded-lg text-center">
-                  <div className="text-2xl font-bold text-[var(--accent-primary)]">{t('updates.modal.placeholder')}</div> {/* Use translation key for placeholder */}
-                  <div className="text-sm text-[var(--text-secondary)]">{t('updates.modal.placeholder')}</div> {/* Use translation key for placeholder */}
+                <div className="update-modal-grid-item">
+                  <div className="update-modal-grid-value">{t('updates.modal.placeholder')}</div>
+                  <div className="update-modal-grid-label">{t('updates.modal.placeholder')}</div>
                 </div>
               </div>
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-2">{t('updates.modal.featureOverviewTitle')}</h4> {/* Use translation key */}
-              <div className="aspect-video rounded-lg overflow-hidden bg-[var(--secondary)] mb-6">
+              <h4 className="update-modal-section-title">{t('updates.modal.featureOverviewTitle')}</h4>
+              <div className="update-modal-video-wrapper">
                 <iframe
-                  className="w-full h-full"
+                  className="update-modal-video"
                   src="https://youtu.be/9cH5Em0F7pc?si=mi9VoAX9xcDfP3Bj"
-                  title={t('updates.modal.featureOverviewTitle')} // Use translation key for iframe title
+                  title={t('updates.modal.featureOverviewTitle')}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -97,9 +103,9 @@ const UpdateModal: React.FC<UpdateModalProps> = ({ update, onClose }) => {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-2">{t('updates.modal.additionalInfoTitle')}</h4> {/* Use translation key */}
-              <p className="text-[var(--text-secondary)]">
-               {t('updates.modal.placeholder')} {/* Use translation key for placeholder */}
+              <h4 className="update-modal-section-title">{t('updates.modal.additionalInfoTitle')}</h4>
+              <p className="update-modal-description">
+                {t('updates.modal.placeholder')}
               </p>
             </div>
           </div>
@@ -109,24 +115,22 @@ const UpdateModal: React.FC<UpdateModalProps> = ({ update, onClose }) => {
   );
 };
 
-interface UpdatesProps {}
-
 interface CaseStudyItem {
-  titleKey: string; // Use translation key for title
-  icon: React.ElementType | any;
-  descriptionKey: string; // Use translation key for description
-  metricsKeys: { valueKey: string; labelKey: string }[]; // Use translation keys for metrics
+  titleKey: string;
+  iconName: string;
+  descriptionKey: string;
+  metricsKeys: { valueKey: string; labelKey: string }[];
 }
 
-const Updates: React.FC<UpdatesProps> = () => {
-  const { isDark } = useTheme(); // Corrected destructuring
-  const { t } = useLanguage(); // Use the translation hook
+const Updates: React.FC = () => { // Removed UpdatesProps interface
+  const { } = useTheme();
+  const { t } = useLanguage();
   const [selectedUpdate, setSelectedUpdate] = useState<UpdateItem | null>(null);
 
   const caseStudies: CaseStudyItem[] = [
     {
       titleKey: 'updates.caseStudy.title',
-      icon: ICONS.shield,
+      iconName: ICONS.shield,
       descriptionKey: 'updates.caseStudy.description',
       metricsKeys: [
         { valueKey: 'updates.caseStudy.metricPlaceholder', labelKey: 'updates.caseStudy.metricPlaceholder' },
@@ -136,40 +140,37 @@ const Updates: React.FC<UpdatesProps> = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[var(--primary)] text-[var(--text-primary)] py-20 px-6">
-      <div className="max-w-7xl mx-auto mb-12">
+    <div className="updates-page-container">
+      <div className="updates-page-header-wrapper">
         <Link
           href="/"
-          className="inline-flex items-center mt-8 text-[var(--accent-primary)] hover:text-[var(--accent-hover)] transition-colors mb-8"
+          className="updates-back-link"
         >
           {ICONS.arrowLeft}
-          {t('backToHome')} {/* Use translation key */}
+          {t('backToHome')}
         </Link>
-        <h1 className="text-4xl font-bold mb-4">{t('updates.pageTitle')}</h1> {/* Use translation key */}
-        <p className="text-[var(--text-secondary)]">
-          {t('updates.pageSubtitle')} {/* Use translation key */}
+        <h1 className="updates-page-title">{t('updates.pageTitle')}</h1>
+        <p className="updates-page-subtitle">
+          {t('updates.pageSubtitle')}
         </p>
       </div>
 
-      {/* Feature Slider - updatesData will be translated in data/updates.ts */}
-      <div className="max-w-7xl mx-auto mb-16">
+      <div className="updates-section-wrapper">
         <UpdateSlider updates={updatesData} />
       </div>
 
-      {/* Case Studies */}
-      <div className="max-w-7xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8">{t('updates.impactTitle')}</h2> {/* Use translation key */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="updates-section-wrapper">
+        <h2 className="updates-section-title">{t('updates.impactTitle')}</h2>
+        <div className="updates-grid">
           {caseStudies.map((study, index) => (
             <CaseStudy key={index} {...study} />
           ))}
         </div>
       </div>
 
-      {/* Updates Grid - updatesData will be translated in data/updates.ts */}
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8">{t('updates.allUpdatesTitle')}</h2> {/* Use translation key */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="updates-section-wrapper">
+        <h2 className="updates-section-title">{t('updates.allUpdatesTitle')}</h2>
+        <div className="updates-grid">
           {updatesData.map((update, index) => {
             return (
               <motion.div
@@ -186,23 +187,30 @@ const Updates: React.FC<UpdatesProps> = () => {
                   transition: { duration: 0.2 }
                 }}
                 onClick={() => setSelectedUpdate(update)}
-                className="group relative bg-[var(--secondary)] rounded-xl p-6 border border-[var(--border)] cursor-pointer"
+                className="update-card"
               >
                 <div
-                  className="absolute -inset-[1px] rounded-xl opacity-0 group-hover:opacity-20 transition-opacity"
+                  className="update-card-glow"
                   style={{
-                    background: 'radial-gradient(circle at center, var(--accent-primary), transparent)'
+                    background: 'radial-gradient(circle at center, var(--color-primary), transparent)'
                   }}
                 />
 
-                <div className="relative z-10">
-                  <div className="text-[var(--accent-primary)] text-2xl mb-4">
-                    {/* Render icon using img tag and iconUrl */}
-                    {update.iconUrl && <img src={update.iconUrl} alt={t(update.titleKey) || update.originalTitle} className="w-8 h-8" />}
+                <div className="update-card-content">
+                  <div className="update-card-icon-wrapper">
+                    {update.iconUrl && (
+                      <Image
+                        src={update.iconUrl}
+                        alt={t(update.titleKey) || update.originalTitle}
+                        width={32} // Specify width
+                        height={32} // Specify height
+                        className="update-card-icon"
+                      />
+                    )}
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{t(update.titleKey)}</h3>
-                  <p className="text-[var(--text-secondary)] mb-4">{t(update.descriptionKey)}</p>
-                  <p className="text-sm text-[var(--text-secondary)]">{t(update.dateKey)}</p>
+                  <h3 className="update-card-title">{t(update.titleKey)}</h3>
+                  <p className="update-card-description">{t(update.descriptionKey)}</p>
+                  <p className="update-card-date">{t(update.dateKey)}</p>
                 </div>
               </motion.div>
             );

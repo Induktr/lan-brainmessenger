@@ -1,8 +1,6 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
-import { useRouter } from 'next/navigation'; // Import useRouter from next/navigation
-import { usePathname } from 'next/navigation'; // Import usePathname from next/navigation
 
 interface Language {
   name: string;
@@ -12,7 +10,7 @@ interface Language {
 interface LanguageContextType {
   language: string;
   changeLanguage: (lang: string) => void;
-  t: (key: string, options?: { defaultValue?: string }) => string;
+  t: (key: string, options?: { defaultValue?: string; [key: string]: string | number | boolean | undefined }) => string;
   languages: { [key: string]: Language };
   isLoading: boolean;
 }
@@ -30,8 +28,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState('en');
   const [translations, setTranslations] = useState<{ [key: string]: string }>({});
   const [isLoading, setIsLoading] = useState(true);
-  const router = useRouter();
-  const pathname = usePathname();
+  // const router = useRouter();
+  // const pathname = usePathname();
 
   const loadTranslations = useCallback(async (lang: string) => {
     setIsLoading(true);
@@ -70,10 +68,43 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       // Optional: Update URL if you want language in the path
       // router.push(`/${lang}${pathname}`);
     }
-  }, [languages, loadTranslations]);
+  }, [loadTranslations]);
 
-  const t = useCallback((key: string, options?: { defaultValue?: string }) => {
-    return translations[key] || options?.defaultValue || key;
+  const t = useCallback((key: string, options?: { defaultValue?: string; [key: string]: string | number | boolean | undefined }) => {
+    const keys = key.split('.');
+    let value: unknown = translations;
+    for (let i = 0; i < keys.length; i++) {
+      if (value && typeof value === 'object' && value !== null && keys[i] in value) {
+        value = (value as Record<string, unknown>)[keys[i]];
+      } else {
+        value = undefined;
+        break;
+      }
+    }
+
+    let result: string;
+    if (typeof value === 'string') {
+      result = value;
+    } else if (options?.defaultValue !== undefined) {
+      result = options.defaultValue;
+    } else {
+      result = key; // Fallback to the key itself if no translation or default value
+    }
+
+    // Handle interpolation if options are provided
+    if (options) {
+      for (const optKey in options) {
+        if (optKey !== 'defaultValue' && Object.prototype.hasOwnProperty.call(options, optKey)) {
+          const placeholder = `{{${optKey}}}`;
+          const optionValue = options[optKey];
+          if (typeof optionValue === 'string' || typeof optionValue === 'number' || typeof optionValue === 'boolean') {
+            result = result.replace(new RegExp(placeholder, 'g'), String(optionValue));
+          }
+        }
+      }
+    }
+
+    return result;
   }, [translations]);
 
   return (

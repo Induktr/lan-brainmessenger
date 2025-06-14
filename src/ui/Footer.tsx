@@ -8,11 +8,6 @@ import { useLanguage } from '../app/context/LanguageContext';
 import SvgIcon from './SvgIcon';
 
 
-interface FooterIconProps {
-  src: string | undefined;
-  alt: string;
-  className?: string;
-}
 
 interface LinkItem {
   nameKey: string;
@@ -54,7 +49,7 @@ const FOOTER_ICONS = {
 };
 
 const Footer = () => {
-  const { isDark } = useTheme();
+  const { } = useTheme();
   const { t } = useLanguage();
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
 
@@ -96,7 +91,7 @@ const Footer = () => {
         { icon: FaLinkedin, href: '#', labelKey: 'footer.social.linkedin' }
       ]
     }
-  ], [t]);
+  ], []);
 
   const goToNextSection = () => {
     if (currentSectionIndex < sections.length - 1) {
@@ -128,12 +123,12 @@ const Footer = () => {
     switch (section.id) {
       case 'brand':
         return (
-          <div className="text-center transform transition-all duration-500">
-            <h2 className="text-[var(--font-size-h1)] font-bold mb-6 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary)] bg-clip-text text-transparent">
+          <div className="footer-brand-section">
+            <h2 className="footer-brand-title">
               {t(section.titleKey)}
             </h2>
             {section.contentKey && (
-              <p className="text-[var(--font-size-lg)] text-[var(--color-text-secondary)] max-w-3xl mx-auto leading-relaxed">
+              <p className="footer-brand-content">
                 {t(section.contentKey)}
               </p>
             )}
@@ -142,29 +137,29 @@ const Footer = () => {
 
       case 'quickLinks':
         return (
-          <div className="text-center transform transition-all duration-500">
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <SvgIcon iconName={FOOTER_ICONS.quickLinks} title={t('footer.iconAlt.quickLinks')} className="w-8 h-8 text-[var(--color-primary)]" />
-              <h3 className="text-[var(--font-size-h3)] font-semibold text-[var(--color-text-primary)]">{t(section.titleKey)}</h3>
+          <div className="footer-quicklinks-section">
+            <div className="footer-quicklinks-header">
+              <SvgIcon iconName={FOOTER_ICONS.quickLinks} title={t('footer.iconAlt.quickLinks')} className="footer-quicklinks-icon" />
+              <h3 className="footer-quicklinks-title">{t(section.titleKey)}</h3>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            <div className="footer-quicklinks-grid">
               {section.links?.map((link, index) => (
                 link.href.startsWith('#') ? (
                   <button
                     key={index}
                     onClick={() => handleNavigation(link)}
-                    className="flex items-center justify-center gap-3 px-6 py-3 bg-[var(--color-surface-dark)] rounded-lg text-[var(--color-text-primary)] hover:text-[var(--color-primary)] hover:scale-105 transition-all duration-300"
+                    className="footer-quicklinks-item"
                   >
-                    <SvgIcon iconName={link.icon} title={t(link.altKey)} className="text-[var(--color-primary)]" />
+                    <SvgIcon iconName={link.icon} title={t(link.altKey)} className="svg-icon" />
                     {t(link.nameKey)}
                   </button>
                 ) : (
                   <Link
                     key={index}
                     href={link.href}
-                    className="flex items-center justify-center gap-3 px-6 py-3 bg-[var(--color-surface-dark)] rounded-lg text-[var(--color-text-primary)] hover:text-[var(--color-primary)] hover:scale-105 transition-all duration-300"
+                    className="footer-quicklinks-item"
                   >
-                    <SvgIcon iconName={link.icon} title={t(link.altKey)} className="text-[var(--color-primary)]" />
+                    <SvgIcon iconName={link.icon} title={t(link.altKey)} className="svg-icon" />
                     {t(link.nameKey)}
                   </Link>
                 )
@@ -175,20 +170,20 @@ const Footer = () => {
 
       case 'contact':
         return (
-          <div className="text-center transform transition-all duration-500">
-            <h3 className="text-[var(--font-size-h3)] font-semibold mb-8 text-[var(--color-text-primary)]">{t(section.titleKey)}</h3>
-            <div className="space-y-6 max-w-2xl mx-auto">
+          <div className="footer-contact-section">
+            <h3 className="footer-contact-title">{t(section.titleKey)}</h3>
+            <div className="footer-contact-list">
               {section.contacts?.map((contact, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-center gap-4 text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors duration-300 group"
+                  className="footer-contact-item"
                 >
                   {contact.isCustomIcon ? (
-                    <SvgIcon iconName={contact.icon as string} title={contact.altKey ? t(contact.altKey) : ''} className="w-8 h-8 text-[var(--color-primary)]" />
+                    <SvgIcon iconName={contact.icon as string} title={contact.altKey ? t(contact.altKey) : ''} className="svg-icon" />
                   ) : (
-                    React.createElement(contact.icon as React.ElementType, { key: index, className: "w-8 h-8 text-[var(--color-primary)]" })
+                    React.createElement(contact.icon as React.ElementType, { className: "footer-contact-item-icon" })
                   )}
-                  <span className="text-[var(--font-size-lg)]">{t(contact.textKey)}</span>
+                  <span className="footer-contact-text">{t(contact.textKey)}</span>
                 </div>
               ))}
             </div>
@@ -197,14 +192,14 @@ const Footer = () => {
 
       case 'social':
         return (
-          <div className="text-center transform transition-all duration-500">
-            <h3 className="text-[var(--font-size-h3)] font-semibold mb-8 text-[var(--color-text-primary)]">{t(section.titleKey)}</h3>
-            <div className="flex justify-center space-x-6">
+          <div className="footer-social-section">
+            <h3 className="footer-social-title">{t(section.titleKey)}</h3>
+            <div className="footer-social-list">
               {section.socials?.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
-                  className="p-4 rounded-full bg-[var(--color-surface-dark)] text-[var(--color-text-primary)] hover:text-[var(--color-primary)] hover:scale-110 transition-all duration-300"
+                  className="footer-social-item"
                   aria-label={t(social.labelKey)}
                 >
                   <social.icon size={28} />
@@ -220,13 +215,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full bg-[var(--color-background-dark)] text-[var(--color-text-primary)] flex flex-col relative">
+    <footer className="footer-base">
       {/* Navigation Arrows */}
-      <div className="flex-1 flex flex-col items-center justify-between py-16 px-4 sm:px-6 lg:px-8">
+      <div className="footer-nav-area">
         {currentSectionIndex > 0 && (
           <button
             onClick={goToPreviousSection}
-            className="absolute top-[15px] left-1/2 -translate-x-1/2 p-3 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] z-10"
+            className="footer-nav-button top"
             aria-label={t('footer.previousSection')}
           >
             <FaChevronUp size={20} />
@@ -234,14 +229,14 @@ const Footer = () => {
         )}
 
         {/* Section Content */}
-        <div className="w-full max-w-7xl mx-auto">
+        <div className="footer-section-wrapper">
           {renderSectionContent()}
         </div>
 
         {currentSectionIndex < sections.length - 1 && (
           <button
             onClick={goToNextSection}
-            className="absolute bottom-[60px] left-1/2 -translate-x-1/2 p-3 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] z-10"
+            className="footer-nav-button bottom"
             aria-label={t('footer.nextSection')}
           >
             <FaChevronDown size={20} />
@@ -250,9 +245,9 @@ const Footer = () => {
       </div>
 
       {/* Copyright - Always visible */}
-      <div className="border-t border-[var(--color-border)] bg-[var(--color-background-dark)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <p className="text-sm text-center text-[var(--color-text-secondary)]">
+      <div className="footer-copyright-wrapper">
+        <div className="footer-copyright-content">
+          <p className="footer-copyright-text">
             {t('footer.copyright')}
           </p>
         </div>

@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { FiChevronDown } from 'react-icons/fi';
-import { useTheme } from '../../app/context/ThemeContext'; // Corrected path
 import { useLanguage } from '../../app/context/LanguageContext'; // Corrected path
 import { faqDataStructure, FAQCategory } from '../../data/faq'; // Corrected path and imported FAQCategory
 import SvgIcon from '../../ui/SvgIcon'; // Corrected path
@@ -18,8 +17,7 @@ interface DisplayableFAQQuestion {
 }
 
 const FAQPage = () => { // Renamed to FAQPage for clarity as it's a Next.js page
-  const { isDark } = useTheme(); // Corrected destructuring
-  const { t, language, isLoading: languageIsLoading } = useLanguage();
+  const { t, isLoading: languageIsLoading } = useLanguage();
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [activeCategoryKey, setActiveCategoryKey] = useState<string>('all');
   const [expandedQuestions, setExpandedQuestions] = useState<Set<string>>(new Set());
@@ -73,7 +71,7 @@ const FAQPage = () => { // Renamed to FAQPage for clarity as it's a Next.js page
       allQuestions: computedAllQuestions,
       displayableCategoryKeys: computedDisplayableCategoryKeys,
     };
-  }, [language, t, languageIsLoading]);
+  }, [t, languageIsLoading]);
 
   const filteredQuestions = allQuestions.filter(q => {
     const translatedQuestion = t(q.questionKey) || '';
@@ -85,50 +83,43 @@ const FAQPage = () => { // Renamed to FAQPage for clarity as it's a Next.js page
   });
 
   return (
-    <div className="min-h-screen bg-[var(--primary)] text-[var(--text-primary)]">
-      <div className="max-w-4xl mx-auto px-4 py-20">
-        <div className="mb-12">
+    <div className="faq-page-container">
+      <div className="faq-content-wrapper">
+        <div className="faq-header-section">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 mt-8 text-[var(--accent-primary)] hover:text-[var(--accent-hover)] transition-colors"
+            className="faq-back-link"
           >
-            <SvgIcon iconName="arrowLeft" title={t('common.backToHome')} className="w-5 h-5" />
+            <SvgIcon iconName="arrowLeft" title={t('common.backToHome')} className="faq-back-link-icon" />
             {t('common.backToHome')}
           </Link>
-          <h1 className="text-4xl font-bold mt-6 mb-4">{t('faq.title')}</h1>
-          <p className="text-[var(--text-secondary)]">
+          <h1 className="faq-page-title">{t('faq.title')}</h1>
+          <p className="faq-page-subtitle">
             {t('faq.subtitle')}
           </p>
         </div>
 
         {/* Search and Filter */}
-        <div className="mb-8 space-y-4">
-          <div className="relative">
+        <div className="faq-search-filter-section">
+          <div className="faq-search-input-wrapper">
             <SvgIcon
               iconName="support"
               title={t('faq.searchAlt')}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5"
-              style={{ filter: 'invert(42%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(92%) contrast(82%)' }}
+              className="faq-search-icon"
             />
             <input
               type="text"
               placeholder={t('faq.searchPlaceholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 rounded-xl bg-[var(--secondary)] border border-[var(--border)]
-                text-[var(--text-primary)] placeholder-[var(--text-secondary)]
-                focus:outline-none focus:border-[var(--accent-primary)] transition-colors"
+              className="faq-search-input"
             />
           </div>
 
-          <div className="flex gap-2 overflow-x-auto pb-2">
+          <div className="faq-category-buttons">
             <button
               onClick={() => setActiveCategoryKey('all')}
-              className={`px-4 py-2 rounded-lg transition-colors whitespace-nowrap
-                ${activeCategoryKey === 'all'
-                  ? 'bg-[var(--accent-primary)] text-[var(--primary)]'
-                  : 'bg-[var(--secondary)] text-[var(--text-primary)] hover:bg-[var(--tertiary)]'
-                }`}
+              className={`faq-category-button ${activeCategoryKey === 'all' ? 'active' : 'inactive'}`}
             >
               {t('faq.allQuestions')}
             </button>
@@ -136,11 +127,7 @@ const FAQPage = () => { // Renamed to FAQPage for clarity as it's a Next.js page
               <button
                 key={catKey}
                 onClick={() => setActiveCategoryKey(catKey)}
-                className={`px-4 py-2 rounded-lg transition-colors whitespace-nowrap
-                  ${activeCategoryKey === catKey
-                    ? 'bg-[var(--accent-primary)] text-[var(--primary)]'
-                    : 'bg-[var(--secondary)] text-[var(--text-primary)] hover:bg-[var(--tertiary)]'
-                  }`}
+                className={`faq-category-button ${activeCategoryKey === catKey ? 'active' : 'inactive'}`}
               >
                 {t(`faq.categories.${catKey}`)}
               </button>
@@ -149,7 +136,7 @@ const FAQPage = () => { // Renamed to FAQPage for clarity as it's a Next.js page
         </div>
 
         {/* Questions */}
-        <div className="space-y-4">
+        <div className="faq-questions-list">
           <AnimatePresence>
             {filteredQuestions.map((item) => (
               <ErrorBoundary key={item.id}> {/* Using the imported ErrorBoundary */}
@@ -157,19 +144,19 @@ const FAQPage = () => { // Renamed to FAQPage for clarity as it's a Next.js page
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
-                  className="rounded-xl bg-[var(--secondary)] border border-[var(--border)] overflow-hidden"
+                  className="faq-question-card"
                 >
                   <button
                     onClick={() => toggleQuestion(item.id)}
-                    className="w-full p-6 flex items-start justify-between gap-4 text-left"
+                    className="faq-question-button"
                   >
-                    <span className="text-[var(--text-primary)] font-medium">
+                    <span className="faq-question-title">
                       {t(item.questionKey)}
                     </span>
                     <motion.div
                       animate={{ rotate: expandedQuestions.has(item.id) ? 180 : 0 }}
                       transition={{ duration: 0.2 }}
-                      className="flex-shrink-0 text-[var(--text-secondary)]"
+                      className="faq-question-arrow"
                     >
                       <FiChevronDown />
                     </motion.div>
@@ -182,10 +169,10 @@ const FAQPage = () => { // Renamed to FAQPage for clarity as it's a Next.js page
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="px-6 pb-6"
+                        className="faq-answer-wrapper"
                       >
-                        <div className="pt-4 border-t border-[var(--border)]">
-                          <p className="text-[var(--text-secondary)]">
+                        <div className="faq-answer-content">
+                          <p className="faq-answer-text">
                             {t(item.answerKey, { defaultValue: t('faq.answerComingSoon') })}
                           </p>
                         </div>
@@ -201,7 +188,7 @@ const FAQPage = () => { // Renamed to FAQPage for clarity as it's a Next.js page
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-center py-12 text-[var(--text-secondary)]"
+              className="faq-no-results"
             >
               {t('faq.noResults')}
             </motion.div>

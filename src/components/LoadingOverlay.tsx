@@ -13,17 +13,17 @@ const LoadingOverlay = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center"
+        className="loading-overlay-container"
       >
         <motion.div
           initial={{ scale: 0.8 }}
           animate={{ scale: 1 }}
           exit={{ scale: 0.8 }}
-          className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-xl"
+          className="loading-overlay-card"
         >
-          <div className="flex flex-col items-center space-y-4">
-            <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
-            <p className="text-gray-600 dark:text-gray-300 font-medium">
+          <div className="loading-spinner-wrapper">
+            <div className="loading-spinner" />
+            <p className="loading-text">
               {t('common.loading')}
             </p>
           </div>

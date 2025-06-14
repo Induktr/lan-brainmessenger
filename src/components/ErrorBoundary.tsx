@@ -3,21 +3,20 @@
 import React from 'react';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 
-interface ErrorFallbackProps extends FallbackProps {}
 
-function ErrorFallback({ error, resetErrorBoundary }: ErrorFallbackProps) {
+function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[var(--primary)]">
-      <div className="max-w-md w-full p-6 bg-[var(--secondary)] rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
+    <div className="error-boundary-container">
+      <div className="error-boundary-card">
+        <h2 className="error-boundary-title">
           Something went wrong
         </h2>
-        <div className="text-[var(--text-secondary)] mb-4">
+        <div className="error-boundary-message">
           {error.message}
         </div>
         <button
           onClick={resetErrorBoundary}
-          className="px-4 py-2 bg-[var(--accent)] text-white rounded hover:opacity-90 transition-opacity"
+          className="error-boundary-button"
         >
           Try again
         </button>
@@ -26,25 +25,24 @@ function ErrorFallback({ error, resetErrorBoundary }: ErrorFallbackProps) {
   );
 }
 
-interface WithErrorBoundaryOptions {
-  onReset?: () => void;
-  // Add other ErrorBoundary props here if needed
+interface WithErrorBoundaryOptions extends Omit<React.ComponentProps<typeof ErrorBoundary>, 'fallback' | 'FallbackComponent' | 'fallbackRender'> {
+  onReset?: (details?: { reason: "imperative-api"; args: unknown[]; } | { reason: "keys"; prev: unknown[] | undefined; next: unknown[] | undefined; }) => void;
 }
 
 export function withErrorBoundary<P>(Component: React.ComponentType<P>, options: WithErrorBoundaryOptions = {}) {
-  return function WithErrorBoundary(props: P & React.Attributes) { // Explicitly combine P and Attributes
+  return function WithErrorBoundary(props: P & React.Attributes) {
+    const { onReset, ...restOptions } = options;
     return (
       <ErrorBoundary
         FallbackComponent={ErrorFallback}
-        onReset={() => {
-          // Reset the state of your app here
-          if (options.onReset) {
-            options.onReset();
+        onReset={(details) => {
+          if (onReset) {
+            onReset(details);
           }
         }}
-        {...options}
+        {...restOptions}
       >
-        <Component {...props} /> {/* Spread combined props */}
+        <Component {...props} />
       </ErrorBoundary>
     );
   };

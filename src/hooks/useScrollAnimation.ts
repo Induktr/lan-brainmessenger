@@ -20,7 +20,7 @@ export function useScrollAnimation(options?: UseScrollAnimationOptions): UseScro
     threshold: options?.threshold || 0.1,
     triggerOnce: options?.once !== undefined ? options.once : true,
     rootMargin: '0px 0px -10% 0px', // Adjust as needed
-    // @ts-ignore - 'amount' is a valid option but conflicts with 'threshold' in some versions
+    // @ts-expect-error - 'amount' is a valid option but conflicts with 'threshold' in some versions
     amount: options?.amount,
   });
 

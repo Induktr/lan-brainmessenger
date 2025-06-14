@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, Variant, Transition } from 'framer-motion';
 
 interface AnimationEffectProps {
   children: React.ReactNode;
@@ -13,7 +13,7 @@ interface AnimationEffectProps {
 }
 
 export const GlitchEffect: React.FC<AnimationEffectProps> = ({ children, duration = 1.0, delay = 0, intensity = 1.5 }) => {
-  const glitchVariants = {
+  const glitchVariants: { hidden: Variant, visible: Variant } = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: [0, 1, 0.8, 1],
@@ -27,10 +27,10 @@ export const GlitchEffect: React.FC<AnimationEffectProps> = ({ children, duratio
       transition: {
         duration: duration,
         delay: delay,
-        ease: 'easeOut' as any, // Cast to any to resolve type error
-        filter: { duration: duration * 0.2, ease: 'easeInOut' as any }, // Cast to any
-        x: { duration: duration * 0.1, ease: 'easeInOut' as any, repeat: 3, repeatType: 'mirror' as any }, // Cast to any
-      },
+        ease: 'easeOut',
+        filter: { duration: duration * 0.2, ease: 'easeInOut' },
+        x: { duration: duration * 0.1, ease: 'easeInOut', repeat: 3, repeatType: 'mirror' },
+      } as Transition,
     },
   };
 
@@ -45,19 +45,19 @@ export const InertiaEffect: React.FC<AnimationEffectProps> = ({ children, durati
   const initialY = direction === 'up' ? 150 : direction === 'down' ? -150 : 0;
   const initialX = direction === 'left' ? 150 : direction === 'right' ? -150 : 0;
 
-  const inertiaVariants = {
+  const inertiaVariants: { hidden: Variant, visible: Variant } = {
     hidden: { opacity: 0, y: initialY, x: initialX },
     visible: {
       opacity: 1,
       y: 0,
       x: 0,
       transition: {
-        type: 'spring' as any, // Cast to any
+        type: 'spring',
         stiffness: 120,
         damping: 12,
         duration: duration,
         delay: delay,
-      },
+      } as Transition,
     },
   };
 
@@ -69,7 +69,7 @@ export const InertiaEffect: React.FC<AnimationEffectProps> = ({ children, durati
 };
 
 export const DistortionEffect: React.FC<AnimationEffectProps> = ({ children, duration = 1.0, delay = 0, intensity = 1.5 }) => {
-  const distortionVariants = {
+  const distortionVariants: { hidden: Variant, visible: Variant } = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,
@@ -79,10 +79,10 @@ export const DistortionEffect: React.FC<AnimationEffectProps> = ({ children, dur
       transition: {
         duration: duration,
         delay: delay,
-        ease: 'easeOut' as any, // Cast to any
-        skewX: { duration: duration * 0.3, ease: 'easeInOut' as any }, // Cast to any
-        skewY: { duration: duration * 0.3, ease: 'easeInOut' as any, delay: duration * 0.1 }, // Cast to any
-      },
+        ease: 'easeOut',
+        skewX: { duration: duration * 0.3, ease: 'easeInOut' },
+        skewY: { duration: duration * 0.3, ease: 'easeInOut', delay: duration * 0.1 },
+      } as Transition,
     },
   };
 
@@ -97,7 +97,7 @@ export const FlyingEffect: React.FC<AnimationEffectProps> = ({ children, duratio
   const initialY = direction === 'up' ? 200 : direction === 'down' ? -200 : 0;
   const initialX = direction === 'left' ? 200 : direction === 'right' ? -200 : 0;
 
-  const flyingVariants = {
+  const flyingVariants: { hidden: Variant, visible: Variant } = {
     hidden: { opacity: 0, y: initialY, x: initialX, rotate: 0 },
     visible: {
       opacity: 1,
@@ -107,10 +107,10 @@ export const FlyingEffect: React.FC<AnimationEffectProps> = ({ children, duratio
       transition: {
         duration: duration,
         delay: delay,
-        ease: 'easeOut' as any, // Cast to any
-        y: { type: 'spring' as any, stiffness: 60, damping: 12 }, // Cast to any
-        x: { type: 'spring' as any, stiffness: 60, damping: 12 }, // Cast to any
-      },
+        ease: 'easeOut',
+        y: { type: 'spring', stiffness: 60, damping: 12 },
+        x: { type: 'spring', stiffness: 60, damping: 12 },
+      } as Transition,
     },
   };
 

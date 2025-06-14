@@ -1,20 +1,50 @@
-export const heroVariants = {
+import { Variant, Transition } from 'framer-motion';
+
+interface HeroVariants {
+  container: {
+    hidden: Variant;
+    show: Variant;
+  };
+  title: {
+    hidden: Variant;
+    show: Variant;
+  };
+  paragraph: {
+    hidden: Variant;
+    show: Variant;
+  };
+  buttons: {
+    hidden: Variant;
+    show: Variant;
+    hover: Variant;
+  };
+  image: {
+    hidden: Variant;
+    show: Variant;
+  };
+  parallax: {
+    initial: Variant;
+    hover: Variant;
+  };
+}
+
+export const heroVariants: HeroVariants = {
   container: {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
+        delayChildren: 0.3,
+      } as Transition,
+    },
   },
-  
+
   title: {
-    hidden: { 
+    hidden: {
       opacity: 0,
       y: 20,
-      filter: 'blur(10px)'
+      filter: 'blur(10px)',
     },
     show: {
       opacity: 1,
@@ -22,24 +52,24 @@ export const heroVariants = {
       filter: 'blur(0px)',
       transition: {
         duration: 0.8,
-        ease: [0.6, -0.05, 0.01, 0.99] as any // Cast to any
-      }
-    }
+        ease: [0.6, -0.05, 0.01, 0.99],
+      } as Transition,
+    },
   },
 
   paragraph: {
-    hidden: { 
+    hidden: {
       opacity: 0,
-      x: -20
+      x: -20,
     },
     show: {
       opacity: 1,
       x: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut" as any // Cast to any
-      }
-    }
+        ease: 'easeOut',
+      } as Transition,
+    },
   },
 
   buttons: {
@@ -48,26 +78,26 @@ export const heroVariants = {
       scale: 1,
       opacity: 1,
       transition: {
-        type: "spring" as any, // Cast to any
+        type: 'spring',
         stiffness: 200,
-        damping: 20
-      }
+        damping: 20,
+      } as Transition,
     },
     hover: {
       scale: 1.05,
       transition: {
-        type: "spring" as any, // Cast to any
+        type: 'spring',
         stiffness: 400,
-        damping: 10
-      }
-    }
+        damping: 10,
+      } as Transition,
+    },
   },
 
   image: {
     hidden: {
       opacity: 0,
       scale: 0.8,
-      rotate: -5
+      rotate: -5,
     },
     show: {
       opacity: 1,
@@ -75,29 +105,29 @@ export const heroVariants = {
       rotate: 0,
       transition: {
         duration: 0.8,
-        ease: [0.6, -0.05, 0.01, 0.99] as any // Cast to any
-      }
-    }
+        ease: [0.6, -0.05, 0.01, 0.99],
+      } as Transition,
+    },
   },
 
   parallax: {
     initial: {
       scale: 1,
       transition: {
-        type: "spring" as any, // Cast to any
+        type: 'spring',
         stiffness: 300,
-        damping: 20
-      }
+        damping: 20,
+      } as Transition,
     },
     hover: {
       scale: 1.02,
       transition: {
-        type: "spring" as any, // Cast to any
+        type: 'spring',
         stiffness: 300,
-        damping: 20
-      }
-    }
-  }
+        damping: 20,
+      } as Transition,
+    },
+  },
 };
 
 export const calculateParallax = (e: React.MouseEvent<HTMLElement>, depth: number = 20): { rotateX: number; rotateY: number } => {

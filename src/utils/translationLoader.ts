@@ -1,4 +1,3 @@
-import React from 'react';
 import { languages } from '../app/context/LanguageContext'; // Corrected path
 
 const translationCache = new Map();

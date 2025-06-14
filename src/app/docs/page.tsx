@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Container from '../../components/Container'; // Corrected path
 import Section from '../../components/Section'; // Corrected path
 import Link from 'next/link';
-import { ICONS } from '../lib/constants'; // Corrected path
 import { useLanguage } from '../../app/context/LanguageContext'; // Corrected path
 import SvgIcon from '../../ui/SvgIcon'; // Explicitly add SvgIcon import
 
@@ -21,6 +20,11 @@ interface DocSection {
   subSections?: DocSection[];
 }
 
+interface ColorApplicationItem {
+  title: string;
+  items: string[];
+}
+
 interface DocConfigItem {
   id: string;
   titleKey: string;
@@ -35,7 +39,7 @@ const RenderContent: React.FC<{ contentKey: string }> = ({ contentKey }) => {
 
   if (Array.isArray(content)) {
     return (
-      <ul className="list-disc list-inside mb-4 text-[var(--text-secondary)]">
+      <ul className="docs-content-list">
         {(content as string[]).map((item, index) => (
           <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
         ))}
@@ -56,13 +60,13 @@ const RenderContent: React.FC<{ contentKey: string }> = ({ contentKey }) => {
               // This is a code block
               const [lang, ...codeLines] = part.split('\n');
               return (
-                <pre key={index} className="bg-[var(--surface)] p-4 rounded-md overflow-x-auto my-4">
+                <pre key={index} className="docs-code-block">
                   <code className={`language-${lang.trim()}`}>{codeLines.join('\n').trim()}</code>
                 </pre>
               );
             } else {
               // This is regular text
-              return <p key={index} className="mb-4" dangerouslySetInnerHTML={{ __html: part }} />;
+              return <p key={index} className="docs-content-paragraph" dangerouslySetInnerHTML={{ __html: part }} />;
             }
           })}
         </>
@@ -901,7 +905,7 @@ const Docs: React.FC = () => {
   const activeDoc = docsConfig.find((doc: DocConfigItem) => doc.id === activeDocId);
   const sectionsToRender = activeDoc ? activeDoc.sections : [];
 
-  const renderSectionContent = (section: any) => {
+  const renderSectionContent = (section: DocSection) => {
     // Only call t(contentKey) if contentKey is defined
     const content = section.contentKey ? t(section.contentKey) : null;
     const list = section.listKey ? t(section.listKey) : null;
@@ -913,13 +917,13 @@ const Docs: React.FC = () => {
     return (
       <>
         {content && typeof content === 'string' && !content.startsWith('<table>') && !content.includes('```') && (
-            <p className="mb-4" dangerouslySetInnerHTML={{ __html: content }} />
+            <p className="docs-content-paragraph" dangerouslySetInnerHTML={{ __html: content }} />
         )}
         {content && typeof content === 'object' && Array.isArray(content) && section.contentKey === 'docs.design.section2.color_application' && (
-            (content as any[]).map((item, idx) => (
+            (content as ColorApplicationItem[]).map((item: ColorApplicationItem, idx: number) => (
                 <div key={idx} className="mb-4">
                     <h4 className="text-xl font-semibold mb-2" dangerouslySetInnerHTML={{ __html: item.title }} />
-                    <ul className="list-disc list-inside mb-4 text-[var(--text-secondary)]">
+                    <ul className="docs-content-list">
                         {item.items.map((subItem: string, subIdx: number) => (
                             <li key={subIdx} dangerouslySetInnerHTML={{ __html: subItem }} />
                         ))}
@@ -927,34 +931,34 @@ const Docs: React.FC = () => {
                 </div>
             ))
         )}
-        {content && typeof content === 'string' && (content.startsWith('<table>') || content.includes('```')) && (
+        {content && typeof content === 'string' && (content.startsWith('<table>') || content.includes('```')) && section.contentKey && (
             <RenderContent contentKey={section.contentKey} />
         )}
-        {codeExample && (
+        {codeExample && section.codeExampleKey && (
             <RenderContent contentKey={section.codeExampleKey} />
         )}
         {list && Array.isArray(list) && (
-          <ul className={`mb-4 text-[var(--text-secondary)] ${section.listKey === 'docs.general.howWeBuild.steps' || section.listKey === 'docs.general.gettingStarted.steps' || section.listKey === 'docs.localizationGuide.section6.testing_scenarios' || section.listKey === 'docs.localizationGuide.section10.scenarios_points' ? 'list-decimal' : 'list-disc'} list-inside`}>
+          <ul className={`docs-content-list ${section.listKey === 'docs.general.howWeBuild.steps' || section.listKey === 'docs.general.gettingStarted.steps' || section.listKey === 'docs.localizationGuide.section6.testing_scenarios' || section.listKey === 'docs.localizationGuide.section10.scenarios_points' ? 'list-decimal' : ''}`}>
             {(list as string[]).map((item, index) => (
               <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
             ))}
           </ul>
         )}
         {table && Array.isArray(table) && (
-            <div className="overflow-x-auto mb-4">
-                <table className="min-w-full bg-[var(--surface)] rounded-lg overflow-hidden">
+            <div className="docs-table-container">
+                <table className="docs-table">
                     <thead>
-                        <tr className="bg-[var(--primary)] text-[var(--text-primary)]">
+                        <tr className="docs-table-header-row">
                             {(table[0] as string[]).map((header, index) => (
-                                <th key={index} className="py-2 px-4 text-left" dangerouslySetInnerHTML={{ __html: header }} />
+                                <th key={index} className="docs-table-header-cell" dangerouslySetInnerHTML={{ __html: header }} />
                             ))}
                         </tr>
                     </thead>
                     <tbody>
                         {(table as string[][]).slice(1).map((row, rowIndex) => (
-                            <tr key={rowIndex} className="border-t border-[var(--border)]">
+                            <tr key={rowIndex} className="docs-table-row">
                                 {row.map((cell, cellIndex) => (
-                                    <td key={cellIndex} className="py-2 px-4" dangerouslySetInnerHTML={{ __html: cell }} />
+                                    <td key={cellIndex} className="docs-table-cell" dangerouslySetInnerHTML={{ __html: cell }} />
                                 ))}
                             </tr>
                         ))}
@@ -962,19 +966,19 @@ const Docs: React.FC = () => {
                 </table>
             </div>
         )}
-        {outro && <p className="mb-4" dangerouslySetInnerHTML={{ __html: outro }} />}
+        {outro && <p className="docs-content-paragraph" dangerouslySetInnerHTML={{ __html: outro }} />}
         {additionalContent.map((item: string, index: number) => (
-            <p key={`add-content-${index}`} className="mb-4" dangerouslySetInnerHTML={{ __html: item }} />
+            <p key={`add-content-${index}`} className="docs-content-paragraph" dangerouslySetInnerHTML={{ __html: item }} />
         ))}
       </>
     );
   };
 
   return (
-    <div className="min-h-screen bg-[var(--primary)] text-[var(--text-primary)] flex">
+    <div className="docs-page-container">
       {/* Sidebar Navigation */}
-      <aside className="w-64 p-8 border-r border-[var(--border)] sticky top-0 h-screen overflow-y-auto hidden lg:block">
-        <h2 className="text-2xl font-bold mb-6">{activeDoc ? t(activeDoc.titleKey) : ''}</h2>
+      <aside className="docs-sidebar">
+        <h2 className="docs-sidebar-title">{activeDoc ? t(activeDoc.titleKey) : ''}</h2>
         <nav>
           <ul>
             {sectionsToRender.map((section) => (
@@ -982,18 +986,18 @@ const Docs: React.FC = () => {
                 <li className="mb-2">
                   <Link
                     href={`#${section.id}`}
-                    className="text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors"
+                    className="docs-nav-link"
                   >
                     {t(section.titleKey)}
                   </Link>
                 </li>
                 {section.subSections && (
-                    <ul className="ml-4">
+                    <ul className="docs-sub-nav-list">
                         {section.subSections.map((subSection: DocSection) => (
                             <li key={subSection.id} className="mb-2">
                                 <Link
                                     href={`#${subSection.id}`}
-                                    className="text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors"
+                                    className="docs-nav-link"
                                 >
                                     {t(subSection.titleKey)}
                                 </Link>
@@ -1008,21 +1012,21 @@ const Docs: React.FC = () => {
       </aside>
 
       {/* Main Content */}
-      <Container className="flex-1 py-16 px-8 lg:px-16">
+      <Container className="docs-main-content">
         <div className="mb-12">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 mt-8 text-[var(--accent-primary)] hover:text-[var(--accent-hover)] transition-colors"
+            className="docs-back-link"
           >
-            <SvgIcon iconName="arrowLeft" title={t('common.backToHome')} className="w-5 h-5" />
+            <SvgIcon iconName="arrowLeft" title={t('common.backToHome')} className="svg-icon" />
             {t('common.backToHome')}
           </Link>
-          <div className="flex items-center justify-between mt-6 mb-4">
-            <h1 className="text-4xl font-bold">{activeDoc ? t(activeDoc.titleKey) : ''}</h1>
+          <div className="docs-header-row">
+            <h1 className="docs-main-title">{activeDoc ? t(activeDoc.titleKey) : ''}</h1>
             <select
               value={activeDocId}
               onChange={(e) => setActiveDocId(e.target.value)}
-              className="p-2 rounded-md bg-[var(--surface)] text-[var(--text-primary)] border border-[var(--border)]"
+              className="docs-select"
             >
               {docsConfig.map((doc) => (
                 <option key={doc.id} value={doc.id}>
@@ -1031,18 +1035,18 @@ const Docs: React.FC = () => {
               ))}
             </select>
           </div>
-          <p className="text-[var(--text-secondary)]">
+          <p className="docs-subtitle">
             {activeDoc ? t(activeDoc.subtitleKey) : ''}
           </p>
         </div>
 
         {sectionsToRender.map((section) => (
-          <Section key={section.id} id={section.id} className="mt-8">
-            <h2 className="text-3xl font-bold mb-4">{t(section.titleKey)}</h2>
+          <Section key={section.id} id={section.id} className="docs-subsection-container">
+            <h2 className="docs-section-title">{t(section.titleKey)}</h2>
             {renderSectionContent(section)}
             {section.subSections && section.subSections.map((subSection: DocSection) => (
-                <div key={subSection.id} id={subSection.id} className="mt-8">
-                    <h3 className="text-2xl font-bold mb-4">{t(subSection.titleKey)}</h3>
+                <div key={subSection.id} id={subSection.id} className="docs-subsection-container">
+                    <h3 className="docs-subsection-title">{t(subSection.titleKey)}</h3>
                     {renderSectionContent(subSection)}
                 </div>
             ))}

@@ -16,7 +16,7 @@ const ErrorMessage: React.FC<ErrorMessageContext> = ({ message }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
-      className="fixed bottom-4 left-1/2 -translate-x-1/2 z-20 bg-[var(--accent-red)] text-[var(--primary)] px-6 py-3 rounded-xl shadow-lg flex items-center gap-2"
+      className="error-message-container"
     >
       <FiAlertCircle />
       {message}

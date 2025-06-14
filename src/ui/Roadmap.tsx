@@ -28,10 +28,8 @@ interface Milestone {
   featuresKeys: string[];
 }
 
-interface RoadmapProps {}
-
-const Roadmap: React.FC<RoadmapProps> = () => {
-  const { isDark } = useTheme();
+const Roadmap: React.FC = () => {
+  const { } = useTheme();
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -159,11 +157,11 @@ const Roadmap: React.FC<RoadmapProps> = () => {
   const getStatusColor = (status: Milestone['status']): string => {
     switch (status) {
       case 'completed':
-        return 'bg-[var(--color-primary)]';
+        return 'bg-primary';
       case 'in-progress':
-        return 'bg-[var(--color-warning)]';
+        return 'bg-warning';
       default:
-        return 'bg-[var(--color-surface-dark)]';
+        return 'bg-surface-dark';
     }
   };
 
@@ -199,7 +197,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
   };
 
   return (
-    <div id="roadmap" className="w-full bg-[var(--color-background-dark)] py-24 overflow-hidden">
+    <div id="roadmap" className="roadmap-section">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -212,7 +210,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
             }
           }
         }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="container"
       >
         <motion.div
           variants={{
@@ -223,17 +221,17 @@ const Roadmap: React.FC<RoadmapProps> = () => {
               transition: { duration: 0.6 }
             }
           }}
-          className="text-center mb-20"
+          className="roadmap-header"
         >
-          <h2 className="text-[var(--font-size-h2)] font-bold text-[var(--color-text-primary)] mb-4">
+          <h2 className="roadmap-title">
             {t('roadmap.title.section')}
           </h2>
-          <p className="text-[var(--color-text-secondary)] text-[var(--font-size-base)]">
+          <p className="roadmap-subtitle">
             {t('roadmap.subtitle.section')}
           </p>
         </motion.div>
 
-        <div className="relative">
+        <div className="roadmap-timeline-container">
           <motion.div
             variants={{
               hidden: { scaleY: 0 },
@@ -245,10 +243,10 @@ const Roadmap: React.FC<RoadmapProps> = () => {
                 }
               }
             }}
-            className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full origin-top bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-primary)]"
+            className="roadmap-timeline-line"
           />
 
-          <div className="relative z-10">
+          <div className="roadmap-milestones-wrapper">
             {milestones.map((milestone, index) => (
               <motion.div
                 key={milestone.dateKey}
@@ -263,34 +261,34 @@ const Roadmap: React.FC<RoadmapProps> = () => {
                     }
                   }
                 }}
-                className={`flex items-center mb-20 ${
-                  index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                className={`roadmap-milestone-item ${
+                  index % 2 === 0 ? 'even' : 'odd'
                 }`}
               >
-                <div className="w-5/12">
-                  <div className={`p-6 rounded-lg bg-[var(--color-surface-dark)] shadow-xl backdrop-blur-sm bg-opacity-80 transform transition-all duration-300 hover:scale-105 ${
-                    milestone.status === 'completed' ? 'border-l-4 border-[var(--color-primary)]' : ''
+                <div className="roadmap-milestone-content-wrapper">
+                  <div className={`roadmap-milestone-card ${
+                    milestone.status === 'completed' ? 'completed' : ''
                   }`}>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center gap-3">
+                    <div className="roadmap-milestone-header">
+                      <div className="roadmap-milestone-title-group">
                         <motion.div
                           variants={iconVariants}
                           custom={index}
                         >
-                          <SvgIcon iconName={milestone.icon} title={t(milestone.titleKey)} className="w-7 h-7 text-[var(--color-primary)]" />
+                          <SvgIcon iconName={milestone.icon} title={t(milestone.titleKey)} className="roadmap-milestone-icon" />
                         </motion.div>
-                        <h3 className="text-[var(--font-size-lg)] font-semibold text-[var(--color-text-primary)]">
+                        <h3 className="roadmap-milestone-title">
                           {t(milestone.titleKey)}
                         </h3>
                       </div>
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(milestone.status)} text-[var(--color-background-dark)]`}>
+                      <span className={`roadmap-milestone-status ${milestone.status}`}>
                         {getTranslatedStatus(milestone.status)}
                       </span>
                     </div>
-                    <p className="text-[var(--color-text-secondary)] text-[var(--font-size-base)] mb-4">
+                    <p className="roadmap-milestone-description">
                       {t(milestone.descriptionKey)}
                     </p>
-                    <ul className="space-y-2">
+                    <ul className="roadmap-milestone-features-list">
                       {milestone.featuresKeys.map((featureKey, idx) => (
                         <motion.li
                           key={idx}
@@ -305,9 +303,9 @@ const Roadmap: React.FC<RoadmapProps> = () => {
                                 }
                               }
                             }}
-                            className="flex items-center gap-2 text-[var(--color-text-secondary)] text-[var(--font-size-sm)]"
+                            className="roadmap-milestone-feature-item"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]" />
+                            <span className="roadmap-milestone-feature-bullet" />
                             {t(featureKey)}
                           </motion.li>
                         ))}
@@ -315,7 +313,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
                     </div>
                   </div>
 
-                  <div className="w-2/12 flex justify-center">
+                  <div className="roadmap-milestone-dot-wrapper">
                     <motion.div
                       variants={{
                         hidden: { scale: 0 },
@@ -327,14 +325,14 @@ const Roadmap: React.FC<RoadmapProps> = () => {
                           }
                         }
                       }}
-                      className="relative"
+                      className="roadmap-milestone-dot"
                     >
-                      <div className={`w-6 h-6 rounded-full ${getStatusColor(milestone.status)} shadow-lg`} />
-                      <div className="absolute -inset-2 bg-[var(--color-primary)] rounded-full opacity-20 animate-ping" />
+                      <div className={`roadmap-milestone-dot-inner ${getStatusColor(milestone.status)}`} />
+                      <div className="roadmap-milestone-dot-ping" />
                     </motion.div>
                   </div>
 
-                  <div className="w-5/12 flex justify-center">
+                  <div className="roadmap-milestone-date-wrapper">
                     <motion.span
                       variants={{
                         hidden: { opacity: 0 },
@@ -346,7 +344,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
                           }
                         }
                       }}
-                      className="text-[var(--color-text-primary)] text-[var(--font-size-base)] font-semibold bg-[var(--color-surface-dark)] px-4 py-2 rounded-full shadow-md"
+                      className="roadmap-milestone-date"
                     >
                       {t(milestone.dateKey)}
                     </motion.span>

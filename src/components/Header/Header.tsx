@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
         <Link
           key={`${item.type}-${item.to}`}
           href={`#${item.to}`}
-          className="text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-colors"
+          className="header-nav-link"
           onClick={(e) => {
             e.preventDefault();
             setIsOpen(false);
@@ -57,7 +57,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
       <Link
         key={`${item.type}-${item.to}`}
         href={item.to}
-        className="text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-colors"
+        className="header-nav-link"
         onClick={() => setIsOpen(false)}
       >
         {item.name}
@@ -66,55 +66,50 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
   };
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-[var(--primary)] border-b border-[var(--border)] transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+    <header className="header-base">
+      <div className="container">
+        <div className="header-content">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-[var(--accent-primary)]">
+          <Link href="/" className="header-logo">
             BrainMessenger
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="header-nav-desktop">
             {menuItems.map(renderNavLink)}
 
             {/* Language Selector */}
-            <div className="relative" ref={langMenuRef}>
+            <div className="lang-selector-wrapper" ref={langMenuRef}>
               <button
                 onClick={() => setIsLangOpen(!isLangOpen)}
-                className="flex items-center gap-2 p-2 rounded-lg hover:bg-[var(--secondary)] transition-colors"
+                className="lang-selector-button"
                 aria-label={t('selectLanguage')}
                 title={t('changeLanguageTooltip')}
                 disabled={isLoading}
               >
-                <SvgIcon iconName="globe" title="Language" className="w-5 h-5 text-[var(--accent-primary)]" />
+                <SvgIcon iconName="globe" title="Language" className="lang-selector-icon" />
                 <Image
                   width={24}
                   height={24}
                   src={languages[language]?.flag}
                   alt={languages[language]?.name}
-                  className="w-5 h-5 object-contain"
-                  style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(0%) saturate(0%) hue-rotate(213deg) brightness(105%) contrast(104%)' }}
+                  className="lang-selector-flag"
                 />
                 <SvgIcon
                   iconName="arrowRight"
                   title="FiChevronDown"
-                  className={`w-4 h-4 transition-transform ${isLangOpen ? 'rotate-180' : ''}`}
-                  style={{
-                    filter: 'brightness(0) saturate(100%) invert(70%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)',
-                    WebkitFilter: 'brightness(0) saturate(100%) invert(70%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
-                  }}
+                  className={`lang-selector-arrow ${isLangOpen ? 'open' : ''}`}
                 />
               </button>
 
               {/* Language Dropdown */}
               {isLangOpen && (
-                <div className="absolute right-0 mt-2 py-2 w-48 bg-[var(--primary)] rounded-lg shadow-xl border border-[var(--border)]">
+                <div className="lang-dropdown">
                   {Object.entries(languages).map(([code, lang]) => (
                     <button
                       key={code}
-                      className={`w-full px-4 py-2 text-left flex items-center gap-2 hover:bg-[var(--secondary)] transition-colors ${
-                        language === code ? 'bg-[var(--secondary)]' : ''
+                      className={`lang-dropdown-item ${
+                        language === code ? 'active' : ''
                       }`}
                       onClick={() => {
                         changeLanguage(code);
@@ -126,8 +121,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
                         height={24}
                         src={(lang as Language).flag}
                         alt={(lang as Language).name}
-                        className="w-5 h-5 object-contain"
-                        style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(0%) saturate(0%) hue-rotate(213deg) brightness(105%) contrast(104%)' }}
+                        className="lang-dropdown-flag"
                       />
                       <span>{(lang as Language).name}</span>
                     </button>
@@ -139,14 +133,13 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
             {/* Download Button */}
             <a
               href="/download/windows"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-[var(--primary)] transition-colors"
+              className="header-download-button"
               download
             >
               <SvgIcon
                 iconName="download"
                 title="Download"
-                className="w-5 h-5"
-                style={{ filter: 'brightness(0) saturate(100%) invert(10%) sepia(0%) saturate(7495%) hue-rotate(224deg) brightness(95%) contrast(88%)' }}
+                className="header-download-icon"
               />
               Download
             </a>
@@ -154,41 +147,41 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-[var(--secondary)] transition-colors"
+              className="theme-toggle-button"
               aria-label={isDark ? t('lightMode') : t('darkMode')}
             >
               {isDark ? (
-                <SvgIcon iconName="sun" title="Light Mode" className="text-[var(--accent-primary)]" />
+                <SvgIcon iconName="sun" title="Light Mode" className="theme-toggle-icon" />
               ) : (
-                <SvgIcon iconName="moon" title="Dark Mode" className="text-[var(--accent-primary)]" />
+                <SvgIcon iconName="moon" title="Dark Mode" className="theme-toggle-icon" />
               )}
             </button>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-[var(--secondary)] transition-colors"
+            className="mobile-menu-button"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? t('closeMenu') : t('openMenu')}
           >
             {isOpen ? (
-              <FiX className="w-6 h-6 text-[var(--text-primary)]" />
+              <FiX className="mobile-menu-icon" />
             ) : (
-              <FiMenu className="w-6 h-6 text-[var(--text-primary)]" />
+              <FiMenu className="mobile-menu-icon" />
             )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4">
-            <nav className="flex flex-col space-y-4">
+          <div className="mobile-nav-container">
+            <nav className="mobile-nav-list">
               {menuItems.map(renderNavLink)}
 
               {/* Mobile Language Selector */}
-              <div className="py-2 border-t border-[var(--border)]">
-                <p className="px-2 py-1 text-sm text-[var(--text-secondary)]">{t('selectLanguage')}</p>
-                <div className="grid grid-cols-2 gap-2 mt-2">
+              <div className="mobile-lang-selector-wrapper">
+                <p className="mobile-lang-selector-label">{t('selectLanguage')}</p>
+                <div className="mobile-lang-grid">
                   {Object.entries(languages).map(([code, lang]) => (
                     <button
                       key={code}
@@ -197,19 +190,16 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
                         setIsOpen(false);
                       }}
                       disabled={isLoading}
-                      className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors
-                        ${language === code
-                          ? 'bg-[var(--accent-primary)] text-[var(--primary)]'
-                          : 'hover:bg-[var(--secondary)] text-[var(--text-primary)]'}
-                        ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                      className={`mobile-lang-item ${
+                        language === code ? 'active' : ''
+                      } ${isLoading ? 'disabled' : ''}`}
                     >
                       <Image
                         width={24}
                         height={24}
                         src={(lang as Language).flag}
                         alt={(lang as Language).name}
-                        className="w-5 h-5 object-contain"
-                        style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(0%) saturate(0%) hue-rotate(213deg) brightness(105%) contrast(104%)' }}
+                        className="mobile-lang-flag"
                       />
                       <span>{(lang as Language).name}</span>
                     </button>
@@ -220,14 +210,13 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
               {/* Mobile Download Button */}
               <Link
                 href="/download/windows"
-                className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-[var(--primary)] transition-colors"
+                className="mobile-download-button"
                 download
               >
                 <SvgIcon
                   iconName="download"
                   title="Download"
-                  className="w-5 h-5"
-                  style={{ filter: 'brightness(0) saturate(100%) invert(10%) sepia(0%) saturate(7495%) hue-rotate(224deg) brightness(95%) contrast(88%)' }}
+                  className="mobile-download-icon"
                 />
                 Download for Windows
               </Link>
@@ -235,16 +224,16 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
               {/* Mobile Theme Toggle */}
               <button
                 onClick={toggleTheme}
-                className="flex items-center justify-center gap-2 p-2 rounded-lg hover:bg-[var(--secondary)] transition-colors"
+                className="mobile-theme-toggle-button"
               >
                 {isDark ? (
                   <>
-                    <SvgIcon iconName="sun" title="Light Mode" className="text-[var(--accent-primary)]" />
+                    <SvgIcon iconName="sun" title="Light Mode" className="mobile-theme-toggle-icon" />
                     <span>{t('lightMode')}</span>
                   </>
                 ) : (
                   <>
-                    <SvgIcon iconName="moon" title="Dark Mode" className="text-[var(--accent-primary)]" />
+                    <SvgIcon iconName="moon" title="Dark Mode" className="mobile-theme-toggle-icon" />
                     <span>{t('darkMode')}</span>
                   </>
                 )}

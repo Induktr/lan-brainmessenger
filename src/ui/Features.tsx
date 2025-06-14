@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import FeatureCard from './FeatureCard';
 import { useLanguage } from '../app/context/LanguageContext';
-import SvgIcon from './SvgIcon';
 
 const FEATURES_ICONS = {
   lock: 'lock',
@@ -22,9 +21,7 @@ interface FeatureItem {
   descriptionKey: string;
 }
 
-interface FeaturesProps {}
-
-const Features: React.FC<FeaturesProps> = () => {
+const Features: React.FC = () => {
   const { t } = useLanguage();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -64,24 +61,24 @@ const Features: React.FC<FeaturesProps> = () => {
   ];
 
   return (
-    <section id="features" className="py-24">
-      <div className="container mx-auto px-4">
+    <section id="features" className="features-section">
+      <div className="container">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="features-header"
         >
-          <h2 className="text-[var(--font-size-h2)] text-[var(--color-text-primary)] font-bold mb-4">
+          <h2 className="features-title">
             {t('features.featuresTitle')}
           </h2>
-          <p className="text-[var(--font-size-base)] text-[var(--color-text-secondary)] max-w-2xl mx-auto">
+          <p className="features-subtitle">
             {t('features.featuresSubtitle')}
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="features-grid">
           {featuresData.map((feature, index) => (
             <FeatureCard
               key={index}

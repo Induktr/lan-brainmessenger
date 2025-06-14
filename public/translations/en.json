@@ -50,6 +50,73 @@
     "latestNews": "Latest news",
     "readMore": "Read More"
   },
+  "roadmap": {
+    "title": {
+      "section": "Roadmap",
+      "projectLaunch": "Project Launch",
+      "enhancedSecurity": "Enhanced Security",
+      "advancedCollaboration": "Advanced Collaboration",
+      "mobileEnhancement": "Mobile Enhancement",
+      "aiIntegration": "AI Integration",
+      "globalExpansion": "Global Expansion",
+      "enterpriseSolutions": "Enterprise Solutions",
+      "futureInnovation": "Future Innovation"
+    },
+    "subtitle": {
+      "section": "Our Future Vision"
+    },
+    "status": {
+      "completed": "Completed",
+      "upcoming": "Upcoming"
+    },
+    "description": {
+      "projectLaunch": "Initial launch of BrainMessenger with core features.",
+      "enhancedSecurity": "Strengthening security protocols and features.",
+      "advancedCollaboration": "Introducing advanced collaboration tools.",
+      "mobileEnhancement": "Enhancing mobile application experience.",
+      "aiIntegration": "Integrating AI-powered features for smarter communication.",
+      "globalExpansion": "Expanding BrainMessenger's reach globally.",
+      "enterpriseSolutions": "Developing solutions for enterprise clients.",
+      "futureInnovation": "Exploring and implementing future technologies."
+    },
+    "features": {
+      "secureMessagingInfrastructure": "Secure messaging infrastructure",
+      "crossPlatformCompatibility": "Cross-platform compatibility",
+      "basicUserInterface": "Basic user interface",
+      "endToEndEncryption": "End-to-end encryption",
+      "twoFactorAuthentication": "Two-factor authentication",
+      "fileSharingCapabilities": "File sharing capabilities",
+      "teamWorkspaces": "Team workspaces",
+      "realTimeCollaboration": "Real-time collaboration",
+      "advancedFileSharing": "Advanced file sharing",
+      "nativeMobileApps": "Native mobile apps",
+      "offlineFunctionality": "Offline functionality",
+      "pushNotifications": "Push notifications",
+      "smartMessageCategorization": "Smart message categorization",
+      "automatedResponses": "Automated responses",
+      "contentAnalysis": "Content analysis",
+      "multiLanguageSupport": "Multi-language support",
+      "regionalDataCenters": "Regional data centers",
+      "culturalAdaptations": "Cultural adaptations",
+      "advancedAdminControls": "Advanced admin controls",
+      "customIntegrations": "Custom integrations",
+      "enterpriseSupport": "Enterprise support",
+      "emergingTechnologies": "Emerging technologies",
+      "communityDrivenFeatures": "Community-driven features",
+      "platformExpansion": "Platform expansion"
+    },
+    "date": {
+      "jan2024": "January 2024",
+      "mar2024": "March 2024",
+      "jun2024": "June 2024",
+      "sep2024": "September 2024",
+      "nov2024": "November 2024",
+      "jan2025": "January 2025",
+      "mar2025": "March 2025",
+      "jun2025": "June 2025",
+      "beyond2025": "Beyond 2025"
+    }
+  },
   "faq": {
     "title": "Frequently Asked Questions",
     "subtitle": "Find answers to common questions about BrainMessenger",
@@ -2429,5 +2496,12 @@
         "longTermInvestmentTitle": "Development and maintenance of this technical system is a long-term investment (Principle 8) and a continuous process of learning and improvement (Principle 1, 9)."
       }
     }
+  },
+  "footer": {
+    "sectionTitle": {
+      "brand": "BrainMessenger"
+    },
+    "brandContent": "Your Smart Communication Platform",
+    "copyright": "© 2025 BrainMessenger. All rights reserved."
   }
 }

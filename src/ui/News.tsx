@@ -5,11 +5,8 @@ import { motion, useAnimation } from 'framer-motion';
 import NewsCard from './NewsCard'; // Corrected path
 import { updates } from '../data/updates'; // Corrected path
 import Link from 'next/link'; // Corrected import
-import { ICONS } from '../app/lib/constants'; // Corrected path
 import { useLanguage } from '../app/context/LanguageContext'; // Corrected path
 import SvgIcon from './SvgIcon'; // Corrected path
-
-interface NewsProps {} // Define an empty interface for component props
 
 interface UpdateItem {
   iconUrl: string;
@@ -19,12 +16,12 @@ interface UpdateItem {
   originalTitle?: string;
 }
 
-const News: React.FC<NewsProps> = () => {
-  const [activeIndex, setActiveIndex] = useState<number>(1); // Explicitly type number
-  const [isAutoPlay, setIsAutoPlay] = useState<boolean>(true); // Explicitly type boolean
-  const autoPlayRef = useRef<NodeJS.Timeout | null>(null); // Explicitly type interval ID or null
-  const wheelTimeoutRef = useRef<NodeJS.Timeout | null>(null); // Explicitly type timeout ID or null
-  const controls = useAnimation(); // Type inferred by framer-motion
+const News: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState<number>(1);
+  const [isAutoPlay, setIsAutoPlay] = useState<boolean>(true);
+  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
+  const wheelTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const {} = useAnimation();
 
   const { t } = useLanguage(); // Use the translation hook
 
@@ -80,62 +77,60 @@ const News: React.FC<NewsProps> = () => {
   };
 
   return (
-    <section className="py-24">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col items-center gap-4 mb-16">
-          <h2 className="text-[var(--font-size-h2)] text-[var(--color-text-primary)] font-bold text-center">
+    <section className="news-section">
+      <div className="container">
+        <div className="news-header">
+          <h2 className="news-title">
             {t('news.latestNews')}
           </h2>
           <Link
             href="/updates"
-            className="group flex items-center gap-2 text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
+            className="news-read-more-link"
             aria-label={t('news.readMore')}
           >
             <span>{t('news.readMore')}</span>
-            <SvgIcon iconName="arrowRight" title={t('news.readMore')} className="w-5 h-5 text-[var(--color-primary)] group-hover:text-[var(--color-primary)]" />
+            <SvgIcon iconName="arrowRight" title={t('news.readMore')} className="svg-icon" />
           </Link>
         </div>
 
-        <div className="relative h-[350px]">
-          <div className="absolute left-1/2 -translate-x-1/2 bottom-[-60px] flex items-center gap-4 z-10 mb-10">
+        <div className="news-carousel-container">
+          <div className="news-carousel-nav">
             <button
               onClick={handlePrev}
-              className={`w-10 h-10 rounded-full flex items-center justify-center bg-[var(--color-surface-dark)] transition-colors
-                ${activeIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[var(--color-primary)] group'}`}
+              className="news-carousel-button"
               disabled={activeIndex === 0}
             >
-              <SvgIcon iconName="arrowLeft" title="Previous" className="w-5 h-5 text-[var(--color-text-primary)] group-hover:text-[var(--color-background-dark)]" />
+              <SvgIcon iconName="arrowLeft" title="Previous" className="svg-icon" />
             </button>
 
             <button
               onClick={toggleAutoPlay}
-              className="w-10 h-10 rounded-full flex items-center justify-center bg-[var(--color-surface-dark)] hover:bg-[var(--color-primary)] group transition-colors"
+              className="news-carousel-button"
             >
-              {isAutoPlay ? <SvgIcon iconName="pause" title="Pause Autoplay" className="w-5 h-5 text-[var(--color-text-primary)] group-hover:text-[var(--color-background-dark)]" /> : <SvgIcon iconName="play" title="Play Autoplay" className="w-5 h-5 text-[var(--color-text-primary)] group-hover:text-[var(--color-background-dark)]" />}
+              {isAutoPlay ? <SvgIcon iconName="pause" title="Pause Autoplay" className="svg-icon" /> : <SvgIcon iconName="play" title="Play Autoplay" className="svg-icon" />}
             </button>
 
             <button
               onClick={handleNext}
-              className={`w-10 h-10 rounded-full flex items-center justify-center bg-[var(--color-surface-dark)] transition-colors
-                ${activeIndex === carouselUpdates.length - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[var(--color-primary)] group'}`}
+              className="news-carousel-button"
               disabled={activeIndex === carouselUpdates.length - 1}
             >
-              <SvgIcon iconName="arrowRight" title="Next" className="w-5 h-5 text-[var(--color-text-primary)] group-hover:text-[var(--color-background-dark)]" />
+              <SvgIcon iconName="arrowRight" title="Next" className="svg-icon" />
             </button>
           </div>
 
           <div
-            className="absolute inset-0 flex items-center justify-center"
+            className="news-carousel-track"
             onWheel={handleWheel}
           >
-            <div className="relative" style={{ width: '800px' }}>
+            <div className="news-carousel-item-wrapper">
               {carouselUpdates.map((item, index) => {
                 const position = index - activeIndex;
                 const isActive = position === 0;
 
                 let xOffset = 0;
                 let scale = 1;
-                let zIndex = carouselUpdates.length - Math.abs(position);
+                const zIndex = carouselUpdates.length - Math.abs(position);
 
                 if (position < 0) {
                   xOffset = -40 * Math.abs(position);
@@ -148,7 +143,7 @@ const News: React.FC<NewsProps> = () => {
                 return (
                   <motion.div
                     key={index}
-                    className="absolute left-1/2 top-1/2"
+                    className="news-carousel-item"
                     style={{
                       x: '-50%',
                       y: '-50%'
@@ -165,7 +160,7 @@ const News: React.FC<NewsProps> = () => {
                       damping: 30
                     }}
                   >
-                    <div style={{ width: '350px' }}>
+                    <div style={{ width: 'var(--news-card-width)' }}>
                       <NewsCard
                         {...item}
                         isActive={isActive}
