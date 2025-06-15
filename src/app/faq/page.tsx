@@ -73,6 +73,10 @@ const FAQPage = () => { // Renamed to FAQPage for clarity as it's a Next.js page
     };
   }, [t, languageIsLoading]);
 
+  console.log('languageIsLoading:', languageIsLoading);
+  console.log('faq.categories translation:', t('faq.categories'));
+  console.log('allQuestions:', allQuestions);
+
   const filteredQuestions = allQuestions.filter(q => {
     const translatedQuestion = t(q.questionKey) || '';
     const matchesSearch = searchQuery.trim() === '' ||
