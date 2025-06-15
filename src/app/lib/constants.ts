@@ -40,7 +40,8 @@ export const ICONS = {
     file: '/icons/file.svg', // Existing icon for generic files
     play: '/icons/play.svg', // New icon for play button
     pause: '/icons/pause.svg', // New icon for pause button
-    loop: '/icons/loop.svg' // New icon for loop button
+    loop: '/icons/loop.svg', // New icon for loop button
+    android: '/icons/android.svg'
 };
 
 export const IMAGES = {

@@ -131,18 +131,18 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
             </div>
 
             {/* Download Button */}
-            <a
-              href="/download/windows"
+            <Link
+              href="/download/android"
               className="header-download-button"
               download
             >
               <SvgIcon
-                iconName="download"
-                title="Download"
+                iconName="android"
+                title="Download for android"
                 className="header-download-icon"
               />
-              Download
-            </a>
+              Download for android
+            </Link>
 
             {/* Theme Toggle */}
             <button
@@ -206,20 +206,6 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
                   ))}
                 </div>
               </div>
-
-              {/* Mobile Download Button */}
-              <Link
-                href="/download/windows"
-                className="mobile-download-button"
-                download
-              >
-                <SvgIcon
-                  iconName="download"
-                  title="Download"
-                  className="mobile-download-icon"
-                />
-                Download for Windows
-              </Link>
 
               {/* Mobile Theme Toggle */}
               <button
