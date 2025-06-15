@@ -342,6 +342,18 @@ p {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.hero-routing-item {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-xs) var(--spacing-md); /* px-4 py-2 */
+  font-size: var(--font-size-sm); /* text-sm */
+  color: var(--color-text-primary);
+  transition-property: background-color, color;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
 .hero-download-menu-item:hover {
   background-color: var(--color-primary);
   color: var(--color-background-dark);
@@ -396,6 +408,10 @@ p {
 }
 
 .hero-download-menu-container {
+  background-color: var(--color-surface-dark);
+}
+
+.hero-routing-container {
   background-color: var(--color-surface-dark);
 }
 

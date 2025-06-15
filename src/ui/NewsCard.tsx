@@ -64,6 +64,8 @@ const NewsCard: React.FC<NewsCardProps> = ({ titleKey, descriptionKey, originalT
           <div className={`news-card-icon-wrapper ${isMore ? 'more' : 'default'}`}>
             {iconUrl && (
               <Image
+                width={24}
+                height={24}
                 src={iconUrl}
                 alt={t(titleKey) || originalTitle || ''}
                 className="news-card-image news-card-image-icon"

@@ -45,7 +45,11 @@
   },
   "news": {
     "latestNews": "Последние новости",
-    "readMore": "Читать далее"
+    "readMore": "Читать далее",
+    "previousButton": "Предыдущая новость",
+    "nextButton": "Следующая новость",
+    "pauseAutoplay": "Приостановить автовоспроизведение",
+    "playAutoplay": "Воспроизвести автовоспроизведение"
   },
   "faq": {
     "title": "Часто задаваемые вопросы",
@@ -487,6 +491,74 @@
         "userGuideLinkContent": "DocUser.md",
         "longTermInvestmentTitle": "Разработка и поддержка этой технической системы — это долгосрочная инвестиция (Принцип 8) и непрерывный процесс обучения и совершенствования (Принцип 1, 9)."
       }
+    }
+  },
+  "roadmap": {
+    "title": {
+      "section": "Дорожная карта",
+      "projectLaunch": "Запуск проекта",
+      "enhancedSecurity": "Улучшенная безопасность",
+      "advancedCollaboration": "Расширенное сотрудничество",
+      "aiIntegration": "Интеграция ИИ",
+      "mobileEnhancement": "Улучшение мобильной версии",
+      "globalExpansion": "Глобальное расширение",
+      "enterpriseSolutions": "Корпоративные решения",
+      "futureInnovation": "Будущие инновации"
+    },
+    "subtitle": {
+      "section": "Наш путь к будущему BrainMessenger"
+    },
+    "date": {
+      "jan2024": "Январь 2024",
+      "mar2024": "Март 2024",
+      "jun2024": "Июнь 2024",
+      "sep2024": "Сентябрь 2024",
+      "nov2024": "Ноябрь 2024",
+      "jan2025": "Январь 2025",
+      "mar2025": "Март 2025",
+      "jun2025": "Июнь 2025",
+      "beyond2025": "После 2025"
+    },
+    "description": {
+      "projectLaunch": "Запуск базовой инфраструктуры и основных функций мессенджера.",
+      "enhancedSecurity": "Внедрение передовых протоколов безопасности и функций защиты данных.",
+      "advancedCollaboration": "Развитие инструментов для командной работы и совместного использования контента.",
+      "aiIntegration": "Интеграция искусственного интеллекта для улучшения пользовательского опыта.",
+      "mobileEnhancement": "Выпуск нативных мобильных приложений и оптимизация для мобильных устройств.",
+      "globalExpansion": "Расширение географического присутствия и поддержка новых языков.",
+      "enterpriseSolutions": "Разработка функций для корпоративных клиентов и крупных организаций.",
+      "futureInnovation": "Исследование и внедрение новых технологий, развитие экосистемы."
+    },
+    "features": {
+      "secureMessagingInfrastructure": "Надежная инфраструктура обмена сообщениями",
+      "crossPlatformCompatibility": "Кросс-платформенная совместимость",
+      "basicUserInterface": "Базовый пользовательский интерфейс",
+      "endToEndEncryption": "Сквозное шифрование",
+      "twoFactorAuthentication": "Двухфакторная аутентификация",
+      "fileSharingCapabilities": "Возможности обмена файлами",
+      "teamWorkspaces": "Командные рабочие пространства",
+      "realTimeCollaboration": "Сотрудничество в реальном времени",
+      "advancedFileSharing": "Расширенный обмен файлами",
+      "smartMessageCategorization": "Умная категоризация сообщений",
+      "automatedResponses": "Автоматические ответы",
+      "contentAnalysis": "Анализ контента",
+      "nativeMobileApps": "Нативные мобильные приложения",
+      "offlineFunctionality": "Автономная функциональность",
+      "pushNotifications": "Push-уведомления",
+      "multiLanguageSupport": "Мультиязычная поддержка",
+      "regionalDataCenters": "Региональные центры обработки данных",
+      "culturalAdaptations": "Культурные адаптации",
+      "advancedAdminControls": "Расширенные элементы управления администратора",
+      "customIntegrations": "Пользовательские интеграции",
+      "enterpriseSupport": "Корпоративная поддержка",
+      "emergingTechnologies": "Новые технологии",
+      "communityDrivenFeatures": "Функции, управляемые сообществом",
+      "platformExpansion": "Расширение платформы"
+    },
+    "status": {
+      "completed": "Завершено",
+      "inProgress": "В процессе",
+      "upcoming": "Предстоящее"
     }
   }
 }

@@ -82,14 +82,14 @@ const Roadmap: React.FC = () => {
     },
     {
       dateKey: 'roadmap.date.sep2024',
-      titleKey: 'roadmap.title.advancedCollaboration',
-      descriptionKey: 'roadmap.description.advancedCollaboration',
+      titleKey: 'roadmap.title.aiIntegration',
+      descriptionKey: 'roadmap.description.aiIntegration',
       status: 'upcoming',
-      icon: ROADMAP_ICONS.advancedcoloboration,
+      icon: ROADMAP_ICONS.ai,
       featuresKeys: [
-        'roadmap.features.teamWorkspaces',
-        'roadmap.features.realTimeCollaboration',
-        'roadmap.features.advancedFileSharing'
+        'roadmap.features.smartMessageCategorization',
+        'roadmap.features.automatedResponses',
+        'roadmap.features.contentAnalysis'
       ]
     },
     {

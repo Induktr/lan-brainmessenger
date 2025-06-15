@@ -7,6 +7,7 @@ import { useLanguage } from '../app/context/LanguageContext'; // Corrected path
 import Image from 'next/image'; // Import Image component
 import SvgIcon from './SvgIcon'; // Import SvgIcon
 import Link from 'next/link';
+import { LINKS } from '../app/lib/constants';
 
 const Hero: React.FC = () => {
   const [showDownloadMenu, setShowDownloadMenu] = useState<boolean>(false);
@@ -78,13 +79,33 @@ const Hero: React.FC = () => {
                     >
                       <div className="hero-download-menu-container">
                         <Link
-                          href="public/files/android-app.apk"
+                          href={LINKS.downloadAndroidApp}
                           download
                           className="hero-download-menu-item"
                           onClick={() => setShowDownloadMenu(false)}
                         >
                           <SvgIcon iconName="android" title="Android" className="svg-icon" />
                           {t('hero.downloadAndroid')}
+                        </Link>
+                      </div>
+                    </motion.div>
+                  )}
+                   {showDownloadMenu && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="hero-routing"
+                    >
+                      <div className="hero-routing-container">
+                        <Link
+                          href={LINKS.webApp}
+                          download
+                          className="hero-routing-item"
+                          onClick={() => setShowDownloadMenu(false)}
+                        >
+                          <SvgIcon iconName="globe" title="Web" className="svg-icon" />
+                          {t('hero.routingWebApp')}
                         </Link>
                       </div>
                     </motion.div>

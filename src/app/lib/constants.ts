@@ -44,6 +44,13 @@ export const ICONS = {
     android: '/icons/android.svg'
 };
 
+export const LINKS = {
+    webApp: "https://app.brain-messenger.com/",
+    x: "https://x.com/Nikitsglost5",
+    linkedin: "https://ua.linkedin.com/",
+    downloadAndroidApp: "public/files/android-app.apk"
+}
+
 export const IMAGES = {
     logoBrainMessenger: '/images/logo.png',
 }

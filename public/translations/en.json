@@ -47,7 +47,11 @@
   },
   "news": {
     "latestNews": "Latest news",
-    "readMore": "Read More"
+    "readMore": "Read More",
+    "previousButton": "Previous news item",
+    "nextButton": "Next news item",
+    "pauseAutoplay": "Pause autoplay",
+    "playAutoplay": "Play autoplay"
   },
   "roadmap": {
     "title": {
@@ -66,6 +70,7 @@
     },
     "status": {
       "completed": "Completed",
+      "inProgress": "In Progress",
       "upcoming": "Upcoming"
     },
     "description": {
