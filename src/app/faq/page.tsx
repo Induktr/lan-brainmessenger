@@ -67,6 +67,8 @@ const FAQPage = () => { // Renamed to FAQPage for clarity as it's a Next.js page
       });
     });
     
+    console.log('computedDisplayableCategoryKeys:', computedDisplayableCategoryKeys);
+    console.log('computedAllQuestions:', computedAllQuestions);
     return {
       allQuestions: computedAllQuestions,
       displayableCategoryKeys: computedDisplayableCategoryKeys,
@@ -75,6 +77,7 @@ const FAQPage = () => { // Renamed to FAQPage for clarity as it's a Next.js page
 
   const filteredQuestions = allQuestions.filter(q => {
     const translatedQuestion = t(q.questionKey) || '';
+    console.log(`Question Key: ${q.questionKey}, Translated Question: ${translatedQuestion}`);
     const matchesSearch = searchQuery.trim() === '' ||
       translatedQuestion.toLowerCase().includes(searchQuery.toLowerCase());
 
