@@ -72,51 +72,51 @@
       "upcoming": "Предстоящее"
     },
     "description": {
-      "projectLaunch": "Initial launch of BrainMessenger with core features.",
-      "enhancedSecurity": "Strengthening security protocols and features.",
-      "advancedCollaboration": "Introducing advanced collaboration tools.",
-      "mobileEnhancement": "Enhancing mobile application experience.",
-      "aiIntegration": "Integrating AI-powered features for smarter communication.",
-      "globalExpansion": "Expanding BrainMessenger's reach globally.",
-      "enterpriseSolutions": "Developing solutions for enterprise clients.",
-      "futureInnovation": "Exploring and implementing future technologies."
+      "projectLaunch": "Запуск базовой инфраструктуры и основных функций мессенджера.",
+      "enhancedSecurity": "Внедрение передовых протоколов безопасности и функций защиты данных.",
+      "advancedCollaboration": "Развитие инструментов для командной работы и совместного использования контента.",
+      "mobileEnhancement": "Выпуск нативных мобильных приложений и оптимизация для мобильных устройств.",
+      "aiIntegration": "Интеграция искусственного интеллекта для улучшения пользовательского опыта.",
+      "globalExpansion": "Расширение географического присутствия и поддержка новых языков.",
+      "enterpriseSolutions": "Разработка функций для корпоративных клиентов и крупных организаций.",
+      "futureInnovation": "Исследование и внедрение новых технологий, развитие экосистемы."
     },
     "features": {
-      "secureMessagingInfrastructure": "Secure messaging infrastructure",
-      "crossPlatformCompatibility": "Cross-platform compatibility",
-      "basicUserInterface": "Basic user interface",
-      "endToEndEncryption": "End-to-end encryption",
-      "twoFactorAuthentication": "Two-factor authentication",
-      "fileSharingCapabilities": "File sharing capabilities",
-      "teamWorkspaces": "Team workspaces",
-      "realTimeCollaboration": "Real-time collaboration",
-      "advancedFileSharing": "Advanced file sharing",
-      "nativeMobileApps": "Native mobile apps",
-      "offlineFunctionality": "Offline functionality",
-      "pushNotifications": "Push notifications",
-      "smartMessageCategorization": "Smart message categorization",
-      "automatedResponses": "Automated responses",
-      "contentAnalysis": "Content analysis",
-      "multiLanguageSupport": "Multi-language support",
-      "regionalDataCenters": "Regional data centers",
-      "culturalAdaptations": "Cultural adaptations",
-      "advancedAdminControls": "Advanced admin controls",
-      "customIntegrations": "Custom integrations",
-      "enterpriseSupport": "Enterprise support",
-      "emergingTechnologies": "Emerging technologies",
-      "communityDrivenFeatures": "Community-driven features",
-      "platformExpansion": "Platform expansion"
+      "secureMessagingInfrastructure": "Надежная инфраструктура обмена сообщениями",
+      "crossPlatformCompatibility": "Кросс-платформенная совместимость",
+      "basicUserInterface": "Базовый пользовательский интерфейс",
+      "endToEndEncryption": "Сквозное шифрование",
+      "twoFactorAuthentication": "Двухфакторная аутентификация",
+      "fileSharingCapabilities": "Возможности обмена файлами",
+      "teamWorkspaces": "Командные рабочие пространства",
+      "realTimeCollaboration": "Сотрудничество в реальном времени",
+      "advancedFileSharing": "Расширенный обмен файлами",
+      "nativeMobileApps": "Нативные мобильные приложения",
+      "offlineFunctionality": "Автономная функциональность",
+      "pushNotifications": "Push-уведомления",
+      "smartMessageCategorization": "Умная категоризация сообщений",
+      "automatedResponses": "Автоматические ответы",
+      "contentAnalysis": "Анализ контента",
+      "multiLanguageSupport": "Мультиязычная поддержка",
+      "regionalDataCenters": "Региональные центры обработки данных",
+      "culturalAdaptations": "Культурные адаптации",
+      "advancedAdminControls": "Расширенные элементы управления администратора",
+      "customIntegrations": "Пользовательские интеграции",
+      "enterpriseSupport": "Корпоративная поддержка",
+      "emergingTechnologies": "Новые технологии",
+      "communityDrivenFeatures": "Функции, управляемые сообществом",
+      "platformExpansion": "Расширение платформы"
     },
     "date": {
-      "jan2024": "January 2024",
-      "mar2024": "March 2024",
-      "jun2024": "June 2024",
-      "sep2024": "September 2024",
-      "nov2024": "November 2024",
-      "jan2025": "January 2025",
-      "mar2025": "March 2025",
-      "jun2025": "June 2025",
-      "beyond2025": "Beyond 2025"
+      "jan2024": "Январь 2026",
+      "mar2024": "Март 2024",
+      "jun2024": "Июнь 2024",
+      "sep2024": "Сентябрь 2024",
+      "nov2024": "Ноябрь 2024",
+      "jan2025": "Январь 2025",
+      "mar2025": "Март 2025",
+      "jun2025": "Июнь 2025",
+      "beyond2025": "После 2025"
     }
   },
   "faq": {
@@ -569,6 +569,13 @@
 
 
 
+
+
+
+
+
+
+  
   "roadmap": {
     "title": {
       "section": "Дорожная карта",
