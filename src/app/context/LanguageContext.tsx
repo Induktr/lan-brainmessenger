@@ -21,7 +21,6 @@ export const languages: { [key: string]: Language } = {
   en: { name: 'English', flag: '/icons/en.svg' },
   ru: { name: 'Русский', flag: '/icons/ru.svg' },
   ua: { name: 'Українська', flag: '/icons/ua.svg' },
-  uk: { name: 'Українська', flag: '/icons/ua.svg' }, // Alias for ua
 };
 
 export function LanguageProvider({ children }: { children: ReactNode }) {

@@ -6,6 +6,7 @@ import { heroVariants } from '../app/lib/animations';
 import { useLanguage } from '../app/context/LanguageContext'; // Corrected path
 import Image from 'next/image'; // Import Image component
 import SvgIcon from './SvgIcon'; // Import SvgIcon
+import Link from 'next/link';
 
 const Hero: React.FC = () => {
   const [showDownloadMenu, setShowDownloadMenu] = useState<boolean>(false);
@@ -76,16 +77,7 @@ const Hero: React.FC = () => {
                       className="hero-download-menu"
                     >
                       <div className="hero-download-menu-container">
-                        <a
-                          href="public/files/desktop-app.zip"
-                          download
-                          className="hero-download-menu-item"
-                          onClick={() => setShowDownloadMenu(false)}
-                        >
-                          <SvgIcon iconName="windows" title="Windows" className="svg-icon" />
-                          {t('hero.downloadWindows')}
-                        </a>
-                        <a
+                        <Link
                           href="public/files/android-app.apk"
                           download
                           className="hero-download-menu-item"
@@ -93,7 +85,7 @@ const Hero: React.FC = () => {
                         >
                           <SvgIcon iconName="android" title="Android" className="svg-icon" />
                           {t('hero.downloadAndroid')}
-                        </a>
+                        </Link>
                       </div>
                     </motion.div>
                   )}
