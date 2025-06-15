@@ -10,7 +10,7 @@ interface Language {
 interface LanguageContextType {
   language: string;
   changeLanguage: (lang: string) => void;
-  t: (key: string, options?: { defaultValue?: string; [key: string]: string | number | boolean | undefined }) => any;
+  t: (key: string, options?: { defaultValue?: string; [key: string]: string | number | boolean | undefined }) => string;
   languages: { [key: string]: Language };
   isLoading: boolean;
 }
@@ -81,8 +81,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       }
     }
 
-    let result: any; // Change type to any to allow returning objects
-    if (value !== undefined) {
+    let result: string;
+    if (typeof value === 'string') {
       result = value;
     } else if (options?.defaultValue !== undefined) {
       result = options.defaultValue;
