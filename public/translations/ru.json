@@ -51,6 +51,74 @@
     "pauseAutoplay": "Приостановить автовоспроизведение",
     "playAutoplay": "Воспроизвести автовоспроизведение"
   },
+  "roadmap": {
+    "title": {
+      "section": "Дорожная карта",
+      "projectLaunch": "Запуск проекта",
+      "enhancedSecurity": "Улучшенная безопасность",
+      "advancedCollaboration": "Расширенное сотрудничество",
+      "mobileEnhancement": "Улучшение мобильной версии",
+      "aiIntegration": "Интеграция ИИ",
+      "globalExpansion": "Глобальное расширение",
+      "enterpriseSolutions": "Корпоративные решения",
+      "futureInnovation": "Будущие инновации"
+    },
+    "subtitle": {
+      "section": "Наш путь к будущему BrainMessenger"
+    },
+    "status": {
+      "completed": "Завершено",
+      "inProgress": "В процессе",
+      "upcoming": "Предстоящее"
+    },
+    "description": {
+      "projectLaunch": "Initial launch of BrainMessenger with core features.",
+      "enhancedSecurity": "Strengthening security protocols and features.",
+      "advancedCollaboration": "Introducing advanced collaboration tools.",
+      "mobileEnhancement": "Enhancing mobile application experience.",
+      "aiIntegration": "Integrating AI-powered features for smarter communication.",
+      "globalExpansion": "Expanding BrainMessenger's reach globally.",
+      "enterpriseSolutions": "Developing solutions for enterprise clients.",
+      "futureInnovation": "Exploring and implementing future technologies."
+    },
+    "features": {
+      "secureMessagingInfrastructure": "Secure messaging infrastructure",
+      "crossPlatformCompatibility": "Cross-platform compatibility",
+      "basicUserInterface": "Basic user interface",
+      "endToEndEncryption": "End-to-end encryption",
+      "twoFactorAuthentication": "Two-factor authentication",
+      "fileSharingCapabilities": "File sharing capabilities",
+      "teamWorkspaces": "Team workspaces",
+      "realTimeCollaboration": "Real-time collaboration",
+      "advancedFileSharing": "Advanced file sharing",
+      "nativeMobileApps": "Native mobile apps",
+      "offlineFunctionality": "Offline functionality",
+      "pushNotifications": "Push notifications",
+      "smartMessageCategorization": "Smart message categorization",
+      "automatedResponses": "Automated responses",
+      "contentAnalysis": "Content analysis",
+      "multiLanguageSupport": "Multi-language support",
+      "regionalDataCenters": "Regional data centers",
+      "culturalAdaptations": "Cultural adaptations",
+      "advancedAdminControls": "Advanced admin controls",
+      "customIntegrations": "Custom integrations",
+      "enterpriseSupport": "Enterprise support",
+      "emergingTechnologies": "Emerging technologies",
+      "communityDrivenFeatures": "Community-driven features",
+      "platformExpansion": "Platform expansion"
+    },
+    "date": {
+      "jan2024": "January 2024",
+      "mar2024": "March 2024",
+      "jun2024": "June 2024",
+      "sep2024": "September 2024",
+      "nov2024": "November 2024",
+      "jan2025": "January 2025",
+      "mar2025": "March 2025",
+      "jun2025": "June 2025",
+      "beyond2025": "Beyond 2025"
+    }
+  },
   "faq": {
     "title": "Часто задаваемые вопросы",
     "subtitle": "Найдите ответы на часто задаваемые вопросы о BrainMessenger",
@@ -493,6 +561,14 @@
       }
     }
   },
+
+
+
+
+
+
+
+
   "roadmap": {
     "title": {
       "section": "Дорожная карта",
