@@ -17,14 +17,14 @@ export const faqDataStructure: FAQCategory[] = [
     ],
   },
   {
-    categoryKey: 'technicalAspects',
+    categoryKey: 'technicalQuestions',
     questions: [
       { id: 'q1' },
       { id: 'q2' },
     ],
   },
   {
-    categoryKey: 'futureDevelopment',
+    categoryKey: 'statusRoadmapFuture',
     questions: [
       { id: 'q1' },
       { id: 'q2' },
