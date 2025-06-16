@@ -4,11 +4,11 @@ import React, { useState } from 'react';
 import SvgIcon from '@/ui/SvgIcon'; // Убедитесь, что путь к SvgIcon правильный
 
 interface AccordionItemProps {
-  question: string;
-  answer: string;
+  questionId: string;
+  categoryKey: string;
 }
 
-const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer }) => {
+const AccordionItem: React.FC<AccordionItemProps> = ({ questionId, categoryKey }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -21,7 +21,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer }) => {
         className="accordion-header"
         onClick={toggleOpen}
       >
-        <span className="accordion-question">{question}</span>
+        <span className="accordion-question">{questionId}</span>
         <SvgIcon
           iconName="arrowRight" // Используем иконку стрелки вправо
           title="Toggle" // Используем title вместо alt для SvgIcon
@@ -32,7 +32,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer }) => {
         className={`accordion-content ${isOpen ? 'is-open' : ''}`}
       >
         <div className="accordion-answer-inner">
-          <p className="accordion-answer-text">{answer}</p>
+          <p className="accordion-answer-text">{categoryKey}</p>
         </div>
       </div>
     </div>

@@ -1,21 +1,32 @@
 import React from 'react';
 import AccordionItem from './AccordionItem';
 
-interface FAQItem {
+interface FAQQuestion {
   id: string;
-  question: string;
-  answer: string;
+}
+
+interface FAQCategory {
+  categoryKey: string;
+  questions: FAQQuestion[];
 }
 
 interface AccordionProps {
-  items: FAQItem[];
+  items: FAQCategory[];
 }
 
 const Accordion: React.FC<AccordionProps> = ({ items }) => {
   return (
     <div className="accordion-container">
-      {items.map((item) => (
-        <AccordionItem key={item.id} question={item.question} answer={item.answer} />
+      {items.map((category) => (
+        <React.Fragment key={category.categoryKey}>
+          {category.questions.map((question) => (
+            <AccordionItem
+              key={question.id}
+              questionId={question.id}
+              categoryKey={category.categoryKey}
+            />
+          ))}
+        </React.Fragment>
       ))}
     </div>
   );

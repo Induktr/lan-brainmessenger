@@ -8,10 +8,8 @@ const FAQPage: React.FC = () => {
     <Container className="faq-page-container">
       <header className="faq-header-section">
         <h1 className="faq-page-title">
-          Часто задаваемые вопросы
         </h1>
         <p className="faq-page-subtitle">
-          Здесь вы найдете ответы на наиболее часто задаваемые вопросы о BrainMessenger.
         </p>
       </header>
       <div className="faq-accordion-wrapper">
