@@ -879,682 +879,682 @@
       }
     },
     "devGuide": {
-      "title": "Руководство по Разработке BrainMessenger",
-      "subtitle": "Применение Принципов в Коде",
+      "title": "BrainMessenger Development Guide",
+      "subtitle": "Applying Principles in Code",
       "introduction": {
-        "title": "1. Введение: Процесс Разработки как Система Совершенствования",
-        "description": "Этот документ является вашим путеводителем по процессу разработки BrainMessenger. Мы строим этот проект не хаотично, а как <strong>целостную систему</strong> (Принцип 9), где каждый участник команды (или вы сами) действует в соответствии с <strong>четкими стандартами и принципами</strong>, стремясь к <strong>постоянному совершенствованию</strong> (Принцип 1, 9). Этот процесс напрямую влияет на <strong>качество</strong> (Принцип 3) конечного продукта и его превращение в <strong>ценный АКТИВ</strong> (Принцип 10).",
-        "goal": "Обеспечить <strong>единый, эффективный и масштабируемый</strong> процесс разработки, упростить онбординг новых участников и поддерживать высокий уровень <strong>качества кода и архитектуры</strong> на каждом этапе, включая глубокое изучение и применение технологий (как видно по трекеру видео).",
-        "audience": "Все, кто пишет код или управляет процессом разработки BrainMessenger (Frontend, Backend, Mobile, Desktop, DevOps разработчики).",
-        "principles_title": "Принципы, которыми руководствуется процесс разработки:",
+        "title": "1. Introduction: The Development Process as a System of Improvement",
+        "description": "This document is your guide to the BrainMessenger development process. We are building this project not chaotically, but as a <strong>holistic system</strong> (Principle 9), where every team member (or you yourself) acts in accordance with <strong>clear standards and principles</strong>, striving for <strong>continuous improvement</strong> (Principle 1, 9). This process directly affects the <strong>quality</strong> (Principle 3) of the final product and its transformation into a <strong>valuable ASSET</strong> (Principle 10).",
+        "goal": "Ensure a <strong>unified, efficient, and scalable</strong> development process, simplify onboarding for new participants, and maintain a high level of <strong>code and architecture quality</strong> at every stage, including deep learning and application of technologies (as seen in the video tracker).",
+        "audience": "Everyone who writes code or manages the BrainMessenger development process (Frontend, Backend, Mobile, Desktop, DevOps developers).",
+        "principles_title": "Principles guiding the development process:",
         "principles": [
-          "<strong>Система и Оптимизация (Принцип 9):</strong> Структура репозитория, стандарты кодирования, CI/CD, использование инструментов — все направлено на создание эффективной и предсказуемой системы. <strong>Кайдзен</strong> применяется к самому процессу разработки.",
-          "<strong>Качество > Количество (Принцип 3):</strong> Приоритет отдается написанию чистого, тестируемого и поддерживаемого кода, даже если это занимает больше времени на старте.",
-          "<strong>Постоянное Обучение (Принцип 1):</strong> Процесс разработки включает изучение новых технологий, их прагматичное применение и рефлексию над полученным опытом (как документируется в видео трекере и Кайдзен-часах).",
-          "<strong>Прагматизм и Реализм (Принцип 12):</strong> Выбор инструментов и подходов, подходящих для текущего этапа проекта, без излишней сложности.",
-          "<strong>Долгосрочное Мышление (Принцип 8):</strong> Архитектурные решения принимаются с прицелом на будущее масштабирование и поддерживаемость. Код пишется так, чтобы его было легко развивать.",
-          "<strong>Ответственность и Проактивность (Принцип 6):</strong> Каждый разработчик несет ответственность за качество своего кода, тесты и активно участвует в улучшении процессов."
+          "<strong>System and Optimization (Principle 9):</strong> Repository structure, coding standards, CI/CD, tool usage — everything is aimed at creating an efficient and predictable system. <strong>Kaizen</strong> is applied to the development process itself.",
+          "<strong>Quality > Quantity (Principle 3):</strong> Priority is given to writing clean, testable, and maintainable code, even if it takes more time initially.",
+          "<strong>Continuous Learning (Principle 1):</strong> The development process includes learning new technologies, pragmatically applying them, and reflecting on the experience gained (as documented in the video tracker and Kaizen hours).",
+          "<strong>Pragmatism and Realism (Principle 12):</strong> Choosing tools and approaches suitable for the current stage of the project, without unnecessary complexity.",
+          "<strong>Long-term Thinking (Principle 8):</strong> Architectural decisions are made with future scalability and maintainability in mind. Code is written to be easily evolvable.",
+          "<strong>Responsibility and Proactivity (Principle 6):</strong> Each developer is responsible for the quality of their code, tests, and actively participates in process improvement."
         ]
       },
       "repoStructure": {
-        "title": "2. Структура Репозитория: Монорепо как Система Организации Кода",
-        "description": "Проект организован как <strong>монорепозиторий</strong>, используя <strong>Turborepo</strong> для управления пакетами. Это — сознательный выбор, призванный повысить <strong>эффективность</strong> (Принцип 9) за счет переиспользования кода и <strong>оптимизации</strong> (Принцип 9) процессов сборки и тестирования.",
+        "title": "2. Repository Structure: Monorepo as a Code Organization System",
+        "description": "The project is organized as a <strong>monorepository</strong>, using <strong>Turborepo</strong> for package management. This is a conscious choice designed to increase <strong>efficiency</strong> (Principle 9) through code reuse and <strong>optimization</strong> (Principle 9) of build and testing processes.",
         "core_title": "<code>core</code>:",
-        "core_content": "Содержит код, который является <strong>ядром системы</strong> (Принцип 9) и может быть использован на любой платформе (API-клиент, общие утилиты, бизнес-логика, не связанная с UI/сервером). Переиспользование повышает <strong>эффективность</strong> (Принцип 9) и <strong>согласованность</strong> (Принцип 7).",
+        "core_content": "Contains code that is the <strong>core of the system</strong> (Principle 9) and can be used on any platform (API client, common utilities, business logic not tied to UI/server). Reuse increases <strong>efficiency</strong> (Principle 9) and <strong>consistency</strong> (Principle 7).",
         "mobile_desktop_title": "<code>mobile-desktop</code>:",
-        "mobile_desktop_content": "Содержит код для <strong>клиентского Актива</strong> (Принцип 10) на мобильных и десктопных платформах.",
+        "mobile_desktop_content": "Contains code for the <strong>client Asset</strong> (Principle 10) on mobile and desktop platforms.",
         "web_title": "<code>web</code>:",
-        "web_content": "Содержит код для <strong>клиентского Актива</strong> на веб-платформе.",
+        "web_content": "Contains code for the <strong>client Asset</strong> on the web platform.",
         "backend_title": "<code>backend</code>:",
-        "backend_content": "Содержит код <strong>серверной части системы</strong>, обрабатывающей запросы, взаимодействующей с БД и внешними сервисами. Это критически важный <strong>рычаг</strong> (Маргулан) для работы всего приложения.",
+        "backend_content": "Contains code for the <strong>server-side of the system</strong>, processing requests, interacting with the database, and external services. This is a critically important <strong>leverage</strong> (Margulan) for the entire application.",
         "infrastructure_title": "<code>infrastructure</code>:",
-        "infrastructure_content": "Содержит конфигурации для <strong>развертывания системы</strong> (Принцип 9) на облачных ресурсах.",
+        "infrastructure_content": "Contains configurations for <strong>deploying the system</strong> (Principle 9) on cloud resources.",
         "docs_title": "<code>docs</code>:",
-        "docs_content": "Содержит <strong>документацию — часть системы знаний</strong> (Принцип 1), необходимую для эффективной работы и онбординга.",
+        "docs_content": "Contains <strong>documentation — part of the knowledge system</strong> (Principle 1), necessary for efficient work and onboarding.",
         "turbo_title": "<code>turbo.json</code>:",
-        "turbo_content": "Определяет, как Turborepo управляет задачами (сборка, тестирование, линтинг) по всему монорепо, используя <strong>кэширование и параллельное выполнение</strong> для <strong>оптимизации</strong> (Принцип 9) времени разработки."
+        "turbo_content": "Defines how Turborepo manages tasks (build, test, linting) across the monorepo, using <strong>caching and parallel execution</strong> to <strong>optimize</strong> (Principle 9) development time."
       },
       "techStack": {
-        "title": "3. Технологический Стек: Инструменты для Построения Фундамента (Принцип 8)",
-        "intro": "Выбор стека основывается на <strong>прагматизме, надежности и потенциале для долгосрочного развития</strong> (Принцип 8, 12). Мы используем <strong>проверенные технологии</strong>, которые позволяют быстро строить, но при этом закладывать <strong>прочный фундамент</strong> (Принцип 8).",
+        "title": "3. Technology Stack: Tools for Building a Foundation (Principle 8)",
+        "intro": "The choice of stack is based on <strong>pragmatism, reliability, and potential for long-term development</strong> (Principle 8, 12). We use <strong>proven technologies</strong> that allow for rapid building while laying a <strong>solid foundation</strong> (Principle 8).",
         "table": [
-          ["Компонент", "Технология", "Версия", "Назначение", "Связь с Принципами"],
-          ["Frontend: Mobile", "React Native", "0.72+", "Создание UI для Android из единой кодовой базы.", "P9 (Система), P12 (Прагматизм), P2 (Ценность - кроссплатформа)."],
-          ["Frontend: Desktop", "React Native for Windows (RNW)", "0.72+", "Создание UI для Windows из единой кодовой базы.", "P9 (Система), P12 (Прагматизм), P2 (Ценность - кроссплатформа)."],
-          ["Frontend: Web", "Next.js, Tailwind CSS", "14.x", "Веб-приложение с SSR/SSG для SEO и производительности, утилитарная стилизация.", "P2 (Ценность), P9 (Система - фреймворк), P12 (Прагматизм)."],
-          ["Frontend: Общее", "TypeScript", "5.x", "Строгая статическая типизация для повышения <strong>качества и надежности</strong> кода.", "P3 (Качество), P9 (Система - предсказуемость)."],
-          ["Backend", "Node.js, NestJS", "22.x, 10.x", "Серверная логика, GraphQL API, высокая производительность Node.js, модульность NestJS.", "P9 (Система - модульность), P8 (Долгосрочное - масштабируемость Node.js)."],
-          ["ORM", "Prisma", "5.x", "Удобная и безопасная работа с базой данных (PostgreSQL).", "P3 (Качество - безопасность запросов), P9 (Система - абстракция БД)."],
-          ["База данных", "PostgreSQL (Neon)", "15.x", "Основное хранилище структурированных данных. Надежная реляционная СУБД.", "P8 (Долгосрочное), P9 (Система), P12 (Прагматизм)."],
-          ["Хранилище Файлов", "Cloudflare R2 (S3-совместимое)", "-", "Хранение медиафайлов и бинарных данных. Выгодно и масштабируемо.", "P10 (Активы), P12 (Прагматизм), P8 (Долгосрочное)."],
-          ["Кэширование", "Redis", "7.x", "Кэширование данных, Rate Limiting, управление присутствием WebSocket.", "P9 (Система - эффективность), P3 (Качество - снижение нагрузки), P5 (Здоровье - отзывчивость)."],
-          ["Асинхронность", "Kafka", "3.x", "Надежная асинхронная обработка фоновых задач (обработка изображений).", "P9 (Система - разделение ответственности), P3 (Качество - надежность)."],
-          ["Оркестрация", "Kubernetes", "1.24+", "Управление контейнерами, автоматическое масштабирование, самовосстановление.", "P8 (Долгосрочное), P9 (Система - управление сложностью), P3 (Качество - отказоустойчивость)."],
-          ["Инфраструктура", "Terraform", "1.5+", "Автоматизация создания и управления инфраструктурой (IaC).", "P9 (Система - автоматизация), P3 (Качество - предсказуемость инфраструктуры)."],
-          ["Тестирование", "Jest, Cypress, Detox", "-", "Модульные, интеграционные, E2E-тесты для обеспечения <strong>качества</strong>.", "P3 (Качество), P9 (Система - автоматизация проверки)."],
-          ["Профилирование", "V8 Profiler, Chrome DevTools", "-", "Инструменты для <strong>измерения и оптимизации производительности</strong>.", "P1 (Обучение), P9 (Система - Кайдзен), P13 (Настойчивость)."],
-          ["Мониторинг Kafka", "Kafdrop", "-", "Визуальный мониторинг очередей Kafka.", "P9 (Система), P5 (Здоровье - системы, видимость проблем)."]
+          ["Component", "Technology", "Version", "Purpose", "Connection to Principles"],
+          ["Frontend: Mobile", "React Native", "0.72+", "Creating UI for Android from a single codebase.", "P9 (System), P12 (Pragmatism), P2 (Value - cross-platform)."],
+          ["Frontend: Desktop", "React Native for Windows (RNW)", "0.72+", "Creating UI for Windows from a single codebase.", "P9 (System), P12 (Pragmatism), P2 (Value - cross-platform)."],
+          ["Frontend: Web", "Next.js, Tailwind CSS", "14.x", "Web application with SSR/SSG for SEO and performance, utility-first styling.", "P2 (Value), P9 (System - framework), P12 (Pragmatism)."],
+          ["Frontend: General", "TypeScript", "5.x", "Strong static typing for increased <strong>quality and reliability</strong> of code.", "P3 (Quality), P9 (System - predictability)."],
+          ["Backend", "Node.js, NestJS", "22.x, 10.x", "Server logic, GraphQL API, high performance of Node.js, modularity of NestJS.", "P9 (System - modularity), P8 (Long-term - Node.js scalability)."],
+          ["ORM", "Prisma", "5.x", "Convenient and secure work with the database (PostgreSQL).", "P3 (Quality - query security), P9 (System - DB abstraction)."],
+          ["Database", "PostgreSQL (Neon)", "15.x", "Main storage for structured data. Reliable relational DBMS.", "P8 (Long-term), P9 (System), P12 (Pragmatism)."],
+          ["File Storage", "Cloudflare R2 (S3-compatible)", "-", "Storing media files and binary data. Cost-effective and scalable.", "P10 (Assets), P12 (Pragmatism), P8 (Long-term)."],
+          ["Caching", "Redis", "7.x", "Data caching, Rate Limiting, WebSocket presence management.", "P9 (System - efficiency), P3 (Quality - load reduction), P5 (Health - responsiveness)."],
+          ["Asynchronicity", "Kafka", "3.x", "Reliable asynchronous processing of background tasks (image processing).", "P9 (System - separation of concerns), P3 (Quality - reliability)."],
+          ["Orchestration", "Kubernetes", "1.24+", "Container management, automatic scaling, self-healing.", "P8 (Long-term), P9 (System - complexity management), P3 (Quality - fault tolerance)."],
+          ["Infrastructure", "Terraform", "1.5+", "Automating the creation and management of infrastructure (IaC).", "P9 (System - automation), P3 (Quality - infrastructure predictability)."],
+          ["Testing", "Jest, Cypress, Detox", "-", "Unit, integration, E2E tests for ensuring <strong>quality</strong>.", "P3 (Quality), P9 (System - automated verification)."],
+          ["Profiling", "V8 Profiler, Chrome DevTools", "-", "Tools for <strong>measuring and optimizing performance</strong>.", "P1 (Learning), P9 (System - Kaizen), P13 (Persistence)."],
+          ["Kafka Monitoring", "Kafdrop", "-", "Visual monitoring of Kafka queues.", "P9 (System), P5 (Health - systems, problem visibility)."]
         ]
       },
       "codingStandards": {
-        "title": "4. Стандарты Кодирования: Дисциплина как Основа Качества (Принцип 3, 9)",
-        "intro": "Соблюдение стандартов кодирования — это проявление <strong>дисциплины</strong> и часть <strong>системы обеспечения качества</strong>. Это делает код предсказуемым, легко читаемым и поддерживаемым другими разработчиками (или вами самими в будущем).",
+        "title": "4. Coding Standards: Discipline as the Foundation of Quality (Principle 3, 9)",
+        "intro": "Adhering to coding standards is an expression of <strong>discipline</strong> and part of the <strong>quality assurance system</strong>. It makes code predictable, easy to read, and maintainable by other developers (or yourself in the future).",
         "generalPrinciples": {
-          "title": "4.1. Общие Принципы",
+          "title": "4.1. General Principles",
           "principles": [
-            "<strong>DRY (Don’t Repeat Yourself):</strong> Избегайте дублирования кода. Используйте общие функции, компоненты, хуки в пакете <code>core</code>.",
-            "<strong>KISS (Keep It Simple, Stupid):</strong> Стремитесь к простоте решений. Не усложняйте без необходимости. <strong>Упрощать сложное</strong> (Маргулан) применимо и к коду.",
-            "<strong>Именование:</strong> Используйте английский язык для всех идентификаторов (переменные, функции, классы), комментариев. Будьте последовательны.",
-            "<strong>Комментарии:</strong> Обязательны для:",
-            "Сложной бизнес-логики (например, обработка платежей, управление WebSocket-соединениями).",
-            "Интеграций с внешними сервисами (где могут быть неочевидные детали API).",
-            "Критических участков кода (аутентификация, шифрование, работа с множествами).",
-            "Неочевидных решений или обходных путей (с объяснением почему)."
+            "<strong>DRY (Don’t Repeat Yourself):</strong> Avoid code duplication. Use common functions, components, hooks in the <code>core</code> package.",
+            "<strong>KISS (Keep It Simple, Stupid):</strong> Strive for simple solutions. Don't overcomplicate unnecessarily. <strong>Simplifying the complex</strong> (Margulan) applies to code as well.",
+            "<strong>Naming:</strong> Use English for all identifiers (variables, functions, classes), comments. Be consistent.",
+            "<strong>Comments:</strong> Mandatory for:",
+            "Complex business logic (e.g., payment processing, WebSocket connection management).",
+            "Integrations with external services (where non-obvious API details may exist).",
+            "Critical code sections (authentication, encryption, set operations).",
+            "Non-obvious solutions or workarounds (with explanation)."
           ]
         },
         "namingConventions": {
-          "title": "4.2. Конвенции Именования",
+          "title": "4.2. Naming Conventions",
           "conventions": [
-            "<strong>Переменные и функции:</strong> <code>camelCase</code> (например, <code>getUserProfile</code>, <code>chatMessage</code>).",
-            "<strong>Классы и модули:</strong> <code>PascalCase</code> (например, <code>UserService</code>, <code>ChatModule</code>).",
-            "<strong>Константы:</strong> <code>UPPER_SNAKE_CASE</code> (например, <code>MAX_FILE_SIZE</code>, <code>DEFAULT_TIMEOUT</code>).",
-            "<strong>Файлы и папки:</strong> <code>kebab-case</code> (например, <code>user-service.ts</code>, <code>chat-screen.tsx</code>, <code>image-processing</code>).",
-            "<strong>API Endpoints (в контексте GraphQL):</strong> Резолверы и их поля именуются согласно доменной модели, часто следуя REST-подобной логике (например, query <code>getUser</code>, mutation <code>sendMessage</code>)."
+            "<strong>Variables and functions:</strong> <code>camelCase</code> (e.g., <code>getUserProfile</code>, <code>chatMessage</code>).",
+            "<strong>Classes and modules:</strong> <code>PascalCase</code> (e.g., <code>UserService</code>, <code>ChatModule</code>).",
+            "<strong>Constants:</strong> <code>UPPER_SNAKE_CASE</code> (e.g., <code>MAX_FILE_SIZE</code>, <code>DEFAULT_TIMEOUT</code>).",
+            "<strong>Files and folders:</strong> <code>kebab-case</code> (e.g., <code>user-service.ts</code>, <code>chat-screen.tsx</code>, <code>image-processing</code>).",
+            "<strong>API Endpoints (in GraphQL context):</strong> Resolvers and their fields are named according to the domain model, often following REST-like logic (e.g., query <code>getUser</code>, mutation <code>sendMessage</code>)."
           ]
         },
         "formattingLinting": {
-          "title": "4.3. Форматирование и Линтинг: Автоматизация Поддержания Порядка",
-          "intro": "Используйте автоматические инструменты для обеспечения единообразного форматирования и соблюдения базовых правил кодирования. Это часть <strong>системы автоматизации качества</strong> (Принцип 9).",
-          "prettier_title": "<strong>Форматирование:</strong> <strong>Prettier</strong> — автоматический форматтер кода.",
-          "prettier_content": "Настройте <code>.prettierrc</code> в корне проекта. Рекомендуемые настройки: 2 пробела для отступов, отсутствие точек с запятой в конце строк, одинарные кавычки для строк.",
+          "title": "4.3. Formatting and Linting: Automating Order Maintenance",
+          "intro": "Use automatic tools to ensure consistent formatting and adherence to basic coding rules. This is part of the <strong>automated quality system</strong> (Principle 9).",
+          "prettier_title": "<strong>Formatting:</strong> <strong>Prettier</strong> — an automatic code formatter.",
+          "prettier_content": "Configure <code>.prettierrc</code> in the project root. Recommended settings: 2 spaces for indents, no semicolons at the end of lines, single quotes for strings.",
           "prettier_code": "```json\n{\n  \"tabWidth\": 2,\n  \"semi\": false,\n  \"singleQuote\": true,\n  \"trailingComma\": \"es5\"\n}\n```",
-          "eslint_title": "<strong>Линтинг:</strong> <strong>ESLint</strong> — статический анализатор кода для выявления проблем.",
-          "eslint_content": "Используйте конфигурацию вроде Airbnb или Standard, адаптированную для TypeScript, React/React Native, NestJS. Настройте правила в <code>.eslintrc.js</code>.\nИнтегрируйте ESLint в ваш редактор кода для получения обратной связи в реальном времени."
+          "eslint_title": "<strong>Linting:</strong> <strong>ESLint</strong> — a static code analyzer for identifying problems.",
+          "eslint_content": "Use a configuration like Airbnb or Standard, adapted for TypeScript, React/React Native, NestJS. Configure rules in <code>.eslintrc.js</code>.\nIntegrate ESLint into your code editor for real-time feedback."
         },
         "codeStructure": {
-          "title": "4.4. Структура Кода: Модульность и Четкие Границы",
-          "intro": "Код организован модульно внутри каждого пакета, следуя принципам <strong>системности</strong> (Принцип 9) и разделения ответственности.",
+          "title": "4.4. Code Structure: Modularity and Clear Boundaries",
+          "intro": "The code is organized modularly within each package, following the principles of <strong>systematization</strong> (Principle 9) and separation of concerns.",
           "corePackage": {
             "title": "Core (<code>packages/core</code>):",
             "points": [
-              "<code>api/</code>: Код для взаимодействия с GraphQL API BrainMessenger (Apollo Client).",
-              "<code>hooks/</code>: Переиспользуемые хуки для React/React Native.",
-              "<code>utils/</code>: Чистые функции-утилиты, не зависящие от конкретной платформы."
+              "<code>api/</code>: Code for interacting with the BrainMessenger GraphQL API (Apollo Client).",
+              "<code>hooks/</code>: Reusable hooks for React/React Native.",
+              "<code>utils/</code>: Pure utility functions, independent of a specific platform."
             ]
           },
           "mobileDesktopPackage": {
             "title": "Mobile-Desktop (<code>packages/mobile-desktop</code>):",
             "points": [
-              "<code>components/</code>: Небольшие, переиспользуемые UI-компоненты (<code>Button</code>, <code>MessageBubble</code>).",
-              "<code>screens/</code>: Компоненты, представляющие целые экраны (<code>ChatScreen</code>, <code>SettingsScreen</code>).",
-              "<code>theme/</code>: Файлы с цветовыми схемами и типографикой, определенные в DocDesign.",
-              "<code>platform/</code>: Код, специфичный для Android или Windows (например, работа с нативными модулями)."
+              "<code>components/</code>: Small, reusable UI components (<code>Button</code>, <code>MessageBubble</code>).",
+              "<code>screens/</code>: Components representing entire screens (<code>ChatScreen</code>, <code>SettingsScreen</code>).",
+              "<code>theme/</code>: Files with color schemes and typography, defined in DocDesign.",
+              "<code>platform/</code>: Code specific to Android or Windows (e.g., working with native modules)."
             ]
           },
           "webPackage": {
             "title": "Web (<code>packages/web</code>):",
             "points": [
-              "<code>pages/</code>: Компоненты страниц Next.js.",
-              "<code>components/</code>: UI-компоненты для веба (могут переиспользовать логику из <code>core/hooks</code> или <code>core/utils</code>).",
-              "<code>styles/</code>: Файлы стилей (Tailwind CSS)."
+              "<code>pages/</code>: Next.js page components.",
+              "<code>components/</code>: UI components for the web (can reuse logic from <code>core/hooks</code> or <code>core/utils</code>).",
+              "<code>styles/</code>: Style files (Tailwind CSS)."
             ]
           },
           "backendPackage": {
             "title": "Backend (<code>backend</code>):",
             "points": [
-              "Структура NestJS: Модули (<code>auth</code>, <code>user</code>, <code>chat</code>, <code>message</code>), сервисы (<code>AuthService</code>, <code>UserService</code>), контроллеры (для REST, если есть) или резолверы (для GraphQL), DTO (Data Transfer Objects), Entities (определенные Prisma).",
-              "<code>src/</code>: Исходный код.",
-              "<code>test/</code>: Тесты."
+              "NestJS structure: Modules (<code>auth</code>, <code>user</code>, <code>chat</code>, <code>message</code>), services (<code>AuthService</code>, <code>UserService</code>), controllers (for REST, if any) or resolvers (for GraphQL), DTO (Data Transfer Objects), Entities (defined by Prisma).",
+              "<code>src/</code>: Source code.",
+              "<code>test/</code>: Tests."
             ]
           }
         }
       },
       "libraries": {
-        "title": "5. Используемые Библиотеки: Выбор Правильных Инструментов (Принцип 12)",
-        "intro": "Мы выбираем библиотеки, которые решают задачи <strong>прагматично</strong> (Принцип 12), обеспечивают <strong>качество</strong> (Принцип 3) и хорошо интегрируются в нашу <strong>систему</strong> (Принцип 9).",
+        "title": "5. Used Libraries: Choosing the Right Tools (Principle 12)",
+        "intro": "We choose libraries that solve problems <strong>pragmatically</strong> (Principle 12), ensure <strong>quality</strong> (Principle 3), and integrate well into our <strong>system</strong> (Principle 9).",
         "common": {
-          "title": "5.1. Общие (Core)",
+          "title": "5.1. Common (Core)",
           "libs": [
-            "<code>@apollo/client</code> (и связанные): Клиент GraphQL для выполнения запросов к Backend API. Используется в <code>core</code> и импортируется в <code>mobile-desktop</code> и <code>web</code>. Обеспечивает <strong>эффективность</strong> (Принцип 9) за счет управления кэшем."
+            "<code>@apollo/client</code> (and related): GraphQL client for making requests to the Backend API. Used in <code>core</code> and imported into <code>mobile-desktop</code> and <code>web</code>. Ensures <strong>efficiency</strong> (Principle 9) through cache management."
           ]
         },
         "mobileDesktop": {
           "title": "5.2. Mobile-Desktop (React Native)",
           "libs": [
-            "<code>react-native-reanimated</code>, <code>moti</code>, <code>lottie-react-native</code>: Библиотеки для создания <strong>плавных и производительных анимаций</strong> (см. DocDesign). Связано с Принципом 3 (Качество UI) и Принципом 5 (Здоровье - снижение нагрузки).",
-            "<code>@react-navigation/native</code> (и связанные): Навигация между экранами приложения. <strong>Системное</strong> (Принцип 9) управление переходами.",
-            "<code>react-native-sound</code>: Базовая библиотека для воспроизведения звуков (сообщения, звонки). См. Документацию звуков."
+            "<code>react-native-reanimated</code>, <code>moti</code>, <code>lottie-react-native</code>: Libraries for creating <strong>smooth and performant animations</strong> (see DocDesign). Related to Principle 3 (UI Quality) and Principle 5 (Health - load reduction).",
+            "<code>@react-navigation/native</code> (and related): Navigation between application screens. <strong>Systematic</strong> (Principle 9) transition management.",
+            "<code>react-native-sound</code>: Basic library for playing sounds (messages, calls). See Sound Documentation."
           ]
         },
         "web": {
           "title": "5.3. Web (Next.js)",
           "libs": [
-            "<code>next</code>, <code>react</code>, <code>react-dom</code>: Основа веб-приложения. Next.js обеспечивает <strong>систему</strong> (Принцип 9) для SSR, SSG, маршрутизации и <strong>оптимизации</strong> (см. DocOptimizationIn).",
-            "<code>tailwindcss</code>: Утилитарный CSS-фреймворк для быстрой и <strong>прагматичной</strong> (Принцип 12) стилизации.",
-            "<code>framer-motion</code>: Библиотека для <strong>качественных</strong> (Принцип 3) анимаций в вебе."
+            "<code>next</code>, <code>react</code>, <code>react-dom</code>: The foundation of the web application. Next.js provides a <strong>system</strong> (Principle 9) for SSR, SSG, routing, and <strong>optimization</strong> (see DocOptimizationIn).",
+            "<code>tailwindcss</code>: Utility-first CSS framework for fast and <strong>pragmatic</strong> (Principle 12) styling.",
+            "<code>framer-motion</code>: Library for <strong>quality</strong> (Principle 3) animations on the web."
           ]
         },
         "backend": {
           "title": "5.4. Backend (NestJS)",
           "libs": [
-            "<code>@nestjs/*</code>: Основные пакеты NestJS (core, common, platform-express/fastify, graphql, typeorm/prisma, jwt, passport, websockets и т.д.). Обеспечивают <strong>модульную, масштабируемую систему</strong> (Принцип 9).",
-            "<code>@nestjs/prisma</code>: Интеграция NestJS и Prisma.",
-            "<code>graphql</code>, <code>@nestjs/graphql</code>, <code>apollo-server-express</code>: Реализация GraphQL API.",
-            "<code>@prisma/client</code>: Клиент Prisma ORM для взаимодействия с Neon (PostgreSQL).",
-            "<code>@aws-sdk/client-s3</code>, <code>@aws-sdk/s3-request-presigner</code>: Работа с Cloudflare R2 (S3-совместимый).",
-            "<code>ioredis</code>: Клиент Redis для кэширования и других задач.",
-            "<code>kafkajs</code>: Клиент Kafka для асинхронных задач.",
-            "<code>firebase-admin</code>: SDK для Firebase (Push-уведомления).",
-            "<code>stripe</code>: SDK для Stripe (Платежи).",
-            "<code>googleapis</code>: SDK для Google APIs (Gmail API).",
-            "<code>bcrypt</code> или <code>argon2</code>: Библиотека для <strong>безопасного</strong> (Принцип 3, 5) хэширования паролей."
+            "<code>@nestjs/*</code>: Core NestJS packages (core, common, platform-express/fastify, graphql, typeorm/prisma, jwt, passport, websockets, etc.). Provide a <strong>modular, scalable system</strong> (Principle 9).",
+            "<code>@nestjs/prisma</code>: NestJS and Prisma integration.",
+            "<code>graphql</code>, <code>@nestjs/graphql</code>, <code>apollo-server-express</code>: GraphQL API implementation.",
+            "<code>@prisma/client</code>: Prisma ORM client for interacting with Neon (PostgreSQL).",
+            "<code>@aws-sdk/client-s3</code>, <code>@aws-sdk/s3-request-presigner</code>: Working with Cloudflare R2 (S3-compatible).",
+            "<code>ioredis</code>: Redis client for caching and other tasks.",
+            "<code>kafkajs</code>: Kafka client for asynchronous tasks.",
+            "<code>firebase-admin</code>: Firebase SDK (Push notifications).",
+            "<code>stripe</code>: Stripe SDK (Payments).",
+            "<code>googleapis</code>: Google APIs SDK (Gmail API).",
+            "<code>bcrypt</code> or <code>argon2</code>: Library for <strong>secure</strong> (Principle 3, 5) password hashing."
           ]
         },
         "crossPackage": {
-          "title": "5.5. Общие (Cross-Package)",
+          "title": "5.5. Common (Cross-Package)",
           "libs": [
-            "<code>typescript</code>: Язык разработки.",
-            "<code>winston</code> или <code>pino</code>: Библиотека для <strong>структурированного логирования</strong> (Принцип 9).",
-            "<code>@sentry/node</code>, <code>@sentry/react</code>, <code>@sentry/react-native</code>: Клиенты Sentry для <strong>отслеживания ошибок</strong> в продакшене (часть системы <strong>качества</strong> и <strong>Кайдзен</strong>).",
-            "<code>core-js</code>, <code>regenerator-runtime</code>: Полифиллы для поддержки современных возможностей JavaScript в старых средах (например, новые методы Set в ES2024).",
-            "<code>zod</code> или <code>class-validator</code>/<code>class-transformer</code>: Библиотеки для <strong>валидации данных</strong>, обеспечения <strong>качества</strong> (Принцип 3) на входе в систему."
+            "<code>typescript</code>: Development language.",
+            "<code>winston</code> or <code>pino</code>: Library for <strong>structured logging</strong> (Principle 9).",
+            "<code>@sentry/node</code>, <code>@sentry/react</code>, <code>@sentry/react-native</code>: Sentry clients for <strong>production error tracking</strong> (part of the <strong>quality</strong> and <strong>Kaizen</strong> system).",
+            "<code>core-js</code>, <code>regenerator-runtime</code>: Polyfills for supporting modern JavaScript features in older environments (e.g., new Set methods in ES2024).",
+            "<code>zod</code> or <code>class-validator</code>/<code>class-transformer</code>: Libraries for <strong>data validation</strong>, ensuring <strong>quality</strong> (Principle 3) at the system input."
           ]
         },
         "setMethods": {
-          "title": "5.6. Работа с Множествами (Set) в ES2024+: Пример Применения Новых Знаний (Принцип 1)",
-          "intro": "<strong>Постоянное обучение</strong> (Принцип 1) и применение <strong>прагматичных</strong> (Принцип 12) инструментов языка — это часть нашей философии. Новые методы объекта <code>Set</code> в ECMAScript 2024 (поддержка в Node.js 22+, современных браузерах) предоставляют <strong>более чистый, читаемый и часто более эффективный</strong> (Принцип 9) способ работы с уникальными наборами данных по сравнению с ручными циклами или преобразованиями в массивы.",
+          "title": "5.6. Working with Sets in ES2024+: Example of Applying New Knowledge (Principle 1)",
+          "intro": "<strong>Continuous learning</strong> (Principle 1) and applying <strong>pragmatic</strong> (Principle 12) language tools are part of our philosophy. New <code>Set</code> object methods in ECMAScript 2024 (supported in Node.js 22+, modern browsers) provide a <strong>cleaner, more readable, and often more efficient</strong> (Principle 9) way to work with unique data sets compared to manual loops or conversions to arrays.",
           "areas": {
-            "title": "Области применения в BrainMessenger:",
+            "title": "Areas of application in BrainMessenger:",
             "points": [
-              "Управление списками пользователей в групповых чатах (добавление/удаление участников).",
-              "Отслеживание уникальных активных сессий или соединений WebSocket.",
-              "Управление правами доступа (проверка, входит ли набор разрешений в доступные).",
-              "Синхронизация списков (например, контактов, чатов) между клиентом и сервером, определение добавленных/удаленных элементов."
+              "Managing user lists in group chats (adding/removing participants).",
+              "Tracking unique active sessions or WebSocket connections.",
+              "Managing access rights (checking if a set of permissions is included in available ones).",
+              "Synchronizing lists (e.g., contacts, chats) between client and server, identifying added/removed items."
             ]
           },
           "keys": {
-            "title": "Ключевые Методы (из ES2024):",
+            "title": "Key Methods (from ES2024):",
             "points": [
-              "<code>union(iterable)</code>: Возвращает новое <code>Set</code> со всеми уникальными элементами из текущего <code>Set</code> и переданного итерируемого объекта.",
-              "<code>intersection(iterable)</code>: Возвращает новое <code>Set</code> с элементами, присутствующими в <strong>обоих</strong> множествах.",
-              "<code>difference(iterable)</code>: Возвращает новое <code>Set</code> с элементами, присутствующими в текущем <code>Set</code>, но <strong>не</strong> в переданном итерируемом объекте.",
-              "<code>symmetricDifference(iterable)</code>: Возвращает новое <code>Set</code> с элементами, которые есть в <strong>одном</strong>, но не в <strong>обоих</strong> множествах.",
-              "<code>isSubsetOf(iterable)</code>: Проверяет, являются ли все элементы текущего <code>Set</code> подмножеством переданного итерируемого объекта (<code>true</code> или <code>false</code>).",
-              "<code>isSupersetOf(iterable)</code>: Проверяет, содержит ли текущий <code>Set</code> все элементы переданного итерируемого объекта (<code>true</code> или <code>false</code>).",
-              "<code>isDisjointFrom(iterable)</code>: Проверяет, не имеют ли текущий <code>Set</code> и переданный итерируемый объект общих элементов (<code>true</code> или <code>false</code>)."
+              "<code>union(iterable)</code>: Returns a new <code>Set</code> with all unique elements from the current <code>Set</code> and the passed iterable object.",
+              "<code>intersection(iterable)</code>: Returns a new <code>Set</code> with elements present in <strong>both</strong> sets.",
+              "<code>difference(iterable)</code>: Returns a new <code>Set</code> with elements present in the current <code>Set</code> but <strong>not</strong> in the passed iterable object.",
+              "<code>symmetricDifference(iterable)</code>: Returns a new <code>Set</code> with elements that are in <strong>one</strong> but not in <strong>both</strong> sets.",
+              "<code>isSubsetOf(iterable)</code>: Checks if all elements of the current <code>Set</code> are a subset of the passed iterable object (<code>true</code> or <code>false</code>).",
+              "<code>isSupersetOf(iterable)</code>: Checks if the current <code>Set</code> contains all elements of the passed iterable object (<code>true</code> or <code>false</code>).",
+              "<code>isDisjointFrom(iterable)</code>: Checks if the current <code>Set</code> and the passed iterable object have no common elements (<code>true</code> or <code>false</code>)."
             ]
           },
           "examples": {
-            "title": "Примеры Использования в Коде (TypeScript):",
-            "code": "```typescript\n// backend/src/chat/chat.service.ts (пример управления участниками группы)\nasync updateGroupMembers(groupId: string, currentMemberIds: Set<string>, newMemberIds: Set<string>) {\n  // Принцип 9: Оптимизация и ясность\n  const addedMembers = newMemberIds.difference(currentMemberIds);\n  const removedMembers = currentMemberIds.difference(newMemberIds);\n  const unchangedMembers = currentMemberIds.intersection(newMemberIds); // Для проверки\n\n  console.log('Added:', addedMembers);\n  console.log('Removed:', removedMembers);\n\n  // Выполнить операции добавления/удаления в БД через Prisma\n  if (addedMembers.size > 0) {\n    await this.prisma.userChat.createMany({\n      data: Array.from(addedMembers).map(userId => ({ groupId, userId })),\n    });\n  }\n  if (removedMembers.size > 0) {\n    await this.prisma.userChat.deleteMany({\n      where: {\n        groupId: groupId,\n        userId: { in: Array.from(removedMembers) },\n      },\n    });\n  }\n\n  // Проверка прав: Убедиться, что текущий пользователь имеет право изменять состав группы\n  const requiredPermission = new Set(['manage_members']);\n  const userPermissions = new Set(await this.getUserPermissions(userId, groupId)); // Получить права пользователя\n  const hasPermission = requiredPermission.isSubsetOf(userPermissions); // Проверка через новый метод\n  if (!hasPermission) {\n      throw new ForbiddenException(\"Недостаточно прав для изменения состава группы.\");\n  }\n}\n\n// frontend/src/hooks/useChats.ts (пример синхронизации списка чатов)\nfunction useSyncChats(localChats: Set<string>, serverChats: string[]) {\n    // Принцип 9: Эффективность синхронизации\n    const serverChatsSet = new Set(serverChats);\n    const newChats = serverChatsSet.difference(localChats);\n    const removedChats = localChats.difference(serverChatsSet);\n\n    console.log('Новые чаты:', newChats);\n    console.log('Удаленные чаты:', removedChats);\n\n    // Обновить локальное состояние/UI на основе newChats и removedChats\n    // ...\n}\n",
+            "title": "Examples of Usage in Code (TypeScript):",
+            "code": "```typescript\n// backend/src/chat/chat.service.ts (example of group member management)\nasync updateGroupMembers(groupId: string, currentMemberIds: Set<string>, newMemberIds: Set<string>) {\n  // Principle 9: Optimization and clarity\n  const addedMembers = newMemberIds.difference(currentMemberIds);\n  const removedMembers = currentMemberIds.difference(newMemberIds);\n  const unchangedMembers = currentMemberIds.intersection(newMemberIds); // For verification\n\n  console.log('Added:', addedMembers);\n  console.log('Removed:', removedMembers);\n\n  // Perform add/remove operations in the database via Prisma\n  if (addedMembers.size > 0) {\n    await this.prisma.userChat.createMany({\n      data: Array.from(addedMembers).map(userId => ({ groupId, userId })),\n    });\n  }\n  if (removedMembers.size > 0) {\n    await this.prisma.userChat.deleteMany({\n      where: {\n        groupId: groupId,\n        userId: { in: Array.from(removedMembers) },\n      },\n    });\n  }\n\n  // Permissions check: Ensure the current user has permission to modify group membership\n  const requiredPermission = new Set(['manage_members']);\n  const userPermissions = new Set(await this.getUserPermissions(userId, groupId)); // Get user permissions\n  const hasPermission = requiredPermission.isSubsetOf(userPermissions); // Check using new method\n  if (!hasPermission) {\n      throw new ForbiddenException(\"Insufficient permissions to modify group membership.\");\n  }\n}\n\n// frontend/src/hooks/useChats.ts (example of chat list synchronization)\nfunction useSyncChats(localChats: Set<string>, serverChats: string[]) {\n    // Principle 9: Synchronization efficiency\n    const serverChatsSet = new Set(serverChats);\n    const newChats = serverChatsSet.difference(localChats);\n    const removedChats = localChats.difference(serverChatsSet);\n\n    console.log('New chats:', newChats);\n    console.log('Removed chats:', removedChats);\n\n    // Update local state/UI based on newChats and removedChats\n    // ...\n}\n",
             "recommendations": [
-              "Применяйте их для операций с уникальными наборами данных. Они разработаны специально для этого и часто более производительны, чем аналогичные операции с массивами, особенно для больших объемов данных.",
-              "Учитывайте совместимость: Новые методы доступны в Node.js 22+ и современных браузерах. Если вам нужно поддерживать старые среды, используйте полифиллы (core-js/proposals/set-methods-v2).",
-              "Типизация в TypeScript: Всегда указывайте тип элементов в Set (например, Set<string>, Set<number>) для лучшей проверки типов и автодополнения."
+              "Apply them for operations with unique data sets. They are specifically designed for this and are often more performant than similar operations with arrays, especially for large datasets.",
+              "Consider compatibility: New methods are available in Node.js 22+ and modern browsers. If you need to support older environments, use polyfills (core-js/proposals/set-methods-v2).",
+              "TypeScript Typing: Always specify the type of elements in a Set (e.g., Set<string>, Set<number>) for better type checking and autocompletion."
             ]
           }
         }
       },
       "devProcess": {
-        "title": "6. Процесс Разработки: Наша Система Рабочего Потока (Принцип 9)",
-        "intro": "Четкий процесс разработки обеспечивает системность, качество и предсказуемость (Принцип 9).",
+        "title": "6. Development Process: Our Workflow System (Principle 9)",
+        "intro": "A clear development process ensures systematization, quality, and predictability (Principle 9).",
         "envSetup": {
-          "title": "6.1. Установка Окружения: Подготовка к Работе",
-          "intro": "Клонируйте репозиторий:",
+          "title": "6.1. Environment Setup: Preparing for Work",
+          "intro": "Clone the repository:",
           "cloneRepo": {
-            "title": "Клонируйте репозиторий:",
-            "code": "```bash\ngit clone <https://github.com/xAI/BrainMessenger.git> # Пример\ncd BrainMessenger\n```"
+            "title": "Clone the repository:",
+            "code": "```bash\ngit clone <https://github.com/xAI/BrainMessenger.git> # Example\ncd BrainMessenger\n```"
           },
           "installDeps": {
-            "title": "Установите зависимости:",
+            "title": "Install dependencies:",
             "code": "```bash\nnpm install\n```"
           },
           "envVars": {
-            "title": "Настройте переменные окружения:",
-            "code": "```bash\ncp .env.example .env\n# Заполните .env данными для Neon, R2, Redis, Kafka, API Gateways, Stripe, Firebase, Gmail API\n```",
-            "note": "Важно иметь рабочие локальные или тестовые инстансы БД, Redis, Kafka или использовать их облачные версии для разработки."
+            "title": "Configure environment variables:",
+            "code": "```bash\ncp .env.example .env\n# Fill .env with data for Neon, R2, Redis, Kafka, API Gateways, Stripe, Firebase, Gmail API\n```",
+            "note": "It is important to have working local or test instances of DB, Redis, Kafka or use their cloud versions for development."
           },
           "prismaClient": {
-            "title": "Сгенерируйте Prisma Client:",
+            "title": "Generate Prisma Client:",
             "code": "```bash\ncd backend\nnpx prisma generate\ncd ..\n```"
           },
           "localDb": {
-            "title": "Настройте локальную БД (если не используете облачную):",
+            "title": "Set up local DB (if not using cloud):",
             "code": "```bash\ncd backend\nnpx prisma migrate dev --name initial_setup\ncd ..\n```"
           }
         },
         "localRun": {
-          "title": "6.2. Локальный Запуск: Активация Системы для Разработки",
-          "intro": "Используйте команды turbo run или специфические команды пакетов.",
+          "title": "6.2. Local Run: Activating the System for Development",
+          "intro": "Use turbo run commands or specific package commands.",
           "runAll": {
-            "title": "Запуск всех сервисов (Backend, Web) для разработки:",
-            "code": "```bash\nturbo run dev # Запустит dev-серверы для всех пакетов с задачей 'dev' в turbo.json\n```"
+            "title": "Start all services (Backend, Web) for development:",
+            "code": "```bash\nturbo run dev # Will start dev-servers for all packages with the 'dev' task in turbo.json\n```"
           },
           "runBackend": {
-            "title": "Отдельный запуск Backend:",
-            "code": "```bash\ncd backend\nnpm run start:dev # или npm run start:debug для отладки\n```"
+            "title": "Separate Backend run:",
+            "code": "```bash\ncd backend\nnpm run start:dev # or npm run start:debug for debugging\n```"
           },
           "runMobileDesktop": {
-            "title": "Отдельный запуск Mobile-Desktop (React Native):",
-            "code": "```bash\ncd packages/mobile-desktop\nnpm run android # для запуска на Android эмуляторе/устройстве\nnpm run windows # для запуска на Windows\n```"
+            "title": "Separate Mobile-Desktop (React Native) run:",
+            "code": "```bash\ncd packages/mobile-desktop\nnpm run android # to run on Android emulator/device\nnpm run windows # to run on Windows\n```"
           },
           "runWeb": {
-            "title": "Отдельный запуск Web (Next.js):",
+            "title": "Separate Web (Next.js) run:",
             "code": "```bash\ncd packages/web\nnpm run dev\n```"
           }
         },
         "commitsBranches": {
-          "title": "6.3. Коммиты и Ветки: Структура Развития Кода (Принцип 9)",
-          "intro": "Мы используем четкую стратегию веток и стандарты для коммитов для поддержания порядка (Принцип 9) и ясной истории изменений (Принцип 7).",
+          "title": "6.3. Commits and Branches: Code Evolution Structure (Principle 9)",
+          "intro": "We use a clear branching strategy and commit standards to maintain order (Principle 9) and a clear change history (Principle 7).",
           "mainBranches": {
-            "title": "Основная ветка разработки:",
+            "title": "Main development branch:",
             "points": [
-              "<code>develop</code>. Все новые функции и исправления интегрируются сюда.",
-              "Стабильная ветка: <code>main</code>. Только проверенный код из <code>develop</code> (через релизные PR)."
+              "<code>develop</code>. All new features and fixes are integrated here.",
+              "Stable branch: <code>main</code>. Only verified code from <code>develop</code> (via release PRs)."
             ]
           },
           "workBranches": {
-            "title": "Ветки для работы:",
+            "title": "Work branches:",
             "points": [
-              "<code>feature/<название_фичи></code>: Для разработки новой функциональности (например, <code>feature/graphql-auth</code>).",
-              "<code>fix/<название_исправления></code>: Для исправления ошибок (например, <code>fix/chat-message-scroll</code>).",
-              "<code>refactor/<название></code>: Для рефакторинга кода."
+              "<code>feature/<feature_name></code>: For developing new functionality (e.g., <code>feature/graphql-auth</code>).",
+              "<code>fix/<fix_name></code>: For bug fixes (e.g., <code>fix/chat-message-scroll</code>).",
+              "<code>refactor/<name></code>: For code refactoring."
             ]
           },
           "commitFormat": {
-            "title": "Формат коммитов:",
-            "example": "Используйте Conventional Commits. Это упрощает генерацию changelog и понимание цели каждого коммита.\n\nПример:\n\n<code>feat(backend/auth): add JWT authentication</code> (новая функция в модуле аутентификации backend)\n\n<code>fix(mobile/chat): resolve message display bug on scroll</code> (исправление бага отображения сообщений в мобильном чате)\n\n<code>docs(roadmap): update Q3 2025 plan</code> (обновление документации)\n\n<code>chore(deps): update prisma to 5.x</code> (рутинная задача, обновление зависимости)",
-            "structure": "Структура: <code>тип(scope): описание</code>\n\n<code>тип</code>: <code>feat</code>, <code>fix</code>, <code>docs</code>, <code>chore</code>, <code>style</code>, <code>refactor</code>, <code>test</code>, <code>ci</code>, <code>perf</code>, <code>build</code>\n\n<code>scope</code>: Необязательно, указывает пакет или область (<code>backend</code>, <code>web</code>, <code>mobile-desktop</code>, <code>core</code>, <code>auth</code>, <code>chat</code>, <code>ui</code>, <code>infra</code> и т.п.)."
+            "title": "Commit format:",
+            "example": "Use Conventional Commits. This simplifies changelog generation and understanding the purpose of each commit.\n\nExample:\n\n<code>feat(backend/auth): add JWT authentication</code> (new feature in backend authentication module)\n\n<code>fix(mobile/chat): resolve message display bug on scroll</code> (bug fix for message display in mobile chat)\n\n<code>docs(roadmap): update Q3 2025 plan</code> (documentation update)\n\n<code>chore(deps): update prisma to 5.x</code> (routine task, dependency update)",
+            "structure": "Structure: <code>type(scope): description</code>\n\n<code>type</code>: <code>feat</code>, <code>fix</code>, <code>docs</code>, <code>chore</code>, <code>style</code>, <code>refactor</code>, <code>test</code>, <code>ci</code>, <code>perf</code>, <code>build</code>\n\n<code>scope</code>: Optional, indicates package or area (<code>backend</code>, <code>web</code>, <code>mobile-desktop</code>, <code>core</code>, <code>auth</code>, <code>chat</code>, <code>ui</code>, <code>infra</code>, etc.)."
           }
         },
         "prCodeReview": {
-          "title": "6.4. Pull Request (PR) и Код-Ревью: Коллективное Обеспечение Качества (Принцип 3, 14)",
-          "intro": "Каждый Pull Request — это возможность получить обратную связь (Принцип 14), улучшить код и обеспечить качество (Принцип 3) перед интеграцией в основную ветку.",
+          "title": "6.4. Pull Request (PR) and Code Review: Collective Quality Assurance (Principle 3, 14)",
+          "intro": "Every Pull Request is an opportunity to receive feedback (Principle 14), improve code, and ensure quality (Principle 3) before integrating into the main branch.",
           "prDescription": {
-            "title": "Описание PR:",
+            "title": "PR Description:",
             "points": [
-              "Четко опишите, какую проблему решает PR или какую функцию добавляет.",
-              "Ссылайтесь на соответствующую задачу в Jira (например, [BM-123]) или другое место отслеживания задач.",
-              "Опишите основные изменения и любые потенциальные риски или вопросы."
+              "Clearly describe what problem the PR solves or what feature it adds.",
+              "Reference the relevant Jira task (e.g., [BM-123]) or other task tracking location.",
+              "Describe major changes and any potential risks or questions."
             ]
           },
           "prRequirements": {
-            "title": "Требования к PR:",
+            "title": "PR Requirements:",
             "points": [
-              "Код должен соответствовать стандартам кодирования (линтер, форматтер).",
-              "Все тесты должны проходить (<code>npm test</code>). Настройте проверку в GitHub Actions.",
-              "Должно быть минимум 1 одобрение (аппрув) от другого разработчика (или от вас самого, если работаете в одиночку, но стремитесь к идеалу код-ревью).",
-              "Для нетривиальных изменений может потребоваться ревью от более опытного разработчика или архитектора."
+              "Code must comply with coding standards (linter, formatter).",
+              "All tests must pass (<code>npm test</code>). Configure checks in GitHub Actions.",
+              "There must be at least 1 approval from another developer (or from yourself if working alone, but strive for ideal code review).",
+              "Non-trivial changes may require review from a more experienced developer or architect."
             ]
           }
         },
         "testing": {
-          "title": "6.5. Тестирование: Проверка Надежности Системы (Принцип 3)",
-          "intro": "Тестирование — неотъемлемая часть процесса обеспечения качества (Принцип 3). Мы используем многоуровневый подход.",
+          "title": "6.5. Testing: System Reliability Verification (Principle 3)",
+          "intro": "Testing is an integral part of the quality assurance process (Principle 3). We use a multi-level approach.",
           "runAllTests": {
-            "title": "Запуск всех тестов:",
-            "code": "```bash\nnpm run test # Запустит тесты для всех пакетов (unit, integration)\n```"
+            "title": "Run all tests:",
+            "code": "```bash\nnpm run test # Will run tests for all packages (unit, integration)\n```"
           },
           "testTypes": {
-            "title": "Виды тестов:",
+            "title": "Types of tests:",
             "points": [
-              "Модульные тесты (Unit Tests): Тестирование отдельных функций или классов изолированно (Jest). Фокус: Корректность мелких частей кода.",
-              "Интеграционные тесты (Integration Tests): Тестирование взаимодействия между несколькими компонентами (например, сервис -> БД, API -> сервис) (Jest). Фокус: Правильность связей между частями системы.",
-              "E2E-тесты (End-to-End Tests): Тестирование пользовательских сценариев в приложении (Cypress для Web, Detox для React Native). Фокус: Работа системы в целом с точки зрения пользователя."
+              "Unit Tests: Testing individual functions or classes in isolation (Jest). Focus: Correctness of small code parts.",
+              "Integration Tests: Testing interaction between several components (e.g., service -> DB, API -> service) (Jest). Focus: Correctness of connections between system parts.",
+              "E2E Tests (End-to-End Tests): Testing user scenarios in the application (Cypress for Web, Detox for React Native). Focus: Overall system operation from the user's perspective."
             ]
           },
           "ciCdTests": {
-            "title": "Настройте автоматический запуск тестов в CI/CD (GitHub Actions) на каждый PR и пуш в develop.",
-            "content": "Настройте автоматический запуск тестов в CI/CD (GitHub Actions) на каждый PR и пуш в develop."
+            "title": "Configure automatic test run in CI/CD (GitHub Actions) on every PR and push to develop.",
+            "content": "Configure automatic test run in CI/CD (GitHub Actions) on every PR and push to develop."
           }
         }
       },
       "devRecommendations": {
-        "title": "7. Рекомендации по Разработке: Лучшие Практики Построения Актива",
-        "intro": "Применяйте эти рекомендации для создания качественного, поддерживаемого кода, который станет основой вашего цифрового Актива (Принцип 3, 10).",
+        "title": "7. Development Recommendations: Best Practices for Building an Asset",
+        "intro": "Apply these recommendations to create quality, maintainable code that will form the foundation of your digital Asset (Principle 3, 10).",
         "corePackage": {
-          "title": "7.1. Core Пакет: Переиспользование для Эффективности",
+          "title": "7.1. Core Package: Reuse for Efficiency",
           "points": [
-            "API-клиент (<code>@apollo/client</code>): Используйте его для всех запросов GraphQL из Frontend. Настройте кэширование (InMemoryCache) и обработку ошибок. Это снижает дублирование кода и обеспечивает единый способ взаимодействия с API.",
-            "Общие Хуки/Утилиты: Выносите сюда логику, которая повторяется на разных платформах (форматирование данных, валидация, работа с токенами)."
+            "API Client (<code>@apollo/client</code>): Use it for all GraphQL queries from the Frontend. Configure caching (InMemoryCache) and error handling. This reduces code duplication and provides a unified way to interact with the API.",
+            "Common Hooks/Utilities: Extract logic here that is repeated across different platforms (data formatting, validation, token handling)."
           ]
         },
         "mobileDesktop": {
           "title": "7.2. Mobile-Desktop (React Native)",
           "points": [
-            "Функциональные Компоненты: Используйте React Hooks и функциональные компоненты. Разделяйте компоненты на \"умные\" (с логикой) и \"глупые\" (только UI).",
-            "Стилизация: Используйте StyleSheet.create для производительности или библиотеки вроде styled-components / NativeBase для системности.",
-            "Нативная Оптимизация: Изучите специфику RNW и RN (например, работа с нативными модулями для повышения производительности критических участков, анимации на нативном потоке с Reanimated)."
+            "Functional Components: Use React Hooks and functional components. Separate components into \"smart\" (with logic) and \"dumb\" (UI only).",
+            "Styling: Use StyleSheet.create for performance or libraries like styled-components / NativeBase for consistency.",
+            "Native Optimization: Study the specifics of RNW and RN (e.g., working with native modules to improve performance of critical sections, animations on native thread with Reanimated)."
           ]
         },
         "web": {
           "title": "7.3. Web (Next.js)",
           "points": [
-            "Маршрутизация и Fetching: Используйте возможности Next.js (File-system routing, getStaticProps, getServerSideProps, getStaticPaths) для оптимизации загрузки страниц (SSR/SSG) и SEO (Принцип 2).",
-            "Стилизация: Tailwind CSS ускоряет разработку UI. Следуйте принципам из DocDesign.",
-            "Оптимизация Изображений: Используйте next/image для автоматической оптимизации изображений."
+            "Routing and Fetching: Use Next.js capabilities (File-system routing, getStaticProps, getServerSideProps, getStaticPaths) to optimize page loading (SSR/SSG) and SEO (Principle 2).",
+            "Styling: Tailwind CSS accelerates UI development. Follow principles from DocDesign.",
+            "Image Optimization: Use next/image for automatic image optimization."
           ]
         },
         "backend": {
           "title": "7.4. Backend (NestJS)",
           "points": [
-            "GraphQL API: Следуйте принципам GraphQL (запрашивать только нужное). Используйте DataLoader для решения проблемы N+1 (см. DocOptimizationIn).",
-            "Prisma: Используйте ORM для всех взаимодействий с БД. Это обеспечивает безопасность (защита от SQL-инъекций - Принцип 3, 5) и типизацию.",
-            "Сервисы: Выносите основную бизнес-логику в сервисы. Контроллеры/Резолверы должны быть тонкими (только обработка запроса и вызов сервиса).",
-            "Интеграции: Взаимодействие с внешними сервисами (R2, Firebase, Stripe, Gmail API) должно быть инкапсулировано в отдельных сервисах (например, StorageService, NotificationService). Это делает код более модульным и тестируемым (Принцип 9).",
-            "Обработка Ошибок: Используйте фильтры исключений NestJS для централизованной обработки ошибок и возврата стандартизированных ответов API (см. DocSpec). Логируйте ошибки подробно (Winston, Sentry)."
+            "GraphQL API: Follow GraphQL principles (request only what's needed). Use DataLoader to solve the N+1 problem (see DocOptimizationIn).",
+            "Prisma: Use ORM for all DB interactions. This ensures security (protection from SQL injections - Principle 3, 5) and typing.",
+            "Services: Extract main business logic into services. Controllers/Resolvers should be thin (only request handling and service invocation).",
+            "Integrations: Interaction with external services (R2, Firebase, Stripe, Gmail API) should be encapsulated in separate services (e.g., StorageService, NotificationService). This makes code more modular and testable (Principle 9).",
+            "Error Handling: Use NestJS exception filters for centralized error handling and returning standardized API responses (see DocSpec). Log errors in detail (Winston, Sentry)."
           ]
         },
         "security": {
-          "title": "7.5. Безопасность: Защита Вашего Актива (Принцип 3, 5, 10)",
-          "intro": "Безопасность — это не фича, а фундаментальный аспект качества (Принцип 3), напрямую связанный со здоровьем системы (Принцип 5) и защитой цифрового актива (Принцип 10: ваш продукт и данные пользователей).",
+          "title": "7.5. Security: Protecting Your Asset (Principle 3, 5, 10)",
+          "intro": "Security is not a feature, but a fundamental aspect of quality (Principle 3), directly related to system health (Principle 5) and digital asset protection (Principle 10: your product and user data).",
           "points": [
-            "Аутентификация: Используйте JWT для stateless аутентификации с короткоживущими access-токенами и refresh-токенами. Надежно храните секрет JWT.",
-            "Хэширование Паролей: Никогда не храните пароли в открытом виде. Используйте надежные алгоритмы хэширования (bcrypt, argon2).",
-            "Валидация Ввода: Строго валидируйте все входящие данные на Backend (например, с помощью class-validator и DTO).",
-            "Защита от Атак: Внедрите Rate Limiting (<code>@nestjs/throttler</code>) для защиты от перебора паролей или DDoS на уровне API. Используйте helmet для установки безопасных HTTP-заголовков.",
-            "Шифрование Чувствительных Данных: Шифруйте данные перед сохранением в R2 (см. DocInt). Надежно храните ключ шифрования отдельно от данных.",
-            "2FA: Реализуйте двухфакторную аутентификацию как опцию для пользователей."
+            "Authentication: Use JWT for stateless authentication with short-lived access tokens and refresh tokens. Securely store the JWT secret.",
+            "Password Hashing: Never store passwords in plain text. Use strong hashing algorithms (bcrypt, argon2).",
+            "Input Validation: Strictly validate all incoming data on the Backend (e.g., using class-validator and DTOs).",
+            "Attack Protection: Implement Rate Limiting (<code>@nestjs/throttler</code>) to protect against brute-force attacks or DDoS at the API level. Use helmet for setting secure HTTP headers.",
+            "Sensitive Data Encryption: Encrypt data before saving to R2 (see DocInt). Securely store the encryption key separately from the data.",
+            "2FA: Implement two-factor authentication as an option for users."
           ]
         }
       },
       "optimization": {
-        "title": "8. Оптимизация Проекта: Постоянное Улучшение (Принцип 9, 1)",
-        "content": "Оптимизация — это итеративный процесс (Принцип 9: Кайдзен), основанный на измерении и обучении (Принцип 1). См. подробное Руководство по оптимизации BrainMessenger."
+        "title": "8. Project Optimization: Continuous Improvement (Principle 9, 1)",
+        "content": "Optimization is an iterative process (Principle 9: Kaizen), based on measurement and learning (Principle 1). See detailed BrainMessenger Optimization Guide."
       },
       "deployProcess": {
-        "title": "9. Процесс Деплоя: Доставка Системы Пользователям (Принцип 9)",
-        "intro": "Процесс деплоя должен быть автоматизированным, надежным и предсказуемым (Принцип 9, 3).",
+        "title": "9. Deployment Process: Delivering the System to Users (Principle 9)",
+        "intro": "The deployment process must be automated, reliable, and predictable (Principle 9, 3).",
         "points": [
-          "Контейнеризация (Docker): Создайте Docker-образы для Backend и других сервисов. Используйте многоступенчатую сборку для оптимизации размера образов (см. Руководство по оптимизации CI/CD).",
-          "Оркестрация (Kubernetes): Развертывайте контейнеры в Kubernetes. Используйте манифесты в папке <code>infrastructure/k8s</code>. K8s обеспечивает автоматическое масштабирование, самовосстановление и управление нагрузкой.",
-          "Инфраструктура как Код (Terraform): Управляйте облачными ресурсами (кластер K8s, сети) с помощью Terraform (<code>infrastructure/main.tf</code>). Это делает инфраструктуру версионируемой и воспроизводимой.",
-          "CI/CD (GitHub Actions): Настройте автоматические пайплайны для сборки, тестирования и деплоя (см. Руководство по оптимизации CI/CD)."
+          "Containerization (Docker): Create Docker images for the Backend and other services. Use multi-stage builds to optimize image size (see CI/CD Optimization Guide).",
+          "Orchestration (Kubernetes): Deploy containers to Kubernetes. Use manifests in the <code>infrastructure/k8s</code> folder. K8s provides automatic scaling, self-healing, and load management.",
+          "Infrastructure as Code (Terraform): Manage cloud resources (K8s cluster, networks) using Terraform (<code>infrastructure/main.tf</code>). This makes the infrastructure versionable and reproducible.",
+          "CI/CD (GitHub Actions): Configure automatic pipelines for building, testing, and deploying (see CI/CD Optimization Guide)."
         ],
-        "process": "Процесс: Код пушится в <code>develop</code> → CI/CD запускает тесты и сборку → После успешного прохождения тестов и ревью, PR мержится в <code>develop</code> → (опционально) автоматический деплой dev/staging окружения → Релизный PR из <code>develop</code> в <code>main</code> → Деплой продакшена."
+        "process": "Process: Code is pushed to <code>develop</code> → CI/CD runs tests and builds → After successful tests and review, PR is merged into <code>develop</code> → (optional) automatic deployment of dev/staging environment → Release PR from <code>develop</code> to <code>main</code> → Production deployment."
       },
       "devCommands": {
-        "title": "10. Полезные Команды Разработчика: Инструментарий Системы",
+        "title": "10. Useful Developer Commands: System Toolkit",
         "table": [
-          ["Команда", "Описание", "Расположение"],
-          ["<code>npm install</code>", "Устанавливает зависимости для всех пакетов (Turborepo).", "Корень"],
-          ["<code>turbo run <task></code>", "Запускает задачу (build, test, lint, dev) для всех пакетов или по фильтру.", "Корень"],
-          ["<code>npm run lint</code>", "Запускает линтеры для всех пакетов.", "Корень"],
-          ["<code>npm run format</code>", "Форматирует код всех пакетов (Prettier).", "Корень"],
-          ["<code>npm run build</code>", "Собирает продакшен-версии всех пакетов.", "Корень"],
-          ["<code>npm run test</code>", "Запускает тесты для всех пакетов.", "Корень"],
-          ["<code>cd backend && npx prisma migrate dev --name <name></code>", "Создает и применяет новую миграцию БД.", "Корень/backend"],
-          ["<code>cd backend && npx prisma studio</code>", "Запускает графический интерфейс для просмотра БД.", "Корень/backend"],
-          ["<code>cd backend && npm run start:dev</code>", "Запускает backend в режиме разработки.", "Корень/backend"],
-          ["<code>cd packages/web && npm run dev</code>", "Запускает веб-приложение в режиме разработки.", "Корень/packages/web"],
-          ["<code>cd packages/mobile-desktop && npm run android</code>", "Запускает мобильное приложение на Android.", "Корень/packages/mobile-desktop"],
-          ["<code>cd packages/mobile-desktop && npm run windows</code>", "Запускает десктоп на Windows.", "Корень/packages/mobile-desktop"],
-          ["<code>cd infrastructure && terraform plan</code>", "Показывает план изменений инфраструктуры.", "Корень/infrastructure"],
-          ["<code>cd infrastructure && terraform apply</code>", "Применяет изменения инфраструктуры.", "Корень/infrastructure"]
+          ["Command", "Description", "Location"],
+          ["<code>npm install</code>", "Installs dependencies for all packages (Turborepo).", "Root"],
+          ["<code>turbo run <task></code>", "Runs a task (build, test, lint, dev) for all packages or by filter.", "Root"],
+          ["<code>npm run lint</code>", "Runs linters for all packages.", "Root"],
+          ["<code>npm run format</code>", "Formats code for all packages (Prettier).", "Root"],
+          ["<code>npm run build</code>", "Builds production versions of all packages.", "Root"],
+          ["<code>npm run test</code>", "Runs tests for all packages.", "Root"],
+          ["<code>cd backend && npx prisma migrate dev --name <name></code>", "Creates and applies a new DB migration.", "Root/backend"],
+          ["<code>cd backend && npx prisma studio</code>", "Launches a graphical interface for viewing the DB.", "Root/backend"],
+          ["<code>cd backend && npm run start:dev</code>", "Starts backend in development mode.", "Root/backend"],
+          ["<code>cd packages/web && npm run dev</code>", "Starts web application in development mode.", "Root/packages/web"],
+          ["<code>cd packages/mobile-desktop && npm run android</code>", "Starts mobile application on Android.", "Root/packages/mobile-desktop"],
+          ["<code>cd packages/mobile-desktop && npm run windows</code>", "Starts desktop on Windows.", "Root/packages/mobile-desktop"],
+          ["<code>cd infrastructure && terraform plan</code>", "Shows infrastructure change plan.", "Root/infrastructure"],
+          ["<code>cd infrastructure && terraform apply</code>", "Applies infrastructure changes.", "Root/infrastructure"]
         ]
       },
       "notes": {
-        "title": "11. Примечания: Постоянное Обучение и Кайдзен",
+        "title": "11. Notes: Continuous Learning and Kaizen",
         "points": [
-          "Онбординг: Новые разработчики должны начать с изучения этой документации, а также Технической документации (общий обзор), Документации дизайна (визуальные стандарты) и Руководства по оптимизации (как писать производительный код).",
-          "Живой Документ: Эта документация является живым документом. Она будет обновляться по мере развития проекта, изучения новых технологий и улучшения процессов. Ваши предложения по улучшению приветствуются! (Принцип 1, 14).",
-          "Совместимость ECMAScript 2024: Убедитесь, что используете Node.js 22+ (для backend) и актуальные версии браузеров/React Native (для frontend) для полной поддержки новых методов Set. При необходимости используйте полифиллы.",
-          "Вопросы и Обратная Связь: Если что-то непонятно, или вы видите возможность улучшить процесс — задавайте вопросы в командном чате (#dev-team в Slack или другом инструменте) и предлагайте изменения. Это часть Силы Взаимодействия и Содействия (Маргулан), которая делает систему сильнее."
+          "Onboarding: New developers should start by studying this documentation, as well as the Technical Documentation (general overview), Design Documentation (visual standards), and Optimization Guide (how to write performant code).",
+          "Living Document: This documentation is a living document. It will be updated as the project evolves, new technologies are learned, and processes improve. Your suggestions for improvement are welcome! (Principle 1, 14).",
+          "ECMAScript 2024 Compatibility: Ensure you are using Node.js 22+ (for backend) and up-to-date browser/React Native versions (for frontend) for full support of new Set methods. Use polyfills if necessary.",
+          "Questions and Feedback: If anything is unclear, or you see an opportunity to improve the process — ask questions in the team chat (#dev-team in Slack or another tool) and propose changes. This is part of the Power of Interaction and Collaboration (Margulan) that makes the system stronger."
         ]
       }
     },
     "integrationsGuide": {
-      "title": "Документация Интеграций BrainMessenger",
-      "subtitle": "Построение Надежной Системы с Внешними Рычагами",
+      "title": "BrainMessenger Integrations Documentation",
+      "subtitle": "Building a Robust System with External Levers",
       "introduction": {
-        "title": "1. Введение: Интеграции как Часть Фундамента Системы",
-        "description": "Этот документ описывает, как BrainMessenger интегрируется с ключевыми внешними сервисами. Мы выбираем эти интеграции <strong>прагматично</strong> (Принцип 12), рассматривая их как <strong>рычаги</strong> (принцип Маргулана), которые позволяют нам не изобретать колесо, а использовать <strong>надежные и масштабируемые</strong> (Принцип 8, 9) сторонние решения для ускорения разработки и обеспечения <strong>качества</strong> (Принцип 3) нашего продукта. Эти интеграции являются неотъемлемой частью нашего <strong>технологического фундамента</strong> (Принцип 8).",
-        "principlesTitle": "Принципы, которыми руководствуется выбор и настройка интеграций:",
+        "title": "1. Introduction: Integrations as Part of the System Foundation",
+        "description": "This document describes how BrainMessenger integrates with key external services. We select these integrations <strong>pragmatically</strong> (Principle 12), viewing them as <strong>levers</strong> (Margulan's principle) that allow us to avoid reinventing the wheel and instead use <strong>reliable and scalable</strong> (Principle 8, 9) third-party solutions to accelerate development and ensure the <strong>quality</strong> (Principle 3) of our product. These integrations are an integral part of our <strong>technological foundation</strong> (Principle 8).",
+        "principlesTitle": "Principles guiding the selection and configuration of integrations:",
         "principles": [
-          "<strong>Система и Оптимизация (Принцип 9):</strong> Интеграции должны быть частью единой, хорошо продуманной системы, где каждый компонент выполняет свою роль эффективно.",
-          "<strong>Прагматизм и Реализм (Принцип 12):</strong> Выбор сервисов с учетом текущих потребностей, бюджета (бесплатные/доступные тарифы на старте) и простоты интеграции.",
-          "<strong>Долгосрочное Мышление (Принцип 8):</strong> Выбор сервисов, способных масштабироваться вместе с ростом проекта.",
-          "<strong>Качество > Количество (Принцип 3):</strong> Фокус на надежности и производительности интеграций, даже если их список на старте небольшой.",
-          "<strong>Создание Ценности (Принцип 2):</strong> Каждая интеграция должна добавлять реальную ценность для конечного пользователя (например, надежное хранение файлов, мгновенные уведомления)."
+          "<strong>System and Optimization (Principle 9):</strong> Integrations must be part of a unified, well-thought-out system where each component performs its role efficiently.",
+          "<strong>Pragmatism and Realism (Principle 12):</strong> Selecting services based on current needs, budget (free/affordable tiers at launch), and ease of integration.",
+          "<strong>Long-term Thinking (Principle 8):</strong> Choosing services capable of scaling with project growth.",
+          "<strong>Quality > Quantity (Principle 3):</strong> Focusing on the reliability and performance of integrations, even if their initial list is small.",
+          "<strong>Value Creation (Principle 2):</strong> Each integration should add real value for the end-user (e.g., reliable file storage, instant notifications)."
         ]
       },
       "overview": {
-        "title": "2. Обзор Ключевых Интеграций: Наши Внешние Компоненты Системы",
+        "title": "2. Overview of Key Integrations: Our External System Components",
         "table": [
-          ["Сервис", "Назначение", "Роль в BrainMessenger", "Основные функции", "Связь с Принципами"],
-          ["<strong>Neon</strong>", "Управляемый PostgreSQL БД", "Хранение всех <strong>структурированных данных</strong> (пользователи, чаты, сообщения, метаданные файлов). Фундамент данных.", "Хостинг PostgreSQL, масштабирование, доступ через строку подключения.", "P8 (Долгосрочное), P9 (Система), P12 (Прагматизм - бесплатный тариф)."],
-          ["<strong>Cloudflare R2</strong>", "Облачное Хранилище (S3-совместимое)", "Хранение всех <strong>неструктурированных данных</strong> (файлы пользователей, аватарки, записи звонков, зашифрованные метаданные). Хранилище Активов.", "Надежное хранение объектов, CDN-доставка, отсутствие платы за исходящий трафик.", "P8 (Долгосрочное), P10 (Активы), P12 (Прагматизм - бесплатный тариф, нет платы за трафик), P3 (Качество - CDN)."],
-          ["<strong>Firebase</strong>", "Push-уведомления", "Мгновенная доставка уведомлений пользователям на мобильные устройства.", "Отправка push-уведомлений (FCM).", "P2 (Ценность - информирование), P9 (Система - надежная доставка), P12 (Прагматизм - готовое решение)."],
-          ["<strong>Stripe</strong>", "Платежная Система", "Обработка платежей за Premium-подписку. Доступ к платежам как к рычагу создания Ценности/Богатства.", "Прием платежей, управление подписками.", "P2 (Ценность - премиум), P10 (Богатство/Активы), P9 (Система - автоматизация платежей)."],
-          ["<strong>Gmail API</strong>", "Сервис отправки email", "Отправка критически важных email (коды подтверждения для регистрации и 2FA).", "Отправка транзакционных email.", "P3 (Качество - надежная доставка email), P9 (Система - часть аутентификации), P5 (Здоровье - безопасность пользователя)."]
+          ["Service", "Purpose", "Role in BrainMessenger", "Key Functions", "Connection to Principles"],
+          ["<strong>Neon</strong>", "Managed PostgreSQL DB", "Storing all <strong>structured data</strong> (users, chats, messages, file metadata). Data foundation.", "PostgreSQL hosting, scaling, connection string access.", "P8 (Long-term), P9 (System), P12 (Pragmatism - free tier)."],
+          ["<strong>Cloudflare R2</strong>", "Cloud Storage (S3-compatible)", "Storing all <strong>unstructured data</strong> (user files, avatars, call recordings, encrypted metadata). Asset storage.", "Reliable object storage, CDN delivery, no egress fees.", "P8 (Long-term), P10 (Assets), P12 (Pragmatism - free tier, no traffic fees), P3 (Quality - CDN)."],
+          ["<strong>Firebase</strong>", "Push Notifications", "Instant delivery of notifications to users on mobile devices.", "Sending push notifications (FCM).", "P2 (Value - informing), P9 (System - reliable delivery), P12 (Pragmatism - ready-made solution)."],
+          ["<strong>Stripe</strong>", "Payment System", "Processing payments for Premium subscription. Access to payments as a lever for Value/Wealth creation.", "Accepting payments, subscription management.", "P2 (Value - premium), P10 (Wealth/Assets), P9 (System - payment automation)."],
+          ["<strong>Gmail API</strong>", "Email Sending Service", "Sending critical emails (verification codes for registration and 2FA).", "Sending transactional emails.", "P3 (Quality - reliable email delivery), P9 (System - part of authentication), P5 (Health - user security)."]
         ]
       },
       "neonIntegration": {
-        "title": "3. Интеграция с Neon: Фундамент Структурированных Данных",
+        "title": "3. Integration with Neon: Foundation for Structured Data",
         "generalInfo": {
-          "title": "3.1. Общая Информация",
-          "description": "Neon предоставляет управляемый сервис PostgreSQL. Мы используем его как <strong>основное хранилище структурированных данных</strong>, таких как информация о пользователях, чатах, сообщениях и метаданных файлов.",
+          "title": "3.1. General Information",
+          "description": "Neon provides a managed PostgreSQL service. We use it as the <strong>primary storage for structured data</strong>, such as user information, chats, messages, and file metadata.",
           "advantages": [
-            "<strong>Прагматизм (P12):</strong> Бесплатный тариф на старте (30 ГБ) полностью покрывает начальные потребности.",
-            "<strong>Система и Долгосрочное Мышление (P9, P8):</strong> Управляемый сервис снижает операционную нагрузку, автоматическое масштабирование и репликация доступны на платных планах, обеспечивая готовность к росту.",
-            "<strong>Качество (P3):</strong> Надежность и производительность PostgreSQL как проверенной СУБД."
+            "<strong>Pragmatism (P12):</strong> The free tier (30 GB) at launch fully covers initial needs.",
+            "<strong>System and Long-term Thinking (P9, P8):</strong> Managed service reduces operational overhead; automatic scaling and replication are available on paid plans, ensuring readiness for growth.",
+            "<strong>Quality (P3):</strong> Reliability and performance of PostgreSQL as a proven DBMS."
           ],
-          "role": "Роль: Ядро, к которому обращается Backend для всех CRUD-операций над метаданными."
+          "role": "Role: The core to which the Backend accesses for all CRUD operations on metadata."
         },
         "configuration": {
-          "title": "3.2. Конфигурация: Подключение к Системе Данных",
+          "title": "3.2. Configuration: Connecting to the Data System",
           "steps": [
-            "1. <strong>Регистрация и Создание Проекта:</strong>",
-            "Создайте аккаунт на `https://neon.tech`.",
-            "Создайте новый проект (например, `brainmessenger-prod`) в консоли Neon.",
-            "2. <strong>Настройка Базы Данных:</strong>",
-            "Neon автоматически предоставляет инстанс PostgreSQL.",
-            "<strong>Примените схему базы данных:</strong> Используйте Prisma Migrate для инициализации структуры таблиц (см. `database/schema.prisma` и Руководство по разработке).",
-            "3. <strong>Переменные Окружения:</strong>",
-            "Получите <strong>строку подключения</strong> (Connection Details) из консоли Neon (Settings → Connection Details).",
-            "Добавьте в ваш `.env` файл:"
+            "1. <strong>Registration and Project Creation:</strong>",
+            "Create an account on `https://neon.tech`.",
+            "Create a new project (e.g., `brainmessenger-prod`) in the Neon console.",
+            "2. <strong>Database Setup:</strong>",
+            "Neon automatically provides a PostgreSQL instance.",
+            "<strong>Apply the database schema:</strong> Use Prisma Migrate to initialize table structure (see `database/schema.prisma` and Development Guide).",
+            "3. <strong>Environment Variables:</strong>",
+            "Obtain the <strong>connection string</strong> (Connection Details) from the Neon console (Settings → Connection Details).",
+            "Add to your `.env` file:"
           ],
-          "envExample": "```env\n# Строка подключения к базе данных Neon\nDATABASE_URL=postgresql://<user>:<password>@<neon-host>/<dbname>?sslmode=require\n```",
-          "note1": "*Примечание:* Используйте `sslmode=require` для безопасного соединения.",
-          "backendCode": "4. <strong>Подключение Backend (NestJS + Prisma):</strong>\nPrisma использует `DATABASE_URL` для подключения. Убедитесь, что Prisma Client сгенерирован (`npx prisma generate`).\nИспользуйте `PrismaService` (из `nestjs-prisma`) для всех операций с БД.\n```typescript\n// backend/src/app.module.ts (или db.module.ts)\nimport { Module } from '@nestjs/common';\nimport { PrismaService } from 'nestjs-prisma'; // Убедитесь, что PrismaModule импортирован в app.module\n\n@Module({\n  providers: [PrismaService], // PrismaService доступен для инъекции\n  exports: [PrismaService],\n})\nexport class DbModule {}\n```"
+          "envExample": "```env\n# Neon Database Connection String\nDATABASE_URL=postgresql://<user>:<password>@<neon-host>/<dbname>?sslmode=require\n```",
+          "note1": "*Note:* Use `sslmode=require` for a secure connection.",
+          "backendCode": "4. <strong>Backend Connection (NestJS + Prisma):</strong>\nPrisma uses `DATABASE_URL` for connection. Ensure Prisma Client is generated (`npx prisma generate`).\nUse `PrismaService` (from `nestjs-prisma`) for all DB operations.\n```typescript\n// backend/src/app.module.ts (or db.module.ts)\nimport { Module } from '@nestjs/common';\nimport { PrismaService } from 'nestjs-prisma'; // Ensure PrismaModule is imported in app.module\n\n@Module({\n  providers: [PrismaService], // PrismaService is available for injection\n  exports: [PrismaService],\n})\nexport class DbModule {}\n```"
         },
         "interactionScenarios": {
-          "title": "3.3. Методы и Сценарии Взаимодействия: API Данных",
-          "description": "Все взаимодействия с Neon происходят через Prisma ORM в Backend, что обеспечивает <strong>типизацию, безопасность и системность</strong> (Принцип 3, 9).",
+          "title": "3.3. Interaction Methods and Scenarios: Data API",
+          "description": "All interactions with Neon occur via Prisma ORM in the Backend, ensuring <strong>typing, security, and systemic consistency</strong> (Principle 3, 9).",
           "signup": {
-            "title": "Сценарий: Регистрация пользователя:",
-            "interaction": "<strong>Взаимодействие:</strong> Backend получает данные пользователя → Использует `PrismaService` для создания новой записи в таблице `users`.",
-            "code": "<strong>Пример кода (Backend Service):</strong>\n```typescript\n// backend/src/auth/auth.service.ts\nimport { Injectable } from '@nestjs/common';\nimport { PrismaService } from 'nestjs-prisma';\nimport { Prisma } from '@prisma/client'; // Импорт типов Prisma\n\n@Injectable()\nexport class AuthService {\n  constructor(private prisma: PrismaService) {}\n\n  async signUp(data: Prisma.UserCreateInput) {\n    // Пример: пароль должен быть захэширован ДО сохранения\n    const hashedPassword = await hashPassword(data.password); // Использование утилиты для хэширования\n    return this.prisma.user.create({\n      data: {\n        email: data.email,\n        name: data.name,\n        password: hashedPassword, // Сохраняем захэшированный пароль\n        // ... другие поля по схеме\n      },\n    });\n  }\n}\n```",
-            "result": "<strong>Результат:</strong> Данные пользователя надежно сохранены в Neon."
+            "title": "Scenario: User Registration:",
+            "interaction": "<strong>Interaction:</strong> Backend receives user data → Uses `PrismaService` to create a new record in the `users` table.",
+            "code": "<strong>Example Code (Backend Service):</strong>\n```typescript\n// backend/src/auth/auth.service.ts\nimport { Injectable } from '@nestjs/common';\nimport { PrismaService } from 'nestjs-prisma';\nimport { Prisma } from '@prisma/client'; // Import Prisma types\n\n@Injectable()\nexport class AuthService {\n  constructor(private prisma: PrismaService) {}\n\n  async signUp(data: Prisma.UserCreateInput) {\n    // Example: password must be hashed BEFORE saving\n    const hashedPassword = await hashPassword(data.password); // Using a hashing utility\n    return this.prisma.user.create({\n      data: {\n        email: data.email,\n        name: data.name,\n        password: hashedPassword, // Store the hashed password\n        // ... other fields as per schema\n      },\n    });\n  }\n}\n```",
+            "result": "<strong>Result:</strong> User data is securely stored in Neon."
           },
           "getChats": {
-            "title": "Сценарий: Получение списка чатов пользователя:",
-            "interaction": "<strong>Взаимодействие:</strong> Frontend запрашивает чаты через GraphQL API → Backend использует `PrismaService` для выполнения запроса к таблице `chats` (возможно, с фильтрацией по `userId` и `include` для метаданных).",
-            "code": "<strong>Пример кода (Backend Service):</strong>\n```typescript\n// backend/src/chat/chat.service.ts\nimport { Injectable } from '@nestjs/common';\nimport { PrismaService } from 'nestjs-prisma';\n\n@Injectable()\nexport class ChatService {\n  constructor(private prisma: PrismaService) {}\n\n  async getUserChats(userId: string) {\n    // Используем индексы @@index([userId]) для оптимизации (Принцип 9, Оптимизация)\n    return this.prisma.chat.findMany({\n      where: {\n        users: { // Предполагается связь Many-to-Many с таблицей UserChat\n          some: {\n            userId: userId,\n          },\n        },\n      },\n      select: { // Выбираем только необходимые поля (Принцип 9, Оптимизация)\n        id: true,\n        name: true,\n        type: true,\n        // ... другие нужные поля\n      },\n      orderBy: { // Сортировка по дате последнего сообщения для актуальности (Принцип 2, Ценность)\n        lastMessageAt: 'desc',\n      },\n    });\n  }\n}\n```"
+            "title": "Scenario: Retrieving User Chat List:",
+            "interaction": "<strong>Interaction:</strong> Frontend requests chats via GraphQL API → Backend uses `PrismaService` to execute a query to the `chats` table (possibly with `userId` filtering and `include` for metadata).",
+            "code": "<strong>Example Code (Backend Service):</strong>\n```typescript\n// backend/src/chat/chat.service.ts\nimport { Injectable } from '@nestjs/common';\nimport { PrismaService } from 'nestjs-prisma';\n\n@Injectable()\nexport class ChatService {\n  constructor(private prisma: PrismaService) {}\n\n  async getUserChats(userId: string) {\n    // Use @@index([userId]) for optimization (Principle 9, Optimization)\n    return this.prisma.chat.findMany({\n      where: {\n        users: { // Assumes Many-to-Many relationship with UserChat table\n          some: {\n            userId: userId,\n          },\n        },\n      },\n      select: { // Select only necessary fields (Principle 9, Optimization)\n        id: true,\n        name: true,\n        type: true,\n        // ... other required fields\n      },\n      orderBy: { // Sort by last message date for relevance (Principle 2, Value)\n        lastMessageAt: 'desc',\n      },\n    });\n  }\n}\n```"
           },
           "saveMessage": {
-            "title": "Сценарий: Сохранение сообщения:",
-            "interaction": "<strong>Взаимодействие:</strong> Пользователь отправляет сообщение → Frontend отправляет его через GraphQL API → Backend использует `PrismaService` для создания новой записи в таблице `messages`, связывая ее с `chatId` и `userId`.",
-            "code": "<strong>Пример кода (Backend Service):</strong>\n```typescript\n// backend/src/message/message.service.ts\nimport { Injectable } from '@nestjs/common';\nimport { PrismaService } from 'nestjs-prisma';\nimport { Prisma } from '@prisma/client';\n\n@Injectable()\nexport class MessageService {\n  constructor(private prisma: PrismaService) {}\n\n  async createMessage(data: Prisma.MessageCreateInput) {\n    // Используем транзакцию, если нужно обновить дату последнего сообщения в чате\n    return this.prisma.$transaction(async (tx) => {\n      const message = await tx.message.create({ data });\n      await tx.chat.update({\n        where: { id: data.chatId },\n        data: { lastMessageAt: message.createdAt }, // Обновляем время последнего сообщения\n      });\n      return message;\n    });\n  }\n}\n```"
+            "title": "Scenario: Saving a Message:",
+            "interaction": "<strong>Interaction:</strong> User sends a message → Frontend sends it via GraphQL API → Backend uses `PrismaService` to create a new record in the `messages` table, linking it to `chatId` and `userId`.",
+            "code": "<strong>Example Code (Backend Service):</strong>\n```typescript\n// backend/src/message/message.nmessage.service.ts\nimport { Injectable } from '@nestjs/common';\nimport { PrismaService } from 'nestjs-prisma';\nimport { Prisma } from '@prisma/client';\n\n@Injectable()\nexport class MessageService {\n  constructor(private prisma: PrismaService) {}\n\n  async createMessage(data: Prisma.MessageCreateInput) {\n    // Use a transaction if you need to update the last message date in the chat\n    return this.prisma.$transaction(async (tx) => {\n      const message = await tx.message.create({ data });\n      await tx.chat.update({\n        where: { id: data.chatId },\n        data: { lastMessageAt: message.createdAt }, // Update last message time\n      });\n      return message;\n    });\n  }\n}\n```"
           }
         },
         "errorHandling": {
-          "title": "3.4. Обработка Ошибок Интеграции: Поддержание Качества Системы",
-          "description": "Надежная система должна уметь обрабатывать ошибки внешних зависимостей (Принцип 3: Качество).",
+          "title": "3.4. Integration Error Handling: Maintaining System Quality",
+          "description": "A reliable system must be able to handle errors from external dependencies (Principle 3: Quality).",
           "connectionError": {
             "title": "Connection Error:",
-            "cause": "Причина: Невозможно установить соединение с Neon. Неверная строка подключения (`DATABASE_URL`), проблемы с сетью, недоступность сервиса Neon.",
-            "solution": "Решение: Проверить переменную окружения `DATABASE_URL`, статус сервиса Neon. Логировать ошибку на Backend (Sentry/Winston)."
+            "cause": "Cause: Unable to establish connection with Neon. Incorrect connection string (`DATABASE_URL`), network issues, Neon service unavailability.",
+            "solution": "Solution: Check the `DATABASE_URL` environment variable, Neon service status. Log the error on the Backend (Sentry/Winston)."
           },
           "queryError": {
             "title": "Database Query Error:",
-            "cause": "Причина: Ошибка выполнения запроса к БД (например, нарушение уникальности, неверный тип данных). Ошибка в логике Backend, несоответствие схемы БД.",
-            "solution": "Решение: Отладить запрос в Backend, проверить логи Prisma. Логировать ошибку."
+            "cause": "Cause: Error executing a DB query (e.g., uniqueness violation, incorrect data type). Backend logic error, schema mismatch.",
+            "solution": "Solution: Debug the query in the Backend, check Prisma logs. Log the error."
           },
           "rateLimitError": {
-            "title": "Rate Limit Exceeded (на платных тарифах):",
-            "cause": "Причина: Превышены лимиты на количество запросов или вычислительные ресурсы в Neon. Высокая нагрузка, неоптимизированные запросы, недостаточный тарифный план.",
-            "solution": "Решение: Оптимизировать запросы (см. Руководство по оптимизации), рассмотреть переход на более высокий тарифный план Neon."
+            "title": "Rate Limit Exceeded (on paid tiers):",
+            "cause": "Cause: Exceeded request limits or computational resources in Neon. High load, unoptimized queries, insufficient pricing plan.",
+            "solution": "Solution: Optimize queries (see Optimization Guide), consider upgrading to a higher Neon pricing plan."
           }
         }
       },
       "r2Integration": {
-        "title": "4. Интеграция с Cloudflare R2: Хранилище Цифровых Активов",
+        "title": "4. Integration with Cloudflare R2: Digital Asset Storage",
         "generalInfo": {
-          "title": "4.1. Общая Информация",
-          "description": "Cloudflare R2 — это сервис объектного хранилища, совместимый с S3 API. Мы используем его для хранения <strong>всех файлов пользователей</strong>, таких как изображения, видео, документы, а также зашифрованные данные.",
+          "title": "4.1. General Information",
+          "description": "Cloudflare R2 is an S3-compatible object storage service. We use it to store <strong>all user files</strong>, such as images, videos, documents, and encrypted data.",
           "advantages": [
-            "<strong>Прагматизм (P12), Создание Богатства/Активов (P10):</strong> <strong>Отсутствие платы за исходящий трафик</strong> — критически важное преимущество для мессенджера, где пользователи активно обмениваются файлами. Бесплатный тариф 10 ГБ на старте.",
-            "<strong>Качество (P3):</strong> Высокая производительность и надежность благодаря глобальной сети Cloudflare.",
-            "<strong>Долгосрочное Мышление (P8), Система (P9):</strong> S3-совместимый API позволяет легко использовать стандартные библиотеки и инструменты, обеспечивая гибкость в будущем."
+            "<strong>Pragmatism (P12), Wealth/Asset Creation (P10):</strong> <strong>No egress fees</strong> — a critically important advantage for a messenger where users actively exchange files. Free 10 GB tier at launch.",
+            "<strong>Quality (P3):</strong> High performance and reliability due to Cloudflare's global network.",
+            "<strong>Long-term Thinking (P8), System (P9):</strong> S3-compatible API allows easy use of standard libraries and tools, ensuring future flexibility."
           ],
-          "role": "Роль: Децентрализованное хранилище для крупных бинарных объектов, снижающее нагрузку на основную базу данных."
+          "role": "Role: Decentralized storage for large binary objects, reducing load on the primary database."
         },
         "configuration": {
-          "title": "4.2. Конфигурация: Подключение к Хранилищу Активов",
+          "title": "4.2. Configuration: Connecting to Asset Storage",
           "steps": [
-            "1. <strong>Создание Бакета:</strong>",
-            "Войдите в Cloudflare Dashboard → R2.",
-            "Нажмите <strong>\"Create Bucket\"</strong>.",
-            "Назовите бакет (например, `brainmessenger-files`). Название должно быть уникальным в рамках всех аккаунтов Cloudflare.",
-            "<strong>Настройки:</strong> Включите шифрование в покое (Encryption at rest) — это часть нашей <strong>системы безопасности</strong> (Принцип 3, 5). Ограничьте публичный доступ к бакету, доступ будет осуществляться через подписанные URL (если требуется) или через Backend.",
-            "2. <strong>Ключи Доступа:</strong>",
-            "В Cloudflare Dashboard перейдите в R2 → Manage R2 API Tokens.",
-            "Создайте новый API-токен. Предоставьте ему минимально необходимые разрешения (например, Read and Write to specific buckets).",
-            "Скопируйте `Access Key ID` и `Secret Access Key`.",
-            "3. <strong>Переменные Окружения:</strong>",
-            "Добавьте в ваш `.env` файл:"
+            "1. <strong>Bucket Creation:</strong>",
+            "Log in to Cloudflare Dashboard → R2.",
+            "Click <strong>\"Create Bucket\"</strong>.",
+            "Name the bucket (e.g., `brainmessenger-files`). The name must be unique across all Cloudflare accounts.",
+            "<strong>Settings:</strong> Enable Encryption at rest — this is part of our <strong>security system</strong> (Principle 3, 5). Restrict public access to the bucket; access will be via signed URLs (if required) or through the Backend.",
+            "2. <strong>Access Keys:</strong>",
+            "In Cloudflare Dashboard, go to R2 → Manage R2 API Tokens.",
+            "Create a new API token. Grant it the minimum necessary permissions (e.g., Read and Write to specific buckets).",
+            "Copy `Access Key ID` and `Secret Access Key`.",
+            "3. <strong>Environment Variables:</strong>",
+            "Add to your `.env` file:"
           ],
-          "envExample": "```env\n# Cloudflare R2 Credentials\nR2_ENDPOINT=<Your R2 Endpoint> # Формат: https://<account-id>.r2.cloudflarestorage.com\nR2_ACCESS_KEY=<Your Access Key ID>\nR2_SECRET_KEY=<Your Secret Access Key>\nR2_BUCKET=brainmessenger-files # Название вашего бакета\n\n# Ключ шифрования для конфиденциальных данных (важно для P3, P5, P10)\nENCRYPTION_KEY=<Your 32-byte (256-bit) hex or base64 encryption key> # Сгенерируйте надежный ключ!\n```",
-          "note": "*Примечание:* <strong>Не коммитьте эти ключи в Git!</strong> (Принцип 3, 5, 6). Используйте `.env.example` без чувствительных данных. <strong>ENCRYPTION_KEY</strong> должен быть сгенерирован надежно и храниться в безопасности.",
-          "backendCode": "4. <strong>Подключение Backend (`@aws-sdk/client-s3`):</strong>\nR2 совместим с S3 API, поэтому можно использовать стандартный AWS SDK для S3.\nУстановите SDK: `npm install @aws-sdk/client-s3`.\nИнициализируйте S3 Client в вашем Backend-сервисе (например, `StorageService`).\n```typescript\n// backend/src/storage/storage.service.ts\nimport { Injectable } from '@nestjs/common';\nimport { S3Client, PutObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';\nimport { getSignedUrl } from '@aws-sdk/s3-request-presigner'; // Для подписанных URL\nimport { createCipheriv, randomBytes, createDecipheriv } from 'crypto'; // Для шифрования\n\n@Injectable()\nexport class StorageService {\n  private r2: S3Client;\n  private encryptionKey: Buffer; // Ключ для шифрования\n\n  constructor() {\n    this.r2 = new S3Client({\n      region: 'auto', // R2 не использует регионы в классическом понимании\n      endpoint: process.env.R2_ENDPOINT,\n      credentials: {\n        accessKeyId: process.env.R2_ACCESS_KEY,\n        secretAccessKey: process.env.R2_SECRET_KEY,\n      },\n    });\n    // Важно: ENCRYPTION_KEY должен быть Buffer 32 байт для aes-256-cbc\n    this.encryptionKey = Buffer.from(process.env.ENCRYPTION_KEY, 'hex'); // Или 'base64'\n    if (this.encryptionKey.length !== 32) {\n         // Логировать ошибку или выбросить исключение - ключ неверной длины\n         console.error(\"Invalid ENCRYPTION_KEY length. Must be 32 bytes for aes-256-cbc.\");\n         // process.exit(1); // Возможно, стоит остановить приложение\n    }\n  }\n\n  // Утилита для шифрования (часть системы безопасности - P3, P5)\n  private encrypt(data: string): { encrypted: string, iv: string } {\n    const iv = randomBytes(16); // Initialization Vector, 16 байт для aes-256-cbc\n    const cipher = createCipheriv('aes-256-cbc', this.encryptionKey, iv);\n    let encrypted = cipher.update(data, 'utf8', 'hex');\n    encrypted += cipher.final('hex');\n    return { encrypted, iv: iv.toString('hex') };\n  }\n\n  // Утилита для дешифрования\n  private decrypt(encrypted: string, iv: string): string {\n      const decipher = createDecipheriv('aes-256-cbc', this.encryptionKey, Buffer.from(iv, 'hex'));\n      let decrypted = decipher.update(encrypted, 'hex', 'utf8');\n      decrypted += decipher.final('utf8');\n      return decrypted;\n  }\n\n  // ... методы для работы с R2 (загрузка, скачивание, удаление)\n}\n```"
+          "envExample": "```env\n# Cloudflare R2 Credentials\nR2_ENDPOINT=<Your R2 Endpoint> # Format: https://<account-id>.r2.cloudflarestorage.com\nR2_ACCESS_KEY=<Your Access Key ID>\nR2_SECRET_KEY=<Your Secret Access Key>\nR2_BUCKET=brainmessenger-files # Your bucket name\n\n# Encryption key for confidential data (important for P3, P5, P10)\nENCRYPTION_KEY=<Your 32-byte (256-bit) hex or base64 encryption key> # Generate a strong key!\n```",
+          "note": "*Note:* <strong>Do not commit these keys to Git!</strong> (Principle 3, 5, 6). Use `.env.example` without sensitive data. <strong>ENCRYPTION_KEY</strong> must be securely generated and stored safely.",
+          "backendCode": "4. <strong>Backend Connection (`@aws-sdk/client-s3`):</strong>\nR2 is S3-compatible, so you can use the standard AWS SDK for S3.\nInstall SDK: `npm install @aws-sdk/client-s3`.\nInitialize S3 Client in your Backend service (e.g., `StorageService`).\n```typescript\n// backend/src/storage/storage.service.ts\nimport { Injectable } from '@nestjs/common';\nimport { S3Client, PutObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';\nimport { getSignedUrl } from '@aws-sdk/s3-request-presigner'; // For signed URLs\nimport { createCipheriv, randomBytes, createDecipheriv } from 'crypto'; // For encryption\n\n@Injectable()\nexport class StorageService {\n  private r2: S3Client;\n  private encryptionKey: Buffer; // Key for encryption\n\n  constructor() {\n    this.r2 = new S3Client({\n      region: 'auto', // R2 does not use regions in the classical sense\n      endpoint: process.env.R2_ENDPOINT,\n      credentials: {\n        accessKeyId: process.env.R2_ACCESS_KEY,\n        secretAccessKey: process.env.R2_SECRET_KEY,\n      },\n    });\n    // Important: ENCRYPTION_KEY must be a 32-byte Buffer for aes-256-cbc\n    this.encryptionKey = Buffer.from(process.env.ENCRYPTION_KEY, 'hex'); // Or 'base64'\n    if (this.encryptionKey.length !== 32) {\n         // Log error or throw exception - key has incorrect length\n         console.error(\"Invalid ENCRYPTION_KEY length. Must be 32 bytes for aes-256-cbc.\");\n         // process.exit(1); // Possibly, should stop the application\n    }\n  }\n\n  // Utility for encryption (part of security system - P3, P5)\n  private encrypt(data: string): { encrypted: string, iv: string } {\n    const iv = randomBytes(16); // Initialization Vector, 16 bytes for aes-256-cbc\n    const cipher = createCipheriv('aes-256-cbc', this.encryptionKey, iv);\n    let encrypted = cipher.update(data, 'utf8', 'hex');\n    encrypted += cipher.final('hex');\n    return { encrypted, iv: iv.toString('hex') };\n  }\n\n  // Utility for decryption\n  private decrypt(encrypted: string, iv: string): string {\n      const decipher = createDecipheriv('aes-256-cbc', this.encryptionKey, Buffer.from(iv, 'hex'));\n      let decrypted = decipher.update(encrypted, 'hex', 'utf8');\n      decrypted += decipher.final('utf8');\n      return decrypted;\n  }\n\n  // ... methods for working with R2 (upload, download, delete)\n}\n```"
         },
         "interactionScenarios": {
-          "title": "4.3. Методы и Сценарии Взаимодействия: API Хранилища",
-          "description": "Взаимодействие с R2 осуществляется через Backend, что позволяет контролировать доступ, обрабатывать файлы (например, оптимизация изображений перед загрузкой) и управлять метаданными в БД (Принцип 9: Система).",
+          "title": "4.3. Interaction Methods and Scenarios: Storage API",
+          "description": "Interaction with R2 is done via the Backend, which allows controlling access, processing files (e.g., image optimization before upload), and managing metadata in the DB (Principle 9: System).",
           "uploadFile": {
-            "title": "Сценарий: Загрузка файла пользователем:",
-            "interaction": "<strong>Взаимодействие:</strong> Пользователь прикрепляет файл в чате → Frontend отправляет файл на Backend → Backend (`StorageService`) загружает файл в R2 → Backend сохраняет метаданные файла (URL, тип, размер) в Neon → Backend отправляет сообщение в чат с ссылкой на файл.",
-            "code": "<strong>Пример кода (Backend Service):</strong>\n```typescript\n// backend/src/storage/storage.service.ts (продолжение)\n// ... S3Client и encryptionKey инициализация ...\n\nasync uploadFile(fileBuffer: Buffer, fileName: string, mimeType: string): Promise<string> {\n  const key = `uploads/${Date.now()}-${fileName}`; // Уникальный ключ файла\n  const params = {\n    Bucket: process.env.R2_BUCKET,\n    Key: key,\n    Body: fileBuffer,\n    ContentType: mimeType, // Важно для отдачи файла\n  };\n  const command = new PutObjectCommand(params);\n  await this.r2.send(command); // Асинхронная загрузка\n\n  // Возвращаем URL для сохранения в БД. R2 позволяет прямые ссылки, если настроен публичный домен.\n  // ИЛИ генерируем подписанный URL для ограниченного доступа (более безопасно).\n  // Пример прямой ссылки (требует настройки Public Access URL в CF Dashboard):\n  // const publicUrl = `${process.env.R2_ENDPOINT.replace('.r2.cloudflarestorage.com', '.r2.dev')}/${process.env.R2_BUCKET}/${key}`;\n  // Для своего домена (предпочтительно):\n  const fileUrl = `https://r2.brainmessenger.com/${key}`; // Ваш настроенный домен Cloudflare Workers/Pages\n\n  return fileUrl;\n}\n\n//backend/src/chat/chat.service.ts (интеграция uploadFile)\n// ... constructor с StorageService ...\nasync sendFileMessage(chatId: string, userId: string, file: Express.Multer.File): Promise<Message> {\n   // Опционально: обработка изображения перед загрузкой (см. DocOptimizationIn)\n   // const processedFileBuffer = await this.imageProcessingService.processImage(file.buffer, 800, 600); // Пример\n   const fileUrl = await this.storageService.uploadFile(file.buffer, file.originalname, file.mimetype);\n\n   // Создаем сообщение в БД со ссылкой на файл\n   return this.prisma.message.create({\n     data: {\n       chatId,\n       userId,\n       content: '[File]', // Или другое обозначение файла\n       fileUrl: fileUrl, // Сохраняем ссылку на файл в БД\n       // fileMetadata: { type: file.mimetype, size: file.size }, // Опционально: сохранение метаданных в JSON поле или отдельной таблице\n     },\n   });\n}\n```",
-            "result": "<strong>Результат:</strong> Файл надежно хранится в R2, ссылка на него доступна в БД для отображения в чате."
+            "title": "Scenario: User File Upload:",
+            "interaction": "<strong>Interaction:</strong> User attaches a file in chat → Frontend sends the file to Backend → Backend (`StorageService`) uploads the file to R2 → Backend saves file metadata (URL, type, size) in Neon → Backend sends a message to the chat with the file link.",
+            "code": "<strong>Example Code (Backend Service):</strong>\n```typescript\n// backend/src/storage/storage.service.ts (continued)\n// ... S3Client and encryptionKey initialization ...\n\nasync uploadFile(fileBuffer: Buffer, fileName: string, mimeType: string): Promise<string> {\n  const key = `uploads/${Date.now()}-${fileName}`; // Unique file key\n  const params = {\n    Bucket: process.env.R2_BUCKET,\n    Key: key,\n    Body: fileBuffer,\n    ContentType: mimeType, // Important for file delivery\n  };\n  const command = new PutObjectCommand(params);\n  await this.r2.send(command); // Asynchronous upload\n\n  // Return URL for saving to DB. R2 allows direct links if a public domain is configured.\n  // OR generate a signed URL for restricted access (more secure).\n  // Example direct link (requires Public Access URL setup in CF Dashboard):\n  // const publicUrl = `${process.env.R2_ENDPOINT.replace('.r2.cloudflarestorage.com', '.r2.dev')}/${process.env.R2_BUCKET}/${key}`;\n  // For your own domain (preferable):\n  const fileUrl = `https://r2.brainmessenger.com/${key}`; // Your configured Cloudflare Workers/Pages domain\n\n  return fileUrl;\n}\n\n//backend/src/chat/chat.service.ts (uploadFile integration)\n// ... constructor with StorageService ...\nasync sendFileMessage(chatId: string, userId: string, file: Express.Multer.File): Promise<Message> {\n   // Optional: image processing before upload (see DocOptimizationIn)\n   // const processedFileBuffer = await this.imageProcessingService.processImage(file.buffer, 800, 600); // Example\n   const fileUrl = await this.storageService.uploadFile(file.buffer, file.originalname, file.mimetype);\n\n   // Create message in DB with file link\n   return this.prisma.message.create({\n     data: {\n       chatId,\n       userId,\n       content: '[File]', // Or another file designation\n       fileUrl: fileUrl, // Save file link to DB\n       // fileMetadata: { type: file.mimetype, size: file.size }, // Optional: save metadata in JSON field or separate table\n     },\n   });\n}\n```",
+            "result": "<strong>Result:</strong> File is securely stored in R2, its link is available in the DB for display in chat."
           },
           "sensitiveData": {
-            "title": "Сценарий: Хранение конфиденциальных данных (например, зашифрованные метаданные):",
-            "interaction": "<strong>Взаимодействие:</strong> При регистрации или обновлении профиля Backend шифрует чувствительные данные (например, резервные email, секретные вопросы) и сохраняет их в R2 в отдельном бакете или папке.",
-            "code": "<strong>Пример кода (Backend Service):</strong>\n```typescript\n// backend/src/storage/storage.service.ts (продолжение)\n// ... методы encrypt/decrypt ...\n\nasync storeSensitiveData(userId: string, sensitiveInfo: any): Promise<string> {\n   const encryptedData = {};\n   for (const key in sensitiveInfo) {\n       if (sensitiveInfo.hasOwnProperty(key)) {\n           const { encrypted, iv } = this.encrypt(JSON.stringify(sensitiveInfo[key])); // Шифруем каждое поле или весь объект\n           encryptedData[key] = { encrypted, iv };\n       }\n   }\n\n   const key = `sensitive/${userId}/metadata.json`;\n   const params = {\n       Bucket: process.env.R2_BUCKET, // Или отдельный бакет для чувствительных данных\n       Key: key,\n       Body: JSON.stringify(encryptedData),\n       ContentType: 'application/json',\n   };\n   const command = new PutObjectCommand(params);\n   await this.r2.send(command);\n   return `https://r2.brainmessenger.com/${key}`; // Ссылка для внутреннего использования\n}\n\n// backend/src/user/user.service.ts (интеграция storeSensitiveData)\n// ... constructor с StorageService ...\nasync createUserWithSensitiveData(userData: any, sensitiveData: any) {\n    // Создаем пользователя в БД\n    const user = await this.prisma.user.create({ data: userData });\n    // Сохраняем зашифрованные данные в R2\n    const sensitiveDataUrl = await this.storageService.storeSensitiveData(user.id, sensitiveData);\n    // Сохраняем ссылку на зашифрованные данные в БД (опционально)\n    await this.prisma.user.update({\n        where: { id: user.id },\n        data: { sensitiveDataUrl: sensitiveDataUrl } // Добавить поле sensitiveDataUrl в схему Prisma\n    });\n    return user;\n}\n```",
-            "result": "<strong>Результат:</strong> Конфиденциальные данные надежно зашифрованы и хранятся отдельно от основной БД в R2. Доступ к ним возможен только через Backend с использованием ключа шифрования."
+            "title": "Scenario: Storing Confidential Data (e.g., encrypted metadata):",
+            "interaction": "<strong>Interaction:</strong> During registration or profile update, Backend encrypts sensitive data (e.g., backup emails, security questions) and saves it to R2 in a separate bucket or folder.",
+            "code": "<strong>Example Code (Backend Service):</strong>\n```typescript\n// backend/src/storage/storage.service.ts (continued)\n// ... encrypt/decrypt methods ...\n\nasync storeSensitiveData(userId: string, sensitiveInfo: any): Promise<string> {\n   const encryptedData = {};\n   for (const key in sensitiveInfo) {\n       if (sensitiveInfo.hasOwnProperty(key)) {\n           const { encrypted, iv } = this.encrypt(JSON.stringify(sensitiveInfo[key])); // Encrypt each field or the entire object\n           encryptedData[key] = { encrypted, iv };\n       }\n   }\n\n   const key = `sensitive/${userId}/metadata.json`;\n   const params = {\n       Bucket: process.env.R2_BUCKET, // Or a separate bucket for sensitive data\n       Key: key,\n       Body: JSON.stringify(encryptedData),\n       ContentType: 'application/json',\n   };\n   const command = new PutObjectCommand(params);\n   await this.r2.send(command);\n   return `https://r2.brainmessenger.com/${key}`; // Link for internal use\n}\n\n// backend/src/user/user.service.ts (storeSensitiveData integration)\n// ... constructor with StorageService ...\nasync createUserWithSensitiveData(userData: any, sensitiveData: any) {\n    // Create user in DB\n    const user = await this.prisma.user.create({ data: userData });\n    // Save encrypted data to R2\n    const sensitiveDataUrl = await this.storageService.storeSensitiveData(user.id, sensitiveData);\n    // Save link to encrypted data in DB (optional)\n    await this.prisma.user.update({\n        where: { id: user.id },\n        data: { sensitiveDataUrl: sensitiveDataUrl } // Add sensitiveDataUrl field to Prisma schema\n    });\n    return user;\n}\n```",
+            "result": "<strong>Result:</strong> Confidential data is securely encrypted and stored separately from the main DB in R2. Access is only possible via the Backend using the encryption key."
           },
           "getFile": {
-            "title": "Сценарий: Получение файла (для отображения или скачивания):",
-            "interaction": "<strong>Взаимодействие:</strong> Frontend получает URL файла из метаданных сообщения (из Neon) → Frontend (или Backend, если требуется аутентификация/подписанные URL) использует этот URL для скачивания файла напрямую из R2.",
-            "code": "<strong>Реализация:</strong> Если бакет R2 настроен с Public Access URL (через Cloudflare Workers/Pages), Frontend может обращаться напрямую. Если доступ ограничен, Backend может генерировать временные подписанные URL через `@aws-sdk/s3-request-presigner`.\n```typescript\n// backend/src/storage/storage.service.ts (продолжение)\n// ... S3Client инициализация ...\n\n// Метод для генерации подписанного URL (более безопасный подход для приватных файлов)\nasync getSignedFileUrl(fileKey: string): Promise<string> {\n    const command = new GetObjectCommand({\n        Bucket: process.env.R2_BUCKET,\n        Key: fileKey,\n    });\n    // Сгенерировать подписанный URL, действительный, например, 60 секунд\n    const signedUrl = await getSignedUrl(this.r2, command, { expiresIn: 60 });\n    return signedUrl;\n}\n```"
+            "title": "Scenario: Retrieving a File (for display or download):",
+            "interaction": "<strong>Interaction:</strong> Frontend retrieves file URL from message metadata (from Neon) → Frontend (or Backend, if authentication/signed URLs are required) uses this URL to download the file directly from R2.",
+            "code": "<strong>Implementation:</strong> If the R2 bucket is configured with a Public Access URL (via Cloudflare Workers/Pages), the Frontend can access it directly. If access is restricted, the Backend can generate temporary signed URLs via `@aws-sdk/s3-request-presigner`.\n```typescript\n// backend/src/storage/storage.service.ts (continued)\n// ... S3Client initialization ...\n\n// Method to generate a signed URL (more secure approach for private files)\nasync getSignedFileUrl(fileKey: string): Promise<string> {\n    const command = new GetObjectCommand({\n        Bucket: process.env.R2_BUCKET,\n        Key: fileKey,\n    });\n    // Generate a signed URL, valid for, e.g., 60 seconds\n    const signedUrl = await getSignedUrl(this.r2, command, { expiresIn: 60 });\n    return signedUrl;\n}\n```"
           }
         },
         "errorHandling": {
-          "title": "4.4. Обработка Ошибок Интеграции: Хранилище Активов",
+          "title": "4.4. Integration Error Handling: Asset Storage",
           "forbidden": {
             "title": "403 Forbidden:",
-            "cause": "Причина: Ошибка доступа к бакету R2. Неверные ключи доступа (`R2_ACCESS_KEY`, `R2_SECRET_KEY`), неверные разрешения токена, попытка доступа к приватному файлу без аутентификации/подписанного URL.",
-            "solution": "Решение: Проверить переменные окружения, разрешения токена R2. Убедиться, что логика доступа (публичный URL vs подписанный URL) реализована корректно. Логировать ошибку."
+            "cause": "Cause: R2 bucket access error. Incorrect access keys (`R2_ACCESS_KEY`, `R2_SECRET_KEY`), incorrect token permissions, attempt to access a private file without authentication/signed URL.",
+            "solution": "Solution: Check environment variables, R2 token permissions. Ensure correct access logic (public URL vs signed URL) is implemented. Log the error."
           },
           "notFound": {
             "title": "404 Not Found:",
-            "cause": "Причина: Файл отсутствует в R2. Неверный ключ файла (`Key`), файл был удален.",
-            "solution": "Решение: Проверить ключ файла, который был сохранен в Neon. Убедиться, что файл действительно был загружен. Логировать ошибку."
+            "cause": "Cause: File missing in R2. Incorrect file key (`Key`), file has been deleted.",
+            "solution": "Solution: Check the file key that was saved in Neon. Confirm the file was indeed uploaded. Log the error."
           },
           "tooManyRequests": {
             "title": "429 Too Many Requests:",
-            "cause": "Причина: Превышен лимит запросов к R2 API. Высокая частота запросов загрузки/скачивания.",
-            "solution": "Решение: Внедрить Rate Limiting на Backend (см. Руководство по оптимизации). Оптимизировать логику работы с файлами."
+            "cause": "Cause: R2 API request limit exceeded. High frequency of upload/download requests.",
+            "solution": "Solution: Implement Rate Limiting on the Backend (see Optimization Guide). Optimize file interaction logic."
           },
           "encryptionError": {
             "title": "Encryption/Decryption Error:",
-            "cause": "Причина: Ошибка шифрования/дешифрования. Неверный ключ шифрования (`ENCRYPTION_KEY`), поврежденный IV, поврежденные зашифрованные данные.",
-            "solution": "Решение: Убедиться, что используется правильный ключ (`ENCRYPTION_KEY`), который совпадает с ключом, использованным при шифровании. Проверить целостность данных и IV. Логировать критическую ошибку."
+            "cause": "Cause: Encryption/decryption error. Incorrect encryption key (`ENCRYPTION_KEY`), corrupted IV, corrupted encrypted data.",
+            "solution": "Solution: Ensure the correct key (`ENCRYPTION_KEY`) is used and matches the key used during encryption. Check data integrity and IV. Log critical error."
           }
         }
       },
       "neonR2Interaction": {
-        "title": "5. Взаимодействие Neon и Cloudflare R2: Оптимизация Хранения Данных (Принцип 9, 12)",
-        "description": "Мы используем Neon и R2 совместно, чтобы создать оптимизированную систему хранения данных, где каждый сервис выполняет свою лучшую функцию (Принцип 9).",
+        "title": "5. Neon and Cloudflare R2 Interaction: Data Storage Optimization (Principle 9, 12)",
+        "description": "We use Neon and R2 together to create an optimized data storage system where each service performs its best function (Principle 9).",
         "scenario": [
-          "<strong>Neon (PostgreSQL):</strong> Хранит <strong>структурированные метаданные</strong>, которые часто запрашиваются и по которым выполняются сложные запросы (пользователи, чаты, текстовые сообщения, ссылки на файлы).",
-          "<strong>Cloudflare R2:</strong> Хранит <strong>неструктурированные бинарные данные</strong> большого размера (файлы), которые реже запрашиваются и не требуют сложной логики выборки по содержимому).",
-          "<strong>Сценарий комплексного взаимодействия:</strong>",
-          "1. Пользователь отправляет файл через чат (Frontend -> Backend).",
-          "2. Backend (`StorageService`) <strong>загружает файл в Cloudflare R2</strong> (используя S3 API). Получает URL файла (или ключ).",
-          "3. Backend (`ChatService`) <strong>сохраняет метаданные сообщения в Neon через Prisma</strong>, включая полученный URL/ключ файла.",
-          "4. Когда другой пользователь открывает чат, Backend (`ChatService`) <strong>получает список сообщений из Neon через Prisma</strong>, включая URL/ключи файлов.",
-          "5. Frontend отображает список сообщений и использует URL/ключи для <strong>скачивания файлов напрямую из R2</strong> (или через Backend, если требуется аутентификация)."
+          "<strong>Neon (PostgreSQL):</strong> Stores <strong>structured metadata</strong> that is frequently queried and requires complex queries (users, chats, text messages, file links).",
+          "<strong>Cloudflare R2:</strong> Stores <strong>unstructured binary data</strong> of large size (files) that are less frequently queried and do not require complex content-based retrieval logic.",
+          "<strong>Complex Interaction Scenario:</strong>",
+          "1. User sends a file via chat (Frontend -> Backend).",
+          "2. Backend (`StorageService`) <strong>uploads the file to Cloudflare R2</strong> (using S3 API). Obtains the file URL (or key).",
+          "3. Backend (`ChatService`) <strong>saves message metadata to Neon via Prisma</strong>, including the obtained file URL/key.",
+          "4. When another user opens a chat, Backend (`ChatService`) <strong>retrieves the list of messages from Neon via Prisma</strong>, including file URLs/keys.",
+          "5. Frontend displays the list of messages and uses the URLs/keys to <strong>download files directly from R2</strong> (or via Backend, if authentication is required)."
         ],
-        "advantagesTitle": "Преимущества такого разделения:",
+        "advantagesTitle": "Advantages of this separation:",
         "advantages": [
-          "<strong>Оптимизация производительности БД:</strong> PostgreSQL не \"засоряется\" большими бинарными данными, что улучшает скорость текстовых запросов (Принцип 9).",
-          "<strong>Снижение стоимости:</strong> R2 предлагает очень выгодные тарифы для хранения больших объемов данных без платы за исходящий трафик, что <strong>прагматично</strong> (Принцип 12) и способствует созданию <strong>актива</strong> (Принцип 10).",
-          "<strong>Масштабируемость:</strong> Каждый сервис масштабируется независимо в соответствии со своим типом нагрузки (Neon для транзакций, R2 для объема/трафика файлов).",
-          "<strong>Надежность:</strong> Разделение ответственности между сервисами повышает общую отказоустойчивость системы."
+          "<strong>DB Performance Optimization:</strong> PostgreSQL is not \"clogged\" with large binary data, which improves the speed of text-based queries (Principle 9).",
+          "<strong>Cost Reduction:</strong> R2 offers very favorable rates for storing large volumes of data with no egress fees, which is <strong>pragmatic</strong> (Principle 12) and contributes to <strong>asset creation</strong> (Principle 10).",
+          "<strong>Scalability:</strong> Each service scales independently according to its load type (Neon for transactions, R2 for volume/file traffic).",
+          "<strong>Reliability:</strong> Separating responsibilities among services increases the overall fault tolerance of the system."
         ]
       },
       "otherIntegrations": {
-        "title": "6. Другие Интеграции: Расширение Функционала Системы (Принцип 2, 12)",
-        "description": "Эти интеграции добавляют <strong>ценность</strong> (Принцип 2) и используют <strong>прагматичные, готовые решения</strong> (Принцип 12).",
+        "title": "6. Other Integrations: Expanding System Functionality (Principle 2, 12)",
+        "description": "These integrations add <strong>value</strong> (Principle 2) and utilize <strong>pragmatic, ready-made solutions</strong> (Principle 12).",
         "firebase": {
-          "title": "6.1. Firebase (Push-уведомления)",
-          "purpose": "Назначение: Мгновенная доставка уведомлений о новых сообщениях, звонках и системных событиях пользователям мобильных приложений.",
-          "role": "Роль: <strong>Критически важный компонент системы уведомлений</strong> (Принцип 9) для поддержания вовлеченности пользователей и оперативного информирования (Принцип 2).",
-          "configuration": "Конфигурация: Переменная окружения: `FIREBASE_CREDENTIALS_PATH` (путь к JSON-файлу учетных данных сервисного аккаунта Firebase). <strong>Храните этот файл безопасно!</strong>",
-          "example": "Используется библиотека `firebase-admin` в Backend NestJS. Пример использования: Отправка уведомления при получении нового сообщения (см. Руководство по оптимизации для батчинга и тем)."
+          "title": "6.1. Firebase (Push Notifications)",
+          "purpose": "Purpose: Instant delivery of notifications about new messages, calls, and system events to mobile application users.",
+          "role": "Role: <strong>Critically important component of the notification system</strong> (Principle 9) for maintaining user engagement and timely information delivery (Principle 2).",
+          "configuration": "Configuration: Environment variable: `FIREBASE_CREDENTIALS_PATH` (path to the Firebase service account JSON credentials file). <strong>Store this file securely!</strong>",
+          "example": "Uses `firebase-admin` library in NestJS Backend. Example usage: Sending a notification upon receiving a new message (see Optimization Guide for batching and topics)."
         },
         "stripe": {
-          "title": "6.2. Stripe (Платежи)",
-          "purpose": "Назначение: Обработка подписок на Premium-функционал BrainMessenger.",
-          "role": "Роль: <strong>Финансовый рычаг</strong> для поддержки развития проекта (Принцип 10: Создание Богатства) и предоставления дополнительной <strong>ценности</strong> (Принцип 2) премиум-пользователям.",
-          "configuration": "Конфигурация: Переменная окружения: `STRIPE_SECRET_KEY`.",
-          "example": "Используется библиотека `stripe` в Backend NestJS. Пример использования: Создание сессии оплаты при попытке оформить подписку. Обработка вебхуков для подтверждения успешной оплаты."
+          "title": "6.2. Stripe (Payments)",
+          "purpose": "Purpose: Processing subscriptions for BrainMessenger's Premium features.",
+          "role": "Role: <strong>Financial lever</strong> to support project development (Principle 10: Wealth Creation) and provide additional <strong>value</strong> (Principle 2) to premium users.",
+          "configuration": "Configuration: Environment variable: `STRIPE_SECRET_KEY`.",
+          "example": "Uses `stripe` library in NestJS Backend. Example usage: Creating a checkout session when attempting to subscribe. Handling webhooks to confirm successful payment."
         },
         "gmailApi": {
-          "title": "6.3. Gmail API (Отправка Email)",
-          "purpose": "Назначение: Отправка транзакционных email, таких как коды подтверждения для регистрации и двухфакторной аутентификации (2FA), уведомления о сбросе пароля.",
-          "role": "Роль: <strong>Критически важный компонент системы аутентификации и безопасности</strong> (Принцип 9, 5).",
-          "configuration": "Конфигурация: Требует настройки сервисного аккаунта Google Cloud и получения учетных данных (см. Техническую документацию, раздел 10.1). Переменные окружения для учетных данных сервисного аккаунта или API-ключей.",
-          "example": "Пример использования: Вызов API для отправки письма с кодом подтверждения после ввода email при регистрации или включении 2FA (см. Спецификацию API, раздел 2.4)."
+          "title": "6.3. Gmail API (Email Sending)",
+          "purpose": "Purpose: Sending transactional emails, such as verification codes for registration and two-factor authentication (2FA), password reset notifications.",
+          "role": "Role: <strong>Critically important component of the authentication and security system</strong> (Principle 9, 5).",
+          "configuration": "Configuration: Requires Google Cloud service account setup and credential retrieval (see Technical Documentation, section 10.1). Environment variables for service account credentials or API keys.",
+          "example": "Example usage: Calling the API to send an email with a verification code after entering email during registration or enabling 2FA (see API Specification, section 2.4)."
         }
       },
       "recommendations": {
-        "title": "7. Рекомендации по Интеграциям: Поддержание Здоровья Системы (Принцип 3, 5, 9)",
-        "intro": "Чтобы интеграции оставались <strong>надежными, безопасными и эффективными</strong> (Принцип 3, 9), следуйте этим рекомендациям, связанным с поддержанием \"здоровья\" системы (Принцип 5, применительно к технике):",
+        "title": "7. Integration Recommendations: Maintaining System Health (Principle 3, 5, 9)",
+        "intro": "To ensure integrations remain <strong>reliable, secure, and effective</strong> (Principle 3, 9), follow these recommendations related to maintaining system \"health\" (Principle 5, as applied to technology):",
         "security": {
-          "title": "Безопасность:",
+          "title": "Security:",
           "points": [
-            "<strong>Никогда не коммитьте ключи и секреты в Git.</strong> Используйте переменные окружения и системы управления секретами в продакшен-окружении (например, Kubernetes Secrets, HashiCorp Vault).",
-            "Регулярно проводите <strong>ротацию API-токенов</strong> (R2, Firebase, Gmail, Stripe) для повышения безопасности.",
-            "Используйте <strong>принцип минимальных привилегий</strong> при создании API-токенов: давайте им только те разрешения, которые действительно необходимы."
+            "<strong>Never commit keys and secrets to Git.</strong> Use environment variables and secret management systems in production environments (e.g., Kubernetes Secrets, HashiCorp Vault).",
+            "Regularly perform <strong>API token rotation</strong> (R2, Firebase, Gmail, Stripe) to enhance security.",
+            "Apply the <strong>principle of least privilege</strong> when creating API tokens: grant them only the permissions that are strictly necessary."
           ]
         },
         "scaling": {
-          "title": "Масштабирование:",
+          "title": "Scaling:",
           "points": [
-            "<strong>Мониторьте использование ресурсов</strong> (место в Neon/R2, запросы к API Firebase/Stripe) через консоли соответствующих сервисов. Будьте готовы перейти на платный тариф при росте нагрузки (Принцип 8, 12).",
-            "Используйте <strong>оптимизационные подходы</strong> (например, батчинг запросов к Firebase, индексирование в Neon, см. Руководство по оптимизации), чтобы отложить необходимость перехода на более дорогие тарифы."
+            "<strong>Monitor resource usage</strong> (Neon/R2 space, Firebase/Stripe API requests) via the respective service consoles. Be prepared to upgrade to a paid tier as load grows (Principle 8, 12).",
+            "Employ <strong>optimization approaches</strong> (e.g., Firebase request batching, Neon indexing, see Optimization Guide) to defer the need for more expensive tiers."
           ]
         },
         "monitoring": {
-          "title": "Мониторинг и Логирование:",
+          "title": "Monitoring and Logging:",
           "points": [
-            "Настройте <strong>логирование ошибок интеграций</strong> в NestJS (Winston, Sentry).",
-            "Используйте <strong>системы мониторинга</strong> (Prometheus/Grafana) для отслеживания метрик запросов к внешним сервисам (задержки, количество ошибок) — это часть <strong>Кайдзен</strong> (Принцип 9), позволяющая выявлять проблемы на ранней стадии."
+            "Configure <strong>integration error logging</strong> in NestJS (Winston, Sentry).",
+            "Use <strong>monitoring systems</strong> (Prometheus/Grafana) to track metrics for external service requests (latencies, error counts) — this is part of <strong>Kaizen</strong> (Principle 9), allowing early problem detection."
           ]
         },
         "errorHandling": {
-          "title": "Обработка Ошибок:",
+          "title": "Error Handling:",
           "points": [
-            "Реализуйте <strong>грамотную обработку ошибок</strong> от внешних сервисов на Backend. Логируйте их подробно.",
-            "Для критически важных операций (например, регистрация, платежи) предусмотрите механизмы <strong>повторных попыток (retries)</strong> или <strong>компенсирующих действий</strong> (например, отметка платежа как незавершенного) при временных сбоях внешних сервисов."
+            "Implement <strong>robust error handling</strong> for external services on the Backend. Log errors in detail.",
+            "For critically important operations (e.g., registration, payments), provide mechanisms for <strong>retries</strong> or <strong>compensating actions</strong> (e.g., marking a payment as incomplete) in case of temporary external service failures."
           ]
         },
         "documentation": {
-          "title": "Документация:",
-          "content": "Поддерживайте эту документацию в актуальном состоянии, отражая изменения в используемых сервисах или добавлении новых интеграций (Принцип 1: Обучение, Принцип 9: Система)."
+          "title": "Documentation:",
+          "content": "Keep this documentation up-to-date, reflecting changes in used services or the addition of new integrations (Principle 1: Learning, Principle 9: System)."
         }
       }
     },
