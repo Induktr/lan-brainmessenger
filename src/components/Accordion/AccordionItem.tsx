@@ -16,24 +16,24 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer }) => {
   };
 
   return (
-    <div className="accordion-item border-b border-gray-200 dark:border-gray-700">
+    <div className="accordion-item">
       <button
-        className="accordion-header w-full flex justify-between items-center py-4 px-6 text-left focus:outline-none"
+        className="accordion-header"
         onClick={toggleOpen}
       >
-        <span className="text-lg font-medium text-gray-900 dark:text-gray-100">{question}</span>
+        <span className="accordion-question">{question}</span>
         <SvgIcon
           iconName="arrowRight" // Используем иконку стрелки вправо
           title="Toggle" // Используем title вместо alt для SvgIcon
-          className={`transform transition-transform duration-300 ${isOpen ? 'rotate-90' : 'rotate-0'}`}
+          className={`accordion-icon ${isOpen ? 'is-open' : ''}`}
         />
       </button>
       <div
-        className={`accordion-content overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-screen opacity-100 py-4 px-6' : 'max-h-0 opacity-0'
-        }`}
+        className={`accordion-content ${isOpen ? 'is-open' : ''}`}
       >
-        <p className="text-gray-700 dark:text-gray-300">{answer}</p>
+        <div className="accordion-answer-inner">
+          <p className="accordion-answer-text">{answer}</p>
+        </div>
       </div>
     </div>
   );

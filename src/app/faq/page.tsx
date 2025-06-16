@@ -5,16 +5,16 @@ import Container from '@/components/Container'; // Предполагаем, ч�
 
 const FAQPage: React.FC = () => {
   return (
-    <Container className="mt-16 sm:mt-32">
-      <header className="max-w-2xl">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl">
+    <Container className="faq-page-container">
+      <header className="faq-header-section">
+        <h1 className="faq-page-title">
           Часто задаваемые вопросы
         </h1>
-        <p className="mt-6 text-base text-gray-700 dark:text-gray-300">
+        <p className="faq-page-subtitle">
           Здесь вы найдете ответы на наиболее часто задаваемые вопросы о BrainMessenger.
         </p>
       </header>
-      <div className="mt-10">
+      <div className="faq-accordion-wrapper">
         <Accordion items={faqData} />
       </div>
     </Container>

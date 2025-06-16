@@ -13,7 +13,7 @@ interface AccordionProps {
 
 const Accordion: React.FC<AccordionProps> = ({ items }) => {
   return (
-    <div className="accordion-container w-full max-w-3xl mx-auto">
+    <div className="accordion-container">
       {items.map((item) => (
         <AccordionItem key={item.id} question={item.question} answer={item.answer} />
       ))}

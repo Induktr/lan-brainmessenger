@@ -2507,24 +2507,77 @@ p {
   height: 100%;
 }
 
+/* FAQ Page styles */
+.faq-page-container {
+  margin-top: var(--spacing-xxl); /* Equivalent to mt-16 sm:mt-32 */
+  margin-bottom: var(--spacing-xxl);
+  max-width: 1024px; /* max-w-4xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-md); /* px-4 */
+  padding-right: var(--spacing-md); /* px-4 */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+  .faq-page-container {
+    margin-top: 80px; /* sm:mt-32 (32 * 2.5 = 80px, assuming 1rem = 16px) */
+  }
+}
+
+.faq-header-section {
+  max-width: 672px; /* max-w-2xl (2xl is 24rem = 384px, but 672px is used in other places for 2xl) */
+  margin-bottom: var(--spacing-xl); /* mb-10 */
+}
+
+.faq-page-title {
+  font-size: var(--font-size-h1); /* text-4xl */
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.025em; /* tracking-tight */
+  color: var(--color-text-primary);
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+  .faq-page-title {
+    font-size: 60px; /* sm:text-5xl (5xl is 48px, but 60px is a common equivalent for 5xl in some systems) */
+  }
+}
+
+.faq-page-subtitle {
+  margin-top: var(--spacing-lg); /* mt-6 */
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+.faq-accordion-wrapper {
+  margin-top: var(--spacing-xl); /* mt-10 */
+}
+
 /* Accordion styles */
 .accordion-container {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md); /* space-y-4 */
+  width: 100%; /* w-full */
+  max-width: 768px; /* max-w-3xl (48rem * 16px/rem = 768px) */
+  margin-left: auto; /* mx-auto */
+  margin-right: auto; /* mx-auto */
 }
 
 .accordion-item {
-  background-color: var(--color-surface-dark); /* bg-[var(--secondary)] */
+  background-color: var(--color-surface-dark);
   border-radius: var(--spacing-md); /* rounded-xl */
   border: 1px solid var(--color-border);
   overflow: hidden;
 }
 
 .accordion-header {
-  font-size: var(--font-size-lg); /* text-lg */
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-primary);
+  width: 100%; /* w-full */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-lg); /* py-4 px-6 */
+  text-align: left;
+  outline: none; /* focus:outline-none */
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -2532,20 +2585,46 @@ p {
   background-color: rgba(var(--color-primary-rgb), 0.1); /* A subtle hover effect */
 }
 
-.accordion-header .svg-icon {
-  color: var(--color-text-secondary);
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+.accordion-question {
+  font-size: var(--font-size-lg); /* text-lg */
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
 }
 
-.accordion-header:hover .svg-icon {
+.accordion-icon {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  color: var(--color-text-secondary);
+}
+
+.accordion-icon.is-open {
+  transform: rotate(90deg);
+}
+
+.accordion-header:hover .accordion-icon {
   color: var(--color-primary);
 }
 
 .accordion-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.accordion-content.is-open {
+  max-height: 1000px; /* A sufficiently large value to allow content to expand */
+  opacity: 1;
+}
+
+.accordion-answer-inner {
+  padding: 0 var(--spacing-lg) var(--spacing-lg); /* px-6 pb-6 */
+}
+
+.accordion-answer-text {
   color: var(--color-text-secondary);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
-  /* These are controlled by JS for max-height and opacity */
 }
 
 /* Add RGB variable for primary color if not already defined for rgba usage */
