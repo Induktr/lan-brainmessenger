@@ -388,177 +388,177 @@
       }
     },
     "design": {
-      "title": "Документация Дизайна BrainMessenger",
-      "subtitle": "Система Качества и Ценности",
+      "title": "BrainMessenger Design Documentation",
+      "subtitle": "Quality and Value System",
       "section1": {
-        "title": "1. Введение: Дизайн как Фундамент Ценности",
+        "title": "1. Introduction: Design as the Foundation of Value",
         "name": "BrainMessenger Design System",
-        "description": "Эта дизайн-система определяет визуальные и функциональные стандарты для интерфейса BrainMessenger. Наша цель — создать интерфейс, который не просто выглядит хорошо, но и является <strong>интуитивно понятным, эффективным и доступным</strong> (Принцип 2: Создание Ценности), опираясь на принципы <strong>качества > количества</strong> (Принцип 3) и <strong>прагматизма</strong> (Принцип 12) в выборе решений.",
-        "goal": "Обеспечить <strong>единообразие, надежность и позитивный пользовательский опыт</strong> на всех платформах (Windows, Android, веб), делая BrainMessenger <strong>полезным АКТИВОМ</strong> (Принцип 10) для пользователей.",
-        "principles_title": "Принципы, которыми руководствуется дизайн:",
+        "description": "This design system defines visual and functional standards for the BrainMessenger interface. Our goal is to create an interface that not only looks good but is also <strong>intuitive, efficient, and accessible</strong> (Principle 2: Value Creation), relying on the principles of <strong>quality > quantity</strong> (Principle 3) and <strong>pragmatism</strong> (Principle 12) in decision-making.",
+        "goal": "Ensure <strong>consistency, reliability, and a positive user experience</strong> across all platforms (Windows, Android, web), making BrainMessenger a <strong>valuable ASSET</strong> (Principle 10) for users.",
+        "principles_title": "Design principles:",
         "principles": [
-          "<strong>Создание Ценности (Принцип 2):</strong> Дизайн должен быть функциональным и решать задачи пользователя максимально удобно и эффективно.",
-          "<strong>Качество > Количество (Принцип 3):</strong> Фокус на отточенности ключевых элементов, а не на множестве непродуманных деталей. Дизайн должен быть <strong>надежным</strong> и <strong>продуманным</strong>.",
-          "<strong>Прагматизм и Реализм (Принцип 12):</strong> Выбор дизайнерских решений, реализуемых с учетом технических ограничений (например, оптимизация анимаций).",
-          "<strong>Целостность (Принцип 7):</strong> Визуальная и функциональная целостность на всех платформах.",
-          "<strong>Здоровье как Фундамент (Принцип 5):</strong> Внимание к доступности (WCAG), чтобы дизайн не создавал излишней нагрузки (зрительной, когнитивной) на пользователя."
+          "<strong>Value Creation (Principle 2):</strong> Design must be functional and solve user tasks as conveniently and efficiently as possible.",
+          "<strong>Quality > Quantity (Principle 3):</strong> Focus on the refinement of key elements, not on a multitude of poorly thought-out details. Design must be <strong>reliable</strong> and <strong>well-considered</strong>.",
+          "<strong>Pragmatism and Realism (Principle 12):</strong> Choosing design solutions that are feasible given technical constraints (e.g., animation optimization).",
+          "<strong>Integrity (Principle 7):</strong> Visual and functional integrity across all platforms.",
+          "<strong>Health as a Foundation (Principle 5):</strong> Attention to accessibility (WCAG) so that the design does not create undue burden (visual, cognitive) on the user."
         ]
       },
       "section2": {
-        "title": "2. Цветовая палитра: Визуальный язык BrainMessenger",
-        "intro": "Цвета разделены для Light и Dark режимов, поддерживая переключение темы (функция \"Night Mode\"). Все цвета заданы в HEX.",
+        "title": "2. Color Palette: BrainMessenger Visual Language",
+        "intro": "Colors are separated for Light and Dark modes, supporting theme switching (\"Night Mode\" function). All colors are specified in HEX.",
         "light_mode_title": "2.1. Light Mode",
         "light_mode_table": [
-          ["Категория", "Цвет (HEX)", "Назначение"],
-          ["<strong>Primary Gradient</strong>", "`#A7F43A` → `#00C853`", "Основной градиент для акцентных элементов (кнопки \"Get Started\", иконки)"],
-          ["<strong>Accent</strong>", "`#FF6347`", "Акцентные элементы (ошибки, важные сообщения)"],
-          ["<strong>Secondary</strong>", "`#00BFFF`", "Второстепенные кнопки, ссылки, интерактивные элементы"],
-          ["<strong>Success</strong>", "`#96C93D`", "Подтверждение, успешные действия"],
-          ["<strong>Background</strong>", "`#FFFFFF`", "Основной фон"],
-          ["<strong>Surface</strong>", "`#F0F0F0`", "Карточки, панели, фоны сообщений"],
-          ["<strong>Text Primary</strong>", "`#333333`", "Основной текст"],
-          ["<strong>Text Secondary</strong>", "`#4D4D4D`", "Вторичный текст, подсказки, метаданные"],
-          ["<strong>Disabled</strong>", "`#B0B0B0`", "Неактивные элементы"],
-          ["<strong>Border</strong>", "`#E8E8D9`", "Границы, разделители"]
+          ["Category", "Color (HEX)", "Purpose"],
+          ["<strong>Primary Gradient</strong>", "`#A7F43A` → `#00C853`", "Main gradient for accent elements (\"Get Started\" buttons, icons)"],
+          ["<strong>Accent</strong>", "`#FF6347`", "Accent elements (errors, important messages)"],
+          ["<strong>Secondary</strong>", "`#00BFFF`", "Secondary buttons, links, interactive elements"],
+          ["<strong>Success</strong>", "`#96C93D`", "Confirmation, successful actions"],
+          ["<strong>Background</strong>", "`#FFFFFF`", "Main background"],
+          ["<strong>Surface</strong>", "`#F0F0F0`", "Cards, panels, message backgrounds"],
+          ["<strong>Text Primary</strong>", "`#333333`", "Primary text"],
+          ["<strong>Text Secondary</strong>", "`#4D4D4D`", "Secondary text, hints, metadata"],
+          ["<strong>Disabled</strong>", "`#B0B0B0`", "Inactive elements"],
+          ["<strong>Border</strong>", "`#E8E8D9`", "Borders, dividers"]
         ],
         "dark_mode_title": "2.2. Dark Mode",
         "dark_mode_table": [
-          ["Категория", "Цвет (HEX)", "Назначение"],
-          ["<strong>Primary Gradient</strong>", "`#F2F047` → `#1ED94F`", "Основной градиент для акцентных элементов"],
-          ["<strong>Accent</strong>", "`#FF6347`", "Акцентные элементы (ошибки)"],
-          ["<strong>Secondary</strong>", "`#00BFFF`", "Второстепенные кнопки, ссылки"],
-          ["<strong>Success</strong>", "`#96C93D`", "Подтверждение, успешные действия"],
-          ["<strong>Background</strong>", "`#1A1A1A`", "Основной фон"],
-          ["<strong>Surface</strong>", "`#333333`", "Карточки, панели, фоны сообщений"],
-          ["<strong>Text Primary</strong>", "`#FFFFFF`", "Основной текст"],
-          ["<strong>Text Secondary</strong>", "`#D9E8D9`", "Вторичный текст, подсказки"],
-          ["<strong>Disabled</strong>", "`#4D4D4D`", "Неактивные элементы"],
-          ["<strong>Border</strong>", "`#B0B0B0`", "Границы, разделители"]
+          ["Category", "Color (HEX)", "Purpose"],
+          ["<strong>Primary Gradient</strong>", "`#F2F047` → `#1ED94F`", "Main gradient for accent elements"],
+          ["<strong>Accent</strong>", "`#FF6347`", "Accent elements (errors)"],
+          ["<strong>Secondary</strong>", "`#00BFFF`", "Secondary buttons, links"],
+          ["<strong>Success</strong>", "`#96C93D`", "Confirmation, successful actions"],
+          ["<strong>Background</strong>", "`#1A1A1A`", "Main background"],
+          ["<strong>Surface</strong>", "`#333333`", "Cards, panels, message backgrounds"],
+          ["<strong>Text Primary</strong>", "`#FFFFFF`", "Primary text"],
+          ["<strong>Text Secondary</strong>", "`#D9E8D9`", "Secondary text, hints"],
+          ["<strong>Disabled</strong>", "`#4D4D4D`", "Inactive elements"],
+          ["<strong>Border</strong>", "`#B0B0B0`", "Borders, dividers"]
         ],
-        "premium_colors_title": "2.3. Цвета Премиум-Функций (Визуальное выделение Ценности)",
+        "premium_colors_title": "2.3. Premium Feature Colors (Visual Value Highlight)",
         "premium_colors": [
-          "<strong>Premium Accent:</strong> `#FFD600` (Золотой)",
-          "<strong>Premium Secondary:</strong> `#2196F3` (Синий)",
-          "Используются для визуального выделения премиум-функций (например, в анимациях нейронных связей, специальных элементах UI), подчеркивая их <strong>дополнительную ценность</strong> (Принцип 2, 10)."
+          "<strong>Premium Accent:</strong> `#FFD600` (Gold)",
+          "<strong>Premium Secondary:</strong> `#2196F3` (Blue)",
+          "Used for visual highlighting of premium features (e.g., in neural connection animations, special UI elements), emphasizing their <strong>additional value</strong> (Principle 2, 10)."
         ],
-        "color_application_title": "2.4. Применение Цветов (Примеры)",
+        "color_application_title": "2.4. Color Application (Examples)",
         "color_application": [
           {
-            "title": "Welcome Screen (из скриншота):",
+            "title": "Welcome Screen (from screenshot):",
             "items": [
-              "Фон: `#1A1A1A` (Dark Mode).",
-              "Кнопка \"Get Started\": Градиент `#F2F047` → `#1ED94F`.",
-              "Иконка чата: `#F2F047` (обводка) с белым символом внутри.",
-              "Текст: `#FFFFFF` (Welcome to Brain Messenger), `#D9E8D9` (подсказка)."
+              "Background: `#1A1A1A` (Dark Mode).",
+              "\"Get Started\" Button: Gradient `#F2F047` → `#1ED94F`.",
+              "Chat icon: `#F2F047` (stroke) with a white symbol inside.",
+              "Text: `#FFFFFF` (Welcome to Brain Messenger), `#D9E8D9` (hint)."
             ]
           },
           {
-            "title": "Переключение темы:",
+            "title": "Theme switching:",
             "items": [
-              "Реализовано через глобальный флаг `themeMode` (`Light`/`Dark`).",
-              "Пример в React Native:\n```jsx\nimport { useColorScheme } from 'react-native';\nconst themeMode = useColorScheme() === 'dark' ? 'Dark' : 'Light';\nconst backgroundColor = themeMode === 'Dark' ? '#1A1A1A' : '#FFFFFF'; // Пример выбора фона\n```"
+              "Implemented via global flag `themeMode` (`Light`/`Dark`).",
+              "React Native example:\n```jsx\nimport { useColorScheme } from 'react-native';\nconst themeMode = useColorScheme() === 'dark' ? 'Dark' : 'Light';\nconst backgroundColor = themeMode === 'Dark' ? '#1A1A1A' : '#FFFFFF'; // Example of background selection\n```"
             ]
           }
         ],
-        "usage_recommendations_title": "2.5. Рекомендации по Использованию Цветов",
+        "usage_recommendations_title": "2.5. Color Usage Recommendations",
         "usage_recommendations": [
-          "<strong>Градиенты:</strong> Используйте `#A7F43A` → `#00C853` или `#F2F047` → `#1ED94F` (в зависимости от темы) для ключевых действий и акцентных элементов, привлекающих внимание к <strong>ценности</strong> (Принцип 2).",
-          "<strong>Темная тема:</strong> Используйте `#1A1A1A` или `#212121` как основной фон для снижения нагрузки на глаза (связь с Принципом 5: Здоровье).",
-          "<strong>Контраст:</strong> Всегда проверяйте контрастность текста и элементов для обеспечения <strong>доступности</strong> (WCAG 2.1 AA) и соответствия Принципу 7 (Целостность). Используйте инструменты вроде WebAIM Contrast Checker."
+          "<strong>Gradients:</strong> Use `#A7F43A` → `#00C853` or `#F2F047` → `#1ED94F` (depending on the theme) for key actions and accent elements that draw attention to <strong>value</strong> (Principle 2).",
+          "<strong>Dark Theme:</strong> Use `#1A1A1A` or `#212121` as the main background to reduce eye strain (connection to Principle 5: Health).",
+          "<strong>Contrast:</strong> Always check the contrast of text and elements to ensure <strong>accessibility</strong> (WCAG 2.1 AA) and adherence to Principle 7 (Integrity). Use tools like WebAIM Contrast Checker."
         ]
       },
       "section3": {
-        "title": "3. Типографика: Читаемость как Основа Эффективности",
-        "intro": "Выбор шрифта и его применение основаны на обеспечении максимальной читаемости и доступности, что критически важно для эффективного усвоения информации и снижения когнитивной нагрузки (связь с Принципом 5: Здоровье и Принципом 2: Ценность).",
-        "primary_font_title": "3.1. Основной шрифт",
+        "title": "3. Typography: Readability as the Foundation of Efficiency",
+        "intro": "Font selection and its application are based on ensuring maximum readability and accessibility, which is critical for efficient information assimilation and reducing cognitive load (connection to Principle 5: Health and Principle 2: Value).",
+        "primary_font_title": "3.1. Primary Font",
         "primary_font": [
-          "<strong>Семейство:</strong> Roboto (Google Fonts)",
-          "<strong>Запасной:</strong> Sans-serif",
-          "<strong>Причина:</strong> Высокая читаемость на разных размерах экрана, широкая поддержка символов (мультиязычность), открытая лицензия и доступность."
+          "<strong>Family:</strong> Roboto (Google Fonts)",
+          "<strong>Fallback:</strong> Sans-serif",
+          "<strong>Reason:</strong> High readability across different screen sizes, broad symbol support (multilingual), open license, and availability."
         ],
-        "sizes_styles_title": "3.2. Размеры и стили (Шкала для Иерархии)",
+        "sizes_styles_title": "3.2. Sizes and Styles (Hierarchy Scale)",
         "sizes_styles_table": [
-          ["Уровень", "Размер", "Начертание", "Использование"],
-          ["H1 (Заголовок)", "24px", "Bold", "Основные заголовки экранов (например, \"Чаты\")"],
-          ["H2 (Подзаголовок)", "18px", "Medium", "Второстепенные заголовки, названия групп"],
-          ["Body", "16px", "Regular", "Основной текст сообщений, список чатов"],
-          ["Caption", "14px", "Regular", "Подписи под фото, время сообщений, мелкий текст"],
-          ["Button", "16px", "Medium", "Текст кнопок действий"]
+          ["Level", "Size", "Weight", "Usage"],
+          ["H1 (Heading)", "24px", "Bold", "Main screen titles (e.g., \"Chats\")"],
+          ["H2 (Subheading)", "18px", "Medium", "Secondary headings, group names"],
+          ["Body", "16px", "Regular", "Main message text, chat list"],
+          ["Caption", "14px", "Regular", "Photo captions, message timestamps, small text"],
+          ["Button", "16px", "Medium", "Action button text"]
         ],
-        "notes_title": "Примечания:",
+        "notes_title": "Notes:",
         "notes": [
-          "<strong>Высота строки (Line Height):</strong> Минимум 1.5 для основного текста для улучшения читаемости.",
-          "<strong>Кастомизация (Принцип 2):</strong> Пользователь может выбрать альтернативный шрифт в настройках (например, Open Sans) для адаптации под свои предпочтения.",
-          "<strong>Доступность:</strong> Соблюдение контраста и минимального размера шрифта для соответствия WCAG."
+          "<strong>Line Height:</strong> Minimum 1.5 for body text to improve readability.",
+          "<strong>Customization (Principle 2):</strong> Users can select an alternative font in settings (e.g., Open Sans) to adapt to their preferences.",
+          "<strong>Accessibility:</strong> Adherence to contrast and minimum font size for WCAG compliance."
         ]
       },
       "section4": {
-        "title": "4. Анимации: Оптимизация и Смысл (Принцип 12: Прагматизм)",
-        "intro": "Анимации в BrainMessenger используются для улучшения пользовательского опыта, предоставления визуальной обратной связи и придания интерфейсу живости. Однако они должны быть <strong>прагматичными, оптимизированными</strong> (<2 ГБ RAM), и <strong>не создавать излишней нагрузки</strong> (связь с Принципом 5: Здоровье).",
-        "principles_title": "4.1. Принципы Анимаций",
+        "title": "4. Animations: Optimization and Purpose (Principle 12: Pragmatism)",
+        "intro": "Animations in BrainMessenger are used to enhance user experience, provide visual feedback, and bring liveliness to the interface. However, they must be <strong>pragmatic, optimized</strong> (<2GB RAM), and <strong>not create undue burden</strong> (connection to Principle 5: Health).",
+        "principles_title": "4.1. Animation Principles",
         "principles": [
-          "<strong>Смысл:</strong> Каждая анимация должна иметь четкую цель – объяснить переход, привлечь внимание к важному, подтвердить действие.",
-          "<strong>Плавность:</strong> Использование `ease-in-out` или `ease-out` для натурального движения.",
-          "<strong>Оптимизация:</strong> Анимации не должны замедлять интерфейс или потреблять много ресурсов. Длительность подобрана для баланса между плавностью и скоростью.",
-          "<strong>Доступность:</strong> Избегание слишком быстрых или мигающих анимаций, которые могут вызвать дискомфорт или приступы у чувствительных пользователей."
+          "<strong>Purpose:</strong> Every animation must have a clear goal – to explain a transition, draw attention to something important, confirm an action.",
+          "<strong>Smoothness:</strong> Use `ease-in-out` or `ease-out` for natural movement.",
+          "<strong>Optimization:</strong> Animations should not slow down the interface or consume excessive resources. Duration is chosen to balance smoothness and speed.",
+          "<strong>Accessibility:</strong> Avoid overly fast or flashing animations that may cause discomfort or seizures in sensitive users."
         ],
-        "list_title": "4.2. Список Анимаций (Примеры)",
+        "list_title": "4.2. Animation List (Examples)",
         "list_table": [
-          ["Название", "Описание", "Триггер", "Параметры", "Связь с Принципами", "Цвета (Light/Dark)"],
-          ["Переключение слайдов", "Сдвиг слайдов (Welcome Screen)", "Свайп/клик по стрелке", "0.3 сек, slide left/right", "P2 (Онбординг)", "#96C93D / #96C93D"],
-          ["Открытие чата", "Чат появляется снизу вверх", "Клик по чату в списке", "0.3 сек, ease-in-out", "P2 (Навигация)", "#00BFFF / #00BFFF"],
-          ["Нажатие кнопки", "Визуальный фидбек при клике (уменьшение)", "Клик по кнопке", "0.2 сек, scale", "P2 (Фидбек)", "Градиент #F2F047→#1ED94F"],
-          ["Отправка сообщения", "Сообщение появляется с плавным появлением", "Клик \"Отправить\"", "0.3 сек, fade-in", "P2 (Фидбек)", "#96C93D / #96C93D"],
-          ["Переход между экранами", "Сдвиг экрана вправо/влево (базовая навигация)", "Навигация", "0.3 сек, slide", "P2 (Навигация)", "#B0B0B0 / #4D4D4D"],
-          ["Анимация иконок (Morph)", "Преобразование иконки (например, mute → unmute)", "Клик (переключение состояния)", "0.4 сек, morph", "P2 (Состояние)", "#FF6347 / #FF6347"],
-          ["Волны при нажатии (Ripple)", "Радиальные волны от точки нажатия (фидбек)", "Клик по кнопке/элементу", "0.3 сек, ripple", "P2 (Фидбек)", "#F2F047 / #F2F047"],
-          ["Глитч-эффект (Premium)", "Искажение текста для премиум (визуализация)", "Активация подписки", "0.2 сек, glitch", "P2, P10 (Выделение)", "#FF6347 / #FF6347"],
-          ["Нейронные связи (Premium)", "Пульсирующие линии (визуализация Актива)", "Премиум-экран", "0.5 сек, pulse", "P2, P10 (Выделение)", "#96C93D / #96C93D"]
+          ["Name", "Description", "Trigger", "Parameters", "Principle Connection", "Colors (Light/Dark)"],
+          ["Slide Switching", "Slide transition (Welcome Screen)", "Swipe/click on arrow", "0.3 sec, slide left/right", "P2 (Onboarding)", "#96C93D / #96C93D"],
+          ["Chat Opening", "Chat appears from bottom up", "Click on chat in list", "0.3 sec, ease-in-out", "P2 (Navigation)", "#00BFFF / #00BFFF"],
+          ["Button Press", "Visual feedback on click (shrink)", "Click on button", "0.2 sec, scale", "P2 (Feedback)", "Gradient #F2F047→#1ED94F"],
+          ["Message Sending", "Message appears with smooth fade-in", "Click \"Send\"", "0.3 sec, fade-in", "P2 (Feedback)", "#96C93D / #96C93D"],
+          ["Screen Transition", "Screen slide right/left (basic navigation)", "Navigation", "0.3 sec, slide", "P2 (Navigation)", "#B0B0B0 / #4D4D4D"],
+          ["Icon Animation (Morph)", "Icon transformation (e.g., mute → unmute)", "Click (state toggle)", "0.4 sec, morph", "P2 (State)", "#FF6347 / #FF6347"],
+          ["Ripple Effect", "Radial waves from click point (feedback)", "Click on button/element", "0.3 sec, ripple", "P2 (Feedback)", "#F2F047 / #F2F047"],
+          ["Glitch Effect (Premium)", "Text distortion for premium (visualization)", "Subscription activation", "0.2 sec, glitch", "P2, P10 (Highlight)", "#FF6347 / #FF6347"],
+          ["Neural Connections (Premium)", "Pulsating lines (Asset visualization)", "Premium screen", "0.5 sec, pulse", "P2, P10 (Highlight)", "#96C93D / #96C93D"]
         ],
-        "implementation_examples_title": "4.3. Примеры Реализации (Фрагменты кода)",
-        "css_ripple_title": "CSS для Ripple-эффекта:",
-        "css_ripple_code": ".ripple {\n  background: linear-gradient(45deg, #F2F047, #1ED94F); /* Или другие цвета/градиент */\n  border-radius: 50%;\n  animation: ripple 0.3s ease-out;\n}\n@keyframes ripple {\n  to { transform: scale(2); opacity: 0; }\n}",
-        "rn_icon_title": "React Native для анімованої іконки:",
-        "rn_icon_code": "import Animated from 'react-native-reanimated'; // Пример библиотеки\nimport Icon from 'react-native-vector-icons/MaterialIcons'; // Пример библиотеки\n\nconst color = themeMode === 'Dark' ? '#FFFFFF' : '#333333';\n// Создание анімованого компонента Icon\nconst AnimatedIcon = Animated.createAnimatedComponent(Icon);\n\n// Пример использования с анимацией scale (припускаючи, что 'scale' - это Animated.Value)\n<AnimatedIcon name=\"volume-up\" color={color} style={{ transform: [{ scale: scale }] }} />"
+        "implementation_examples_title": "4.3. Implementation Examples (Code Snippets)",
+        "css_ripple_title": "CSS for Ripple Effect:",
+        "css_ripple_code": ".ripple {\n  background: linear-gradient(45deg, #F2F047, #1ED94F); /* Or other colors/gradient */\n  border-radius: 50%;\n  animation: ripple 0.3s ease-out;\n}\n@keyframes ripple {\n  to { transform: scale(2); opacity: 0; }\n}",
+        "rn_icon_title": "React Native for animated icon:",
+        "rn_icon_code": "import Animated from 'react-native-reanimated'; // Example library\nimport Icon from 'react-native-vector-icons/MaterialIcons'; // Example library\n\nconst color = themeMode === 'Dark' ? '#FFFFFF' : '#333333';\n// Create an animated Icon component\nconst AnimatedIcon = Animated.createAnimatedComponent(Icon);\n\n// Example usage with scale animation (assuming 'scale' is an Animated.Value)\n<AnimatedIcon name=\"volume-up\" color={color} style={{ transform: [{ scale: scale }] }} />"
       },
       "section5": {
-        "title": "5. Выравнивание и Сетка: Структура и Порядок (Принцип 9: Система)",
-        "intro": "Использование последовательной системы выравнивания и модульной сетки — это основа для создания <strong>системного, легко поддерживаемого и визуально гармоничного</strong> интерфейса (Принцип 9: Система).",
-        "base_grid": "<strong>Базовая Сетка:</strong> 8px (базовый шаг для определения размеров элементов, отступов, интервалов). Все значения должны быть кратны 8 (или 4 для очень мелких элементов).",
-        "alignment_title": "<strong>Выравнивание:</strong>",
+        "title": "5. Alignment and Grid: Structure and Order (Principle 9: System)",
+        "intro": "Using a consistent alignment system and modular grid is fundamental to creating a <strong>systematic, easily maintainable, and visually harmonious</strong> interface (Principle 9: System).",
+        "base_grid": "<strong>Base Grid:</strong> 8px (base step for defining element sizes, paddings, intervals). All values should be multiples of 8 (or 4 for very small elements).",
+        "alignment_title": "<strong>Alignment:</strong>",
         "alignment": [
-          "Используется принцип <strong>визуальной иерархии</strong>: более важные элементы располагаются выше или визуально доминируют.",
-          "<strong>Вертикальный поток:</strong> Контент на экранах организуется сверху вниз: Заголовок → Поле ввода → Кнопка действия.",
-          "<strong>Горизонтальное выравнивание:</strong> Элементы в контейнерах выравниваются по левому краю (для LTR) или правому краю (для RTL), если нет необходимости в центрировании (например, заголовки в шапке).",
-          "<strong>Отступы (Padding/Margin):</strong> Используются значения из шкалы, кратной 8px (8, 16, 24, 32, 40, 48 px и т.д.) для создания четких интервалов между элементами и группами элементов."
+          "The principle of <strong>visual hierarchy</strong> is used: more important elements are positioned higher or visually dominate.",
+          "<strong>Vertical flow:</strong> Content on screens is organized from top to bottom: Title → Input Field → Action Button.",
+          "<strong>Horizontal alignment:</strong> Elements in containers are left-aligned (for LTR) or right-aligned (for RTL), unless centering is required (e.g., headers in the top bar).",
+          "<strong>Padding/Margin:</strong> Values from a scale of multiples of 8px (8, 16, 24, 32, 40, 48 px, etc.) are used to create clear spacing between elements and groups of elements."
         ],
-        "adaptability_title": "<strong>Адаптивность и Отзывчивость:</strong>",
+        "adaptability_title": "<strong>Adaptability and Responsiveness:</strong>",
         "adaptability": [
-          "Дизайн адаптируется под различные размеры экрана для обеспечения <strong>ценности</strong> (Принцип 2) на любом устройстве.",
-          "<strong>Мобильные устройства:</strong> 320px–767px (Обычно одноколоночный макет).",
-          "<strong>Планшеты:</strong> 768px–1023px (Возможно, двухколоночный макет, боковые панели).",
-          "<strong>Десктоп:</strong> 1024px+ (Широкий макет, многоколоночный дизайн, боковые панели)."
+          "The design adapts to various screen sizes to ensure <strong>value</strong> (Principle 2) on any device.",
+          "<strong>Mobile Devices:</strong> 320px–767px (Typically single-column layout).",
+          "<strong>Tablets:</strong> 768px–1023px (Potentially two-column layout, side panels).",
+          "<strong>Desktop:</strong> 1024px+ (Wide layout, multi-column design, side panels)."
         ]
       },
       "section6": {
-        "title": "6. Принципы Доступности (WCAG 2.1 AA): Дизайн для Всех (Принцип 5: Здоровье, Принцип 7: Целостность)",
-        "intro": "<strong>Доступность — это не опция, а фундаментальное требование</strong> (схоже с Принципом 5: Здоровье как Фундамент) для создания <strong>целостного</strong> (Принцип 7) и <strong>ценного</strong> (Принцип 2) продукта, которым могут пользоваться все, независимо от их способностей или используемых технологий. Мы стремимся соответствовать уровню WCAG 2.1 AA.",
+        "title": "6. Accessibility Principles (WCAG 2.1 AA): Design for All (Principle 5: Health, Principle 7: Integrity)",
+        "intro": "<strong>Accessibility is not an option, but a fundamental requirement</strong> (similar to Principle 5: Health as a Foundation) for creating a <strong>holistic</strong> (Principle 7) and <strong>valuable</strong> (Principle 2) product that everyone can use, regardless of their abilities or technologies. We strive to comply with WCAG 2.1 AA level.",
         "principles": [
-          "<strong>Контрастность Цветов:</strong> Текстовые элементы должны иметь минимальный контраст 4.5:1 (для обычного текста) и 3:1 (для крупного текста или иконок) по отношению к фону. Это проверяется для обеих тем (Light/Dark).",
-          "<strong>Навигация с Клавиатуры:</strong> Все интерактивные элементы (кнопки, ссылки, поля ввода) должны быть доступны для навигации с помощью клавиатуры (Tab, Shift+Tab) и активации (Enter, Space).",
-          "<strong>Поддержка Экранных Читалок (Screen Readers):</strong> Использование семантической разметки (HTML) и ARIA-атрибутов для предоставления контекста и информации пользователям экранных читалок (например, описания для иконок, состояния элементов).",
-          "<strong>Визуальный Индикатор Фокуса:</strong> Для пользователей клавиатуры должен быть четкий и видимый индикатор текущего сфокусированного элемента (например, синяя обводка `#007BFF`).",
-          "<strong>Обработка Ошибок:</strong> Сообщения об ошибках должны быть четкими, понятными и легко определяемыми пользователями, включая пользователей экранных читалок.",
-          "<strong>Поддержка RTL (Справа Налево):</strong> Дизайн адаптируется для языков с направлением письма справа налево (например, арабский), включая зеркальное отображение макета, иконок и текста (см. DocLocIn.md)."
+          "<strong>Color Contrast:</strong> Text elements must have a minimum contrast ratio of 4.5:1 (for normal text) and 3:1 (for large text or icons) relative to the background. This is checked for both themes (Light/Dark).",
+          "<strong>Keyboard Navigation:</strong> All interactive elements (buttons, links, input fields) must be accessible for navigation using the keyboard (Tab, Shift+Tab) and activation (Enter, Space).",
+          "<strong>Screen Reader Support:</strong> Use semantic markup (HTML) and ARIA attributes to provide context and information to screen reader users (e.g., descriptions for icons, element states).",
+          "<strong>Visual Focus Indicator:</strong> For keyboard users, there must be a clear and visible indicator of the currently focused element (e.g., blue outline `#007BFF`).",
+          "<strong>Error Handling:</strong> Error messages must be clear, understandable, and easily identifiable by users, including screen reader users.",
+          "<strong>RTL (Right-to-Left) Support:</strong> The design adapts for right-to-left languages (e.g., Arabic), including mirroring layout, icons, and text (see DocLocIn.md)."
         ]
       },
       "section7": {
-        "title": "7. Примечания и Рекомендации",
+        "title": "7. Notes and Recommendations",
         "notes": [
-          "<strong>Кастомизация Пользователем:</strong> Помните, что некоторые аспекты дизайна (цвета чатов, шрифты) пользователь может изменять в настройках. Дизайн системы должен учитывать эту гибкость.",
-          "<strong>Тестирование на Реальных Устройствах:</strong> Все компоненты дизайна необходимо тестировать на разнообразных устройствах, с различными разрешениями экрана и в разных условиях освещения, чтобы убедиться в их эффективности и доступности.",
-          "<strong>Живая Документация:</strong> Эта дизайн-система — живой документ. Она будет дополняться новыми компонентами, шаблонами и рекомендациями по мере развития продукта, отражая принципы <strong>непрерывного совершенствования</strong> (Принцип 1) и <strong>системного подхода</strong> (Принцип 9).",
-          "<strong>Дизайн как часть Процесса Кайдзен:</strong> Дизайн-решения анализируются и улучшаются на основе обратной связи и реального использования, интегрируясь в общий процесс Кайдзен (Принцип 9, 14)."
+          "<strong>User Customization:</strong> Remember that users can change some design aspects (chat colors, fonts) in settings. The design system must account for this flexibility.",
+          "<strong>Testing on Real Devices:</strong> All design components must be tested on various devices, with different screen resolutions and in different lighting conditions, to ensure their effectiveness and accessibility.",
+          "<strong>Living Documentation:</strong> This design system is a living document. It will be supplemented with new components, templates, and recommendations as the product evolves, reflecting the principles of <strong>continuous improvement</strong> (Principle 1) and a <strong>systemic approach</strong> (Principle 9).",
+          "<strong>Design as part of the Kaizen Process:</strong> Design decisions are analyzed and improved based on feedback and real usage, integrating into the overall Kaizen process (Principle 9, 14)."
         ]
       }
     },
