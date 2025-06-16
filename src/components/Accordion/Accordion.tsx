@@ -3,6 +3,8 @@ import AccordionItem from './AccordionItem';
 
 interface FAQQuestion {
   id: string;
+  question: string; // Add translated question
+  answer: string;   // Add translated answer
 }
 
 interface FAQCategory {
@@ -22,8 +24,8 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
           {category.questions.map((question) => (
             <AccordionItem
               key={question.id}
-              questionId={question.id}
-              categoryKey={category.categoryKey}
+              question={question.question} // Pass translated question
+              answer={question.answer}     // Pass translated answer
             />
           ))}
         </React.Fragment>

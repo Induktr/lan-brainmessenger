@@ -1,14 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import SvgIcon from '@/ui/SvgIcon'; // Убедитесь, что путь к SvgIcon правильный
+import SvgIcon from '@/ui/SvgIcon';
 
 interface AccordionItemProps {
-  questionId: string;
-  categoryKey: string;
+  question: string; // Now receives the translated question directly
+  answer: string;   // Now receives the translated answer directly
 }
 
-const AccordionItem: React.FC<AccordionItemProps> = ({ questionId, categoryKey }) => {
+const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -21,10 +21,10 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ questionId, categoryKey }
         className="accordion-header"
         onClick={toggleOpen}
       >
-        <span className="accordion-question">{questionId}</span>
+        <span className="accordion-question">{question}</span>
         <SvgIcon
-          iconName="arrowRight" // Используем иконку стрелки вправо
-          title="Toggle" // Используем title вместо alt для SvgIcon
+          iconName="arrowRight"
+          title="Toggle"
           className={`accordion-icon ${isOpen ? 'is-open' : ''}`}
         />
       </button>
@@ -32,7 +32,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ questionId, categoryKey }
         className={`accordion-content ${isOpen ? 'is-open' : ''}`}
       >
         <div className="accordion-answer-inner">
-          <p className="accordion-answer-text">{categoryKey}</p>
+          <p className="accordion-answer-text">{answer}</p>
         </div>
       </div>
     </div>

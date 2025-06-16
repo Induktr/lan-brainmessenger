@@ -234,7 +234,20 @@
           "question": "What are the project's limitations at the current stage (MVP)?",
           "answer": "*   Limited set of features compared to the vision (no calls, Premium, enhanced security).\n*   Limited multilingualism and accessibility options (expansion planned).\n*   The architecture is currently monolithic, which imposes limitations on independent scaling of individual parts.\n*   There may be performance limitations under load significantly exceeding the target for MVP (~1000 simultaneous users) before implementing deep optimizations and microservices."
         }
-      }
+      },
+      "learnMoreContribute": {
+        "q1": {
+          "question": "Where can I get more detailed information about the project?",
+          "answer": "More detailed information can be found in our documentation (the link will be added later) and on the project's GitHub page (if the project is open source)."
+        },
+        "q2": {
+          "question": "How can I join the project's development or contribute?",
+          "answer": "We are always happy to welcome new participants! Contact us via the contact form on the website or via GitHub (if the project is open) to discuss possible options for cooperation."
+        },
+        "q3": {
+          "question": "Where can I ask additional questions?",
+          "answer": "Additional questions can be asked via the contact form on the website, in our community (link will be added) or by creating an issue on GitHub (if the project is open)."
+        }
     }
   },
   "docs": {
@@ -2508,4 +2521,5 @@
     "brandContent": "Your Smart Communication Platform",
     "copyright": "© 2025 BrainMessenger. All rights reserved."
   }
+}
 }
