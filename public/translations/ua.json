@@ -1,254 +1,254 @@
 {
   "header": {
-    "features": "Features",
-    "news": "News",
-    "faq": "FAQ",
-    "faqLink": "FAQ",
-    "docs": "Docs",
-    "updates": "Updates",
-    "selectLanguage": "Select language",
-    "changeLanguageTooltip": "Change language",
-    "lightMode": "Light Mode",
-    "darkMode": "Dark Mode",
-    "openMenu": "Open menu",
-    "closeMenu": "Close menu",
-    "settings": "Settings",
-    "signOut": "Sign Out",
-    "deleteAccount": "Delete Account",
-    "deleteAccountConfirmTitle": "Confirm Account Deletion",
-    "deleteAccountConfirmMessage": "Are you sure you want to delete your account? This action cannot be undone.",
-    "cancel": "Cancel",
-    "confirmDelete": "Confirm Deletion",
-    "signIn": "Sign In"
-  },
-  "hero": {
-    "title": "Welcome to BrainMessenger",
-    "subtitle": "Your Smart Communication Platform",
-    "getStarted": "Get Started",
-    "learnMore": "Learn More",
-    "connectSmarterTitle": "Connect Smarter with BrainMessenger",
-    "connectSmarterSubtitle": "Experience the next generation of messaging with advanced features, unparalleled security, and seamless communication across all your devices.",
-    "downloadButton": "Download",
-    "downloadAndroid": "Download for Android"
-  },
-  "features": {
-    "featuresTitle": "Key Features",
-    "featuresSubtitle": "Discover what makes us unique",
-    "secureMessaging": "Secure Messaging",
-    "secureMessagingDesc": "End-to-end encryption for your privacy",
-    "smartAssistant": "Smart Assistant",
-    "smartAssistantDesc": "AI-powered help at your fingertips",
-    "crossPlatform": "Cross Platform",
-    "crossPlatformDesc": "Use on any device, anywhere",
-    "groupChats": "Group Chats",
-    "groupChatsDesc": "Connect with multiple people at once",
-    "privacyFirst": "Privacy First",
-    "privacyFirstDesc": "Your data is yours, always"
-  },
-  "news": {
-    "latestNews": "Latest news",
-    "readMore": "Read More",
-    "previousButton": "Previous news item",
-    "nextButton": "Next news item",
-    "pauseAutoplay": "Pause autoplay",
-    "playAutoplay": "Play autoplay"
-  },
-  "roadmap": {
-    "title": {
-      "section": "Roadmap",
-      "projectLaunch": "Project Launch",
-      "enhancedSecurity": "Enhanced Security",
-      "advancedCollaboration": "Advanced Collaboration",
-      "mobileEnhancement": "Mobile Enhancement",
-      "aiIntegration": "AI Integration",
-      "globalExpansion": "Global Expansion",
-      "enterpriseSolutions": "Enterprise Solutions",
-      "futureInnovation": "Future Innovation"
+      "features": "Функції",
+      "news": "Новини",
+      "faq": "FAQ",
+      "faqLink": "Поширені запитання",
+      "docs": "Документація",
+      "updates": "Оновлення",
+      "selectLanguage": "Вибрати мову",
+      "changeLanguageTooltip": "Змінити мову",
+      "lightMode": "Світла тема",
+      "darkMode": "Темна тема",
+      "openMenu": "Відкрити меню",
+      "closeMenu": "Закрити меню",
+      "settings": "Налаштування",
+      "signOut": "Вийти",
+      "deleteAccount": "Видалити обліковий запис",
+      "deleteAccountConfirmTitle": "Підтвердити видалення облікового запису",
+      "deleteAccountConfirmMessage": "Ви впевнені, що бажаєте видалити свій обліковий запис? Цю дію неможливо скасувати.",
+      "cancel": "Скасувати",
+      "confirmDelete": "Підтвердити видалення",
+      "signIn": "Увійти"
     },
-    "subtitle": {
-      "section": "Our Future Vision"
-    },
-    "status": {
-      "completed": "Completed",
-      "inProgress": "In Progress",
-      "upcoming": "Upcoming"
-    },
-    "description": {
-      "projectLaunch": "Initial launch of BrainMessenger with core features.",
-      "enhancedSecurity": "Strengthening security protocols and features.",
-      "advancedCollaboration": "Introducing advanced collaboration tools.",
-      "mobileEnhancement": "Enhancing mobile application experience.",
-      "aiIntegration": "Integrating AI-powered features for smarter communication.",
-      "globalExpansion": "Expanding BrainMessenger's reach globally.",
-      "enterpriseSolutions": "Developing solutions for enterprise clients.",
-      "futureInnovation": "Exploring and implementing future technologies."
+    "hero": {
+      "title": "Ласкаво просимо до BrainMessenger",
+      "subtitle": "Ваша розумна платформа для спілкування",
+      "getStarted": "Почати",
+      "learnMore": "Дізнатися більше",
+      "connectSmarterTitle": "Спілкуйтесь розумніше з BrainMessenger",
+      "connectSmarterSubtitle": "Відчуйте нове покоління обміну повідомленнями з розширеними функціями, неперевершеною безпекою та безперебійним зв'язком на всіх ваших пристроях.",
+      "downloadButton": "Завантажити",
+      "downloadAndroid": "Завантажити для Android"
     },
     "features": {
-      "secureMessagingInfrastructure": "Secure messaging infrastructure",
-      "crossPlatformCompatibility": "Cross-platform compatibility",
-      "basicUserInterface": "Basic user interface",
-      "endToEndEncryption": "End-to-end encryption",
-      "twoFactorAuthentication": "Two-factor authentication",
-      "fileSharingCapabilities": "File sharing capabilities",
-      "teamWorkspaces": "Team workspaces",
-      "realTimeCollaboration": "Real-time collaboration",
-      "advancedFileSharing": "Advanced file sharing",
-      "nativeMobileApps": "Native mobile apps",
-      "offlineFunctionality": "Offline functionality",
-      "pushNotifications": "Push notifications",
-      "smartMessageCategorization": "Smart message categorization",
-      "automatedResponses": "Automated responses",
-      "contentAnalysis": "Content analysis",
-      "multiLanguageSupport": "Multi-language support",
-      "regionalDataCenters": "Regional data centers",
-      "culturalAdaptations": "Cultural adaptations",
-      "advancedAdminControls": "Advanced admin controls",
-      "customIntegrations": "Custom integrations",
-      "enterpriseSupport": "Enterprise support",
-      "emergingTechnologies": "Emerging technologies",
-      "communityDrivenFeatures": "Community-driven features",
-      "platformExpansion": "Platform expansion"
+      "featuresTitle": "Ключові функції",
+      "featuresSubtitle": "Відкрийте для себе, що робить нас унікальними",
+      "secureMessaging": "Безпечні повідомлення",
+      "secureMessagingDesc": "Наскрізне шифрування для вашої конфіденційності",
+      "smartAssistant": "Розумний помічник",
+      "smartAssistantDesc": "Допомога на базі ШІ завжди під рукою",
+      "crossPlatform": "Кросплатформенність",
+      "crossPlatformDesc": "Використовуйте на будь-якому пристрої, будь-де",
+      "groupChats": "Групові чати",
+      "groupChatsDesc": "Спілкуйтесь з кількома людьми одночасно",
+      "privacyFirst": "Конфіденційність насамперед",
+      "privacyFirstDesc": "Ваші дані належать вам, завжди"
     },
-    "date": {
-      "jan2024": "January 2024",
-      "mar2024": "March 2024",
-      "jun2024": "June 2024",
-      "sep2024": "September 2024",
-      "nov2024": "November 2024",
-      "jan2025": "January 2025",
-      "mar2025": "March 2025",
-      "jun2025": "June 2025",
-      "beyond2025": "Beyond 2025"
-    }
-  },
+    "news": {
+      "latestNews": "Останні новини",
+      "readMore": "Читати далі",
+      "previousButton": "Попередня новина",
+      "nextButton": "Наступна новина",
+      "pauseAutoplay": "Призупинити автовідтворення",
+      "playAutoplay": "Відтворити автовідтворення"
+    },
+    "roadmap": {
+      "title": {
+        "section": "Дорожня карта",
+        "projectLaunch": "Запуск проєкту",
+        "enhancedSecurity": "Покращена безпека",
+        "advancedCollaboration": "Розширена співпраця",
+        "mobileEnhancement": "Покращення мобільної версії",
+        "aiIntegration": "Інтеграція ШІ",
+        "globalExpansion": "Глобальне розширення",
+        "enterpriseSolutions": "Корпоративні рішення",
+        "futureInnovation": "Майбутні інновації"
+      },
+      "subtitle": {
+        "section": "Наше бачення майбутнього"
+      },
+      "status": {
+        "completed": "Завершено",
+        "inProgress": "У процесі",
+        "upcoming": "Майбутні"
+      },
+      "description": {
+        "projectLaunch": "Початковий запуск BrainMessenger з основними функціями.",
+        "enhancedSecurity": "Посилення протоколів безпеки та функцій.",
+        "advancedCollaboration": "Впровадження розширених інструментів для співпраці.",
+        "mobileEnhancement": "Покращення досвіду використання мобільного застосунку.",
+        "aiIntegration": "Інтеграція функцій на базі ШІ для розумнішого спілкування.",
+        "globalExpansion": "Розширення охоплення BrainMessenger по всьому світу.",
+        "enterpriseSolutions": "Розробка рішень для корпоративних клієнтів.",
+        "futureInnovation": "Дослідження та впровадження майбутніх технологій."
+      },
+      "features": {
+        "secureMessagingInfrastructure": "Інфраструктура безпечного обміну повідомленнями",
+        "crossPlatformCompatibility": "Кросплатформна сумісність",
+        "basicUserInterface": "Базовий користувацький інтерфейс",
+        "endToEndEncryption": "Наскрізне шифрування",
+        "twoFactorAuthentication": "Двофакторна автентифікація",
+        "fileSharingCapabilities": "Можливості обміну файлами",
+        "teamWorkspaces": "Командні робочі простори",
+        "realTimeCollaboration": "Співпраця в реальному часі",
+        "advancedFileSharing": "Розширений обмін файлами",
+        "nativeMobileApps": "Нативні мобільні застосунки",
+        "offlineFunctionality": "Офлайн-функціонал",
+        "pushNotifications": "Push-сповіщення",
+        "smartMessageCategorization": "Розумна категоризація повідомлень",
+        "automatedResponses": "Автоматичні відповіді",
+        "contentAnalysis": "Аналіз контенту",
+        "multiLanguageSupport": "Багатомовна підтримка",
+        "regionalDataCenters": "Регіональні центри обробки даних",
+        "culturalAdaptations": "Культурні адаптації",
+        "advancedAdminControls": "Розширені елементи керування адміністратора",
+        "customIntegrations": "Користувацькі інтеграції",
+        "enterpriseSupport": "Корпоративна підтримка",
+        "emergingTechnologies": "Новітні технології",
+        "communityDrivenFeatures": "Функції, розроблені спільнотою",
+        "platformExpansion": "Розширення платформи"
+      },
+      "date": {
+        "jan2024": "Січень 2024",
+        "mar2024": "Березень 2024",
+        "jun2024": "Червень 2024",
+        "sep2024": "Вересень 2024",
+        "nov2024": "Листопад 2024",
+        "jan2025": "Січень 2025",
+        "mar2025": "Березень 2025",
+        "jun2025": "Червень 2025",
+        "beyond2025": "Після 2025"
+      }
+    },
   "faq": {
-    "title": "Frequently Asked Questions",
-    "subtitle": "Find answers to common questions about BrainMessenger",
-    "searchAlt": "Search icon",
-    "searchPlaceholder": "Search questions...",
-    "allQuestions": "All Questions",
-    "noResults": "No questions found matching your search.",
-    "categories": {
-      "general": "General",
-      "technical": "Technical",
-      "security": "Security",
-      "pricing": "Pricing",
-      "generalProject": "General Project Questions",
-      "technicalQuestions": "Technical Questions",
-      "developmentProcesses": "Development Processes",
-      "statusRoadmapFuture": "Status, Roadmap, and Future",
-      "challengesOpportunitiesLimitations": "Challenges, Opportunities, and Limitations",
-      "learnMoreContribute": "Learn More and Contribute"
-    },
-    "questionsData": {
-      "generalProject": {
-        "q1": {
-          "question": "What is the main idea behind BrainMessenger? What makes it special?",
-          "answer": "BrainMessenger is not just another messenger. Our main idea is to create a Digital ASSET (Principle 10) that simplifies complex interaction (Margulan Seisembayev's principle) and serves as a reliable tool for effective communication. We are focused on quality (Principle 3), security (Principle 5), and reliability (Principle 3), not just a set of features. We are building a SYSTEM (Principle 9) that reflects our principles and is constantly improving."
-        },
-        "q2": {
-          "question": "What key principles underpin the development of BrainMessenger?",
-          "answer": "The project is based on a set of 15 key principles (see My Key Principles), inspired by Margulan Seisembayev and IT industry best practices. The most important ones influencing code and processes are: Continuous Learning (Principle 1), Value Creation (Principle 2), Quality > Quantity (Principle 3), System and Optimization (Kaizen, Principle 9), Long-Term Thinking (Principle 8), Pragmatism and Realism (Principle 12), Persistence (Principle 13), Bias for Action (Principle 15). We strive for these principles to permeate all aspects of the project."
-        },
-        "q3": {
-          "question": "Who is behind the project? Is it an open community or a team?",
-          "answer": "Currently, the project is at an early stage and is actively being developed by one person (you), who is the driving force and bears responsibility (Principle 6) for its construction. In the future, it is planned to attract contributors and possibly form a team. The project is open for contributions (see CONTRIBUTING.md)."
-        }
+      "title": "Часто задавані питання",
+      "subtitle": "Знайдіть відповіді на поширені питання про BrainMessenger",
+      "searchAlt": "Іконка пошуку",
+      "searchPlaceholder": "Шукати питання...",
+      "allQuestions": "Усі питання",
+      "noResults": "Питань за вашим запитом не знайдено.",
+      "categories": {
+        "general": "Загальні",
+        "technical": "Технічні",
+        "security": "Безпека",
+        "pricing": "Ціни",
+        "generalProject": "Загальні питання щодо проєкту",
+        "technicalQuestions": "Технічні питання",
+        "developmentProcesses": "Процеси розробки",
+        "statusRoadmapFuture": "Статус, дорожня карта та майбутнє",
+        "challengesOpportunitiesLimitations": "Виклики, можливості та обмеження",
+        "learnMoreContribute": "Дізнатися більше та зробити внесок"
       },
-      "technicalQuestions": {
-        "q1": {
-          "question": "Why was this particular technology stack chosen (TypeScript, NestJS, React/RN, PostgreSQL/Neon, GraphQL, Kafka, Redis, Cloudflare R2, etc.)?",
-          "answer": "The choice of stack is based on pragmatism (Principle 12), long-term thinking (Principle 8), and the pursuit of quality (Principle 3) and scalability (NFR-14, NFR-15).\n*   TypeScript: Increases code reliability and maintainability through strong typing.\n*   NestJS: Provides a powerful, modular architecture for the Backend, simplifying the construction of scalable applications.\n*   React/React Native/Next.js: Allow building UI for different platforms from a single codebase (cross-platform) and provide good performance.\n*   PostgreSQL (Neon): A reliable, proven relational database with extensive scaling and optimization capabilities. Neon as a managed service reduces operational overhead (Pragmatism).\n*   Prisma: Chosen as a reliable ORM, providing type safety and built-in protection against SQL injection (Quality, Security).\n*   GraphQL: Allows clients to request only the data they actually need with a single query, optimizing network interaction (especially for mobile clients) and reducing data redundancy compared to REST. GraphQL also simplifies fetching related data (solving N+1 problems with DataLoader).\n*   Kafka: Chosen for reliable asynchronous task processing, which is critical for scalability and fault tolerance.\n*   Redis: High-performance In-memory store for caching, Rate Limiting, and real-time state management.\n*   Cloudflare R2: Object storage with very favorable terms (no egress fees), ideal for storing user files (Pragmatism, ASSET).\n\nThis stack allows laying a solid technical foundation (Principle 8) for future development."
+      "questionsData": {
+        "generalProject": {
+          "q1": {
+            "question": "Яка основна ідея BrainMessenger? Що робить його особливим?",
+            "answer": "BrainMessenger — це не просто черговий месенджер. Наша основна ідея — створити Цифровий АКТИВ (Принцип 10), який спрощує складну взаємодію (принцип Маргулана Сейсембаєва) та слугує надійним інструментом для ефективної комунікації. Ми зосереджені на якості (Принцип 3), безпеці (Принцип 5) та надійності (Принцип 3), а не просто на наборі функцій. Ми будуємо СИСТЕМУ (Принцип 9), яка відображає наші принципи та постійно покращується."
+          },
+          "q2": {
+            "question": "Які ключові принципи лежать в основі розробки BrainMessenger?",
+            "answer": "Проєкт базується на наборі з 15 ключових принципів (див. Мої ключові принципи), натхненних Маргуланом Сейсембаєвим та найкращими практиками IT-індустрії. Найважливіші, що впливають на код та процеси: Безперервне навчання (Принцип 1), Створення цінності (Принцип 2), Якість > Кількість (Принцип 3), Система та оптимізація (Кайдзен, Принцип 9), Довгострокове мислення (Принцип 8), Прагматизм та реалізм (Принцип 12), Наполегливість (Принцип 13), Схильність до дії (Принцип 15). Ми прагнемо, щоб ці принципи пронизували всі аспекти проєкту."
+          },
+          "q3": {
+            "question": "Хто стоїть за проєктом? Це відкрита спільнота чи команда?",
+            "answer": "Наразі проєкт перебуває на ранній стадії та активно розробляється однією особою (вами), яка є рушійною силою та несе відповідальність (Принцип 6) за його побудову. У майбутньому планується залучення контриб'юторів та, можливо, формування команди. Проєкт відкритий для внесків (див. CONTRIBUTING.md)."
+          }
         },
-        "q2": {
-          "question": "Why is a monolithic architecture used at the start, rather than microservices immediately?",
-          "answer": "Using a monolithic architecture at the start (MVP) is a pragmatic and realistic decision (Principle 12). It allows for rapid development and iteration of basic functionality, minimizing complexity at an early stage when the team is small. Launching the MVP is more important than building an overly complex architecture. Once the MVP will be completed and the project starts to grow, a phased transition to microservices is planned (see Microservice Migration Plan)."
+        "technicalQuestions": {
+          "q1": {
+            "question": "Чому було обрано саме цей технологічний стек (TypeScript, NestJS, React/RN, PostgreSQL/Neon, GraphQL, Kafka, Redis, Cloudflare R2 тощо)?",
+            "answer": "Вибір стека базується на прагматизмі (Принцип 12), довгостроковому мисленні (Принцип 8) та прагненні до якості (Принцип 3) та масштабованості (НФВ-14, НФВ-15).\n*   TypeScript: Збільшує надійність та підтримуваність коду завдяки строгій типізації.\n*   NestJS: Надає потужну, модульну архітектуру для бекенду, спрощуючи побудову масштабованих додатків.\n*   React/React Native/Next.js: Дозволяють створювати UI для різних платформ з єдиної кодової бази (крос-платформність) та забезпечують хорошу продуктивність.\n*   PostgreSQL (Neon): Надійна, перевірена реляційна база даних з широкими можливостями масштабування та оптимізації. Neon як керований сервіс зменшує операційні витрати (Прагматизм).\n*   Prisma: Обрано як надійний ORM, що забезпечує типобезпеку та вбудований захист від SQL-ін'єкцій (Якість, Безпека).\n*   GraphQL: Дозволяє клієнтам запитувати лише ті дані, які їм дійсно потрібні, одним запитом, оптимізуючи мережеву взаємодію (особливо для мобільних клієнтів) та зменшуючи надлишковість даних порівняно з REST. GraphQL також спрощує отримання пов'язаних даних (вирішуючи N+1 проблеми з DataLoader).\n*   Kafka: Обрано для надійної асинхронної обробки завдань, що критично важливо для масштабованості та відмовостійкості.\n*   Redis: Високопродуктивне In-memory сховище для кешування, Rate Limiting та управління станом у реальному часі.\n*   Cloudflare R2: Об'єктне сховище з дуже вигідними умовами (без плати за вихідний трафік), ідеально підходить для зберігання файлів користувачів (Прагматизм, АКТИВ).\n\nЦей стек дозволяє закласти міцну технічну основу (Принцип 8) для майбутнього розвитку."
+          },
+          "q2": {
+            "question": "Чому на старті використовується монолітна архітектура, а не відразу мікросервіси?",
+            "answer": "Використання монолітної архітектури на старті (MVP) — це прагматичне та реалістичне рішення (Принцип 12). Воно дозволяє швидко розробляти та ітерувати базовий функціонал, мінімізуючи складність на ранній стадії, коли команда невелика. Запуск MVP важливіший, ніж побудова надмірно складної архітектури. Після завершення MVP та зростання проєкту планується поетапний перехід до мікросервісів (див. План міграції на мікросервіси)."
+          },
+          "q3": {
+            "question": "Які підходи використовуються для забезпечення безпеки?",
+            "answer": "Безпека є фундаментальним аспектом (Принцип 5) та пріоритетом (див. Посібник з безпеки).\n*   Шифрування даних при передачі (TLS 1.2+) та в стані спокою (AES для чутливих даних, шифрування в R2).\n*   Надійне хешування паролів (bcrypt/argon2).\n*   Використання Prisma для запобігання SQL-ін'єкціям.\n*   Валідація всіх вхідних даних на бекенді.\n*   Двофакторна автентифікація (2FA) через електронну пошту.\n*   Обмеження швидкості запитів (Rate Limiting) для захисту від брутфорс- та DDoS-атак.\n*   Регулярне сканування на вразливості.\n*   Зберігання секретів у захищених місцях (Kubernetes Secrets)."
+          },
+          "q4": {
+            "question": "Як реалізовано функціональність реального часу (обмін повідомленнями)?",
+            "answer": "Функціональність реального часу (обмін повідомленнями) реалізована з використанням WebSockets. Бекенд (NestJS Gateway) керує WebSocket-з'єднаннями, а клієнти підписуються на події чату. Доставка повідомлень відбувається через WebSocket. Для масштабування WebSockets у мікросервісній архітектурі буде використовуватися Redis Pub/Sub або Kafka."
+          },
+          "q5": {
+            "question": "Чому використовується GraphQL замість REST API?",
+            "answer": "GraphQL дозволяє клієнтам запитувати лише ті дані, які їм дійсно потрібні, одним запитом. Це оптимізує мережеву взаємодію (особливо для мобільних клієнтів) та зменшує надлишковість даних порівняно з REST. GraphQL також спрощує отримання пов'язаних даних (вирішуючи N+1 проблеми з DataLoader)."
+          },
+          "q6": {
+            "question": "Як керуються великі обсяги даних та файлів?",
+            "answer": "*   Структуровані дані (повідомлення, користувачі, чати): Зберігаються в PostgreSQL (Neon). Для швидкого отримання використовуються індекси та оптимізація запитів (Prisma). У міру зростання планується партиціонування таблиць та реплікація бази даних.\n*   Неструктуровані дані (файли, зображення): Зберігаються в Cloudflare R2. Для оптимізації зображень перед завантаженням використовується асинхронна обробка (Kafka). R2 обрано через масштабованість та вигідні тарифи на трафік."
+          }
         },
-        "q3": {
-          "question": "What approaches are used to ensure security?",
-          "answer": "Security is a fundamental aspect (Principle 5) and a priority (see Security Guide).\n*   Data encryption in transit (TLS 1.2+) and at rest (AES for sensitive data, encryption in R2).\n*   Strong password hashing (bcrypt/argon2).\n*   Using Prisma to prevent SQL injection.\n*   Validation of all input data on the Backend.\n*   Two-factor authentication (2FA) via email.\n*   Rate Limiting to protect against brute-force and DDoS attacks.\n*   Regular vulnerability scanning.\n*   Storing secrets in secure locations (Kubernetes Secrets)."
+        "developmentProcesses": {
+          "q1": {
+            "question": "Який підхід використовується до управління проєктом та завданнями?",
+            "answer": "Управління проєктом ведеться за допомогою системи планування (див. Моя система планування 2025-2026) у Notion. Використовується декомпозиція глобальних цілей на етапи (Roadmap), тижневе планування та трекер завдань. Важливим елементом є Година Кайдзен (Принцип 9) для щоденної рефлексії, аналізу вузьких місць та пошуку шляхів покращення."
+          },
+          "q2": {
+            "question": "Як забезпечується якість коду?",
+            "answer": "Якість коду забезпечується системними підходами (Принцип 3, 9):\n*   Використання TypeScript із суворою типізацією.\n*   Дотримання стандартів кодування (ESLint, Prettier).\n*   Code review всіх змін.\n*   Автоматизоване тестування на різних рівнях (Unit, Integration, E2E).\n*   Безперервна інтеграція (CI) для автоматичної перевірки коду та тестів при кожному комміті/PR."
+          },
+          "q3": {
+            "question": "Яка стратегія тестування використовується?",
+            "answer": "Використовується багаторівнева стратегія тестування (див. Посібник з тестування), що поєднує ручне та автоматизоване тестування: Unit, Integration, API, E2E, Load, Security, Regression. Тести інтегровані в CI/CD. Фокус робиться на перевірці ключових вимог (ФВ, НФВ)."
+          },
+          "q4": {
+            "question": "Як обробляються помилки?",
+            "answer": "Помилки обробляються централізовано та уніфіковано на бекенді (NestJS Exception Filters) та перетворюються на стандартний формат відповіді API з кодами (extensions.code). На фронтенді помилки обробляються на основі цих кодів, відображаючи користувачеві зрозуміле повідомлення та пропонуючи дію. Усі помилки ретельно логуються (Winston → ELK) та відправляються до Sentry для відстеження та аналізу (див. Специфікація помилок, Посібник з моніторингу)."
+          },
+          "q5": {
+            "question": "Як відбувається розгортання проєкту?",
+            "answer": "Розгортання автоматизовано через CI/CD пайплайн (GitHub Actions). Для контейнеризації використовується Docker, а для оркестрації в хмарі — Kubernetes. Інфраструктура описана як код (Terraform). Процес включає автоматичну збірку, тестування, публікацію образів та Rolling Updates у Kubernetes для розгортання без простою (див. Посібник з розгортання)."
+          },
+          "q6": {
+            "question": "Як система моніториться у продакшені?",
+            "answer": "Система моніторингу — це очі та вуха проєкту (Принцип 9, 5). Використовуються:\n*   Prometheus для збору метрик продуктивності та ресурсів.\n*   Grafana для візуалізації метрик та дашбордів.\n*   Sentry для відстеження помилок додатків (фронтенд та бекенд).\n*   ELK Stack (або Kibana з Winston) для централізованого логування та аналізу.\n*   Alertmanager для налаштування автоматичних сповіщень про проблеми.\nЦі інструменти дозволяють завчасно виявляти проблеми та проводити оптимізацію (див. Посібник з моніторингу)."
+          }
         },
-        "q4": {
-          "question": "How is real-time functionality implemented (message exchange)?",
-          "answer": "Real-time functionality (message exchange) is implemented using WebSockets. The Backend (NestJS Gateway) manages WebSocket connections, and clients subscribe to chat events. Message delivery occurs via WebSocket. For scaling WebSockets in a microservice architecture, Redis Pub/Sub or Kafka will be used."
+        "statusRoadmapFuture": {
+          "q1": {
+            "question": "Який поточний статус проєкту?",
+            "answer": "Проєкт перебуває в активній фазі розробки Мінімально життєздатного продукту (MVP). Закладено основний технологічний фундамент, реалізовано ключові елементи UI та базову безпеку. У процесі реалізації знаходиться основний функціонал обміну повідомленнями, роботи з файлами та створення груп/каналів. (Див. Посібник з вимог до проєкту BrainMessenger (MVP))."
+          },
+          "q2": {
+            "question": "Які наступні кроки після завершення MVP?",
+            "answer": "Після завершення MVP наступні кроки включають додавання розширених функцій (аудіо/відеодзвінки, Преміум, розширена безпека, повний набір анімацій та локалізації), подальшу оптимізацію продуктивності та підготовку до масштабування. Детальний план представлений у Дорожній карті BrainMessenger (див. Roadmap)."
+          },
+          "q3": {
+            "question": "Чи планується перехід на мікросервісну архітектуру?",
+            "answer": "Так, перехід на мікросервіси є частиною довгострокової стратегії розвитку (Принцип 8). Він планується поетапно, починаючи з 1 кварталу 2026 року, з використанням підходу Strangler Pattern. Це дозволить незалежно масштабувати компоненти, підвищуючи відмовостійкість та гнучкість (див. План міграції на мікросервіси)."
+          }
         },
-        "q5": {
-          "question": "Why is GraphQL used instead of REST API?",
-          "answer": "GraphQL allows clients to request only the data they actually need with a single query. This optimizes network interaction (especially for mobile clients) and reduces data redundancy compared to REST. GraphQL also simplifies fetching related data (solving N+1 problems with DataLoader)."
+        "challengesOpportunitiesLimitations": {
+          "q1": {
+            "question": "Які основні технічні виклики (підводні камені) у проєкті?",
+            "answer": "*   Реалізація надійної функціональності реального часу (WebSockets): Керування тисячами одночасних підключень, надійна доставка повідомлень, керування статусом онлайн/оффлайн.\n*   Масштабування бази даних при великих обсягах даних: Керування зростанням таблиці повідомлень (партиціонування), оптимізація складних запитів.\n*   Обробка та доставка файлів: Ефективне завантаження, оптимізація зображень, безпечне завантаження з Cloudflare R2.\n*   Перехід до мікросервісів: Збільшення операційної складності, налаштування міжсервісної комунікації (Kafka, GraphQL Federation), міграція даних.\n*   Підтримка високої якості та продуктивності: Безперервна оптимізація на всіх рівнях (бекенд, фронтенд, інфраструктура) у міру зростання навантаження та функціоналу."
+          },
+          "q2": {
+            "question": "Які можливості та переваги надає архітектура та стек проєкту?",
+            "answer": "*   Висока масштабованість: Обрані технології (NestJS, Kubernetes, Kafka, Redis, Neon, R2) дозволяють горизонтально масштабувати додаток для підтримки великої кількості користувачів.\n*   Надійність та відмовостійкість: Використання надійних сервісів, асинхронна обробка (Kafka), моніторинг та, у майбутньому, мікросервіси підвищують стійкість системи до відмов.\n*   Висока продуктивність: GraphQL, кешування, оптимізація запитів, асинхронна обробка сприяють швидкій роботі програми.\n*   Крос-платформність: React Native та Next.js дозволяють створювати додатки для всіх основних платформ з єдиної кодової бази (для UI).\n*   Якість коду та підтримуваність: TypeScript, NestJS, Prisma, стандарти кодування, тестування спрощують розробку та зменшують кількість дефектів.\n*   Економічна ефективність (на старті): Використання безкоштовних/доступних тарифів (Neon, R2) та перевірених рішень з відкритим вихідним кодом.\n*   Багата екосистема: Використання популярних технологій з великою спільнотою та багатьма готовими бібліотеками."
+          },
+          "q3": {
+            "question": "Які обмеження проєкту на поточному етапі (MVP)?",
+            "answer": "*   Обмежений набір функцій порівняно з баченням (немає дзвінків, Преміум, посиленої безпеки).\n*   Обмежені можливості багатомовності та доступності (планується розширення).\n*   Архітектура наразі монолітна, що накладає обмеження на незалежне масштабування окремих частин.\n*   Можуть бути обмеження щодо продуктивності при навантаженні, що значно перевищує цільову для MVP (~1000 одночасних користувачів), до впровадження глибоких оптимізацій та мікросервісів."
+          }
         },
-        "q6": {
-          "question": "How are large volumes of data and files managed?",
-          "answer": "*   Structured data (messages, users, chats): Stored in PostgreSQL (Neon). Indexes and query optimization (Prisma) are used for fast retrieval. As it grows, table partitioning and database replication are planned.\n*   Unstructured data (files, images): Stored in Cloudflare R2. Asynchronous processing (Kafka) is used for image optimization before uploading. R2 is chosen for scalability and favorable traffic rates."
+        "learnMoreContribute": {
+          "q1": {
+            "question": "Де я можу отримати більш детальну інформацію про проєкт?",
+            "answer": "Більш детальну інформацію можна знайти в нашій документації (посилання буде додано пізніше) та на сторінці проєкту на GitHub (якщо проєкт відкритий)."
+          },
+          "q2": {
+            "question": "Як я можу долучитися до розробки проєкту або зробити свій внесок?",
+            "answer": "Ми завжди раді новим учасникам! Зв'яжіться з нами через контактну форму на сайті або через GitHub (якщо проєкт відкритий), щоб обговорити можливі варіанти співпраці."
+          },
+          "q3": {
+            "question": "Де я можу поставити додаткові запитання?",
+            "answer": "Додаткові запитання можна поставити через контактну форму на сайті, в нашому ком'юніті (посилання буде додано) або створивши issue на GitHub (якщо проєкт відкритий)."
+          }
         }
-      },
-      "developmentProcesses": {
-        "q1": {
-          "question": "What is the approach to project and task management?",
-          "answer": "The project is managed using a planning system (see My Planning System 2025-2026) in Notion. Global goals are decomposed into stages (Roadmap), weekly planning, and a task tracker are used. An important element is the Kaizen Hour (Principle 9) for daily reflection, analyzing bottlenecks, and finding ways to improve."
-        },
-        "q2": {
-          "question": "How is code quality ensured?",
-          "answer": "Code quality is ensured through systematic approaches (Principle 3, 9):\n*   Using TypeScript with strict typing.\n*   Adhering to coding standards (ESLint, Prettier).\n*   Code review of all changes.\n*   Automated testing at different levels (Unit, Integration, E2E).\n*   Continuous Integration (CI) for automatic code and test checks on every commit/PR."
-        },
-        "q3": {
-          "question": "What testing strategy is used?",
-          "answer": "A multi-level testing strategy is used (see Testing Guide), combining manual and automated testing: Unit, Integration, API, E2E, Load, Security, Regression. Tests are integrated into CI/CD. The focus is on verifying key requirements (FRs, NFRs)."
-        },
-        "q4": {
-          "question": "How are errors handled?",
-          "answer": "Errors are handled centrally and uniformly on the Backend (NestJS Exception Filters) and converted to a standard API response format with codes (extensions.code). On the Frontend, errors are processed based on these codes, displaying a clear message to the user and suggesting an action. All errors are thoroughly logged (Winston → ELK) and sent to Sentry for tracking and analysis (see Error Specification, Monitoring Guide)."
-        },
-        "q5": {
-          "question": "How is the project deployed?",
-          "answer": "Deployment is automated through a CI/CD pipeline (GitHub Actions). Docker is used for containerization and Kubernetes for orchestration in the cloud. Infrastructure is described as code (Terraform). The process includes automatic build, testing, image publishing, and Rolling Updates in Kubernetes for zero-downtime deployment (see Deployment Guide)."
-        },
-        "q6": {
-          "question": "How is the system monitored in production?",
-          "answer": "The monitoring system is the eyes and ears of the project (Principle 9, 5). The following are used:\n*   Prometheus for collecting performance and resource metrics.\n*   Grafana for visualizing metrics and dashboards.\n*   Sentry for tracking application errors (Frontend and Backend).\n*   ELK Stack (or Kibana with Winston) for centralized logging and analysis.\n*   Alertmanager for configuring automatic alerts about problems.\nThese tools allow for proactive problem identification and optimization (see Monitoring Guide)."
-        }
-      },
-      "statusRoadmapFuture": {
-        "q1": {
-          "question": "What is the current status of the project?",
-          "answer": "The project is in the active development phase of the Minimum Viable Product (MVP). The main technological foundation has been laid, key UI elements and basic security have been implemented. The core messaging, file handling, and group/channel creation are in progress. (See BrainMessenger Project Requirements (MVP) Guide)."
-        },
-        "q2": {
-          "question": "What are the next steps after completing the MVP?",
-          "answer": "After completing the MVP, the next steps include adding advanced functions (audio/video calls, Premium, extended security, full set of animations and localization), further performance optimization, and preparing for scaling. A detailed plan is presented in the BrainMessenger Roadmap (see Roadmap)."
-        },
-        "q3": {
-          "question": "Is a transition to a microservice architecture planned?",
-          "answer": "Yes, the transition to microservices is part of the long-term development strategy (Principle 8). It is planned in stages, starting from Q1 2026, using the Strangler Pattern approach. This will allow components to be scaled independently, increasing fault tolerance and flexibility (see Microservice Migration Plan)."
-        }
-      },
-      "challengesOpportunitiesLimitations": {
-        "q1": {
-          "question": "What are the main technical challenges (pitfalls) in the project?",
-          "answer": "*   Implementing reliable real-time functionality (WebSockets): Managing thousands of simultaneous connections, reliable message delivery, managing online/offline status.\n*   Scaling the database with large data volumes: Managing the growth of the messages table (partitioning), optimizing complex queries.\n*   Handling and delivering files: Efficient uploading, image optimization, secure downloading from Cloudflare R2.\n*   Transitioning to microservices: Increased operational complexity, configuring inter-service communication (Kafka, GraphQL Federation), data migration.\n*   Maintaining high quality and performance: Continuous optimization at all levels (Backend, Frontend, Infrastructure) as load and functionality grow."
-        },
-        "q2": {
-          "question": "What opportunities and advantages does the project's architecture and stack provide?",
-          "answer": "*   High scalability: The chosen technologies (NestJS, Kubernetes, Kafka, Redis, Neon, R2) allow the application to be scaled horizontally to support a large number of users.\n*   Reliability and fault tolerance: Using reliable services, asynchronous processing (Kafka), monitoring, and, in the future, microservices increases the system's resilience to failures.\n*   High performance: GraphQL, caching, query optimization, asynchronous processing contribute to the application's fast operation.\n*   Cross-platform compatibility: React Native and Next.js allow creating applications for all major platforms from a single codebase (for UI).\n*   Code quality and maintainability: TypeScript, NestJS, Prisma, coding standards, testing simplify development and reduce the number of defects.\n*   Cost-effectiveness (at the start): Using free/affordable tiers (Neon, R2) and proven open-source solutions.\n*   Rich ecosystem: Using popular technologies with a large community and many ready-made libraries."
-        },
-        "q3": {
-          "question": "What are the project's limitations at the current stage (MVP)?",
-          "answer": "*   Limited set of features compared to the vision (no calls, Premium, enhanced security).\n*   Limited multilingualism and accessibility options (expansion planned).\n*   The architecture is currently monolithic, which imposes limitations on independent scaling of individual parts.\n*   There may be performance limitations under load significantly exceeding the target for MVP (~1000 simultaneous users) before implementing deep optimizations and microservices."
-        }
-      },
-      "learnMoreContribute": {
-        "q1": {
-          "question": "Де я можу отримати більш детальну інформацію про проект?",
-          "answer": "Більш детальну інформацію можна знайти в нашій документації (посилання буде додано пізніше) та на сторінці проекту на GitHub (якщо проект відкритий)."
-        },
-        "q2": {
-          "question": "Як я можу долучитися до розробки проекту або зробити свій внесок?",
-          "answer": "Ми завжди раді новим учасникам! Зв'яжіться з нами через контактну форму на сайті або через GitHub (якщо проект відкритий), щоб обговорити можливі варіанти співпраці."
-        },
-        "q3": {
-          "question": "Де я можу поставити додаткові запитання?",
-          "answer": "Додаткові запитання можна поставити через контактну форму на сайті, в нашому ком'юніті (посилання буде додано) або створивши issue на GitHub (якщо проект відкритий)."
-        } 
-    }
   },
   "docs": {
     "general": {
@@ -1936,590 +1936,590 @@
       }
     },
     "apiSpec": {
-      "title": "Спецификация API BrainMessenger (Интерфейс Системы)",
-      "subtitle": "Интерфейс Системы",
+      "title": "Специфікація API BrainMessenger (Інтерфейс Системи)",
+      "subtitle": "Інтерфейс Системи",
       "generalInfo": {
-        "title": "1. Общая Информация: API как Точка Взаимодействия с Системой",
-        "description": "Этот документ описывает GraphQL API BrainMessenger — <strong>основной интерфейс</strong> (Принцип 9), через который клиентские приложения (Web, Mobile, Desktop) взаимодействуют с серверной частью системы и получают доступ к данным и функциональности. GraphQL выбран за его <strong>эффективность и гибкость</strong> (Принцип 9, 2), позволяя клиентам запрашивать только те данные, которые им необходимы.",
-        "projectNameTitle": "Название проекта:",
+        "title": "1. Загальна Інформація: API як Точка Взаємодії з Системою",
+        "description": "Цей документ описує GraphQL API BrainMessenger — <strong>основний інтерфейс</strong> (Принцип 9), через який клієнтські застосунки (Web, Mobile, Desktop) взаємодіють із сервером системи та отримують доступ до даних і функціональності. GraphQL обрано за його <strong>ефективність та гнучкість</strong> (Принцип 9, 2), що дозволяє клієнтам запитувати лише ті дані, які їм необхідні.",
+        "projectNameTitle": "Назва проєкту:",
         "projectNameContent": "BrainMessenger",
-        "apiPurposeTitle": "Цель:",
-        "apiPurposeContent": "Предоставить четкое и полное описание доступных запросов (Queries) и мутаций (Mutations), их входных и выходных данных, а также правил аутентификации и форматов ошибок. Это обеспечивает <strong>системность</strong> (Принцип 9) взаимодействия между Frontend и Backend и повышает <strong>качество</strong> (Принцип 3) разработки.",
-        "baseUrlTitle": "Базовый URL:",
-        "baseUrlContent": "`https://api.brainmessenger.com/graphql` (адрес API Gateway, который перенаправляет запросы на Backend Service).",
-        "requestFormatTitle": "Формат запросов:",
-        "requestFormatContent": "GraphQL-запросы (POST-запросы с `Content-Type: application/json` и телом в формате GraphQL).",
-        "authenticationTitle": "Аутентификация:",
-        "authenticationContent": "Для большинства методов требуется передать JWT-токен в заголовке `Authorization: Bearer <token>`. Токен получается после успешного логина. Это часть нашей <strong>системы безопасности</strong> (Принцип 3, 5).",
-        "relatedDocsTitle": "Связь с другими документами:",
+        "apiPurposeTitle": "Мета:",
+        "apiPurposeContent": "Надати чіткий і повний опис доступних запитів (Queries) та мутацій (Mutations), їх вхідних і вихідних даних, а також правил автентифікації та форматів помилок. Це забезпечує <strong>системність</strong> (Принцип 9) взаємодії між Frontend та Backend та підвищує <strong>якість</strong> (Принцип 3) розробки.",
+        "baseUrlTitle": "Базовий URL:",
+        "baseUrlContent": "`https://api.brainmessenger.com/graphql` (адреса API Gateway, який перенаправляє запити на Backend Service).",
+        "requestFormatTitle": "Формат запитів:",
+        "requestFormatContent": "GraphQL-запити (POST-запити з `Content-Type: application/json` та тілом у форматі GraphQL).",
+        "authenticationTitle": "Автентифікація:",
+        "authenticationContent": "Для більшості методів потрібно передати JWT-токен у заголовку `Authorization: Bearer <token>`. Токен отримується після успішного входу. Це частина нашої <strong>системи безпеки</strong> (Принцип 3, 5).",
+        "relatedDocsTitle": "Зв'язок з іншими документами:",
         "relatedDocsContent": [
-          "DocTech.md: Общая архитектура системы, включая Backend и API Gateway.",
-          "DocDevIn.md: Детали реализации Backend на NestJS и GraphQL.",
-          "DocInt.md: Описание интеграций, которые Backend использует (Neon, R2, Firebase и др.).",
-          "DocOptimizationIn.md: Подходы к оптимизации производительности API."
+          "DocTech.md: Загальна архітектура системи, включаючи Backend та API Gateway.",
+          "DocDevIn.md: Деталі реалізації Backend на NestJS та GraphQL.",
+          "DocInt.md: Опис інтеграцій, які Backend використовує (Neon, R2, Firebase та ін.).",
+          "DocOptimizationIn.md: Підходи до оптимізації продуктивності API."
         ]
       },
       "graphqlSchema": {
-        "title": "2. Схема GraphQL: Структура Доступных Данных и Операций",
-        "description": "Полная схема GraphQL доступна по адресу API через инструменты интроспекции (например, GraphQL Playground, Apollo Studio). Ниже приведены основные типы и операции.",
+        "title": "2. Схема GraphQL: Структура Доступних Даних та Операцій",
+        "description": "Повна схема GraphQL доступна за адресою API через інструменти інтроспекції (наприклад, GraphQL Playground, Apollo Studio). Нижче наведено основні типи та операції.",
         "dataTypes": {
-          "title": "2.1. Типы Данных (Schemas): Описание Структуры Информации",
+          "title": "2.1. Типи Даних (Schemas): Опис Структури Інформації",
           "user": {
             "title": "User:",
-            "code": "type User {\n  id: ID!\n  email: String!\n  name: String!\n  avatarUrl: String # URL аватара пользователя (хранится в R2)\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  # ... другие поля (например, статус онлайн/оффлайн)\n}"
+            "code": "type User {\n  id: ID!\n  email: String!\n  name: String!\n  avatarUrl: String # URL аватара користувача (зберігається в R2)\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  # ... інші поля (наприклад, статус онлайн/офлайн)\n}"
           },
           "chat": {
             "title": "Chat:",
-            "code": "type Chat {\n  id: ID!\n  name: String! # Название чата (для групп/каналов)\n  type: String! # Тип чата (\"personal\", \"group\", \"channel\")\n  users: [User!] # Список участников чата\n  messages(pagination: PaginationInput): [Message!] # Сообщения в чате (с пагинацией)\n  lastMessageAt: DateTime # Время последнего сообщения (для сортировки списка чатов)\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  # ... другие поля (например, фото группы/канала, описание)\n}"
+            "code": "type Chat {\n  id: ID!\n  name: String! # Назва чату (для груп/каналів)\n  type: String! # Тип чату (\"personal\", \"group\", \"channel\")\n  users: [User!] # Список учасників чату\n  messages(pagination: PaginationInput): [Message!] # Повідомлення в чаті (з пагінацією)\n  lastMessageAt: DateTime # Час останнього повідомлення (для сортування списку чатів)\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  # ... інші поля (наприклад, фото групи/каналу, опис)\n}"
           },
           "message": {
             "title": "Message:",
-            "code": "type Message {\n  id: ID!\n  content: String! # Текст сообщения (для текстовых сообщений)\n  fileUrl: String # URL файла, если сообщение является файлом (хранится в R2)\n  fileMetadata: JSON # Метаданные файла (тип, размер, имя) (хранится в Neon/R2)\n  sender: User! # Отправитель сообщения\n  chat: Chat! # Чат, которому принадлежит сообщение\n  createdAt: DateTime! # Время отправки сообщения\n  updatedAt: DateTime!\n  # ... другие поля (например, статус прочтения, реакции)\n}"
+            "code": "type Message {\n  id: ID!\n  content: String! # Текст повідомлення (для текстових повідомлень)\n  fileUrl: String # URL файлу, якщо повідомлення є файлом (зберігається в R2)\n  fileMetadata: JSON # Метадані файлу (тип, розмір, ім'я) (зберігається в Neon/R2)\n  sender: User! # Відправник повідомлення\n  chat: Chat! # Чат, якому належить повідомлення\n  createdAt: DateTime! # Час відправлення повідомлення\n  updatedAt: DateTime!\n  # ... інші поля (наприклад, статус прочитання, реакції)\n}"
           },
           "paginationInput": {
             "title": "PaginationInput:",
-            "code": "input PaginationInput {\n  take: Int # Максимальное количество элементов\n  skip: Int # Пропустить элементов (для offset-based пагинации)\n  cursor: String # Курсор (ID) для cursor-based пагинации\n}"
+            "code": "input PaginationInput {\n  take: Int # Максимальна кількість елементів\n  skip: Int # Пропустити елементів (для offset-based пагінації)\n  cursor: String # Курсор (ID) для cursor-based пагінації\n}"
           },
           "authPayload": {
             "title": "AuthPayload:",
-            "code": "type AuthPayload {\n  token: String! # JWT токен доступа\n  user: User! # Данные аутентифицированного пользователя\n}"
+            "code": "type AuthPayload {\n  token: String! # JWT токен доступу\n  user: User! # Дані автентифікованого користувача\n}"
           },
           "dateTimeJson": {
             "title": "DateTime, JSON:",
-            "content": "Стандартные скалярные типы или кастомные скаляры, определенные на Backend."
+            "content": "Стандартні скалярні типи або кастомні скаляри, визначені на Backend."
           }
         },
         "operations": {
-          "title": "2.2. Операции (Queries и Mutations): Доступ к Функционалу Системы",
+          "title": "2.2. Операції (Queries та Mutations): Доступ до Функціоналу Системи",
           "authentication": {
-            "title": "2.2.1. Аутентификация (Authentication)",
+            "title": "2.2.1. Автентифікація (Authentication)",
             "registerUser": {
               "title": "`mutation registerUser(input: RegisterInput!): AuthPayload!`",
-              "description": "Регистрирует нового пользователя в системе.",
-              "input": "`RegisterInput`: `{ email: String!, password: String!, name: String! }` (password min 8 chars, digit, special char - см. валидацию).",
-              "authRequired": "Требуется аутентификация: Нет.",
-              "scenario": "Сценарий: Пользователь заполняет форму регистрации.",
-              "errors": "Ошибки: `400 Bad Request` (неверный формат данных/валидация), `409 Conflict` (email уже используется)."
+              "description": "Реєструє нового користувача в системі.",
+              "input": "`RegisterInput`: `{ email: String!, password: String!, name: String! }` (password min 8 chars, digit, special char - див. валідацію).",
+              "authRequired": "Потрібна автентифікація: Ні.",
+              "scenario": "Сценарій: Користувач заповнює форму реєстрації.",
+              "errors": "Помилки: `400 Bad Request` (невірний формат даних/валідація), `409 Conflict` (email вже використовується)."
             },
             "loginUser": {
               "title": "`mutation loginUser(input: LoginInput!): AuthPayload!`",
-              "description": "Аутентифицирует пользователя по email и паролю.",
+              "description": "Автентифікує користувача за email та паролем.",
               "input": "`LoginInput`: `{ email: String!, password: String! }`.",
-              "authRequired": "Требуется аутентификация: Нет.",
-              "scenario": "Сценарий: Пользователь вводит учетные данные для входа.",
-              "errors": "Ошибки: `401 Unauthorized` (неверный email или пароль)."
+              "authRequired": "Потрібна автентифікація: Ні.",
+              "scenario": "Сценарій: Користувач вводить облікові дані для входу.",
+              "errors": "Помилки: `401 Unauthorized` (невірний email або пароль)."
             },
             "logoutUser": {
               "title": "`mutation logoutUser: Boolean!`",
-              "description": "Инвалидирует текущий JWT токен на сервере (если реализовано хранение токенов или их черных списков).",
-              "authRequired": "Требуется аутентификация: Да (используется текущий токен).",
-              "scenario": "Сценарий: Пользователь нажимает \"Выйти\".",
-              "returns": "Возвращает: `true` при успешном выходе.",
-              "errors": "Ошибки: `401 Unauthorized` (токен недействителен)."
+              "description": "Інактивація поточного JWT токена на сервері (якщо реалізовано зберігання токенів або їх чорних списків).",
+              "authRequired": "Потрібна автентифікація: Так (використовується поточний токен).",
+              "scenario": "Сценарій: Користувач натискає \"Вийти\".",
+              "returns": "Повертає: `true` при успішному виході.",
+              "errors": "Помилки: `401 Unauthorized` (токен недійсний)."
             }
           },
           "user": {
-            "title": "2.2.2. Пользователь (User)",
+            "title": "2.2.2. Користувач (User)",
             "getUser": {
               "title": "`query getUser(id: ID!): User`",
-              "description": "Получает данные пользователя по его уникальному ID.",
-              "authRequired": "Требуется аутентификация: Да (для доступа к любым данным пользователя, кроме, возможно, публичного профиля).",
-              "scenario": "Сценарий: Просмотр профиля пользователя.",
-              "errors": "Ошибки: `404 Not Found` (пользователь с таким ID не найден)."
+              "description": "Отримує дані користувача за його унікальним ID.",
+              "authRequired": "Потрібна автентифікація: Так (для доступу до будь-яких даних користувача, окрім, можливо, публічного профілю).",
+              "scenario": "Сценарій: Перегляд профілю користувача.",
+              "errors": "Помилки: `404 Not Found` (користувач з таким ID не знайдений)."
             },
             "getCurrentUser": {
               "title": "`query getCurrentUser: User!`",
-              "description": "Получает данные текущего аутентифицированного пользователя.",
-              "authRequired": "Требуется аутентификация: Да.",
-              "scenario": "Сценарий: Загрузка профиля текущего пользователя при старте приложения.",
-              "errors": "Ошибки: `401 Unauthorized`."
+              "description": "Отримує дані поточного автентифікованого користувача.",
+              "authRequired": "Потрібна автентифікація: Так.",
+              "scenario": "Сценарій: Завантаження профілю поточного користувача при запуску застосунку.",
+              "errors": "Помилки: `401 Unauthorized`."
             },
             "updateUser": {
               "title": "`mutation updateUser(id: ID!, input: UserInput!): User!`",
-              "description": "Обновляет данные профиля пользователя.",
-              "input": "`UserInput`: `{ name: String, email: String, password: String, avatarUrl: String }`. Поля опциональны.",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть владельцем профиля или иметь права администратора).",
-              "scenario": "Сценарий: Пользователь редактирует свой профиль.",
-              "errors": "Ошибки: `400 Bad Request` (неверный формат данных), `401 Unauthorized`, `403 Forbidden` (нет прав на редактирование этого пользователя), `404 Not Found`."
+              "description": "Оновлює дані профілю користувача.",
+              "input": "`UserInput`: `{ name: String, email: String, password: String, avatarUrl: String }`. Поля опціональні.",
+              "authRequired": "Потрібна автентифікація: Так (і користувач має бути власником профілю або мати права адміністратора).",
+              "scenario": "Сценарій: Користувач редагує свій профіль.",
+              "errors": "Помилки: `400 Bad Request` (невірний формат даних), `401 Unauthorized`, `403 Forbidden` (немає прав на редагування цього користувача), `404 Not Found`."
             },
             "deleteUser": {
               "title": "`mutation deleteUser(id: ID!): Boolean!`",
-              "description": "Удаляет аккаунт пользователя.",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть владельцем аккаунта).",
-              "scenario": "Сценарий: Пользователь решает удалить свою учетную запись.",
-              "returns": "Возвращает: `true` при успешном удалении.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
+              "description": "Видаляє обліковий запис користувача.",
+              "authRequired": "Потрібна автентифікація: Так (і користувач має бути власником облікового запису).",
+              "scenario": "Сценарій: Користувач вирішує видалити свій обліковий запис.",
+              "returns": "Повертає: `true` при успішному видаленні.",
+              "errors": "Помилки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
             }
           },
           "chats": {
-            "title": "2.2.3. Чаты (Chats)",
+            "title": "2.2.3. Чати (Chats)",
             "getChats": {
               "title": "`query getChats: [Chat!]!`",
-              "description": "Получает список всех чатов, в которых участвует текущий пользователь.",
-              "authRequired": "Требуется аутентификация: Да.",
-              "scenario": "Сценарий: Загрузка списка чатов на главном экране.",
-              "errors": "Ошибки: `401 Unauthorized`."
+              "description": "Отримує список усіх чатів, в яких бере участь поточний користувач.",
+              "authRequired": "Потрібна автентифікація: Так.",
+              "scenario": "Сценарій: Завантаження списку чатів на головному екрані.",
+              "errors": "Помилки: `401 Unauthorized`."
             },
             "getChat": {
               "title": "`query getChat(id: ID!): Chat`",
-              "description": "Получает данные конкретного чата по ID.",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть участником этого чата).",
-              "scenario": "Сценарий: Открытие конкретного чата.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
+              "description": "Отримує дані конкретного чату за ID.",
+              "authRequired": "Потрібна автентифікація: Так (і користувач має бути учасником цього чату).",
+              "scenario": "Сценарій: Відкриття конкретного чату.",
+              "errors": "Помилки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
             },
             "createChat": {
               "title": "`mutation createChat(input: CreateChatInput!): Chat!`",
-              "description": "Создает новый чат.",
-              "input": "`CreateChatInput`: `{ type: String!, name: String, userIds: [ID!]! }`. `type` может быть \"personal\", \"group\", \"channel\". `name` обязателен для \"group\" и \"channel\". `userIds` включает ID создателя и других участников (для \"personal\" и \"group\").",
-              "authRequired": "Требуется аутентификация: Да.",
-              "scenario": "Сценарий: Пользователь создает новый чат или группу.",
-              "errors": "Ошибки: `400 Bad Request` (неверный тип, отсутствуют userIds и т.п.), `401 Unauthorized`, `403 Forbidden` (нет прав на создание такого типа чата)."
+              "description": "Створює новий чат.",
+              "input": "`CreateChatInput`: `{ type: String!, name: String, userIds: [ID!]! }`. `type` може бути \"personal\", \"group\", \"channel\". `name` обов'язковий для \"group\" та \"channel\". `userIds` включає ID творця та інших учасників (для \"personal\" та \"group\").",
+              "authRequired": "Потрібна автентифікація: Так.",
+              "scenario": "Сценарій: Користувач створює новий чат або групу.",
+              "errors": "Помилки: `400 Bad Request` (невірний тип, відсутні userIds тощо), `401 Unauthorized`, `403 Forbidden` (немає прав на створення такого типу чату)."
             },
             "getMessages": {
               "title": "`query getMessages(chatId: ID!, pagination: PaginationInput): [Message!]!`",
-              "description": "Получает список сообщений для заданного чата. Поддерживает пагинацию.",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть участником чата).",
-              "scenario": "Сценарий: Открытие чата, подгрузка старых сообщений при прокрутке.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
+              "description": "Отримує список повідомлень для заданого чату. Підтримує пагінацію.",
+              "authRequired": "Потрібна автентифікація: Так (і користувач має бути учасником чату).",
+              "scenario": "Сценарій: Відкриття чату, підвантаження старих повідомлень при прокрутці.",
+              "errors": "Помилки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
             },
             "sendMessage": {
               "title": "`mutation sendMessage(chatId: ID!, content: String!, fileUrl: String, fileMetadata: JSON): Message!`",
-              "description": "Отправляет новое сообщение в чат. Может содержать текст или ссылку на файл.",
-              "input": "`chatId`: ID чата. `content`: Текст сообщения. `fileUrl`: URL файла в R2 (опционально). `fileMetadata`: Метаданные файла (опционально).",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть участником чата).",
-              "scenario": "Сценарий: Пользователь отправляет текстовое сообщение или файл.",
-              "errors": "Ошибки: `400 Bad Request`, `401 Unauthorized`, `403 Forbidden` (нет прав писать в этот чат), `404 Not Found` (чат не найден)."
+              "description": "Відправляє нове повідомлення в чат. Може містити текст або посилання на файл.",
+              "input": "`chatId`: ID чату. `content`: Текст повідомлення. `fileUrl`: URL файлу в R2 (опціонально). `fileMetadata`: Метадані файлу (опціонально).",
+              "authRequired": "Потрібна автентифікація: Так (і користувач має бути учасником чату).",
+              "scenario": "Сценарій: Користувач відправляє текстове повідомлення або файл.",
+              "errors": "Помилки: `400 Bad Request`, `401 Unauthorized`, `403 Forbidden` (немає прав писати в цей чат), `404 Not Found` (чат не знайдений)."
             },
             "deleteMessage": {
               "title": "`mutation deleteMessage(messageId: ID!): Boolean!`",
-              "description": "Удаляет сообщение.",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть отправителем сообщения или иметь права администратора чата).",
-              "scenario": "Сценарий: Пользователь удаляет свое сообщение.",
-              "returns": "Возвращает: `true` при успешном удалении.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
+              "description": "Видаляє повідомлення.",
+              "authRequired": "Потрібна автентифікація: Так (і користувач має бути відправником повідомлення або мати права адміністратора чату).",
+              "scenario": "Сценарій: Користувач видаляє своє повідомлення.",
+              "returns": "Повертає: `true` при успішному видаленні.",
+              "errors": "Помилки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
             }
           },
           "externalIntegrations": {
-            "title": "2.2.4. Внешние Интеграции (через API Backend)",
+            "title": "2.2.4. Зовнішні Інтеграції (через API Backend)",
             "sendVerificationCode": {
               "title": "`mutation sendVerificationCode(email: String!): Boolean!`",
-              "description": "Запускает процесс отправки кода подтверждения на указанный email (используя Gmail API). Используется при регистрации или сбросе пароля.",
-              "authRequired": "Требуется аутентификация: Нет.",
-              "scenario": "Сценарий: Пользователь вводит email на экране регистрации/восстановления пароля.",
-              "returns": "Возвращает: `true` при успешной постановке задачи на отправку.",
-              "errors": "Ошибки: `400 Bad Request` (неверный формат email), `429 Too Many Requests` (защита от спама)."
+              "description": "Запускає процес відправлення коду підтвердження на вказаний email (використовуючи Gmail API). Використовується при реєстрації або скиданні пароля.",
+              "authRequired": "Потрібна автентифікація: Ні.",
+              "scenario": "Сценарій: Користувач вводить email на екрані реєстрації/відновлення пароля.",
+              "returns": "Повертає: `true` при успішній постановці задачі на відправлення.",
+              "errors": "Помилки: `400 Bad Request` (невірний формат email), `429 Too Many Requests` (захист від спаму)."
             },
             "verifyEmailCode": {
               "title": "`mutation verifyEmailCode(email: String!, code: String!): Boolean!`",
-              "description": "Проверяет код подтверждения, полученный по email.",
-              "authRequired": "Требуется аутентификация: Нет.",
-              "scenario": "Сценарий: Пользователь вводит код из email.",
-              "returns": "Возвращает: `true` при успешной проверке.",
-              "errors": "Ошибки: `400 Bad Request` (неверный код или email), `404 Not Found` (для данного email нет активного кода)."
+              "description": "Перевіряє код підтвердження, отриманий по email.",
+              "authRequired": "Потрібна автентифікація: Ні.",
+              "scenario": "Сценарій: Користувач вводить код з email.",
+              "returns": "Повертає: `true` при успішній перевірці.",
+              "errors": "Помилки: `400 Bad Request` (невірний код або email), `404 Not Found` (для даного email немає активного коду)."
             },
             "enableTwoFactorAuth": {
               "title": "`mutation enableTwoFactorAuth(userId: ID!): Boolean!`",
-              "description": "Включает/отключает двухфакторную аутентификацию для пользователя. Требует предварительной верификации email. Код для 2FA отправляется на email (Gmail API) при каждом логине после включения.",
-              "authRequired": "Требуется аутентификация: Да (пользователь должен управлять своим аккаунтом).",
-              "scenario": "Сценарий: Пользователь настраивает безопасность аккаунта.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`, `400 Bad Request` (email не верифицирован)."
+              "description": "Вмикає/вимикає двофакторну автентифікацію для користувача. Вимагає попередньої верифікації email. Код для 2FA відправляється на email (Gmail API) при кожному вході після увімкнення.",
+              "authRequired": "Потрібна автентифікація: Так (користувач має керувати своїм обліковим записом).",
+              "scenario": "Сценарій: Користувач налаштовує безпеку облікового запису.",
+              "errors": "Помилки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`, `400 Bad Request` (email не верифікований)."
             },
             "disableTwoFactorAuth": {
               "title": "`mutation disableTwoFactorAuth(userId: ID!): Boolean!`",
-              "description": "Включает/отключает двухфакторную аутентификацию для пользователя. Требует предварительной верификации email. Код для 2FA отправляется на email (Gmail API) при каждом логине после включения.",
-              "authRequired": "Требуется аутентификация: Да (пользователь должен управлять своим аккаунтом).",
-              "scenario": "Сценарий: Пользователь настраивает безопасность аккаунта.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`, `400 Bad Request` (email не верифицирован)."
+              "description": "Вмикає/вимикає двофакторну автентифікацію для користувача. Вимагає попередньої верифікації email. Код для 2FA відправляється на email (Gmail API) при кожному вході після увімкнення.",
+              "authRequired": "Потрібна автентифікація: Так (користувач має керувати своїм обліковим записом).",
+              "scenario": "Сценарій: Користувач налаштовує безпеку облікового запису.",
+              "errors": "Помилки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`, `400 Bad Request` (email не верифікований)."
             },
             "sendTwoFactorCode": {
               "title": "`mutation sendTwoFactorCode(userId: ID!): Boolean!`",
-              "description": "Отправляет код двухфакторной аутентификации на email пользователя.",
-              "authRequired": "Требуется аутентификация: Частичная (например, после ввода пароля, но до ввода 2FA кода). Логика зависит от флоу аутентификации.",
-              "scenario": "Сценарий: Пользователь входит в аккаунт с включенной 2FA.",
-              "errors": "Ошибки: `404 Not Found` (пользователь не найден или 2FA не включена), `429 Too Many Requests`."
+              "description": "Відправляє код двофакторної автентифікації на email користувача.",
+              "authRequired": "Потрібна автентифікація: Часткова (наприклад, після введення пароля, але до введення 2FA коду). Логіка залежить від потоку автентифікації.",
+              "scenario": "Сценарій: Користувач входить до облікового запису з увімкненою 2FA.",
+              "errors": "Помилки: `404 Not Found` (користувач не знайдений або 2FA не увімкнена), `429 Too Many Requests`."
             },
             "createPaymentSession": {
               "title": "`mutation createPaymentSession(input: PaymentInput!): PaymentSessionPayload!`",
-              "description": "Создает сессию оплаты через Stripe для оформления Premium подписки.",
-              "input": "`PaymentInput`: `{ planId: ID!, returnUrl: String! }` (ID выбранного тарифного плана, URL для редиректа после оплаты).",
-              "authRequired": "Требуется аутентификация: Да.",
-              "scenario": "Сценарий: Пользователь нажимает \"Подписаться\" на Premium экране.",
-              "errors": "Ошибки: `400 Bad Request` (неверный planId), `401 Unauthorized`."
+              "description": "Створює сесію оплати через Stripe для оформлення Premium підписки.",
+              "input": "`PaymentInput`: `{ planId: ID!, returnUrl: String! }` (ID обраного тарифного плану, URL для редиректу після оплати).",
+              "authRequired": "Потрібна автентифікація: Так.",
+              "scenario": "Сценарій: Користувач натискає \"Підписатися\" на Premium екрані.",
+              "errors": "Помилки: `400 Bad Request` (невірний planId), `401 Unauthorized`."
             }
           }
         }
       },
       "errorHandling": {
-        "title": "3. Обработка Ошибок API: Ясная Обратная Связь (Принцип 3, 14)",
-        "description": "API возвращает стандартизированные ошибки для <strong>ясной обратной связи</strong> (Принцип 14) с клиентом и поддержания <strong>качества</strong> (Принцип 3).",
-        "errorFormatTitle": "Формат ошибок (в соответствии со спецификацией GraphQL):",
-        "errorFormatCode": "{\n  \"data\": null, // Обычно null при ошибках верхнего уровня\n  \"errors\": [\n    {\n      \"message\": \"Описание ошибки (может быть локализовано - см. DocLocIn)\",\n      \"locations\": [...], // Расположение ошибки в запросе\n      \"path\": [...],      // Путь к полю, вызвавшему ошибку\n      \"extensions\": {\n        \"code\": \"КОД_ОШИБКИ\", // Стандартизированный код ошибки (например, \"UNAUTHENTICATED\", \"FORBIDDEN\", \"BAD_USER_INPUT\", \"NOT_FOUND\")\n        \"http\": { // Если применимо, HTTP статус код\n          \"status\": 401,\n          \"headers\": {}\n        },\n         \"details\": {} // Дополнительные детали об ошибке (опционально)\n      }\n    }\n    // ... могут быть другие ошибки\n  ]\n}",
-        "keyErrorCodesTitle": "Ключевые коды ошибок (extensions.code):",
+        "title": "3. Обробка Помилок API: Чіткий Зворотний Зв'язок (Принцип 3, 14)",
+        "description": "API повертає стандартизовані помилки для <strong>чіткого зворотного зв'язку</strong> (Принцип 14) з клієнтом та підтримки <strong>якості</strong> (Принцип 3).",
+        "errorFormatTitle": "Формат помилок (відповідно до специфікації GraphQL):",
+        "errorFormatCode": "{\n  \"data\": null, // Зазвичай null при помилках верхнього рівня\n  \"errors\": [\n    {\n      \"message\": \"Опис помилки (може бути локалізовано - див. DocLocIn)\",\n      \"locations\": [...], // Розташування помилки в запиті\n      \"path\": [...],      // Шлях до поля, що викликало помилку\n      \"extensions\": {\n        \"code\": \"КОД_ПОМИЛКИ\", // Стандартизований код помилки (наприклад, \"UNAUTHENTICATED\", \"FORBIDDEN\", \"BAD_USER_INPUT\", \"NOT_FOUND\")\n        \"http\": { // Якщо застосовно, HTTP статус код\n          \"status\": 401,\n          \"headers\": {}\n        },\n         \"details\": {} // Додаткові деталі про помилку (опціонально)\n      }\n    }\n    // ... можуть бути інші помилки\n  ]\n}",
+        "keyErrorCodesTitle": "Ключові коди помилок (extensions.code):",
         "keyErrorCodesList": [
-          "`UNAUTHENTICATED`: Требуется аутентификация, но токен отсутствует или недействителен (`HTTP 401`).",
-          "`FORBIDDEN`: Аутентификация пройдена, но у пользователя нет прав на выполнение операции (`HTTP 403`).",
-          "`BAD_USER_INPUT`: Ошибка валидации входных данных (`HTTP 400`). Детали могут быть в `extensions.details`.",
-          "`NOT_FOUND`: Запрошенный ресурс не найден (`HTTP 404`).",
-          "`CONFLICT`: Конфликт данных (например, попытка зарегистрировать email, который уже существует) (`HTTP 409`).",
-          "`INTERNAL_SERVER_ERROR`: Неожиданная ошибка на сервере (`HTTP 500`).",
-          "`RATE_LIMITED`: Превышен лимит запросов (`HTTP 429`)."
+          "`UNAUTHENTICATED`: Потрібна автентифікація, але токен відсутній або недійсний (`HTTP 401`).",
+          "`FORBIDDEN`: Автентифікація пройдена, але користувач не має прав на виконання операції (`HTTP 403`).",
+          "`BAD_USER_INPUT`: Помилка валідації вхідних даних (`HTTP 400`). Деталі можуть бути в `extensions.details`.",
+          "`NOT_FOUND`: Запитуваний ресурс не знайдено (`HTTP 404`).",
+          "`CONFLICT`: Конфлікт даних (наприклад, спроба зареєструвати email, який вже існує) (`HTTP 409`).",
+          "`INTERNAL_SERVER_ERROR`: Неочікувана помилка на сервері (`HTTP 500`).",
+          "`RATE_LIMITED`: Перевищено ліміт запитів (`HTTP 429`)."
         ],
-        "localizationErrorsTitle": "Локализация ошибок:",
-        "localizationErrorsContent": "Сообщения об ошибках (`message`) могут быть локализованы на стороне Backend на основе заголовка `Accept-Language` или предпочтений пользователя (см. DocLocIn)."
+        "localizationErrorsTitle": "Локалізація помилок:",
+        "localizationErrorsContent": "Повідомлення про помилки (`message`) можуть бути локалізовані на стороні Backend на основі заголовка `Accept-Language` або переваг користувача (див. DocLocIn)."
       },
       "notes": {
-        "title": "4. Примечания",
+        "title": "4. Примітки",
         "dataTypes": {
-          "title": "Типы данных:",
+          "title": "Типи даних:",
           "list": [
-            "`ID`: Уникальный идентификатор ресурса (обычно строка).",
-            "`String`: Текстовая строка.",
+            "`ID`: Унікальний ідентифікатор ресурсу (зазвичай рядок).",
+            "`String`: Текстовий рядок.",
             "`Int`, `Float`: Числа.",
-            "`Boolean`: Логическое значение (`true`/`false`).",
-            "`DateTime`: Дата и время в формате ISO 8601 (например, \"2025-03-14T10:30:00Z\").",
-            "`JSON`: Кастомный скаляр для передачи произвольных JSON-объектов (например, для `fileMetadata`).",
-            "`!` в конце типа означает, что поле <strong>не может быть null</strong>."
+            "`Boolean`: Логічне значення (`true`/`false`).",
+            "`DateTime`: Дата та час у форматі ISO 8601 (наприклад, \"2025-03-14T10:30:00Z\").",
+            "`JSON`: Кастомний скаляр для передачі довільних JSON-об'єктів (наприклад, для `fileMetadata`).",
+            "`!` в кінці типу означає, що поле <strong>не може бути null</strong>."
           ]
         },
         "pagination": {
-          "title": "Пагинация:",
-          "content": "Для списков, которые могут быть длинными (`messages`), используйте пагинацию для эффективной загрузки данных (Принцип 9)."
+          "title": "Пагінація:",
+          "content": "Для списків, які можуть бути довгими (`messages`), використовуйте пагінацію для ефективного завантаження даних (Принцип 9)."
         },
         "validation": {
-          "title": "Валидация:",
-          "content": "Backend выполняет строгую валидацию всех входных данных (через DTO и `class-validator`), возвращая ошибки `BAD_USER_INPUT` при их некорректности. Это часть <strong>системы обеспечения качества</strong> (Принцип 3)."
+          "title": "Валідація:",
+          "content": "Backend виконує сувору валідацію всіх вхідних даних (через DTO та `class-validator`), повертаючи помилки `BAD_USER_INPUT` при їх некоректності. Це частина <strong>системи забезпечення якості</strong> (Принцип 3)."
         },
         "security": {
-          "title": "Безопасность:",
-          "content": "Все запросы, работающие с чувствительными данными или изменяющие состояние системы (кроме регистрации/логина), требуют аутентификации."
+          "title": "Безпека:",
+          "content": "Усі запити, що працюють з чутливими даними або змінюють стан системи (окрім реєстрації/входу), вимагають автентифікації."
         },
         "testingTools": {
-          "title": "Инструменты тестирования API:",
-          "content": "Используйте GraphQL Playground (часто доступен по адресу `/graphql` в dev-режиме Backend), Postman или Apollo Studio для отправки запросов и тестирования API."
+          "title": "Інструменти тестування API:",
+          "content": "Використовуйте GraphQL Playground (часто доступний за адресою `/graphql` у dev-режимі Backend), Postman або Apollo Studio для відправлення запитів та тестування API."
         }
       }
     },
     "technicalDocs": {
-      "title": "BrainMessenger Technical Documentation (System and Foundation)",
-      "subtitle": "General Information: Architecture of a Digital Asset",
+      "title": "Технічна документація BrainMessenger (Система та Основа)",
+      "subtitle": "Загальна інформація: Архітектура цифрового активу",
       "generalInfo": {
-        "title": "1. General Information: Architecture of a Digital Asset",
-        "description": "BrainMessenger is a modern messenger built as a <strong>reliable, scalable, and secure system</strong> (Principle 9), which serves as a <strong>key digital ASSET</strong> (Principle 10). This document provides a high-level overview of the project's <strong>technical foundation</strong> (Principle 8), describing the main components, technologies, and their interaction.",
-        "projectNameTitle": "Project Name:",
+        "title": "1. Загальна інформація: Архітектура цифрового активу",
+        "description": "BrainMessenger — це сучасний месенджер, побудований як <strong>надійна, масштабована та безпечна система</strong> (Принцип 9), що служить <strong>ключовим цифровим АКТИВОМ</strong> (Принцип 10). Цей документ надає високорівневий огляд <strong>технічної основи</strong> (Принцип 8) проєкту, описуючи основні компоненти, технології та їх взаємодію.",
+        "projectNameTitle": "Назва проєкту:",
         "projectNameContent": "BrainMessenger",
-        "purposeTitle": "Purpose:",
-        "purposeContent": "To provide a general understanding of BrainMessenger's structure, the technology stack used, and the principles underlying its construction, for all team members and stakeholders.",
-        "principlesTitle": "Principles reflected in the technical structure:",
+        "purposeTitle": "Мета:",
+        "purposeContent": "Надати загальне розуміння структури BrainMessenger, використовуваного технологічного стеку та принципів, що лежать в основі його побудови, для всіх членів команди та зацікавлених сторін.",
+        "principlesTitle": "Принципи, відображені в технічній структурі:",
         "principlesList": [
-          "<strong>System and Optimization (Principle 9):</strong> The project is designed as a set of interconnected, optimized components.",
-          "<strong>Long-Term Thinking (Principle 8):</strong> Selection of technologies and architecture considering future scaling and development needs.",
-          "<strong>Quality > Quantity (Principle 3):</strong> Use of proven, reliable solutions and focus on code and infrastructure quality.",
-          "<strong>Pragmatism and Realism (Principle 12):</strong> Use of ready-made services (Neon, R2, Firebase) where justified, instead of building everything from scratch.",
-          "<strong>Value Creation (Principle 2):</strong> The technical structure aims to provide key messenger functions (communication, files, calls) at a high level."
+          "<strong>Системність та Оптимізація (Принцип 9):</strong> Проєкт спроєктовано як набір взаємопов'язаних, оптимізованих компонентів.",
+          "<strong>Довгострокове мислення (Принцип 8):</strong> Вибір технологій та архітектури з урахуванням майбутніх потреб масштабування та розвитку.",
+          "<strong>Якість > Кількість (Принцип 3):</strong> Використання перевірених, надійних рішень та фокус на якості коду та інфраструктури.",
+          "<strong>Прагматизм та Реалізм (Принцип 12):</strong> Використання готових сервісів (Neon, R2, Firebase) там, де це виправдано, замість побудови всього з нуля.",
+          "<strong>Створення цінності (Принцип 2):</strong> Технічна структура спрямована на надання ключових функцій месенджера (зв'язок, файли, дзвінки) на високому рівні."
         ]
       },
       "techStack": {
-        "title": "2. Technology Stack: Tools for Building the System",
-        "description": "We use a modern and flexible set of technologies, allowing us to effectively build and scale BrainMessenger.",
+        "title": "2. Стек технологій: Інструменти для побудови системи",
+        "description": "Ми використовуємо сучасний та гнучкий набір технологій, що дозволяє нам ефективно створювати та масштабувати BrainMessenger.",
         "frontend": {
-          "title": "Frontend (Client Applications):",
+          "title": "Фронтенд (Клієнтські застосунки):",
           "list": [
-            "<strong>React Native (Android, Windows Desktop):</strong> A single codebase for mobile and desktop applications. Chosen for cross-platform compatibility and a large set of ready-made libraries.",
-            "<strong>Next.js (Web):</strong> React-framework for web application with SSR/SSG support for performance and SEO.",
-            "<strong>TypeScript:</strong> Strict typing for all Frontend code. Increases reliability and simplifies refactoring."
+            "<strong>React Native (Android, Windows Desktop):</strong> Єдина кодова база для мобільних та десктопних застосунків. Обрано за кросплатформність та великий набір готових бібліотек.",
+            "<strong>Next.js (Web):</strong> React-фреймворк для веб-застосунку з підтримкою SSR/SSG для продуктивності та SEO.",
+            "<strong>TypeScript:</strong> Сувора типізація всього Frontend-коду. Збільшує надійність та спрощує рефакторинг."
           ]
         },
         "backend": {
-          "title": "Backend (Server Logic):",
+          "title": "Бекенд (Серверна логіка):",
           "list": [
-            "<strong>Node.js:</strong> High-performance JavaScript/TypeScript runtime environment.",
-            "<strong>NestJS:</strong> Modular framework for Node.js. Provides a structured architecture (modules, services, controllers/resolvers) and TypeScript support.",
-            "<strong>GraphQL:</strong> API protocol. Allows clients to request exactly the data they need, reducing redundancy."
+            "<strong>Node.js:</strong> Високопродуктивне середовище виконання JavaScript/TypeScript.",
+            "<strong>NestJS:</strong> Модульний фреймворк для Node.js. Забезпечує структуровану архітектуру (модулі, сервіси, контролери/резолвери) та підтримку TypeScript.",
+            "<strong>GraphQL:</strong> API-протокол. Дозволяє клієнтам запитувати саме ті дані, які їм потрібні, зменшуючи надлишковість."
           ]
         },
         "databaseCaching": {
-          "title": "Database and Caching:",
+          "title": "База даних та кешування:",
           "list": [
-            "<strong>PostgreSQL (via Neon):</strong> Reliable relational DBMS. Used as the main storage for structured data (users, chats, messages, metadata). Neon provides a managed service with scaling and replication features.",
-            "<strong>Prisma ORM:</strong> Tool for interacting with PostgreSQL from NestJS. Provides typing and query security.",
-            "<strong>Redis:</strong> In-memory data store. Used for caching, Rate Limiting, managing WebSocket connection state (user presence)."
+            "<strong>PostgreSQL (через Neon):</strong> Надійна реляційна СУБД. Використовується як основне сховище для структурованих даних (користувачі, чати, повідомлення, метадані). Neon надає керований сервіс з можливостями масштабування та реплікації.",
+            "<strong>Prisma ORM:</strong> Інструмент для взаємодії з PostgreSQL з NestJS. Забезпечує типізацію та безпеку запитів.",
+            "<strong>Redis:</strong> Сховище даних в оперативній пам'яті. Використовується для кешування, Rate Limiting, керування станом WebSocket-з'єднань (присутність користувача)."
           ]
         },
         "fileStorage": {
-          "title": "File Storage:",
+          "title": "Файлове сховище:",
           "list": [
-            "<strong>Cloudflare R2:</strong> Object storage, compatible with S3 API. Used for storing user files (photos, videos, documents, avatars, call recordings), encrypted data. Chosen for low cost and no egress fees."
+            "<strong>Cloudflare R2:</strong> Об'єктне сховище, сумісне з S3 API. Використовується для зберігання користувацьких файлів (фото, відео, документи, аватари, записи дзвінків), зашифрованих даних. Обрано через низьку вартість та відсутність плати за вихідний трафік."
           ]
         },
         "asyncProcessing": {
-          "title": "Asynchronous Processing:",
+          "title": "Асинхронна обробка:",
           "list": [
-            "<strong>Kafka:</strong> Distributed message queue system. Used for reliable asynchronous task processing (e.g., image processing, sending notifications) outside the main API thread."
+            "<strong>Kafka:</strong> Розподілена система черг повідомлень. Використовується для надійної асинхронної обробки завдань (наприклад, обробка зображень, надсилання сповіщень) поза основним потоком API."
           ]
         },
         "infrastructureDeployment": {
-          "title": "Infrastructure and Deployment:",
+          "title": "Інфраструктура та розгортання:",
           "list": [
-            "<strong>Docker:</strong> Application containerization. Provides isolation and portability.",
-            "<strong>Kubernetes:</strong> Container orchestration. Manages deployment, scaling, and self-healing of services in a cluster.",
-            "<strong>Terraform:</strong> Infrastructure as Code (IaC). Automates the creation and management of cloud resources."
+            "<strong>Docker:</strong> Контейнеризація застосунків. Забезпечує ізоляцію та портативність.",
+            "<strong>Kubernetes:</strong> Оркестрація контейнерів. Керує розгортанням, масштабуванням та самовідновленням сервісів у кластері.",
+            "<strong>Terraform:</strong> Інфраструктура як код (IaC). Автоматизує створення та керування хмарними ресурсами."
           ]
         },
         "testingMonitoringLogging": {
-          "title": "Testing, Monitoring, Logging:",
+          "title": "Тестування, Моніторинг, Логування:",
           "list": [
-            "<strong>Jest, Cypress, Detox:</strong> Tools for unit, integration, and E2E testing.",
-            "<strong>Prometheus, Grafana:</strong> Monitoring system. Collection and visualization of performance metrics and system status.",
-            "<strong>Winston, Sentry:</strong> Logging and error tracking system."
+            "<strong>Jest, Cypress, Detox:</strong> Інструменти для модульного, інтеграційного та E2E тестування.",
+            "<strong>Prometheus, Grafana:</strong> Система моніторингу. Збір та візуалізація метрик продуктивності та стану системи.",
+            "<strong>Winston, Sentry:</strong> Система логування та відстеження помилок."
           ]
         }
       },
       "architecture": {
-        "title": "3. Project Architecture: Interconnection of System Components",
-        "description": "BrainMessenger's architecture follows the principles of <strong>modularity and separation of concerns</strong> (Principle 9).",
+        "title": "3. Архітектура проєкту: Взаємозв'язок компонентів системи",
+        "description": "Архітектура BrainMessenger слідує принципам <strong>модульності та розділення відповідальності</strong> (Принцип 9).",
         "clientApplications": {
-          "title": "Client Applications (Frontend):",
+          "title": "Клієнтські застосунки (Фронтенд):",
           "list": [
-            "Web (Next.js), Mobile & Desktop (React Native).",
-            "Contain the user interface and user interaction logic.",
-            "Interact with the Backend exclusively via <strong>GraphQL API</strong>.",
-            "Can directly download files from Cloudflare R2 (if public access) or via Backend (if authentication or URL signing is required)."
+            "Веб (Next.js), Мобільні та Десктопні (React Native).",
+            "Містять користувацький інтерфейс та логіку взаємодії з користувачем.",
+            "Взаємодіють з Бекендом виключно через <strong>GraphQL API</strong>.",
+            "Можуть безпосередньо завантажувати файли з Cloudflare R2 (у разі публічного доступу) або через Бекенд (якщо потрібна автентифікація або підписання URL)."
           ]
         },
         "apiGateway": {
-          "title": "API Gateway (In the future):",
-          "content": "Single entry point for all client requests. Can perform authentication, Rate Limiting, routing to the necessary Backend services. At startup, the Backend itself acts as the Gateway."
+          "title": "API Gateway (У майбутньому):",
+          "content": "Єдина точка входу для всіх клієнтських запитів. Може виконувати автентифікацію, Rate Limiting, маршрутизацію до необхідних Бекенд-сервісів. На старті сам Бекенд виступає в ролі Gateway."
         },
         "backendService": {
-          "title": "Backend Service (NestJS):",
+          "title": "Бекенд-сервіс (NestJS):",
           "list": [
-            "Main server component.",
-            "Contains <strong>BrainMessenger's business logic</strong> (user management, chats, messages, calls, payments).",
-            "Provides <strong>GraphQL API</strong> for client applications.",
-            "Interacts with the <strong>Database (Neon/PostgreSQL via Prisma)</strong> for reading/writing structured data.",
-            "Interacts with <strong>File Storage (Cloudflare R2)</strong> for uploading/retrieving files (via AWS SDK).",
-            "Interacts with <strong>Cache (Redis)</strong> for fast operations.",
-            "Queues tasks in <strong>Queue (Kafka)</strong> for asynchronous processing.",
-            "Uses external services (Firebase, Stripe, Gmail API)."
+            "Основний серверний компонент.",
+            "Містить <strong>бізнес-логіку BrainMessenger</strong> (керування користувачами, чатами, повідомленнями, дзвінками, платежами).",
+            "Надає <strong>GraphQL API</strong> для клієнтських застосунків.",
+            "Взаємодіє з <strong>Базою даних (Neon/PostgreSQL через Prisma)</strong> для читання/запису структурованих даних.",
+            "Взаємодіє з <strong>Файловим сховищем (Cloudflare R2)</strong> для завантаження/отримання файлів (через AWS SDK).",
+            "Взаємодіє з <strong>Кешем (Redis)</strong> для швидких операцій.",
+            "Ставить завдання в <strong>Чергу (Kafka)</strong> для асинхронної обробки.",
+            "Використовує зовнішні сервіси (Firebase, Stripe, Gmail API)."
           ]
         },
         "database": {
-          "title": "Database (Neon/PostgreSQL):",
-          "content": "Stores structured data. Scales independently."
+          "title": "База даних (Neon/PostgreSQL):",
+          "content": "Зберігає структуровані дані. Масштабується незалежно."
         },
         "fileStorage": {
-          "title": "File Storage (Cloudflare R2):",
-          "content": "Stores unstructured binary data. Scales by volume."
+          "title": "Файлове сховище (Cloudflare R2):",
+          "content": "Зберігає неструктуровані бінарні дані. Масштабується за обсягом."
         },
         "caching": {
-          "title": "Caching (Redis):",
-          "content": "Fast access to temporary data."
+          "title": "Кешування (Redis):",
+          "content": "Швидкий доступ до тимчасових даних."
         },
         "messageQueue": {
-          "title": "Message Queue (Kafka):",
-          "content": "Buffering and reliable message delivery between services for asynchronous processing."
+          "title": "Черга повідомлень (Kafka):",
+          "content": "Буферизація та надійна доставка повідомлень між сервісами для асинхронної обробки."
         },
         "workers": {
-          "title": "Workers (Kafka Consumers):",
+          "title": "Воркери (Kafka Consumers):",
           "list": [
-            "Separate services that read tasks from Kafka and perform heavy or long operations (image processing, sending large mailings).",
-            "Scale independently."
+            "Окремі сервіси, які зчитують завдання з Kafka та виконують важкі або тривалі операції (обробка зображень, надсилання масових розсилок).",
+            "Масштабуються незалежно."
           ]
         },
         "externalServices": {
-          "title": "External Services (Firebase, Stripe, Gmail API):",
+          "title": "Зовнішні сервіси (Firebase, Stripe, Gmail API):",
           "list": [
-            "Provide specialized functionality (notifications, payments, email).",
-            "Used by the Backend service."
+            "Надають спеціалізований функціонал (сповіщення, платежі, електронна пошта).",
+            "Використовуються Бекенд-сервісом."
           ]
         },
         "mermaidDiagram": {
-          "title": "Architecture Diagram:",
+          "title": "Діаграма архітектури:",
           "code": "graph TD\n    A[Frontend Web (Next.js)] -->|GraphQL API| B(API Gateway / Backend);\n    A -->|Direct File Access (Opt.)| E(Cloudflare R2);\n    F[Frontend Mobile/Desktop (React Native)] -->|GraphQL API| B;\n    F -->|Direct File Access (Opt.)| E;\n    B -->|Prisma Queries/Mutations| C(Neon/PostgreSQL);\n    B -->|AWS SDK (S3 API)| E;\n    B -->|ioredis| D(Redis Cache);\n    B -->|kafkajs Producer| G(Kafka Queue);\n    B -->|Firebase Admin SDK| H(Firebase FCM);\n    B -->|Stripe SDK| I(Stripe);\n    B -->|Google APIs Client| J(Gmail API);\n    G -->|kafkajs Consumer| K(Kafka Workers);\n    K -->|sharp| K; % Image processing\n    K -->|AWS SDK (S3 API)| E;\n    K -->|GraphQL API / Other Service Calls| B; % Report completion, send chat message\n    C -->|Replication (for scaling)| C;\n    C -->|Partitioning/Sharding (for scaling)| C;\n    E -->|CDN| A; % File delivery to Frontend\n    Prometheus(Prometheus) -->|Scrape Metrics| B;\n    Prometheus -->|Scrape Metrics| C;\n    Prometheus -->|Scrape Metrics| D;\n    Prometheus -->|Scrape Metrics| G;\n    Grafana(Grafana) -->|Visualize Metrics| Prometheus;\n    Sentry(Sentry) -->|Error Reports| B;\n    Sentry -->|Error Reports| A;"
         }
       },
       "api": {
-        "title": "4. API: Interaction Interface",
-        "description": "BrainMessenger's API is implemented using GraphQL with NestJS.",
-        "endpointTitle": "Endpoint:",
+        "title": "4. API: Інтерфейс взаємодії",
+        "description": "API BrainMessenger реалізовано з використанням GraphQL на NestJS.",
+        "endpointTitle": "Кінцева точка:",
         "endpointContent": "`/graphql`",
-        "structureTitle": "Structure:",
-        "structureContent": "Defined by the GraphQL Schema (User, Chat, Message types, etc.) and a set of Queries (for data retrieval) and Mutations (for data modification).",
-        "authenticationTitle": "Authentication:",
-        "authenticationContent": "JWT tokens in the `Authorization: Bearer <token>` header.",
-        "externalApiIntegrationsTitle": "External API Integrations:",
-        "externalApiIntegrationsContent": "Interaction with external services (Gmail, Stripe) is done via the Backend, which provides corresponding Mutations in the GraphQL API (see API Specification).",
+        "structureTitle": "Структура:",
+        "structureContent": "Визначається GraphQL-схемою (типи User, Chat, Message тощо) та набором Queries (для отримання даних) і Mutations (для зміни даних).",
+        "authenticationTitle": "Автентифікація:",
+        "authenticationContent": "JWT-токени в заголовку `Authorization: Bearer <token>`.",
+        "externalApiIntegrationsTitle": "Інтеграції із зовнішніми API:",
+        "externalApiIntegrationsContent": "Взаємодія із зовнішніми сервісами (Gmail, Stripe) відбувається через Бекенд, який надає відповідні Mutations у GraphQL API (див. Специфікацію API).",
         "keyFunctionalAreas": {
-          "title": "Key functional areas of the API:",
+          "title": "Ключові функціональні області API:",
           "list": [
-            "Authentication (registration, login, logout, 2FA).",
-            "User management (get/update/delete profile).",
-            "Chat management (create, get list, get chat data).",
-            "Message handling (send text messages, send files, get history).",
-            "Contact management.",
-            "Application settings (theme, notifications, language).",
-            "Premium subscription management.",
-            "File management (upload to R2 via Backend).",
-            "(In the future) Calls and video calls (call session management)."
+            "Автентифікація (реєстрація, вхід, вихід, 2FA).",
+            "Керування користувачами (отримання/оновлення/видалення профілю).",
+            "Керування чатами (створення, отримання списку, отримання даних чату).",
+            "Обробка повідомлень (надсилання текстових повідомлень, надсилання файлів, отримання історії).",
+            "Керування контактами.",
+            "Налаштування застосунку (тема, сповіщення, мова).",
+            "Керування преміум-підписками.",
+            "Керування файлами (завантаження в R2 через Бекенд).",
+            "(У майбутньому) Дзвінки та відеодзвінки (керування сесіями дзвінків)."
           ]
         },
-        "detailedSpecTitle": "Detailed API specification is described in:",
+        "detailedSpecTitle": "Детальна специфікація API описана в:",
         "detailedSpecContent": "DocSpec.md"
       },
       "database": {
-        "title": "5. Database (Neon/PostgreSQL): Main Data Storage",
+        "title": "5. База даних (Neon/PostgreSQL): Основне сховище даних",
         "description": "",
-        "technologyTitle": "Technology:",
+        "technologyTitle": "Технологія:",
         "technologyContent": "PostgreSQL 15.x.",
-        "hostingTitle": "Hosting:",
+        "hostingTitle": "Хостинг:",
         "hostingContent": "Neon.",
-        "roleTitle": "Role:",
-        "roleContent": "Relational database for all structured data.",
+        "roleTitle": "Роль:",
+        "roleContent": "Реляційна база даних для всіх структурованих даних.",
         "keyTables": {
-          "title": "Key tables (defined in backend/prisma/schema.prisma):",
+          "title": "Ключові таблиці (визначені в backend/prisma/schema.prisma):",
           "list": [
-            "User: User information (id, email, password_hash, name, avatarUrl, createdAt, updatedAt, is2FaEnabled).",
-            "Chat: Chat information (id, type, name, createdAt, updatedAt, lastMessageAt).",
-            "UserChat: Linking table for Many-to-Many relationship between User and Chat (userId, chatId, joinedAt, lastReadMessageId).",
-            "Message: Messages in chats (id, chatId, senderId, content, fileUrl, fileMetadata (JSON), createdAt, updatedAt).",
-            "Contact: User's contact list (id, userId, contactId).",
-            "Transaction: Payment history (for Premium) (id, userId, amount, currency, status, provider, createdAt).",
-            "Code: Temporary codes (for email verification, 2FA) (id, userId/email, code, type, expiresAt)."
+            "User: Інформація про користувача (id, email, password_hash, name, avatarUrl, createdAt, updatedAt, is2FaEnabled).",
+            "Chat: Інформація про чат (id, type, name, createdAt, updatedAt, lastMessageAt).",
+            "UserChat: Таблиця зв'язку для відношення Many-to-Many між User та Chat (userId, chatId, joinedAt, lastReadMessageId).",
+            "Message: Повідомлення в чатах (id, chatId, senderId, content, fileUrl, fileMetadata (JSON), createdAt, updatedAt).",
+            "Contact: Список контактів користувача (id, userId, contactId).",
+            "Transaction: Історія платежів (для Premium) (id, userId, amount, currency, status, provider, createdAt).",
+            "Code: Тимчасові коди (для верифікації email, 2FA) (id, userId/email, code, type, expiresAt)."
           ]
         },
-        "interactionTitle": "Interaction:",
-        "interactionContent": "Backend only via Prisma ORM.",
-        "optimizationScalingTitle": "Optimization and Scaling:",
-        "optimizationScalingContent": "Indexes, Prisma query optimization, materialized views, partitioning, replication are used (see DocOptimizationIn)."
+        "interactionTitle": "Взаємодія:",
+        "interactionContent": "Тільки Бекенд через Prisma ORM.",
+        "optimizationScalingTitle": "Оптимізація та масштабування:",
+        "optimizationScalingContent": "Використовуються індекси, оптимізація запитів Prisma, матеріалізовані подання, партиціонування, реплікація (див. DocOptimizationIn)."
       },
       "fileStorage": {
-        "title": "6. File Storage (Cloudflare R2): Storage for Media and Binary Assets",
+        "title": "6. Файлове сховище (Cloudflare R2): Зберігання медіа та бінарних активів",
         "description": "",
-        "technologyTitle": "Technology:",
-        "technologyContent": "Object storage, S3-compatible API.",
-        "hostingTitle": "Hosting:",
+        "technologyTitle": "Технологія:",
+        "technologyContent": "Об'єктне сховище, S3-сумісний API.",
+        "hostingTitle": "Хостинг:",
         "hostingContent": "Cloudflare R2.",
-        "roleTitle": "Role:",
-        "roleContent": "Storage for all unstructured data (user files, avatars, call recordings).",
-        "interactionTitle": "Interaction:",
-        "interactionContent": "Backend uploads files, Backend or Frontend retrieves files (directly or via signed URLs).",
-        "structureTitle": "Structure:",
-        "structureContent": "Files are organized by folders/keys (e.g., `avatars/`, `chat-images/`, `sensitive-data/`).",
-        "securityTitle": "Security:",
-        "securityContent": "Encryption at rest, restricted access, encryption of sensitive data at the application level before upload (see DocInt, DocSecurity)."
+        "roleTitle": "Роль:",
+        "roleContent": "Сховище для всіх неструктурованих даних (файли користувачів, аватари, записи дзвінків).",
+        "interactionTitle": "Взаємодія:",
+        "interactionContent": "Бекенд завантажує файли, Бекенд або Фронтенд отримує файли (безпосередньо або через підписані URL).",
+        "structureTitle": "Структура:",
+        "structureContent": "Файли організовані за папками/ключами (наприклад, `avatars/`, `chat-images/`, `sensitive-data/`).",
+        "securityTitle": "Безпека:",
+        "securityContent": "Шифрування в стані спокою, обмежений доступ, шифрування конфіденційних даних на рівні застосунку перед завантаженням (див. DocInt, DocSecurity)."
       },
       "projectStructure": {
-        "title": "7. Project Structure (Monorepository): Code Organization",
-        "description": "The project is organized as a monorepository using Turborepo.",
-        "purposeTitle": "Purpose:",
-        "purposeContent": "To simplify managing multiple applications/packages (backend, web, mobile-desktop, core) and code reuse.",
+        "title": "7. Структура проєкту (Монорепозиторій): Організація коду",
+        "description": "Проєкт організовано як монорепозиторій з використанням Turborepo.",
+        "purposeTitle": "Мета:",
+        "purposeContent": "Спрощення керування кількома застосунками/пакетами (backend, web, mobile-desktop, core) та повторного використання коду.",
         "packages": {
-          "title": "Packages:",
+          "title": "Пакети:",
           "list": [
-            "core: Common code.",
-            "backend: Server logic.",
-            "web: Web application.",
-            "mobile-desktop: Mobile/desktop application (React Native).",
-            "Infrastructure: Configuration files for deployment (infrastructure/).",
-            "Documentation: Project documentation (docs/)."
+            "core: Спільний код.",
+            "backend: Серверна логіка.",
+            "web: Веб-застосунок.",
+            "mobile-desktop: Мобільний/десктопний застосунок (React Native).",
+            "Infrastructure: Файли конфігурації для розгортання (infrastructure/).",
+            "Documentation: Документація проєкту (docs/)."
           ]
         },
-        "detailedDescriptionTitle": "Detailed description of the monorepository structure can be found in:",
-        "detailedDescriptionContent": "DocDevIn.md (section 2)."
+        "detailedDescriptionTitle": "Детальний опис структури монорепозиторію можна знайти в:",
+        "detailedDescriptionContent": "DocDevIn.md (розділ 2)."
       },
       "security": {
-        "title": "8. Security: Fundamental Aspect of the System",
-        "description": "Security is built in at all levels (see more in BrainMessenger Security Guide).",
-        "authenticationTitle": "Authentication:",
-        "authenticationContent": "JWT, 2FA via email.",
-        "authorizationTitle": "Authorization:",
-        "authorizationContent": "Access rights verification for resources on the Backend.",
-        "encryptionTitle": "Encryption:",
-        "encryptionContent": "TLS/SSL for data transfer, password hashing (bcrypt/argon2), encryption of sensitive data at the application level before storing in R2.",
-        "validationTitle": "Validation:",
-        "validationContent": "Strict input data validation on the Backend.",
-        "attackProtectionTitle": "Protection against Attacks:",
-        "attackProtectionContent": "Rate Limiting, secure HTTP headers.",
-        "principleTitle": "Principle:",
-        "principleContent": "Security is a continuous process of learning (Principle 1) and improvement (Principle 9), based on responsibility (Principle 6)."
+        "title": "8. Безпека: Фундаментальний аспект системи",
+        "description": "Безпека вбудована на всіх рівнях (детальніше див. у Посібнику з безпеки BrainMessenger).",
+        "authenticationTitle": "Автентифікація:",
+        "authenticationContent": "JWT, 2FA через email.",
+        "authorizationTitle": "Авторизація:",
+        "authorizationContent": "Перевірка прав доступу до ресурсів на Бекенді.",
+        "encryptionTitle": "Шифрування:",
+        "encryptionContent": "TLS/SSL для передачі даних, хешування паролів (bcrypt/argon2), шифрування конфіденційних даних на рівні застосунку перед збереженням у R2.",
+        "validationTitle": "Валідація:",
+        "validationContent": "Сувора валідація вхідних даних на Бекенді.",
+        "attackProtectionTitle": "Захист від атак:",
+        "attackProtectionContent": "Rate Limiting, безпечні HTTP-заголовки.",
+        "principleTitle": "Принцип:",
+        "principleContent": "Безпека — це безперервний процес навчання (Принцип 1) та вдосконалення (Принцип 9), заснований на відповідальності (Принцип 6)."
       },
       "deployment": {
-        "title": "9. Deployment: Delivering the System to Users",
-        "description": "The deployment process is automated.",
-        "containerizationTitle": "Containerization:",
-        "containerizationContent": "Docker images for Backend, Kafka Consumers.",
-        "orchestrationTitle": "Orchestration:",
-        "orchestrationContent": "Kubernetes manages containers in the cloud.",
-        "iacTitle": "Infrastructure as Code:",
-        "iacContent": "Terraform (IaC). Automates the creation and management of cloud resources.",
+        "title": "9. Розгортання: Доставка системи користувачам",
+        "description": "Процес розгортання автоматизований.",
+        "containerizationTitle": "Контейнеризація:",
+        "containerizationContent": "Образи Docker для Бекенда, Kafka Consumers.",
+        "orchestrationTitle": "Оркестрація:",
+        "orchestrationContent": "Kubernetes керує контейнерами в хмарі.",
+        "iacTitle": "Інфраструктура як код:",
+        "iacContent": "Terraform (IaC). Автоматизує створення та керування хмарними ресурсами.",
         "ciCdTitle": "CI/CD:",
-        "ciCdContent": "GitHub Actions automates build, testing, and deployment.",
-        "webAppDeploymentTitle": "Web application can be deployed separately (e.g., on Vercel or Cloudflare Pages).",
+        "ciCdContent": "GitHub Actions автоматизує збірку, тестування та розгортання.",
+        "webAppDeploymentTitle": "Веб-застосунок може бути розгорнутий окремо (наприклад, на Vercel або Cloudflare Pages).",
         "webAppDeploymentContent": "",
-        "detailedDescriptionTitle": "Detailed description of the deployment process can be found in:",
+        "detailedDescriptionTitle": "Детальний опис процесу розгортання можна знайти в:",
         "detailedDescriptionList": [
-          "DocDevIn.md (section 9)",
-          "Deployment Guide"
+          "DocDevIn.md (розділ 9)",
+          "Посібник з розгортання"
         ]
       },
       "monitoringLogging": {
-        "title": "10. Monitoring and Logging: Visibility into System State",
+        "title": "10. Моніторинг та логування: Видимість стану системи",
         "description": "",
-        "monitoringTitle": "Monitoring:",
+        "monitoringTitle": "Моніторинг:",
         "monitoringList": [
-          "Collection and visualization of performance and system health metrics (CPU, RAM, API/DB latencies, errors).",
-          "Tools: Prometheus, Grafana. Allows early problem detection (Principle 9: Kaizen)."
+          "Збір та візуалізація метрик продуктивності та стану системи (CPU, RAM, затримки API/БД, помилки).",
+          "Інструменти: Prometheus, Grafana. Дозволяє завчасно виявляти проблеми (Принцип 9: Кайдзен)."
         ],
-        "loggingTitle": "Logging:",
+        "loggingTitle": "Логування:",
         "loggingList": [
-          "Collection of structured logs from all components (Backend, workers).",
-          "Tools: Winston (for Node.js), Sentry (for error tracking)."
+          "Збір структурованих логів з усіх компонентів (Бекенд, воркери).",
+          "Інструменти: Winston (для Node.js), Sentry (для відстеження помилок)."
         ],
-        "detailedDescriptionTitle": "Detailed description can be found in:",
+        "detailedDescriptionTitle": "Детальний опис можна знайти в:",
         "detailedDescriptionList": [
-          "BrainMessenger Optimization Guide (section 14)",
-          "Monitoring Guide"
+          "Посібник з оптимізації BrainMessenger (розділ 14)",
+          "Посібник з моніторингу"
         ]
       },
       "externalApiIntegrations": {
-        "title": "11. External API Integrations: Using External Levers",
-        "description": "The Backend interacts with several external services via their APIs.",
+        "title": "11. Інтеграції із зовнішніми API: Використання зовнішніх важелів",
+        "description": "Бекенд взаємодіє з декількома зовнішніми сервісами через їхні API.",
         "gmailApiTitle": "Gmail API:",
-        "gmailApiContent": "Sending transactional emails (confirmation, 2FA).",
+        "gmailApiContent": "Надсилання транзакційних листів (підтвердження, 2FA).",
         "stripeTitle": "Stripe:",
-        "stripeContent": "Payment processing and subscriptions.",
+        "stripeContent": "Обробка платежів та підписок.",
         "firebaseFCMTitle": "Firebase FCM:",
-        "firebaseFCMContent": "Sending push notifications to mobile devices.",
-        "principleTitle": "Principle:",
-        "principleContent": "Using these services is a pragmatic (Principle 12) way to quickly add functionality, using ready-made, reliable (Principle 3) solutions.",
-        "detailedDescriptionTitle": "Detailed description of integrations can be found in:",
+        "firebaseFCMContent": "Надсилання push-сповіщень на мобільні пристрої.",
+        "principleTitle": "Принцип:",
+        "principleContent": "Використання цих сервісів — прагматичний (Принцип 12) спосіб швидко додати функціональність, використовуючи готові, надійні (Принцип 3) рішення.",
+        "detailedDescriptionTitle": "Детальний опис інтеграцій можна знайти в:",
         "detailedDescriptionContent": "DocInt.md"
       },
       "notes": {
-        "title": "12. Notes",
-        "description": "This documentation provides a high-level overview of the BrainMessenger technical system. For a more detailed understanding of individual parts, refer to related documents:",
-        "apiSpecLinkTitle": "API Specification:",
+        "title": "12. Примітки",
+        "description": "Ця документація надає високорівневий огляд технічної системи BrainMessenger. Для більш детального розуміння окремих частин звертайтеся до відповідних документів:",
+        "apiSpecLinkTitle": "Специфікація API:",
         "apiSpecLinkContent": "DocSpec.md",
-        "devGuideLinkTitle": "Development Guide:",
+        "devGuideLinkTitle": "Посібник розробника:",
         "devGuideLinkContent": "DocDevIn.md",
-        "optimizationGuideLinkTitle": "Optimization Guide:",
+        "optimizationGuideLinkTitle": "Посібник з оптимізації:",
         "optimizationGuideLinkContent": "DocOptimizationIn.md",
-        "integrationsDocsLinkTitle": "Integrations Documentation:",
+        "integrationsDocsLinkTitle": "Документація з інтеграцій:",
         "integrationsDocsLinkContent": "DocInt.md",
-        "designDocsLinkTitle": "Design Documentation:",
+        "designDocsLinkTitle": "Документація з дизайну:",
         "designDocsLinkContent": "DocDesign.md",
-        "userGuideLinkTitle": "User Guide:",
+        "userGuideLinkTitle": "Посібник користувача:",
         "userGuideLinkContent": "DocUser.md",
-        "longTermInvestmentTitle": "Development and maintenance of this technical system is a long-term investment (Principle 8) and a continuous process of learning and improvement (Principle 1, 9)."
+        "longTermInvestmentTitle": "Розробка та підтримка цієї технічної системи — це довгострокова інвестиція (Принцип 8) та безперервний процес навчання та вдосконалення (Принцип 1, 9)."
       }
     }
   },
-  "footer": {
-    "sectionTitle": {
+    "footer": {
+      "sectionTitle": {
       "brand": "BrainMessenger"
     },
-    "brandContent": "Your Smart Communication Platform",
-    "copyright": "© 2025 BrainMessenger. All rights reserved."
+      "brandContent": "Ваша розумна платформа для спілкування",
+      "copyright": "© 2025 BrainMessenger. Всі права захищено."
+    }
   }
-}
 }

@@ -563,177 +563,367 @@
       }
     },
     "localizationGuide": {
-      "title": "Руководство по Локализации BrainMessenger",
-      "subtitle": "Доступность и Масштабирование",
-      "section1": {
-        "title": "1. Введение: Расширение Ценности через Доступность",
-        "name": "BrainMessenger Design System",
-        "description": "Это руководство описывает процесс локализации BrainMessenger — ключевой шаг для обеспечения доступности и ценности (Принцип 2) продукта для широкой аудитории по всему миру. Мы рассматриваем локализацию не просто как перевод строк, а как систематический процесс (Принцип 9) адаптации интерфейса и контента, который позволит нам масштабировать наше влияние (Принцип 2, 8).",
-        "goal": "Сделать BrainMessenger понятным и удобным для пользователей из разных культур, начиная с базового набора языков и создавая надежную систему (Принцип 9) для легкого добавления новых в будущем.",
-        "current_status": "Базовая поддержка английского языка (MVP). Идет планирование и подготовка к добавлению новых языков в рамках текущих этапов разработки (см. Дорожную карту).",
-        "principles_title": "Принципы, которыми руководствуется локализация:",
+      "title": "BrainMessenger Optimization Guide (Kaizen Principle in Action)",
+      "subtitle": "Introduction: Optimization as a Continuous Improvement Process",
+      "introduction": {
+        "title": "1. Introduction: Optimization as a Continuous Improvement Process",
+        "description": "This document describes in detail the approaches, tools, and techniques we use to optimize BrainMessenger's performance. Optimization is not a one-time task, but a <strong>continuous improvement process</strong> (Principle 1, 9: Kaizen) that allows us to ensure the application's <strong>high quality, reliability, and scalability</strong> (Principle 3, 8).",
+        "goalTitle": "Goal:",
+        "goalContent": "Identify and eliminate performance bottlenecks at all system levels (Frontend, Backend, Database, Infrastructure) to ensure BrainMessenger remains <strong>fast, responsive, and efficient</strong> (Principle 2) even under significant load (target - 1 million active users), while maintaining <strong>system health</strong> (Principle 5, applicable to technology).",
+        "audienceTitle": "Audience:",
+        "audienceContent": "Backend, Frontend, Mobile, Desktop, and DevOps developers focused on performance and scalability.",
+        "principlesTitle": "Principles guiding optimization:",
         "principles": [
-          "Создание Ценности (Принцип 2): Локализация напрямую повышает ценность продукта для неанглоязычных пользователей.",
-          "Система и Оптимизация (Принцип 9): Процесс локализации строится как четкая, повторяемая система для эффективности.",
-          "Прагматизм и Реализм (Принцип 12): Выбор начального набора языков основывается на потенциальном охвате и ресурсах.",
-          "Внешняя Экспертиза и Обратная Связь (Принцип 14): Привлечение профессиональных переводчиков и сбор обратной связи от пользователей на разных языках."
+          "<strong>System and Optimization (Principle 9: Kaizen):</strong> Optimization is a key aspect of our development system. A cyclical approach is used: Measure → Analyze → Improve → Verify.",
+          "<strong>Quality > Quantity (Principle 3):</strong> It is better to have a few critically important optimizations than many minor ones that yield little effect.",
+          "<strong>Pragmatism and Realism (Principle 12):</strong> We optimize what truly impacts performance and user experience, based on real data, not assumptions.",
+          "<strong>Continuous Learning (Principle 1):</strong> Studying new optimization techniques and tools, analyzing results and lessons learned.",
+          "<strong>Persistence (Principle 13):</strong> Optimization can be complex. Persistence is required to identify and solve deep performance issues.",
+          "<strong>Health as Foundation (Principle 5):</strong> System optimization (e.g., reducing memory/CPU consumption) directly impacts the \"health\" of servers and user devices.",
+          "<strong>External Expertise (Principle 14):</strong> Using standard tools (Prometheus, Grafana, V8 Profiler), studying the experience of other teams (Google, Next.js, etc.)."
         ]
       },
-      "section2": {
-        "title": "2. Цели Локализации",
-        "goals": [
-          "Обеспечить поддержку минимум 5 ключевых языков (Английский, Испанский, Французский, Русский, Арабский) для старта MVP — (Требование NFR-11, соответствующее Принципу 12: Прагматизм).",
-          "Реализовать адаптацию пользовательского интерфейса для языков с направлением письма справа налево (RTL), таких как арабский (Принцип 2: Доступность).",
-          "Поддерживать единообразие терминологии и стиля во всех переводах, используя централизованные инструменты (Принцип 9: Система).",
-          "Создать эффективный и простой процесс добавления новых языков по мере роста базы пользователей и поступления запросов (Принцип 9: Масштабирование, Принцип 12: Прагматизм, Принцип 14: Обратная связь)."
-        ]
+      "generalPrinciple": {
+        "title": "2. General Optimization Principle (Kaizen Cycle)",
+        "intro": "Our approach to optimization follows the <strong>Kaizen cycle (Principle 9)</strong>:",
+        "step1": {
+          "title": "1. Measure:",
+          "content": "Collect performance data. Use monitoring tools (Prometheus, Sentry), profiling (V8 Profiler), bundle analysis (Webpack Bundle Analyzer, `@next/bundle-analyzer`)."
+        },
+        "step2": {
+          "title": "2. Analyze:",
+          "content": "Identify <strong>bottlenecks</strong> based on collected data. Where does the system spend most time or resources?"
+        },
+        "step3": {
+          "title": "3. Improve:",
+          "content": "Apply specific optimization techniques described in this guide to address identified bottlenecks."
+        },
+        "step4": {
+          "title": "4. Verify:",
+          "content": "Re-measure performance after changes. Ensure optimization had the expected effect and did not cause regressions (did not worsen other aspects)."
+        },
+        "step5": {
+          "title": "5. Repeat:",
+          "content": "Performance may change with increasing load and functionality. Repeat the Kaizen cycle continuously."
+        }
       },
-      "section3": {
-        "title": "3. Инструменты и Технологии: Надежный Фундамент (Принцип 8, 9)",
-        "intro": "Выбор инструментов основан на прагматизме (Принцип 12), надежности и поддержке системного подхода (Принцип 9).",
-        "tools_table": [
-          ["Инструмент", "Назначение", "Установка/Конфигурация"],
-          ["i18next", "Основная библиотека для управления переводами в Frontend (React Native). Поддерживает интерполяцию, контексты.", "npm install i18next react-i18next"],
-          ["react-intl", "Библиотека для локализованного форматирования дат, чисел, валют в Frontend.", "npm install react-intl"],
-          ["Transifex", "Профессиональная платформа для управления переводами, привлечения переводчиков и обеспечения качества перевода.", "Регистрация на transifex.com"],
-          ["rtlcss", "Утилита для автоматической трансформации CSS-стилей для поддержки RTL-языков.", "npm install -g rtlcss (глобально) или npm install rtlcss --save-dev"],
-          ["JSON файлы", "Формат хранения переводов.", "Стандартный."]
-        ]
+      "imageProcessing": {
+        "title": "3. Image Processing Optimization: Efficiency and Speed (Principle 9, 2)",
+        "intro": "Image processing can be resource-intensive. <strong>Optimizing this process directly affects content loading speed and application responsiveness</strong> (Principle 2: Value).",
+        "libraryTitle": "Library:",
+        "libraryContent": "`sharp` (based on `libvips`). Chosen as a <strong>pragmatic</strong> (Principle 12) and <strong>high-performance</strong> (Principle 9) solution for Node.js.",
+        "applicationAreasTitle": "Application Areas:",
+        "applicationAreasContent": "Resizing, compression, format conversion for avatars, chat images.",
+        "keyTechniqueTitle": "Key Technique:",
+        "keyTechniqueContent": "<strong>Asynchronous processing</strong> in the background via Kafka.",
+        "implementationStepsTitle": "Implementation Steps (Backend):",
+        "step1": {
+          "title": "1. Install `sharp`:",
+          "content": "Ensure `libvips` is installed in your operating system or Docker image.",
+          "code": "```bash\\nnpm install sharp\\n```"
+        },
+        "step2": {
+          "title": "2. Create an image processing service:",
+          "content": "Encapsulate logic in a separate service (part of the <strong>system</strong> - Principle 9).",
+          "code": "```typescript\\n// backend/src/image-processing/image-processing.service.ts\\nimport { Injectable, Scope } from '@nestjs/common';\\nimport sharp from 'sharp';\\n\\n@Injectable()\\nexport class ImageProcessingService {\\n  // Method for resizing, compressing, and converting to WebP\\n  async processImage(buffer: Buffer, width: number, height?: number): Promise<Buffer> {\\n    // resize({ width, height, withoutEnlargement: true }) - avoid enlargement if source is smaller\\n    // webp({ quality: 80 }) - compress to WebP format (good compression while maintaining quality)\\n    // withMetadata({ orientation: true }) - preserve orientation from EXIF, remove others (size saving - Principle 9)\\n    return sharp(buffer)\\n      .resize(width, height, { withoutEnlargement: true })\\n      .webp({ quality: 80 })\\n      .withMetadata({ orientation: true })\\n      .toBuffer();\\n  }\\n\\n  // Method for simple resizing\\n  async resizeImage(buffer: Buffer, width: number, height?: number): Promise<Buffer> {\\n       return sharp(buffer)\\n           .resize(width, height, { withoutEnlargement: true })\\n           .toBuffer();\\n  }\\n\\n   // Method for converting to a specific format\\n   async convertToFormat(buffer: Buffer, format: keyof sharp.Format): Promise<Buffer> {\\n       return sharp(buffer).toFormat(format).toBuffer();\\n   }\\n}\\n```"
+        },
+        "step3": {
+          "title": "3. Integrate with file upload (Backend Controller/Service):",
+          "content": "",
+          "code": "```typescript\\n// backend/src/upload/upload.controller.ts (avatar upload handling example)\\nimport { Controller, Post, UploadedFile, UseInterceptors, Body, Inject } from '@nestjs/common';\\nimport { FileInterceptor } from '@nestjs/platform-express';\\nimport { ImageProcessingService } from '../image-processing/image-processing.service';\\nimport { StorageService } from '../storage/storage.service';\\nimport { UserService } from '../user/user.service';\\n\\n@Controller('upload')\\nexport class UploadController {\\n  constructor(\\n    private imageProcessingService: ImageProcessingService,\\n    private storageService: StorageService,\\n    private userService: UserService,\\n    // ... Kafka producer injection for asynchronous processing\\n  ) {}\\n\\n  @Post('avatar')\\n  @UseInterceptors(FileInterceptor('file')) // 'file' - form field name\\n  async uploadAvatar(@UploadedFile() file: Express.Multer.File, @Body('userId') userId: string) {\\n    // Optimization: Process image before uploading to R2\\n    const processedImageBuffer = await this.imageProcessingService.processImage(file.buffer, 300, 300); // Resize and compress\\n    const fileName = `avatars/${userId}-${Date.now()}.webp`; // Unique file name in avatars folder\\n    const mimeType = 'image/webp'; // Corresponds to WebP format\\n\\n    // Upload processed file to Cloudflare R2\\n    const avatarUrl = await this.storageService.uploadFile(processedImageBuffer, fileName, mimeType);\\n\\n    // Update avatar link in user profile in Neon\\n    await this.userService.updateUserAvatar(userId, avatarUrl);\\n\\n    // Return avatar URL to client\\n    return { avatarUrl };\\n  }\\n\\n  @Post('chat-image')\\n  @UseInterceptors(FileInterceptor('file'))\\n  async uploadChatImage(@UploadedFile() file: Express.Multer.File, @Body('chatId') chatId: string, @Body('userId') userId: string) {\\n      // Send image processing task to Kafka for asynchronous processing (Principle 9)\\n      const taskPayload = { fileBuffer: file.buffer.toString('base64'), fileName: file.originalname, mimeType: file.mimetype, chatId, userId };\\n      // Assumes you have a Kafka producer service\\n      // await this.kafkaProducerService.sendMessage('image-processing-topic', JSON.stringify(taskPayload));\\n\\n      // Immediate response to client that file is accepted for processing\\n      return { status: 'processing', originalFileName: file.originalname };\\n\\n      // OR, if synchronous processing is acceptable for small files:\\n      /*\\n      const processedImageBuffer = await this.imageProcessingService.processImage(file.buffer, 800); // Resize\\n      const fileName = `chat-images/${chatId}-${Date.now()}.webp`;\\n      const mimeType = 'image/webp';\\n      const imageUrl = await this.storageService.uploadFile(processedImageBuffer, fileName, mimeType);\\n\\n      // Create 'image' type message in chat\\n      // await this.chatService.sendImageMessage(chatId, userId, imageUrl);\\n\\n      return { imageUrl };\\n      */\\n  }\\n}\\n```"
+        },
+        "step4": {
+          "title": "4. Asynchronicity via Kafka (for heavy tasks):",
+          "content": "For processing images in chats (which can be large), use <strong>Kafka</strong> (see section 8) for <strong>asynchronous processing</strong>. The Backend quickly accepts the file from the client and queues the task in Kafka. A separate worker (Kafka consumer) picks up the task, processes the image using `sharp`, uploads it to R2, and only then creates a message in the chat via API. This <strong>reduces API response time</strong> (Principle 9) and improves user experience."
+        }
       },
-      "section4": {
-        "title": "4. Структура Файлов Переводов: Порядок в Системе (Принцип 9)",
-        "intro": "Переводы организованы в четкой файловой структуре для удобства управления (Принцип 9: Система).",
-        "location_title": "4.1. Расположение",
-        "location_content": "Файлы переводов хранятся в директории locales внутри frontend/src:\n\nfrontend/\n├── src/\n│ ├── locales/\n│ │ ├── en.json # Английский (базовый)\n│ │ ├── es.json # Испанский\n│ │ ├── fr.json # Французский\n│ │ ├── ru.json # Русский\n│ │ ├── ar.json # Арабский (пример RTL)\n│ └── index.ts # Конфигурация i18next",
-        "format_title": "4.2. Формат JSON: Контекст и Гибкость",
-        "format_content": "Ключи: Используется camelCase. Ключи должны быть описательными и отражать контекст использования строки (например, sendButton вместо просто send).\n\nЗначения: Содержат переводимый текст. Поддерживается интерполяция для вставки динамических данных (например, имена пользователей).",
-        "format_example": "Пример en.json:\n\n```json\n{\n  \"welcomeTitle\": \"Welcome to BrainMessenger!\",\n  \"sendButton\": \"Send\",\n  \"errors\": {\n    \"unauthorized\": \"Please log in again to continue.\",\n    \"notFound\": \"The requested item could not be found.\"\n  },\n  \"chat\": {\n    \"newMessageNotification\": \"New message from {{name}}\",\n    \"unreadCount\": \"{{count}} unread messages\"\n  },\n  \"settings\": {\n    \"language\": \"Language\",\n    \"theme\": \"Theme\"\n  }\n}\n```",
-        "rtl_flag_title": "4.3. RTL-флаг: Адаптация Интерфейса",
-        "rtl_flag_content": "Для языков с направлением справа налево в начало соответствующего JSON-файла добавляется метаданные для индикации:",
-        "rtl_flag_example": "```json\n{\n  \"rtl\": true,\n  \"welcomeTitle\": \"مرحبًا بك في BrainMessenger!\"\n  // ... остальные переводы\n}\n```\n\nЭтот флаг используется Frontend-приложением для соответствующей адаптации стилей и макета."
+      "dbOptimization": {
+        "title": "4. Database Optimization (Neon/PostgreSQL): Accelerating Data Access (Principle 9, 8)",
+        "intro": "The database often becomes a bottleneck. Optimizing queries and DB structure is critical for <strong>long-term performance</strong> (Principle 8) and <strong>system efficiency</strong> (Principle 9).",
+        "platformTitle": "Platform:",
+        "platformContent": "Neon (managed PostgreSQL).",
+        "toolTitle": "Tool:",
+        "toolContent": "Prisma ORM.",
+        "analysisToolTitle": "Analysis Tool:",
+        "analysisToolContent": "`EXPLAIN ANALYZE` in Neon SQL client or `prisma.queryRaw` with `EXPLAIN ANALYZE`.",
+        "monitoringToolTitle": "Monitoring Tool:",
+        "monitoringToolContent": "Prometheus + `postgres_exporter` (see section 14).",
+        "indexing": {
+          "title": "4.1. Indexing: Accelerating Search and Filtering",
+          "intro": "Indexes allow the database to find desired rows faster.",
+          "whenTitle": "When to use:",
+          "whenContent": "On fields frequently used in `WHERE`, `JOIN`, `ORDER BY` clauses.",
+          "applicationAreasTitle": "Application areas in BrainMessenger:",
+          "applicationAreasContent": "`userId`, `chatId`, `createdAt` (in `Message` table), `email` (in `User` table), search fields.",
+          "prismaTitle": "Implementation (Prisma):",
+          "prismaContent": "Add `@index` in `schema.prisma`.",
+          "prismaCode": "```prisma\\n// schema.prisma\\nmodel Message {\\n  id        String   @id @default(cuid())\\n  content   String\\n  createdAt DateTime @default(now()) @map(\\\"created_at\\\") // Example @map for snake_case in DB\\n  chatId    String @map(\\\"chat_id\\\")\\n  userId    String @map(\\\"user_id\\\")\\n  chat      Chat     @relation(fields: [chatId], references: [id])\\n  user      User     @relation(fields: [userId], references: [id])\\n\\n  // Combined index for fast chat message queries by time\\n  @@index([chatId, createdAt])\\n  // Index for fast retrieval of messages by user (e.g., for statistics)\\n  @@index([userId])\\n  // Index for content search (if full-text search is required - consider tsearch)\\n  // @@index([content]) // Only for simple LIKE filters\\n}\\n\\nmodel User {\\n    id    String @id @default(cuid())\\n    email String @unique // Unique index for fast email search (login, registration)\\n    name  String\\n    // ... other fields\\n}\\n\\nmodel Chat {\\n   id          String @id @default(cuid())\\n   lastMessageAt DateTime? @map(\\\"last_message_at\\\") // For sorting chats (needs index)\\n   // ... other fields\\n   @@index([lastMessageAt]) // Index for sorting chat list\\n}\\n```",
+          "applicationTitle": "Application:",
+          "applicationContent": "After modifying `schema.prisma`, run migration (`npx prisma migrate dev`)."
+        },
+        "queryOptimization": {
+          "title": "4.2. Query Optimization (Prisma): Writing Efficient DB Interaction Code",
+          "intro": "",
+          "selectFieldsTitle": "Select only necessary fields (`select`):",
+          "selectFieldsContent": "Do not query `SELECT *`. Specify only the fields you truly need. This reduces the amount of data transferred over the network and processed by the DB.",
+          "selectFieldsCode": "```typescript\\n// Bad\\nconst user = await prisma.user.findUnique({ where: { id: userId } }); // Will select all fields\\n\\n// Good (if only email and name are needed)\\nconst user = await prisma.user.findUnique({\\n  where: { id: userId },\\n  select: {\\n    email: true,\\n    name: true,\\n  },\\n});\\n```",
+          "nPlus1Title": "Avoid N+1 problems (`include`):",
+          "nPlus1Content": "If you need related data (e.g., message author when getting a list of messages), use `include` or `select` with nested fields instead of executing a separate query for each item.",
+          "nPlus1Code": "```typescript\\n// Bad (N+1 problem - separate query for each user)\\nconst messages = await prisma.message.findMany({ where: { chatId: chatId } });\\nfor (const message of messages) {\\n  const sender = await prisma.user.findUnique({ where: { id: message.userId } });\\n  // ... use sender\\n}\\n\\n// Good (use include to fetch message author in a single query)\\nconst messagesWithSender = await prisma.message.findMany({\\n  where: { chatId: chatId },\\n  include: {\\n    user: { // Include user data related to the message via the 'user' field in the Message model\\n      select: { id: true, name: true, avatarUrl: true } // Select only necessary user fields\\n    },\\n  },\\n  orderBy: { createdAt: 'asc' }, // Example: messages in chronological order\\n  take: 50, // Example: pagination\\n});\\n```",
+          "paginationTitle": "Pagination (`skip`, `take`, `cursor`):",
+          "paginationContent": "For fetching large lists (chat messages, chat list), use pagination to avoid loading all data at once. `cursor`-based pagination is preferred for infinite scrolling.",
+          "paginationCode": "```typescript\\n// Example pagination with take and skip\\nconst messages = await prisma.message.findMany({\\n    where: { chatId: chatId },\\n    orderBy: { createdAt: 'asc' },\\n    skip: (page - 1) * pageSize, // Skip N messages\\n    take: pageSize, // Take M messages\\n});\\n\\n// Example Cursor-based pagination (for \\\"show more\\\")\\nconst messages = await prisma.message.findMany({\\n    where: { chatId: chatId },\\n    orderBy: { createdAt: 'asc' },\\n    cursor: { id: lastMessageId }, // Start after the last message\\n    skip: 1, // Skip the last message itself\\n    take: pageSize,\\n});\\n```"
+        },
+        "prismaAccelerate": {
+          "title": "4.3. Prisma Accelerate: Global Cache and Connection Pool",
+          "intro": "Prisma Accelerate provides a global network of servers (Edge locations) that cache query results and manage a connection pool to your Neon DB.",
+          "whenTitle": "When to use:",
+          "whenContent": "To reduce query latency for users worldwide and optimize DB connection pool usage.",
+          "implementationTitle": "Implementation:",
+          "implementationContent": "Configured in the Prisma console. Your `DATABASE_URL` is replaced with the Prisma Accelerate URL."
+        },
+        "materializedViews": {
+          "title": "4.4. Materialized Views: Caching Complex Aggregations",
+          "intro": "Materialized views are essentially cached results of complex queries or aggregations (e.g., number of messages in a chat, last active users in a group). They are stored on disk and can be read quickly.",
+          "whenTitle": "When to use:",
+          "whenContent": "For queries that are executed frequently but require complex computations (JOINs, GROUP BY, aggregate functions) over large tables, and where the data does not need to be absolutely up-to-date every millisecond.",
+          "applicationAreasTitle": "Application Areas:",
+          "applicationAreasContent": "Chat statistics (total messages, participants), \"top\" user lists (e.g., by number of messages sent).",
+          "implementationTitle": "Implementation (SQL, via Prisma `queryRaw` or Neon SQL client):",
+          "implementationContent": "```sql\\n-- Create a materialized view to count messages in each chat\\nCREATE MATERIALIZED VIEW chat_message_counts AS\\nSELECT\\n    \\\"chatId\\\",\\n    COUNT(*) as \\\"messageCount\\\"\\nFROM \\\"Message\\\"\\nGROUP BY \\\"chatId\\\";\\n\\n-- Create an index on the view for fast search by chatId (optional, but often useful)\\nCREATE INDEX idx_chat_message_counts_chat_id ON chat_message_counts (\\\"chatId\\\");\\n```",
+          "updateTitle": "Update:",
+          "updateContent": "Materialized views need to be <strong>periodically refreshed</strong> to reflect changes in the base tables. This is done with the `REFRESH MATERIALIZED VIEW <view_name>;` command. The refresh frequency depends on how current the data needs to be (e.g., hourly, daily).",
+          "updateCode": "```sql\\n-- Refresh view (may block reads during execution)\\nREFRESH MATERIALIZED VIEW chat_message_counts;\\n\\n-- Refresh view without blocking reads (for large views)\\nREFRESH MATERIALIZED VIEW CONCURRENTLY chat_message_counts; -- Requires a unique index\\n```",
+          "usageTitle": "Usage in Prisma:",
+          "usageContent": "Query as a regular table.",
+          "usageCode": "```typescript\\nconst chatStats = await prisma.chatMessageCounts.findMany({\\n  select: { chatId: true, messageCount: true },\\n  where: { chatId: 'some-chat-id' },\\n});\\n```"
+        },
+        "partitioning": {
+          "title": "4.5. Table Partitioning: Dividing Large Data Volumes",
+          "intro": "Partitioning physically divides very large tables (e.g., `Message`) into smaller parts (partitions) based on a value in a specific column (e.g., `createdAt` or `chatId`).",
+          "whenTitle": "When to use:",
+          "whenContent": "When a table becomes so large (billions of rows) that indexes alone are insufficient, and queries start to slow down due to the need to scan too much data.",
+          "applicationAreasTitle": "Application Areas:",
+          "applicationAreasContent": "The `Message` table is an ideal candidate for partitioning by creation time (`createdAt`) or chat ID (`chatId`).",
+          "implementationTitle": "Implementation (SQL, via Prisma `queryRaw` or Neon SQL client):",
+          "implementationContent": "PostgreSQL supports native partitioning.",
+          "implementationCode": "```sql\\n-- Create the main partitioned table by date range\\nCREATE TABLE messages (\\n    id TEXT NOT NULL,\\n    content TEXT NOT NULL,\\n    created_at TIMESTAMP WITH TIME ZONE NOT NULL,\\n    chat_id TEXT NOT NULL,\\n    user_id TEXT NOT NULL,\\n    PRIMARY KEY (id, created_at) -- Partition key must be part of the primary key\\n) PARTITION BY RANGE (created_at); -- Partition by range of created_at field\\n\\n-- Create partitions (e.g., by month)\\nCREATE TABLE messages_2025_03 PARTITION OF messages\\n    FOR VALUES FROM ('2025-03-01 00:00:00+00') TO ('2025-04-01 00:00:00+00');\\n\\nCREATE TABLE messages_2025_04 PARTITION OF messages\\n    FOR VALUES FROM ('2025-04-01 00:00:00+00') TO ('2025-05-01 00:00:00+00');\\n\\n-- ... create new partitions as needed (automatically or manually)\\n\\n-- Create indexes for the partitioned table (apply to all partitions)\\nCREATE INDEX ON messages (\\\"chat_id\\\", \\\"created_at\\\");\\nCREATE INDEX ON messages (\\\"user_id\\\");\\n```",
+          "advantagesTitle": "Advantages:",
+          "advantagesContent": "Queries including a filter by the partitioning key (e.g., `WHERE created_at BETWEEN ...`) will scan only the necessary partitions, significantly speeding up execution. Managing old data (deletion) becomes simpler (you can just drop old partitions).",
+          "prismaRelationTitle": "Relation with Prisma:",
+          "prismaRelationContent": "Prisma interacts with a partitioned table as with a regular one."
+        }
       },
-      "section5": {
-        "title": "5. Настройка Локализации: Интеграция в Систему (Принцип 9)",
-        "intro": "Локализация интегрируется как в Frontend (для отображения переведенного UI), так и в Backend (для возврата локализованных ошибок или уведомлений).",
-        "frontend_title": "5.1. Frontend (React Native): Использование i18next",
-        "frontend_init_title": "Инициализация i18next:",
-        "frontend_init_code": "В главном файле приложения или файла конфигурации (frontend/src/index.ts или подобном):\n\n```jsx\nimport i18n from 'i18next'\nimport { initReactI18next } from 'react-i18next'\n\n// Импорт всех файлов локалей\nimport en from './locales/en.json'\nimport es from './locales/es.json'\nimport fr from './locales/fr.json'\nimport ru from './locales/ru.json'\nimport ar from './locales/ar.json'\n\n// Определение ресурсов\nconst resources = {\n  en: { translation: en },\n  es: { translation: es },\n  fr: { translation: fr },\n  ru: { translation: ru },\n  ar: { translation: ar },\n};\n\ni18n\n  .use(initReactI18next) // Подключение react-i18next\n  .init({\n    resources,\n    lng: 'en', // Язык по умолчанию при первом запуске (может определяться по системным настройкам или выбору пользователя)\n    fallbackLng: 'en', // Резервный язык, если текущий перевод отсутствует\n    interpolation: {\n      escapeValue: false // Позволяет использовать HTML теги в переводах (осторожно!)\n    }\n  });\n\nexport default i18n;\n```",
-        "frontend_usage_title": "Использование перевода в компонентах:",
-        "frontend_usage_code": "Используйте хук useTranslation для доступа к функции t и объекту i18n.\n\n```jsx\nimport { useTranslation } from 'react-i18next';\nimport { Text, Button, View } from 'react-native';\n\nconst WelcomeScreen = () => {\n  const { t, i18n } = useTranslation(); // Получаем функцию t и объект i18n\n\n  return (\n    <View>\n      {/* Использование простого перевода */}\n      <Text>{t('welcomeTitle')}</Text>\n      \n      {/* Использование перевода с интерполяцией */}\n      {/* Предполагается, что где-то есть состояние unreadCount */}\n      <Text>{t('chat.unreadCount', { count: 5 })}</Text> \n\n      {/* Использование перевода для текста кнопки */}\n      <Button title={t('sendButton')} onPress={sendMessage} />\n      \n      {/* Пример смены языка */}\n      <Button title={t('settings.language')} onPress={() => i18n.changeLanguage('ar')} />\n    </View>\n  );\n};\n```",
-        "frontend_change_title": "Смена языка:",
-        "frontend_change_content": "Язык меняется вызовом i18n.changeLanguage('код_языка'). Обычно это делается в настройках пользователя.",
-        "backend_title": "5.2. Backend (NestJS): Локализация Ошибок и Уведомлений",
-        "backend_intro": "Backend может возвращать локализованные сообщения об ошибках или уведомления, опираясь на язык, переданный Frontend (например, в заголовке Accept-Language или настройках пользователя).",
-        "backend_code": "Использование локализованных сообщений при выбрасывании ошибок:\n\n```typescript\nimport { HttpException, HttpStatus } from '@nestjs/common';\nimport { t } from 'i18next'; // Предполагается, что i18next инициализирован и в Backend\n\n// В сервисе или контроллере\nif (!user) {\n  // Определяем язык пользователя (например, из request.headers['accept-language'])\n  const userLang = determineUserLanguage(request); \n  throw new HttpException(t('errors.unauthorized', { lng: userLang }), HttpStatus.UNAUTHORIZED);\n}\n```",
-        "backend_note": "Локаль пользователя определяется из заголовка Accept-Language (стандартный подход) или сохраняется в профиле пользователя в базе данных после его выбора в настройках приложения.",
-        "rtl_adaptation_title": "5.3. RTL-адаптация (Справа Налево): Зеркальное Отображение Системы",
-        "rtl_adaptation_intro": "Для языков с RTL (арабский, иврит и др.) необходимо зеркально отобразить макет и некоторые элементы интерфейса.",
-        "rtl_css_title": "Стили (CSS/CSS-in-JS):",
-        "rtl_css_code": "Используйте rtlcss в процессе сборки или условные стили в коде. rtlcss автоматически преобразует свойства вроде margin-left, padding-right, text-align: left и т.п. в их RTL-эквиваленты (margin-right, padding-left, text-align: right).\n\n```css\n/* Исходный CSS для LTR */\n.message-bubble {\n  margin-left: 10px;\n  text-align: left;\n}\n/* После обработки rtlcss для RTL */\n.message-bubble {\n  margin-right: 10px;\n  text-align: right;\n}\n```",
-        "rtl_rn_title": "React Native:",
-        "rtl_rn_code": "React-Native имеет встроенную поддержку RTL через I18nManager.\n\n```jsx\nimport { I18nManager } from 'react-native';\nimport i18n from './index'; // Ваш файл инициализации i18next\n\n// В главном файле приложения, перед рендером\nconst isRTL = i18n.language === 'ar' || i18n.language === 'he'; // Проверяем, является ли текущий язык RTL\n\n// ForceRTL может потребовать перезагрузки приложения для полной силы\nif (isRTL !== I18nManager.isRTL) {\n  I18nManager.forceRTL(isRTL);\n  // Optional: Restart the app to apply RTL layout fully\n  // RNRestart.Restart(); \n}\n\n// Некоторые стили могут требовать ручной адаптации, если auto-conversion недостаточно\nconst containerStyle = {\n  flexDirection: isRTL ? 'row-reverse' : 'row',\n  textAlign: isRTL ? 'right' : 'left',\n};\n```",
-        "rtl_icons_title": "Иконки:",
-        "rtl_icons_content": "Некоторые иконки (например, стрелки \"назад\", \"далее\") должны быть зеркально отображены для RTL. Это можно делать условно в коде или использовать RTL-ready наборы иконок."
+      "graphqlOptimization": {
+        "title": "5. GraphQL API Optimization (NestJS + Prisma): Efficient Data Transfer",
+        "intro": "GraphQL itself is an <strong>optimization</strong> tool (Principle 9) compared to REST (client requests only necessary data). However, it can still be optimized.",
+        "analysisToolTitle": "Analysis Tool:",
+        "analysisToolContent": "`graphql-query-complexity` for protection against complex queries.",
+        "dataloader": {
+          "title": "5.1. DataLoader: Solving the N+1 Problem in GraphQL",
+          "intro": "DataLoader is a utility that helps solve the N+1 query problem when working with data graphs. If you have a list of objects, and for each object, you need to fetch a related object (e.g., a list of messages and their author for each message), DataLoader will collect all IDs of related objects and make a single batch request to the DB.",
+          "whenTitle": "When to use:",
+          "whenContent": "In GraphQL resolvers, when you need to fetch related objects for a list of parent objects.",
+          "applicationAreasTitle": "Application Areas:",
+          "applicationAreasContent": "Fetching author data for each message in a chat, fetching a list of participants for each chat in a user's chat list.",
+          "implementationTitle": "Implementation:",
+          "implementationContent": "Create separate DataLoaders for each object type that needs to be fetched. Integrate them into the GraphQL request context.",
+          "implementationCode": "```typescript\\n// backend/src/graphql/loaders/user.loader.ts\\nimport { Injectable, Scope } from '@nestjs/common';\\nimport DataLoader from 'dataloader';\\nimport { PrismaService } from 'nestjs-prisma';\\nimport { User } from '@prisma/client'; // Prisma model import\\n\\n// Scope.REQUEST - important for DataLoader to be unique per GraphQL request\\n@Injectable({ scope: Scope.REQUEST })\\nexport class UserLoader {\\n  private loader: DataLoader<string, User>;\\n\\n  constructor(private prisma: PrismaService) {\\n    // Create a new DataLoader. The batchLoadFn function takes an array of keys (user IDs)\\n    this.loader = new DataLoader<string, User>(\\n      async (ids: readonly string[]) => {\\n        // Execute ONE DB query to fetch ALL users by their IDs\\n        const users = await this.prisma.user.findMany({\\n          where: {\\n            id: { in: Array.from(ids) }, // Array.from(ids) for Prisma compatibility\\n          },\\n        });\\n\\n        // Important: Return an array of results ordered by the original 'ids' array\\n        const userMap = new Map(users.map(user => [user.id, user]));\\n        return ids.map(id => userMap.get(id)); // Return users in the same order as requested\\n      },\\n      { cache: true } // Enable caching within the GraphQL request\\n    );\\n  }\\n\\n  // Method to load a single user by ID\\n  load(id: string): Promise<User> {\\n    return this.loader.load(id);\\n  }\\n\\n  // Method to load a list of users by ID\\n  loadMany(ids: string[]): Promise<(Error | User)[]> {\\n      return this.loader.loadMany(ids);\\n  }\\n}\\n```\\nIntegrate loaders into the GraphQL context (`backend/src/graphql/graphql.module.ts` or `app.module.ts`):\\n```typescript\\n// backend/src/graphql/graphql.module.ts\\nimport { Module } from '@nestjs/common';\\nimport { GraphQLModule } from '@nestjs/graphql';\\nimport { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';\\nimport { UserLoader }nfrom './loaders/user.loader'; // Loader import\\n// ... other resolver and module imports\\n\\n@Module({\\n  imports: [\\n    GraphQLModule.forRoot<ApolloDriverConfig>({\\n      driver: ApolloDriver,\\n      // ... other GraphQL settings (schema path, context, etc.)\\n      context: ({ req, connection }) => {\\n        // Create context for each request\\n        const context = { req }; // Add request object\\n         if (connection) {\\n           // For WebSocket (subscriptions)\\n           // context.loaders = new Loaders(); // If loaders are created here\\n         } else {\\n           // For HTTP requests (queries/mutations)\\n           // Create loaders and add them to context\\n           context.loaders = {\\n              userLoader: new UserLoader(/* dependencies */), // PrismaService needs to be injected\\n              // ... other loaders\\n           };\\n           // Example of dependency injection into loader (may require FactoryProvider)\\n           // context.loaders = {\\n           //     userLoader: req.loaders.userLoader, // If using Request-scoped NestJS providers\\n           // };\\n         }\\n        return context;\\n      },\\n      // plugins: [complexityPlugin], // Plugin for query complexity analysis\\n    }),\\n    // ... import other modules\\n  ],\\n   providers: [UserLoader], // Add loader as a provider (for Request scope)\\n})\\nexport class GraphqlModule {}\\n```",
+          "usageTitle": "Use loaders in resolvers:",
+          "usageContent": "",
+          "usageCode": "```typescript\\n// backend/src/message/message.resolver.ts\\nimport { Resolver, ResolveField, Parent, Context } from '@nestjs/graphql';\\nimport { Message } from '@prisma/client'; // Prisma model import\\nimport { UserLoader } from '../graphql/loaders/user.loader'; // Loader import\\n\\n@Resolver('Message') // Specify GraphQL type the resolver belongs to\\nexport class MessageResolver {\\n  @ResolveField('user') // Define resolver for 'user' field in Message type\\n  async resolveUser(@Parent() message: Message, @Context() context: any) {\\n    // Use userLoader from context to load user by message.userId\\n    // DataLoader will automatically collect all message.userId in the current request and load them in a batch\\n    return context.loaders.userLoader.load(message.userId);\\n  }\\n}\\n```"
+        },
+        "queryComplexityAnalysis": {
+          "title": "5.2. Query Complexity Analysis: Protection Against \"Heavy\" Queries",
+          "intro": "GraphQL allows clients to request arbitrarily nested data, which can lead to very \"heavy\" queries that heavily burden the server and DB.",
+          "toolTitle": "Tool:",
+          "toolContent": "`graphql-query-complexity`.",
+          "whenTitle": "When to use:",
+          "whenContent": "Always enable complexity protection in production.",
+          "principleTitle": "Operating Principle:",
+          "principleContent": "The plugin analyzes the query before execution and calculates its \"complexity\" (e.g., as the sum of the \"cost\" of each field). If the complexity exceeds a set threshold, the query is rejected.",
+          "implementationTitle": "Implementation:",
+          "implementationContent": "Configure the plugin in NestJS GraphQLModule (see Development Guide)."
+        },
+        "persistedQueries": {
+          "title": "5.3. Persisted Queries: Network-Level Query Caching",
+          "intro": "Persisted Queries allow the client to send only a hash of a GraphQL query to the server, instead of the full text. The server finds the full query by this hash (if known) and executes it.",
+          "whyTitle": "Why:",
+          "whyContent": "Reduces the amount of data transferred over the network, which speeds up queries, especially on mobile devices. Improves CDN caching efficiency.",
+          "whenTitle": "When to use:",
+          "whenContent": "For frequently repeated client queries.",
+          "implementationTitle": "Implementation:",
+          "implementationContent": "Requires support on both client-side (Apollo Client supports) and server-side (Apollo Server supports). The server needs to store the mapping between hashes and queries (e.g., in Redis)."
+        }
       },
-      "section6": {
-        "title": "6. Процесс Добавления Нового Языка: Масштабируемая Система (Принцип 9)",
-        "intro": "Процесс добавления нового языка построен как четкая, повторяемая последовательность действий для обеспечения эффективности (Принцип 9).",
-        "file_title": "Создание базового файла перевода:",
-        "file_content": "Скопируйте актуальный en.json (или другой наиболее полный файл) в frontend/src/locales/<code>.json, где <code> — двухбуквенный код нового языка (например, de.json для немецкого).\nДобавьте rtl: true в начало файла, если новый язык RTL.",
-        "transifex_title": "Загрузка на платформу переводов (Transifex):",
-        "transifex_content": "Загрузите новый файл <code>.json в проект BrainMessenger на Transifex. Система автоматически определит, какие строки нуждаются в переводе.",
-        "process_title": "Организация процесса перевода:",
-        "process_content": "Назначьте переводчиков (профессионалов или проверенных участников сообщества, Принцип 14) для нового языка в Transifex.\nОтвечайте на их вопросы по контексту строк.\nКонтролируйте прогресс перевода в Transifex.",
-        "export_title": "Экспорт и Интеграция перевода:",
-        "export_content": "После завершения перевода экспортируйте готовый файл <code>.json из Transifex.\nПоместите его обратно в директорию frontend/src/locales/.\nИмпортируйте новый ресурс в файле инициализации i18next (frontend/src/index.ts) и добавьте его в объект resources.",
-        "ui_title": "Добавление опции выбора языка в UI:",
-        "ui_content": "Добавьте новый язык в список доступных языков в разделе \"Настройки\" > \"Язык\".",
-        "testing_title": "Тестирование:",
-        "testing_intro": "Критически важный шаг (Принцип 3: Качество). Переключите язык в настройках приложения.",
-        "testing_scenarios": [
-          "Корректность перевода всех строк в UI.",
-          "Отсутствие обрезки текста (некоторые языки длиннее английского).",
-          "Корректное отображение UI для RTL-языков (зеркальность, выравнивание).",
-          "Интерполяция и Форматирование: Проверьте экраны, где используются динамические данные (имена, счетчики, даты, числа), убедитесь, что они форматируются правильно для текущей локали.",
-          "Локализованные ошибки: Инициируйте различные ошибки (неправильный логин, отсутствие элемента), проверьте, что сообщения об ошибках приходят на выбранном языке."
-        ]
+      "backendLogicOptimization": {
+        "title": "6. Backend Logic Optimization (NestJS): Code Efficiency",
+        "intro": "",
+        "toolsTitle": "Tools:",
+        "toolsContent": "Node.js profiling (V8 Profiler), memory leak detection (`heapdump`).",
+        "whenTitle": "When to use:",
+        "whenContent": "For identifying \"hot\" code sections consuming significant CPU or memory, and diagnosing memory issues.",
+        "processTitle": "Process:",
+        "processContent": "Use profiling tools for <strong>measurement</strong> (Kaizen Step 1). Analyze results (Step 2). Make code changes (Step 3). Repeat (Step 4).",
+        "recommendationsTitle": "Recommendations:",
+        "recommendationsContent": "Avoid synchronous operations that block the main Node.js thread. Use asynchronous APIs. Optimize loops, and operations with large arrays/objects."
       },
-      "section7": {
-        "title": "7. Поддерживаемые Языки (Начальный Список и План)",
-        "intro": "Начальный список языков, выбранный по прагматическим соображениям (Принцип 12) и потенциальному охвату.",
-        "languages_table": [
-          ["Код", "Язык", "Направление", "Статус", "План (Q 2025)"],
-          ["en", "Английский", "LTR", "Реализован (Базовый)", "-"],
-          ["es", "Испанский", "LTR", "В плане (Q3)", "Q3"],
-          ["fr", "Французский", "LTR", "В плане (Q3)", "Q3"],
-          ["ru", "Русский", "LTR", "В плане (Q3)", "Q3"],
-          ["ar", "Арабский", "RTL", "В плане (Q3, требуется RTL)", "Q3"]
+      "caching": {
+        "title": "7. Caching (Redis): Reducing DB Load and Acceleration (Principle 9)",
+        "intro": "Caching allows storing frequently requested data in fast memory (Redis) to avoid accessing the slower DB (Neon) on every request. This is a key <strong>lever</strong> for improving <strong>system efficiency</strong> (Principle 9).",
+        "libraryTitle": "Library:",
+        "libraryContent": "`ioredis`, `@nestjs/cache-manager`, `cache-manager-redis-store`.",
+        "patternTitle": "Pattern:",
+        "patternContent": "Cache-Aside (read from cache, if not present – read from DB and write to cache).",
+        "applicationAreasTitle": "Application Areas:",
+        "applicationAreasContent": "Frequently requested, relatively rarely changing data (user profiles, application settings, results of complex queries/aggregations, materialized views).",
+        "implementationTitle": "Implementation:",
+        "implementationContent": "Configure Redis in NestJS and use it in services.",
+        "invalidationTitle": "Key Aspect:",
+        "invalidationContent": "<strong>Cache invalidation</strong>. When data changes in the DB, delete corresponding keys from Redis so clients do not receive stale data."
+      },
+      "asyncProcessing": {
+        "title": "8. Asynchronous Processing (Kafka): Reliability and Responsiveness (Principle 9, 2)",
+        "intro": "Use <strong>Kafka</strong> for tasks that do not require an immediate response to the user (sending emails, image processing, notifications, analytics).",
+        "libraryTitle": "Library:",
+        "libraryContent": "`kafkajs`.",
+        "whyTitle": "Why:",
+        "whyContent": "Kafka is a <strong>reliable distributed queue system</strong> that guarantees message delivery and allows scaling task processing independently of the main API (worker-consumers).",
+        "applicationAreasTitle": "Application Areas:",
+        "applicationAreasContent": [
+          "Image/video processing after upload.",
+          "Sending large volumes of push notifications.",
+          "Generating reports or statistics.",
+          "Archiving old messages/files."
         ],
-        "expansion_note": "Расширение списка: Новые языки будут добавляться на основе обратной связи (Принцип 14) и анализа потенциальной ценности (Принцип 2) для роста аудитории (например, если >10% запросов о поддержке нового языка)."
+        "patternTitle": "Pattern:",
+        "patternContent": "<strong>Producer-Consumer</strong>. The Backend-API queues tasks in a Kafka topic (Producer). Separate services/workers (Consumers) read tasks from the topic and execute them in the background.",
+        "partitioningTitle": "Partitioning in Kafka:",
+        "partitioningContent": "Use message keys (e.g., `userId`, `chatId`) to ensure messages related to the same user/chat land in the same partition. This guarantees processing order within a partition, which can be important for some tasks.",
+        "monitoringTitle": "Monitoring:",
+        "monitoringContent": "Use <strong>Kafdrop</strong> for visual monitoring of topics, messages, and consumer group states."
       },
-      "section8": {
-        "title": "8. Рекомендации: Лучшие Практики Локализации",
-        "dev_title": "8.1. Для Разработчиков (Пишем Код, Готовый к Миру)",
-        "dev_points": [
-          "Не хардкодьте строки! Все строки, которые видит пользователь, должны быть вынесены в файлы локализации и использоваться через функцию t('ключ') (Принцип 9: Система).",
-          "Используйте интерполяцию для строк с переменными данными (t('chat.newMessageNotification', { name: user.name })), а не конкатенацию строк в коде.",
-          "Учитывайте плюрализацию (формы единственного/множественного числа) при работе со счетчиками ({{count}} unread messages). i18next и react-intl поддерживают это.",
-          "Используйте react-intl для всех операций с датами, числами, валютами, чтобы их формат был корректным для каждой локали (Принцип 3: Качество, Принцип 2: Ценность).",
-          "Тестируйте UI с длинными переводами (например, немецкий, который часто длиннее английского) и RTL-языками, чтобы убедиться, что макет не ломается и текст не обрезается (Принцип 3: Качество)."
-        ],
-        "design_title": "8.2. Для Дизайнеров (Рисуем Макеты, Гибкие к Языкам)",
-        "design_points": [
-          "Учитывайте, что текст на других языках может быть на 30% (и более) длиннее английского. Оставляйте достаточно пространства в компонентах.",
-          "Проектируйте макеты с учетом зеркального отображения для RTL. Иконки направлений, расположение текста и элементов должны меняться (Принцип 2: Доступность)."
-        ],
-        "translator_title": "8.3. Для Переводчиков (Создаем Понятный Контент)",
-        "translator_points": [
-          "Сохраняйте контекст. Одно и то же английское слово может переводиться по-разному в зависимости от того, где оно используется (например, \"Send\" для сообщения или для заявки). Платформы вроде Transifex помогают добавлять контекстные комментарии.",
-          "Придерживайтесь последовательной терминологии, используйте глоссарий, если он есть.",
-          "Сохраняйте тон приложения (дружелюбный, но профессиональный, особенно в системных сообщениях и ошибках).",
-          "Используйте возможности интерполяции и плюрализации в файлах перевода."
+      "pushNotificationsOptimization": {
+        "title": "9. Push Notification Optimization (Firebase FCM): Efficient Information Delivery (Principle 2)",
+        "intro": "Push notifications are an important communication channel with the user (Principle 2: Value). Optimizing their delivery is crucial for user experience.",
+        "platformTitle": "Platform:",
+        "platformContent": "Firebase Cloud Messaging (FCM).",
+        "techniquesTitle": "Techniques:",
+        "techniquesContent": [
+          "<strong>Batching:</strong> Send multiple notifications with a single FCM API call (`sendMulticast`) to reduce network overhead.",
+          "<strong>Topics:</strong> Use topics for mass broadcasts (e.g., new channel message notification) to let FCM manage subscriber lists.",
+          "<strong>Data Messages:</strong> Use Data Messages for full control over notification display on the client and the ability to attach custom data."
         ]
       },
-      "section9": {
-        "title": "9. Форматирование (Даты, Числа, Валюты): Детали, Создающие Качество (Принцип 3)",
-        "intro": "Корректное отображение локализованных данных критически важно для качества (Принцип 3) и удобства (Принцип 2).",
-        "dates_title": "Даты и Время:",
-        "dates_code": "```jsx\nimport { FormattedDate, FormattedTime } from 'react-intl';\n\n// Отобразит дату в формате, соответствующем текущей локали\n<FormattedDate value={new Date()} /> // Например, \"3/14/2025\" (en-US) или \"14.3.2025\" (de-DE)\n<FormattedDate value={new Date()} weekday=\"long\" year=\"numeric\" month=\"long\" day=\"numeric\" /> // \"Friday, March 14, 2025\"\n\n// Отобразит время\n<FormattedTime value={new Date()} /> // Например, \"3:00:00 PM\" (en-US) или \"15:00:00\" (de-DE)\n```",
-        "numbers_title": "Числа и Валюты:",
-        "numbers_code": "```jsx\nimport { FormattedNumber, FormattedCurrency } from 'react-intl';\n\n// Отобразит число с локальным разделителем тысяч и десятичным знаком\n<FormattedNumber value={1234.56} /> // \"1,234.56\" (en-US) или \"1.234,56\" (de-DE)\n\n// Отобразит число как процент\n<FormattedNumber value={0.75} style=\"percent\" /> // \"75%\"\n\n// Отобразит число как валюту (требует кода валюты)\n<FormattedCurrency value={123.45} currency=\"USD\" /> // \"$123.45\" (en-US)\n```\n\nДля работы с react-intl необходимо обернуть ваше приложение в IntlProvider и загрузить соответствующие данные локали (react-intl/locale-data)."
+      "clientApiDbInteraction": {
+        "title": "10. Client-API-DB Interaction Optimization: Reducing Data Path (Principle 9)",
+        "intro": "",
+        "clientLevelTitle": "At the Client Level:",
+        "clientLevelContent": "Use libraries for state management and caching network-fetched data (`@apollo/client`, `react-query`/`@tanstack/react-query`). This helps avoid redundant requests for the same data and quickly display cached data.",
+        "networkLevelTitle": "At the Network Level:",
+        "networkLevelContent": "Enable modern protocols (HTTP/2, HTTP/3) and compression (Gzip/Brotli) on your API Gateway or Backend server to reduce data volume and latency.",
+        "backendLevelTitle": "At the Backend Level:",
+        "backendLevelContent": "Optimize interaction with DB (section 4) and external services (section 7)."
       },
-      "section10": {
-        "title": "10. Тестирование Локализации: Гарантия Качества (Принцип 3, 9)",
-        "intro": "Тестирование — неотъемлемая часть системы обеспечения качества (Принцип 3, 9).",
-        "scenarios_title": "Сценарии Тестирования:",
-        "scenarios_points": [
-          "Переключение языка: Убедитесь, что смена языка в настройках мгновенно (или после перезапуска, если требуется I18nManager) применяет новый перевод и RTL-макет.",
-          "Отображение всех строк: Проверьте основные экраны и диалоги, чтобы убедиться, что все видимые пользователю строки переведены.",
-          "Длинный текст: Проверьте UI с языками, известными своей длиной (например, немецкий, русский), чтобы убедиться, что текст не обрезается, элементы не накладываются друг на друга.",
-          "RTL-интерфейс: Тщательно проверьте UI на арабском (или другом RTL-языке): направление текста, выравнивание элементов, отображение иконок направлений, положение скроллбаров.",
-          "Интерполяция и Форматирование: Проверьте экраны, где используются динамические данные (имена, счетчики, даты, числа), убедитесь, что они форматируются правильно для текущей локали.",
-          "Локализованные ошибки: Инициируйте различные ошибки (неправильный логин, отсутствие элемента), проверьте, что сообщения об ошибках приходят на выбранном языке."
-        ],
-        "tools_title": "Инструменты:",
-        "tools_points": [
-          "Ручное тестирование: Основной метод. Тестирование на реальных устройствах с разными локалями.",
-          "Автоматизированные тесты (Cypress/detox): Можно написать тесты, которые проверяют наличие определенных ключей перевода на странице или даже делают скриншоты UI для сравнения LTR/RTL макетов (Принцип 9: Система)."
-        ],
-        "criteria_title": "Критерии Успеха Тестирования:",
-        "criteria_points": [
-          "100% пользовательских строк переведены.",
-          "Отсутствие обрезки или наложения текста в UI.",
-          "Корректное и полное RTL-отображение для соответствующих языков.",
-          "Правильное локализованное форматирование дат, чисел, валют."
+      "authenticationOptimization": {
+        "title": "11. Authentication Optimization: Speed and Security",
+        "intro": "",
+        "statelessJwtTitle": "Stateless (JWT):",
+        "statelessJwtContent": "Using JWT reduces server load as it does not need to store user session states.",
+        "rateLimitingTitle": "Rate Limiting (`@nestjs/throttler`):",
+        "rateLimitingContent": "Protecting authentication endpoints from Brute Force attacks, which also reduces load.",
+        "secureHeadersTitle": "Secure Headers (`helmet`):",
+        "secureHeadersContent": "Adding HTTP headers to protect against XSS, CSRF, and other attacks."
+      },
+      "chatWebSocketOptimization": {
+        "title": "12. Chat Optimization (WebSocket): Low Latency and Scalability",
+        "intro": "WebSocket is used for real-time message exchange. <strong>Optimizing WebSocket connections is critical for chat responsiveness</strong> (Principle 2).",
+        "libraryTitle": "Library:",
+        "libraryContent": "NestJS Gateways (`@nestjs/websockets`), Socket.IO (if cross-browser compatibility and fallback are needed).",
+        "techniquesTitle": "Techniques:",
+        "techniquesContent": [
+          "<strong>Binary Formats:</strong> Transmitting messages in binary format (e.g., MessagePack) instead of text JSON can reduce data volume.",
+          "<strong>Message Batching:</strong> Buffer messages on client and server and send them in batches (e.g., every 50 ms) instead of one by one. Reduces packet count.",
+          "<strong>Presence Management:</strong> Use Redis to quickly track online/offline user status. Heartbeats (ping-pong) for connection maintenance and disconnection detection.",
+          "<strong>Vertical/Horizontal Scaling:</strong> NestJS Gateways can operate in cluster mode. Use Redis or another Pub/Sub mechanism (e.g., Kafka) to exchange messages between Backend instances, ensuring messages are delivered to all subscribers, regardless of which Backend instance they are connected to."
         ]
       },
-      "section11": {
-        "title": "11. Примечания",
-        "notes": [
-          "План: Полная реализация поддержки 5 ключевых языков запланирована на Q3 2025 (см. Дорожную карту), после завершения этапа построения технологического фундамента и начала разработки MVP.",
-          "Масштабирование: Система разработана так, чтобы добавление новых языков в будущем было эффективным (Принцип 9). Основные затраты — это сам перевод.",
-          "Ограничения: Технические логи, сообщения сервера для отладки не переводятся. Локализация касается только пользовательского интерфейса и сообщений, предназначенных для конечного пользователя."
+      "animationsOptimization": {
+        "title": "13. Animation Optimization: Smoothness and Performance (Principle 3, 5)",
+        "intro": "Performant animations make the interface <strong>high quality</strong> (Principle 3) and reduce device load (Principle 5: Health).",
+        "mobileDesktopTitle": "Mobile-Desktop (React Native):",
+        "mobileDesktopContent": "Use `react-native-reanimated` for animations that run on the native thread, not blocking the JavaScript thread.",
+        "webTitle": "Web (Next.js):",
+        "webContent": "Use `framer-motion` for declarative creation of smooth animations.",
+        "docDesignTitle": "DocDesign:",
+        "docDesignContent": "DocDesign describes animation principles and parameters, including the option for users to disable them (Principle 12: Pragmatism)."
+      },
+      "monitoring": {
+        "title": "14. Monitoring with Prometheus and Grafana: Measurement as the Foundation of Kaizen (Principle 9)",
+        "intro": "A monitoring system is your <strong>eyes</strong> and <strong>measurement tools</strong> (Kaizen Step 1).",
+        "toolsTitle": "Tools:",
+        "toolsContent": "Prometheus (metric collection), Grafana (visualization), Alertmanager (anomaly notifications).",
+        "whenTitle": "When to use:",
+        "whenContent": "Always. Set up monitoring at all levels: Backend (API latency, errors), DB (query time, load), Redis (cache hits, memory usage), Kafka (message count in topics, consumer lag), Infrastructure (CPU, RAM, network).",
+        "implementationTitle": "Implementation:",
+        "implementationContent": "See detailed setup steps in the Development Guide (section 14).",
+        "principleTitle": "Principle:",
+        "principleContent": "Use metrics to <strong>identify bottlenecks</strong> (Kaizen Step 2) and assess the <strong>efficiency</strong> (Principle 9) of your optimizations. Set up <strong>alerts</strong> for proactive problem detection."
+      },
+      "ciCdOptimization": {
+        "title": "15. CI/CD Optimization: Accelerating the Development Cycle (Principle 9)",
+        "intro": "An efficient CI/CD pipeline accelerates code delivery, which is part of <strong>optimizing the entire development process</strong> (Principle 9).",
+        "toolsTitle": "Tools:",
+        "toolsContent": "Turborepo (caching, parallelization), GitHub Actions (automation).",
+        "techniquesTitle": "Techniques:",
+        "techniquesContent": [
+          "<strong>Caching with Turborepo:</strong> Cache build and test results between CI runs and locally.",
+          "<strong>Parallel Execution:</strong> Run tasks (lint, build, test) for different packages or test parts in parallel.",
+          "<strong>Docker Image Optimization:</strong> Use multi-stage builds and `.dockerignore` to reduce image size and speed up build/deploy."
         ]
+      },
+      "frontendOptimization": {
+        "title": "16. Frontend Optimization: Speed and Responsiveness for the User (Principle 2, 3)",
+        "intro": "The frontend must be <strong>fast and responsive</strong> for the user to perceive the product's <strong>value</strong> (Principle 2).",
+        "webTechniquesTitle": "Techniques (Web - Next.js):",
+        "webTechniquesContent": [
+          "<strong>Code Splitting / Dynamic Imports:</strong> Load code only when needed (`next/dynamic`).",
+          "<strong>SSR/SSG:</strong> Use server-side rendering or static site generation to speed up initial render and SEO (`getStaticProps`, `getServerSideProps`).",
+          "<strong>Image Optimization:</strong> Use `next/image` or `<picture>` and modern formats (WebP).",
+          "<strong>Bundle Analysis:</strong> Use `@next/bundle-analyzer` to identify the heaviest modules."
+        ],
+        "reactNativeTechniquesTitle": "Techniques (React Native):",
+        "reactNativeTechniquesContent": [
+          "<strong>Lazy Loading:</strong> Use `React.lazy` and `Suspense` for screens and components not needed at startup.",
+          "<strong>Performant Lists:</strong> Use `FlatList` or `SectionList` with proper configuration (`getItemLayout`, `windowSize`) for large message or chat lists.",
+          "<strong>Image Optimization:</strong> Use `react-native-fast-image`.",
+          "<strong>Profiling:</strong> Use Performance Monitor in the React Native Debugger Menu to identify UI bottlenecks."
+        ],
+        "generalTechniquesTitle": "General Techniques:",
+        "generalTechniquesContent": [
+          "Dead code elimination (Tree Shaking), replacing heavy libraries with lighter alternatives (e.g., `dayjs` instead of `moment`), bundle compression (Gzip/Brotli)."
+        ]
+      },
+      "dbScaling": {
+        "title": "17. Database Scaling (Replication and Sharding): Preparing for Growth (Principle 8)",
+        "intro": "These techniques become relevant with significant growth in data volume and load. They are part of a <strong>long-term scaling strategy</strong> (Principle 8).",
+        "replicationTitle": "Replication (Master-Slave):",
+        "replicationContent": "Creating read-only copies of the DB (read replicas). Allows distributing read load.",
+        "shardingTitle": "Sharding:",
+        "shardingContent": "Dividing data of a large table into parts (shards) based on a specific key (`chatId`, `userId`), distributing them across different servers. Allows scaling both reads and writes. Implemented logically (in the application) or using extensions (Citus for PostgreSQL).",
+        "whenToApplyTitle": "When to Apply:",
+        "whenToApplyContent": "Based on <strong>measurements</strong> of DB load and performance (Principle 9), not in advance."
+      },
+      "notes": {
+        "title": "18. Notes: Continuous Kaizen in Optimization",
+        "prioritizationTitle": "Prioritization:",
+        "prioritizationContent": "Start optimizing in areas that yield the greatest impact at the current stage of the project (Principle 12). For an MVP, this might be frontend loading speed, or core API query performance.",
+        "automationTitle": "Automation:",
+        "automationContent": "Automate measurement and optimization verification processes as much as possible (CI/CD, monitoring alerts) — this is part of the <strong>System</strong> (Principle 9).",
+        "documentationNotesTitle": "Documentation:",
+        "documentationNotesContent": "Document conducted optimizations, their effect, and lessons learned in this documentation or in tasks/commits (Principle 1: Learning, Principle 9: Kaizen).",
+        "cultureTitle": "Culture:",
+        "cultureContent": "Foster a culture where every developer is responsible for their code's performance and actively participates in identifying and eliminating bottlenecks (Principle 6)."
       }
     },
     "userGuide": {
@@ -1936,266 +2126,266 @@
       }
     },
     "apiSpec": {
-      "title": "Спецификация API BrainMessenger (Интерфейс Системы)",
-      "subtitle": "Интерфейс Системы",
+      "title": "BrainMessenger API Specification (System Interface)",
+      "subtitle": "System Interface",
       "generalInfo": {
-        "title": "1. Общая Информация: API как Точка Взаимодействия с Системой",
-        "description": "Этот документ описывает GraphQL API BrainMessenger — <strong>основной интерфейс</strong> (Принцип 9), через который клиентские приложения (Web, Mobile, Desktop) взаимодействуют с серверной частью системы и получают доступ к данным и функциональности. GraphQL выбран за его <strong>эффективность и гибкость</strong> (Принцип 9, 2), позволяя клиентам запрашивать только те данные, которые им необходимы.",
-        "projectNameTitle": "Название проекта:",
+        "title": "1. General Information: API as a System Interaction Point",
+        "description": "This document describes the BrainMessenger GraphQL API — the <strong>main interface</strong> (Principle 9) through which client applications (Web, Mobile, Desktop) interact with the server-side of the system and access data and functionality. GraphQL was chosen for its <strong>efficiency and flexibility</strong> (Principle 9, 2), allowing clients to request only the data they need.",
+        "projectNameTitle": "Project Name:",
         "projectNameContent": "BrainMessenger",
-        "apiPurposeTitle": "Цель:",
-        "apiPurposeContent": "Предоставить четкое и полное описание доступных запросов (Queries) и мутаций (Mutations), их входных и выходных данных, а также правил аутентификации и форматов ошибок. Это обеспечивает <strong>системность</strong> (Принцип 9) взаимодействия между Frontend и Backend и повышает <strong>качество</strong> (Принцип 3) разработки.",
-        "baseUrlTitle": "Базовый URL:",
-        "baseUrlContent": "`https://api.brainmessenger.com/graphql` (адрес API Gateway, который перенаправляет запросы на Backend Service).",
-        "requestFormatTitle": "Формат запросов:",
-        "requestFormatContent": "GraphQL-запросы (POST-запросы с `Content-Type: application/json` и телом в формате GraphQL).",
-        "authenticationTitle": "Аутентификация:",
-        "authenticationContent": "Для большинства методов требуется передать JWT-токен в заголовке `Authorization: Bearer <token>`. Токен получается после успешного логина. Это часть нашей <strong>системы безопасности</strong> (Принцип 3, 5).",
-        "relatedDocsTitle": "Связь с другими документами:",
+        "apiPurposeTitle": "Purpose:",
+        "apiPurposeContent": "To provide a clear and complete description of available queries (Queries) and mutations (Mutations), their input and output data, as well as authentication rules and error formats. This ensures <strong>systematicity</strong> (Principle 9) of interaction between Frontend and Backend and improves development <strong>quality</strong> (Principle 3).",
+        "baseUrlTitle": "Base URL:",
+        "baseUrlContent": "`https://api.brainmessenger.com/graphql` (API Gateway address that redirects requests to the Backend Service).",
+        "requestFormatTitle": "Request Format:",
+        "requestFormatContent": "GraphQL requests (POST requests with `Content-Type: application/json` and a GraphQL-formatted body).",
+        "authenticationTitle": "Authentication:",
+        "authenticationContent": "Most methods require passing a JWT token in the `Authorization: Bearer <token>` header. The token is obtained after successful login. This is part of our <strong>security system</strong> (Principle 3, 5).",
+        "relatedDocsTitle": "Related Documents:",
         "relatedDocsContent": [
-          "DocTech.md: Общая архитектура системы, включая Backend и API Gateway.",
-          "DocDevIn.md: Детали реализации Backend на NestJS и GraphQL.",
-          "DocInt.md: Описание интеграций, которые Backend использует (Neon, R2, Firebase и др.).",
-          "DocOptimizationIn.md: Подходы к оптимизации производительности API."
+          "DocTech.md: Overall system architecture, including Backend and API Gateway.",
+          "DocDevIn.md: Backend implementation details in NestJS and GraphQL.",
+          "DocInt.md: Description of integrations that Backend uses (Neon, R2, Firebase, etc.).",
+          "DocOptimizationIn.md: Approaches to API performance optimization."
         ]
       },
       "graphqlSchema": {
-        "title": "2. Схема GraphQL: Структура Доступных Данных и Операций",
-        "description": "Полная схема GraphQL доступна по адресу API через инструменты интроспекции (например, GraphQL Playground, Apollo Studio). Ниже приведены основные типы и операции.",
+        "title": "2. GraphQL Schema: Structure of Available Data and Operations",
+        "description": "The full GraphQL schema is available at the API address via introspection tools (e.g., GraphQL Playground, Apollo Studio). Below are the main types and operations.",
         "dataTypes": {
-          "title": "2.1. Типы Данных (Schemas): Описание Структуры Информации",
+          "title": "2.1. Data Types (Schemas): Description of Information Structure",
           "user": {
             "title": "User:",
-            "code": "type User {\n  id: ID!\n  email: String!\n  name: String!\n  avatarUrl: String # URL аватара пользователя (хранится в R2)\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  # ... другие поля (например, статус онлайн/оффлайн)\n}"
+            "code": "type User {\n  id: ID!\n  email: String!\n  name: String!\n  avatarUrl: String # User avatar URL (stored in R2)\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  # ... other fields (e.g., online/offline status)\n}"
           },
           "chat": {
             "title": "Chat:",
-            "code": "type Chat {\n  id: ID!\n  name: String! # Название чата (для групп/каналов)\n  type: String! # Тип чата (\"personal\", \"group\", \"channel\")\n  users: [User!] # Список участников чата\n  messages(pagination: PaginationInput): [Message!] # Сообщения в чате (с пагинацией)\n  lastMessageAt: DateTime # Время последнего сообщения (для сортировки списка чатов)\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  # ... другие поля (например, фото группы/канала, описание)\n}"
+            "code": "type Chat {\n  id: ID!\n  name: String! # Chat name (for groups/channels)\n  type: String! # Chat type (\"personal\", \"group\", \"channel\")\n  users: [User!] # List of chat participants\n  messages(pagination: PaginationInput): [Message!] # Messages in chat (with pagination)\n  lastMessageAt: DateTime # Time of last message (for sorting chat list)\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  # ... other fields (e.g., group/channel photo, description)\n}"
           },
           "message": {
             "title": "Message:",
-            "code": "type Message {\n  id: ID!\n  content: String! # Текст сообщения (для текстовых сообщений)\n  fileUrl: String # URL файла, если сообщение является файлом (хранится в R2)\n  fileMetadata: JSON # Метаданные файла (тип, размер, имя) (хранится в Neon/R2)\n  sender: User! # Отправитель сообщения\n  chat: Chat! # Чат, которому принадлежит сообщение\n  createdAt: DateTime! # Время отправки сообщения\n  updatedAt: DateTime!\n  # ... другие поля (например, статус прочтения, реакции)\n}"
+            "code": "type Message {\n  id: ID!\n  content: String! # Message text (for text messages)\n  fileUrl: String # File URL if message is a file (stored in R2)\n  fileMetadata: JSON # File metadata (type, size, name) (stored in Neon/R2)\n  sender: User! # Message sender\n  chat: Chat! # Chat to which the message belongs\n  createdAt: DateTime! # Message sending time\n  updatedAt: DateTime!\n  # ... other fields (e.g., read status, reactions)\n}"
           },
           "paginationInput": {
             "title": "PaginationInput:",
-            "code": "input PaginationInput {\n  take: Int # Максимальное количество элементов\n  skip: Int # Пропустить элементов (для offset-based пагинации)\n  cursor: String # Курсор (ID) для cursor-based пагинации\n}"
+            "code": "input PaginationInput {\n  take: Int # Maximum number of elements\n  skip: Int # Skip elements (for offset-based pagination)\n  cursor: String # Cursor (ID) for cursor-based pagination\n}"
           },
           "authPayload": {
             "title": "AuthPayload:",
-            "code": "type AuthPayload {\n  token: String! # JWT токен доступа\n  user: User! # Данные аутентифицированного пользователя\n}"
+            "code": "type AuthPayload {\n  token: String! # JWT access token\n  user: User! # Authenticated user data\n}"
           },
           "dateTimeJson": {
             "title": "DateTime, JSON:",
-            "content": "Стандартные скалярные типы или кастомные скаляры, определенные на Backend."
+            "content": "Standard scalar types or custom scalars defined on the Backend."
           }
         },
         "operations": {
-          "title": "2.2. Операции (Queries и Mutations): Доступ к Функционалу Системы",
+          "title": "2.2. Operations (Queries and Mutations): Access to System Functionality",
           "authentication": {
-            "title": "2.2.1. Аутентификация (Authentication)",
+            "title": "2.2.1. Authentication",
             "registerUser": {
               "title": "`mutation registerUser(input: RegisterInput!): AuthPayload!`",
-              "description": "Регистрирует нового пользователя в системе.",
-              "input": "`RegisterInput`: `{ email: String!, password: String!, name: String! }` (password min 8 chars, digit, special char - см. валидацию).",
-              "authRequired": "Требуется аутентификация: Нет.",
-              "scenario": "Сценарий: Пользователь заполняет форму регистрации.",
-              "errors": "Ошибки: `400 Bad Request` (неверный формат данных/валидация), `409 Conflict` (email уже используется)."
+              "description": "Registers a new user in the system.",
+              "input": "`RegisterInput`: `{ email: String!, password: String!, name: String! }` (password min 8 chars, digit, special char - see validation).",
+              "authRequired": "Authentication required: No.",
+              "scenario": "Scenario: User fills out the registration form.",
+              "errors": "Errors: `400 Bad Request` (invalid data format/validation), `409 Conflict` (email already in use)."
             },
             "loginUser": {
               "title": "`mutation loginUser(input: LoginInput!): AuthPayload!`",
-              "description": "Аутентифицирует пользователя по email и паролю.",
+              "description": "Authenticates a user by email and password.",
               "input": "`LoginInput`: `{ email: String!, password: String! }`.",
-              "authRequired": "Требуется аутентификация: Нет.",
-              "scenario": "Сценарий: Пользователь вводит учетные данные для входа.",
-              "errors": "Ошибки: `401 Unauthorized` (неверный email или пароль)."
+              "authRequired": "Authentication required: No.",
+              "scenario": "Scenario: User enters credentials to log in.",
+              "errors": "Errors: `401 Unauthorized` (invalid email or password)."
             },
             "logoutUser": {
               "title": "`mutation logoutUser: Boolean!`",
-              "description": "Инвалидирует текущий JWT токен на сервере (если реализовано хранение токенов или их черных списков).",
-              "authRequired": "Требуется аутентификация: Да (используется текущий токен).",
-              "scenario": "Сценарий: Пользователь нажимает \"Выйти\".",
-              "returns": "Возвращает: `true` при успешном выходе.",
-              "errors": "Ошибки: `401 Unauthorized` (токен недействителен)."
+              "description": "Invalidates the current JWT token on the server (if token storage or blacklisting is implemented).",
+              "authRequired": "Authentication required: Yes (current token is used).",
+              "scenario": "Scenario: User clicks \"Log Out\".",
+              "returns": "Returns: `true` on successful logout.",
+              "errors": "Errors: `401 Unauthorized` (invalid token)."
             }
           },
           "user": {
-            "title": "2.2.2. Пользователь (User)",
+            "title": "2.2.2. User",
             "getUser": {
               "title": "`query getUser(id: ID!): User`",
-              "description": "Получает данные пользователя по его уникальному ID.",
-              "authRequired": "Требуется аутентификация: Да (для доступа к любым данным пользователя, кроме, возможно, публичного профиля).",
-              "scenario": "Сценарий: Просмотр профиля пользователя.",
-              "errors": "Ошибки: `404 Not Found` (пользователь с таким ID не найден)."
+              "description": "Retrieves user data by their unique ID.",
+              "authRequired": "Authentication required: Yes (for accessing any user data, except possibly public profiles).",
+              "scenario": "Scenario: Viewing a user's profile.",
+              "errors": "Errors: `404 Not Found` (user with this ID not found)."
             },
             "getCurrentUser": {
               "title": "`query getCurrentUser: User!`",
-              "description": "Получает данные текущего аутентифицированного пользователя.",
-              "authRequired": "Требуется аутентификация: Да.",
-              "scenario": "Сценарий: Загрузка профиля текущего пользователя при старте приложения.",
-              "errors": "Ошибки: `401 Unauthorized`."
+              "description": "Retrieves data of the current authenticated user.",
+              "authRequired": "Authentication required: Yes.",
+              "scenario": "Scenario: Loading the current user's profile on app startup.",
+              "errors": "Errors: `401 Unauthorized`."
             },
             "updateUser": {
               "title": "`mutation updateUser(id: ID!, input: UserInput!): User!`",
-              "description": "Обновляет данные профиля пользователя.",
-              "input": "`UserInput`: `{ name: String, email: String, password: String, avatarUrl: String }`. Поля опциональны.",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть владельцем профиля или иметь права администратора).",
-              "scenario": "Сценарий: Пользователь редактирует свой профиль.",
-              "errors": "Ошибки: `400 Bad Request` (неверный формат данных), `401 Unauthorized`, `403 Forbidden` (нет прав на редактирование этого пользователя), `404 Not Found`."
+              "description": "Updates user profile data.",
+              "input": "`UserInput`: `{ name: String, email: String, password: String, avatarUrl: String }`. Fields are optional.",
+              "authRequired": "Authentication required: Yes (and the user must be the profile owner or have administrator rights).",
+              "scenario": "Scenario: User edits their profile.",
+              "errors": "Errors: `400 Bad Request` (invalid data format), `401 Unauthorized`, `403 Forbidden` (no rights to edit this user), `404 Not Found`."
             },
             "deleteUser": {
               "title": "`mutation deleteUser(id: ID!): Boolean!`",
-              "description": "Удаляет аккаунт пользователя.",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть владельцем аккаунта).",
-              "scenario": "Сценарий: Пользователь решает удалить свою учетную запись.",
-              "returns": "Возвращает: `true` при успешном удалении.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
+              "description": "Deletes a user account.",
+              "authRequired": "Authentication required: Yes (and the user must be the account owner).",
+              "scenario": "Scenario: User decides to delete their account.",
+              "returns": "Returns: `true` on successful deletion.",
+              "errors": "Errors: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
             }
           },
           "chats": {
-            "title": "2.2.3. Чаты (Chats)",
+            "title": "2.2.3. Chats",
             "getChats": {
               "title": "`query getChats: [Chat!]!`",
-              "description": "Получает список всех чатов, в которых участвует текущий пользователь.",
-              "authRequired": "Требуется аутентификация: Да.",
-              "scenario": "Сценарий: Загрузка списка чатов на главном экране.",
-              "errors": "Ошибки: `401 Unauthorized`."
+              "description": "Retrieves a list of all chats the current user participates in.",
+              "authRequired": "Authentication required: Yes.",
+              "scenario": "Scenario: Loading the chat list on the main screen.",
+              "errors": "Errors: `401 Unauthorized`."
             },
             "getChat": {
               "title": "`query getChat(id: ID!): Chat`",
-              "description": "Получает данные конкретного чата по ID.",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть участником этого чата).",
-              "scenario": "Сценарий: Открытие конкретного чата.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
+              "description": "Retrieves data of a specific chat by ID.",
+              "authRequired": "Authentication required: Yes (and the user must be a participant of this chat).",
+              "scenario": "Scenario: Opening a specific chat.",
+              "errors": "Errors: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
             },
             "createChat": {
               "title": "`mutation createChat(input: CreateChatInput!): Chat!`",
-              "description": "Создает новый чат.",
-              "input": "`CreateChatInput`: `{ type: String!, name: String, userIds: [ID!]! }`. `type` может быть \"personal\", \"group\", \"channel\". `name` обязателен для \"group\" и \"channel\". `userIds` включает ID создателя и других участников (для \"personal\" и \"group\").",
-              "authRequired": "Требуется аутентификация: Да.",
-              "scenario": "Сценарий: Пользователь создает новый чат или группу.",
-              "errors": "Ошибки: `400 Bad Request` (неверный тип, отсутствуют userIds и т.п.), `401 Unauthorized`, `403 Forbidden` (нет прав на создание такого типа чата)."
+              "description": "Creates a new chat.",
+              "input": "`CreateChatInput`: `{ type: String!, name: String, userIds: [ID!]! }`. `type` can be \"personal\", \"group\", \"channel\". `name` is required for \"group\" and \"channel\". `userIds` includes the creator's ID and other participants (for \"personal\" and \"group\").",
+              "authRequired": "Authentication required: Yes.",
+              "scenario": "Scenario: User creates a new chat or group.",
+              "errors": "Errors: `400 Bad Request` (invalid type, missing userIds, etc.), `401 Unauthorized`, `403 Forbidden` (no rights to create this chat type)."
             },
             "getMessages": {
               "title": "`query getMessages(chatId: ID!, pagination: PaginationInput): [Message!]!`",
-              "description": "Получает список сообщений для заданного чата. Поддерживает пагинацию.",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть участником чата).",
-              "scenario": "Сценарий: Открытие чата, подгрузка старых сообщений при прокрутке.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
+              "description": "Retrieves a list of messages for a given chat. Supports pagination.",
+              "authRequired": "Authentication required: Yes (and the user must be a participant of the chat).",
+              "scenario": "Scenario: Opening a chat, loading old messages on scroll.",
+              "errors": "Errors: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
             },
             "sendMessage": {
               "title": "`mutation sendMessage(chatId: ID!, content: String!, fileUrl: String, fileMetadata: JSON): Message!`",
-              "description": "Отправляет новое сообщение в чат. Может содержать текст или ссылку на файл.",
-              "input": "`chatId`: ID чата. `content`: Текст сообщения. `fileUrl`: URL файла в R2 (опционально). `fileMetadata`: Метаданные файла (опционально).",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть участником чата).",
-              "scenario": "Сценарий: Пользователь отправляет текстовое сообщение или файл.",
-              "errors": "Ошибки: `400 Bad Request`, `401 Unauthorized`, `403 Forbidden` (нет прав писать в этот чат), `404 Not Found` (чат не найден)."
+              "description": "Sends a new message to a chat. Can contain text or a file link.",
+              "input": "`chatId`: Chat ID. `content`: Message text. `fileUrl`: File URL in R2 (optional). `fileMetadata`: File metadata (optional).",
+              "authRequired": "Authentication required: Yes (and the user must be a participant of the chat).",
+              "scenario": "Scenario: User sends a text message or a file.",
+              "errors": "Errors: `400 Bad Request`, `401 Unauthorized`, `403 Forbidden` (no rights to write to this chat), `404 Not Found` (chat not found)."
             },
             "deleteMessage": {
               "title": "`mutation deleteMessage(messageId: ID!): Boolean!`",
-              "description": "Удаляет сообщение.",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть отправителем сообщения или иметь права администратора чата).",
-              "scenario": "Сценарий: Пользователь удаляет свое сообщение.",
-              "returns": "Возвращает: `true` при успешном удалении.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
+              "description": "Deletes a message.",
+              "authRequired": "Authentication required: Yes (and the user must be the message sender or have chat administrator rights).",
+              "scenario": "Scenario: User deletes their message.",
+              "returns": "Returns: `true` on successful deletion.",
+              "errors": "Errors: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
             }
           },
           "externalIntegrations": {
-            "title": "2.2.4. Внешние Интеграции (через API Backend)",
+            "title": "2.2.4. External Integrations (via Backend API)",
             "sendVerificationCode": {
               "title": "`mutation sendVerificationCode(email: String!): Boolean!`",
-              "description": "Запускает процесс отправки кода подтверждения на указанный email (используя Gmail API). Используется при регистрации или сбросе пароля.",
-              "authRequired": "Требуется аутентификация: Нет.",
-              "scenario": "Сценарий: Пользователь вводит email на экране регистрации/восстановления пароля.",
-              "returns": "Возвращает: `true` при успешной постановке задачи на отправку.",
-              "errors": "Ошибки: `400 Bad Request` (неверный формат email), `429 Too Many Requests` (защита от спама)."
+              "description": "Initiates the process of sending a verification code to the specified email (using Gmail API). Used for registration or password reset.",
+              "authRequired": "Authentication required: No.",
+              "scenario": "Scenario: User enters email on the registration/password recovery screen.",
+              "returns": "Returns: `true` if the sending task was successfully queued.",
+              "errors": "Errors: `400 Bad Request` (invalid email format), `429 Too Many Requests` (spam protection)."
             },
             "verifyEmailCode": {
               "title": "`mutation verifyEmailCode(email: String!, code: String!): Boolean!`",
-              "description": "Проверяет код подтверждения, полученный по email.",
-              "authRequired": "Требуется аутентификация: Нет.",
-              "scenario": "Сценарий: Пользователь вводит код из email.",
-              "returns": "Возвращает: `true` при успешной проверке.",
-              "errors": "Ошибки: `400 Bad Request` (неверный код или email), `404 Not Found` (для данного email нет активного кода)."
+              "description": "Verifies the confirmation code received via email.",
+              "authRequired": "Authentication required: No.",
+              "scenario": "Scenario: User enters the code from email.",
+              "returns": "Returns: `true` on successful verification.",
+              "errors": "Errors: `400 Bad Request` (invalid code or email), `404 Not Found` (no active code for this email)."
             },
             "enableTwoFactorAuth": {
               "title": "`mutation enableTwoFactorAuth(userId: ID!): Boolean!`",
-              "description": "Включает/отключает двухфакторную аутентификацию для пользователя. Требует предварительной верификации email. Код для 2FA отправляется на email (Gmail API) при каждом логине после включения.",
-              "authRequired": "Требуется аутентификация: Да (пользователь должен управлять своим аккаунтом).",
-              "scenario": "Сценарий: Пользователь настраивает безопасность аккаунта.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`, `400 Bad Request` (email не верифицирован)."
+              "description": "Enables/disables two-factor authentication for a user. Requires prior email verification. The 2FA code is sent to email (Gmail API) with each login after activation.",
+              "authRequired": "Authentication required: Yes (user must manage their account).",
+              "scenario": "Scenario: User configures account security.",
+              "errors": "Errors: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`, `400 Bad Request` (email not verified)."
             },
             "disableTwoFactorAuth": {
               "title": "`mutation disableTwoFactorAuth(userId: ID!): Boolean!`",
-              "description": "Включает/отключает двухфакторную аутентификацию для пользователя. Требует предварительной верификации email. Код для 2FA отправляется на email (Gmail API) при каждом логине после включения.",
-              "authRequired": "Требуется аутентификация: Да (пользователь должен управлять своим аккаунтом).",
-              "scenario": "Сценарий: Пользователь настраивает безопасность аккаунта.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`, `400 Bad Request` (email не верифицирован)."
+              "description": "Enables/disables two-factor authentication for a user. Requires prior email verification. The 2FA code is sent to email (Gmail API) with each login after activation.",
+              "authRequired": "Authentication required: Yes (user must manage their account).",
+              "scenario": "Scenario: User configures account security.",
+              "errors": "Errors: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`, `400 Bad Request` (email not verified)."
             },
             "sendTwoFactorCode": {
               "title": "`mutation sendTwoFactorCode(userId: ID!): Boolean!`",
-              "description": "Отправляет код двухфакторной аутентификации на email пользователя.",
-              "authRequired": "Требуется аутентификация: Частичная (например, после ввода пароля, но до ввода 2FA кода). Логика зависит от флоу аутентификации.",
-              "scenario": "Сценарий: Пользователь входит в аккаунт с включенной 2FA.",
-              "errors": "Ошибки: `404 Not Found` (пользователь не найден или 2FA не включена), `429 Too Many Requests`."
+              "description": "Sends a two-factor authentication code to the user's email.",
+              "authRequired": "Authentication required: Partial (e.g., after password entry, but before 2FA code entry). Logic depends on the authentication flow.",
+              "scenario": "Scenario: User logs into an account with 2FA enabled.",
+              "errors": "Errors: `404 Not Found` (user not found or 2FA not enabled), `429 Too Many Requests`."
             },
             "createPaymentSession": {
               "title": "`mutation createPaymentSession(input: PaymentInput!): PaymentSessionPayload!`",
-              "description": "Создает сессию оплаты через Stripe для оформления Premium подписки.",
-              "input": "`PaymentInput`: `{ planId: ID!, returnUrl: String! }` (ID выбранного тарифного плана, URL для редиректа после оплаты).",
-              "authRequired": "Требуется аутентификация: Да.",
-              "scenario": "Сценарий: Пользователь нажимает \"Подписаться\" на Premium экране.",
-              "errors": "Ошибки: `400 Bad Request` (неверный planId), `401 Unauthorized`."
+              "description": "Creates a payment session via Stripe for Premium subscription checkout.",
+              "input": "`PaymentInput`: `{ planId: ID!, returnUrl: String! }` (ID of the selected tariff plan, URL for redirect after payment).",
+              "authRequired": "Authentication required: Yes.",
+              "scenario": "Scenario: User clicks \"Subscribe\" on the Premium screen.",
+              "errors": "Errors: `400 Bad Request` (invalid planId), `401 Unauthorized`."
             }
           }
         }
       },
       "errorHandling": {
-        "title": "3. Обработка Ошибок API: Ясная Обратная Связь (Принцип 3, 14)",
-        "description": "API возвращает стандартизированные ошибки для <strong>ясной обратной связи</strong> (Принцип 14) с клиентом и поддержания <strong>качества</strong> (Принцип 3).",
-        "errorFormatTitle": "Формат ошибок (в соответствии со спецификацией GraphQL):",
-        "errorFormatCode": "{\n  \"data\": null, // Обычно null при ошибках верхнего уровня\n  \"errors\": [\n    {\n      \"message\": \"Описание ошибки (может быть локализовано - см. DocLocIn)\",\n      \"locations\": [...], // Расположение ошибки в запросе\n      \"path\": [...],      // Путь к полю, вызвавшему ошибку\n      \"extensions\": {\n        \"code\": \"КОД_ОШИБКИ\", // Стандартизированный код ошибки (например, \"UNAUTHENTICATED\", \"FORBIDDEN\", \"BAD_USER_INPUT\", \"NOT_FOUND\")\n        \"http\": { // Если применимо, HTTP статус код\n          \"status\": 401,\n          \"headers\": {}\n        },\n         \"details\": {} // Дополнительные детали об ошибке (опционально)\n      }\n    }\n    // ... могут быть другие ошибки\n  ]\n}",
-        "keyErrorCodesTitle": "Ключевые коды ошибок (extensions.code):",
+        "title": "3. API Error Handling: Clear Feedback (Principle 3, 14)",
+        "description": "The API returns standardized errors for <strong>clear feedback</strong> (Principle 14) to the client and to maintain <strong>quality</strong> (Principle 3).",
+        "errorFormatTitle": "Error format (according to GraphQL specification):",
+        "errorFormatCode": "{\n  \"data\": null, // Usually null for top-level errors\n  \"errors\": [\n    {\n      \"message\": \"Error description (can be localized - see DocLocIn)\",\n      \"locations\": [...], // Error location in the query\n      \"path\": [...],      // Path to the field that caused the error\n      \"extensions\": {\n        \"code\": \"ERROR_CODE\", // Standardized error code (e.g., \"UNAUTHENTICATED\", \"FORBIDDEN\", \"BAD_USER_INPUT\", \"NOT_FOUND\")\n        \"http\": { // If applicable, HTTP status code\n          \"status\": 401,\n          \"headers\": {}\n        },\n         \"details\": {} // Additional error details (optional)\n      }\n    }\n    // ... other errors may exist\n  ]\n}",
+        "keyErrorCodesTitle": "Key error codes (extensions.code):",
         "keyErrorCodesList": [
-          "`UNAUTHENTICATED`: Требуется аутентификация, но токен отсутствует или недействителен (`HTTP 401`).",
-          "`FORBIDDEN`: Аутентификация пройдена, но у пользователя нет прав на выполнение операции (`HTTP 403`).",
-          "`BAD_USER_INPUT`: Ошибка валидации входных данных (`HTTP 400`). Детали могут быть в `extensions.details`.",
-          "`NOT_FOUND`: Запрошенный ресурс не найден (`HTTP 404`).",
-          "`CONFLICT`: Конфликт данных (например, попытка зарегистрировать email, который уже существует) (`HTTP 409`).",
-          "`INTERNAL_SERVER_ERROR`: Неожиданная ошибка на сервере (`HTTP 500`).",
-          "`RATE_LIMITED`: Превышен лимит запросов (`HTTP 429`)."
+          "`UNAUTHENTICATED`: Authentication required, but token is missing or invalid (`HTTP 401`).",
+          "`FORBIDDEN`: Authentication passed, but the user does not have rights to perform the operation (`HTTP 403`).",
+          "`BAD_USER_INPUT`: Input data validation error (`HTTP 400`). Details can be in `extensions.details`.",
+          "`NOT_FOUND`: The requested resource was not found (`HTTP 404`).",
+          "`CONFLICT`: Data conflict (e.g., attempt to register an email that already exists) (`HTTP 409`).",
+          "`INTERNAL_SERVER_ERROR`: Unexpected server error (`HTTP 500`).",
+          "`RATE_LIMITED`: Request limit exceeded (`HTTP 429`)."
         ],
-        "localizationErrorsTitle": "Локализация ошибок:",
-        "localizationErrorsContent": "Сообщения об ошибках (`message`) могут быть локализованы на стороне Backend на основе заголовка `Accept-Language` или предпочтений пользователя (см. DocLocIn)."
+        "localizationErrorsTitle": "Error Localization:",
+        "localizationErrorsContent": "Error messages (`message`) can be localized on the Backend side based on the `Accept-Language` header or user preferences (see DocLocIn)."
       },
       "notes": {
-        "title": "4. Примечания",
+        "title": "4. Notes",
         "dataTypes": {
-          "title": "Типы данных:",
+          "title": "Data Types:",
           "list": [
-            "`ID`: Уникальный идентификатор ресурса (обычно строка).",
-            "`String`: Текстовая строка.",
-            "`Int`, `Float`: Числа.",
-            "`Boolean`: Логическое значение (`true`/`false`).",
-            "`DateTime`: Дата и время в формате ISO 8601 (например, \"2025-03-14T10:30:00Z\").",
-            "`JSON`: Кастомный скаляр для передачи произвольных JSON-объектов (например, для `fileMetadata`).",
-            "`!` в конце типа означает, что поле <strong>не может быть null</strong>."
+            "`ID`: Unique resource identifier (usually a string).",
+            "`String`: Text string.",
+            "`Int`, `Float`: Numbers.",
+            "`Boolean`: Boolean value (`true`/`false`).",
+            "`DateTime`: Date and time in ISO 8601 format (e.g., \"2025-03-14T10:30:00Z\").",
+            "`JSON`: Custom scalar for passing arbitrary JSON objects (e.g., for `fileMetadata`).",
+            "`!` at the end of a type means the field <strong>cannot be null</strong>."
           ]
         },
         "pagination": {
-          "title": "Пагинация:",
-          "content": "Для списков, которые могут быть длинными (`messages`), используйте пагинацию для эффективной загрузки данных (Принцип 9)."
+          "title": "Pagination:",
+          "content": "For lists that can be long (`messages`), use pagination for efficient data loading (Principle 9)."
         },
         "validation": {
-          "title": "Валидация:",
-          "content": "Backend выполняет строгую валидацию всех входных данных (через DTO и `class-validator`), возвращая ошибки `BAD_USER_INPUT` при их некорректности. Это часть <strong>системы обеспечения качества</strong> (Принцип 3)."
+          "title": "Validation:",
+          "content": "Backend performs strict validation of all input data (via DTO and `class-validator`), returning `BAD_USER_INPUT` errors if they are incorrect. This is part of the <strong>quality assurance system</strong> (Principle 3)."
         },
         "security": {
-          "title": "Безопасность:",
-          "content": "Все запросы, работающие с чувствительными данными или изменяющие состояние системы (кроме регистрации/логина), требуют аутентификации."
+          "title": "Security:",
+          "content": "All requests working with sensitive data or changing system state (except registration/login) require authentication."
         },
         "testingTools": {
-          "title": "Инструменты тестирования API:",
-          "content": "Используйте GraphQL Playground (часто доступен по адресу `/graphql` в dev-режиме Backend), Postman или Apollo Studio для отправки запросов и тестирования API."
+          "title": "API Testing Tools:",
+          "content": "Use GraphQL Playground (often available at `/graphql` in dev mode Backend), Postman, or Apollo Studio to send requests and test the API."
         }
       }
     },
