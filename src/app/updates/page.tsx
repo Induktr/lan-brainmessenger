@@ -48,7 +48,7 @@ const UpdateModal: React.FC<UpdateModalProps> = ({ update, onClose }) => {
             {update.iconUrl && (
               <Image
                 src={update.iconUrl}
-                alt={t(update.titleKey) || update.originalTitle}
+                alt={t(update.titleKey) as string || update.originalTitle}
                 width={24} // Specify width
                 height={24} // Specify height
                 className="update-modal-icon"
@@ -56,45 +56,45 @@ const UpdateModal: React.FC<UpdateModalProps> = ({ update, onClose }) => {
             )}
           </div>
           <div>
-            <h3 className="update-modal-title">{t(update.titleKey)}</h3>
-            <p className="update-modal-date">{t(update.dateKey)}</p>
+            <h3 className="update-modal-title">{t(update.titleKey) as string}</h3>
+            <p className="update-modal-date">{t(update.dateKey) as string}</p>
           </div>
         </div>
 
         <div className="update-modal-prose">
-          <p className="update-modal-description">{t(update.descriptionKey)}</p>
+          <p className="update-modal-description">{t(update.descriptionKey) as string}</p>
 
           <div className="update-modal-section-spacing">
             <div>
-              <h4 className="update-modal-section-title">{t('updates.modal.keyFeaturesTitle')}</h4>
+              <h4 className="update-modal-section-title">{t('updates.modal.keyFeaturesTitle') as string}</h4>
               <ul className="update-modal-list">
-                <li>{t('updates.modal.placeholder')}</li>
-                <li>{t('updates.modal.placeholder')}</li>
-                <li>{t('updates.modal.placeholder')}</li>
+                <li>{t('updates.modal.placeholder') as string}</li>
+                <li>{t('updates.modal.placeholder') as string}</li>
+                <li>{t('updates.modal.placeholder') as string}</li>
               </ul>
             </div>
 
             <div>
-              <h4 className="update-modal-section-title">{t('updates.modal.impactMetricsTitle')}</h4>
+              <h4 className="update-modal-section-title">{t('updates.modal.impactMetricsTitle') as string}</h4>
               <div className="update-modal-grid">
                 <div className="update-modal-grid-item">
-                  <div className="update-modal-grid-value">{t('updates.modal.placeholder')}</div>
-                  <div className="update-modal-grid-label">{t('updates.modal.placeholder')}</div>
+                  <div className="update-modal-grid-value">{t('updates.modal.placeholder') as string}</div>
+                  <div className="update-modal-grid-label">{t('updates.modal.placeholder') as string}</div>
                 </div>
                 <div className="update-modal-grid-item">
-                  <div className="update-modal-grid-value">{t('updates.modal.placeholder')}</div>
-                  <div className="update-modal-grid-label">{t('updates.modal.placeholder')}</div>
+                  <div className="update-modal-grid-value">{t('updates.modal.placeholder') as string}</div>
+                  <div className="update-modal-grid-label">{t('updates.modal.placeholder') as string}</div>
                 </div>
               </div>
             </div>
 
             <div>
-              <h4 className="update-modal-section-title">{t('updates.modal.featureOverviewTitle')}</h4>
+              <h4 className="update-modal-section-title">{t('updates.modal.featureOverviewTitle') as string}</h4>
               <div className="update-modal-video-wrapper">
                 <iframe
                   className="update-modal-video"
                   src="https://youtu.be/9cH5Em0F7pc?si=mi9VoAX9xcDfP3Bj"
-                  title={t('updates.modal.featureOverviewTitle')}
+                  title={t('updates.modal.featureOverviewTitle') as string}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -103,9 +103,9 @@ const UpdateModal: React.FC<UpdateModalProps> = ({ update, onClose }) => {
             </div>
 
             <div>
-              <h4 className="update-modal-section-title">{t('updates.modal.additionalInfoTitle')}</h4>
+              <h4 className="update-modal-section-title">{t('updates.modal.additionalInfoTitle') as string}</h4>
               <p className="update-modal-description">
-                {t('updates.modal.placeholder')}
+                {t('updates.modal.placeholder') as string}
               </p>
             </div>
           </div>
@@ -147,11 +147,11 @@ const Updates: React.FC = () => { // Removed UpdatesProps interface
           className="updates-back-link"
         >
           {ICONS.arrowLeft}
-          {t('backToHome')}
+          {t('backToHome') as string}
         </Link>
-        <h1 className="updates-page-title">{t('updates.pageTitle')}</h1>
+        <h1 className="updates-page-title">{t('updates.pageTitle') as string}</h1>
         <p className="updates-page-subtitle">
-          {t('updates.pageSubtitle')}
+          {t('updates.pageSubtitle') as string}
         </p>
       </div>
 
@@ -160,7 +160,7 @@ const Updates: React.FC = () => { // Removed UpdatesProps interface
       </div>
 
       <div className="updates-section-wrapper">
-        <h2 className="updates-section-title">{t('updates.impactTitle')}</h2>
+        <h2 className="updates-section-title">{t('updates.impactTitle') as string}</h2>
         <div className="updates-grid">
           {caseStudies.map((study, index) => (
             <CaseStudy key={index} {...study} />
@@ -169,7 +169,7 @@ const Updates: React.FC = () => { // Removed UpdatesProps interface
       </div>
 
       <div className="updates-section-wrapper">
-        <h2 className="updates-section-title">{t('updates.allUpdatesTitle')}</h2>
+        <h2 className="updates-section-title">{t('updates.allUpdatesTitle') as string}</h2>
         <div className="updates-grid">
           {updatesData.map((update, index) => {
             return (
@@ -201,16 +201,16 @@ const Updates: React.FC = () => { // Removed UpdatesProps interface
                     {update.iconUrl && (
                       <Image
                         src={update.iconUrl}
-                        alt={t(update.titleKey) || update.originalTitle}
+                        alt={t(update.titleKey) as string || update.originalTitle}
                         width={32} // Specify width
                         height={32} // Specify height
                         className="update-card-icon"
                       />
                     )}
                   </div>
-                  <h3 className="update-card-title">{t(update.titleKey)}</h3>
-                  <p className="update-card-description">{t(update.descriptionKey)}</p>
-                  <p className="update-card-date">{t(update.dateKey)}</p>
+                  <h3 className="update-card-title">{t(update.titleKey) as string}</h3>
+                  <p className="update-card-description">{t(update.descriptionKey) as string}</p>
+                  <p className="update-card-date">{t(update.dateKey) as string}</p>
                 </div>
               </motion.div>
             );

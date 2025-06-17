@@ -31,9 +31,9 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
   const langMenuRef = useRef<HTMLDivElement>(null);
 
   const menuItems: MenuItem[] = [
-    { name: t('header.features'), to: 'features', type: 'scroll' },
-    { name: t('header.faqLink'), to: '/faq', type: 'route' },
-    { name: t('header.docs'), to: '/docs', type: 'route' }
+    { name: t('header.features') as string, to: 'features', type: 'scroll' },
+    { name: t('header.faqLink') as string, to: '/faq', type: 'route' },
+    { name: t('header.docs') as string, to: '/docs', type: 'route' }
   ];
 
   const renderNavLink = (item: MenuItem) => {
@@ -83,8 +83,8 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
               <button
                 onClick={() => setIsLangOpen(!isLangOpen)}
                 className="lang-selector-button"
-                aria-label={t('selectLanguage')}
-                title={t('changeLanguageTooltip')}
+                aria-label={t('selectLanguage') as string}
+                title={t('changeLanguageTooltip') as string}
                 disabled={isLoading}
               >
                 <SvgIcon iconName="globe" title="Language" className="lang-selector-icon" />
@@ -148,7 +148,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
             <button
               onClick={toggleTheme}
               className="theme-toggle-button"
-              aria-label={isDark ? t('lightMode') : t('darkMode')}
+              aria-label={isDark ? t('lightMode') as string : t('darkMode') as string}
             >
               {isDark ? (
                 <SvgIcon iconName="sun" title="Light Mode" className="theme-toggle-icon" />
@@ -162,7 +162,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
           <button
             className="mobile-menu-button"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? t('closeMenu') : t('openMenu')}
+            aria-label={isOpen ? t('closeMenu') as string : t('openMenu') as string}
           >
             {isOpen ? (
               <FiX className="mobile-menu-icon" />
@@ -180,7 +180,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
 
               {/* Mobile Language Selector */}
               <div className="mobile-lang-selector-wrapper">
-                <p className="mobile-lang-selector-label">{t('selectLanguage')}</p>
+                <p className="mobile-lang-selector-label">{t('selectLanguage') as string}</p>
                 <div className="mobile-lang-grid">
                   {Object.entries(languages).map(([code, lang]) => (
                     <button
@@ -215,12 +215,12 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
                 {isDark ? (
                   <>
                     <SvgIcon iconName="sun" title="Light Mode" className="mobile-theme-toggle-icon" />
-                    <span>{t('lightMode')}</span>
+                    <span>{t('lightMode') as string}</span>
                   </>
                 ) : (
                   <>
                     <SvgIcon iconName="moon" title="Dark Mode" className="mobile-theme-toggle-icon" />
-                    <span>{t('darkMode')}</span>
+                    <span>{t('darkMode') as string}</span>
                   </>
                 )}
               </button>

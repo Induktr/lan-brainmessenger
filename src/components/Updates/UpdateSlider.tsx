@@ -80,7 +80,7 @@ const UpdateSlider: React.FC<UpdateSliderProps> = ({ updates }) => {
                 {currentUpdate.iconUrl && (
                   <Image
                     src={currentUpdate.iconUrl}
-                    alt={t(currentUpdate.titleKey) || currentUpdate.originalTitle}
+                    alt={(t(currentUpdate.titleKey) as string) || currentUpdate.originalTitle as string}
                     width={32} // Specify width
                     height={32} // Specify height
                     className="update-slider-icon"
@@ -88,17 +88,17 @@ const UpdateSlider: React.FC<UpdateSliderProps> = ({ updates }) => {
                 )}
               </div>
               <div>
-                <h3 className="update-slider-title">{t(currentUpdate.titleKey)}</h3>
-                <p className="update-slider-date">{t(currentUpdate.dateKey)}</p>
+                <h3 className="update-slider-title">{t(currentUpdate.titleKey) as string}</h3>
+                <p className="update-slider-date">{t(currentUpdate.dateKey) as string}</p>
               </div>
             </div>
-            <p className="update-slider-description">{t(currentUpdate.descriptionKey)}</p>
+            <p className="update-slider-description">{t(currentUpdate.descriptionKey) as string}</p>
             <div className="update-slider-buttons">
               <button className="update-slider-button-primary">
-                {t('updates.slider.learnMore')}
+                {t('updates.slider.learnMore') as string}
               </button>
               <button className="update-slider-button-secondary">
-                {t('updates.slider.viewDetails')}
+                {t('updates.slider.viewDetails') as string}
               </button>
             </div>
           </div>
@@ -106,7 +106,7 @@ const UpdateSlider: React.FC<UpdateSliderProps> = ({ updates }) => {
             {currentUpdate.imageUrl && (
               <Image
                 src={currentUpdate.imageUrl}
-                alt={t(currentUpdate.titleKey) || currentUpdate.originalTitle}
+                alt={(t(currentUpdate.titleKey) as string) || currentUpdate.originalTitle as string}
                 width={256} // Example width, adjust as needed
                 height={144} // Example height, adjust as needed
                 className="update-slider-image"
@@ -150,7 +150,7 @@ const UpdateSlider: React.FC<UpdateSliderProps> = ({ updates }) => {
       <button
         onClick={() => setIsAutoPlay(!isAutoPlay)}
         className="update-slider-autoplay-toggle"
-        aria-label={isAutoPlay ? t('updates.slider.pauseAutoplay') : t('updates.slider.playAutoplay')}
+        aria-label={isAutoPlay ? t('updates.slider.pauseAutoplay') as string : t('updates.slider.playAutoplay') as string}
       >
         {isAutoPlay ? <SvgIcon iconName="pause" title="Pause Autoplay" className="update-slider-autoplay-icon" /> : <SvgIcon iconName="play" title="Play Autoplay" className="update-slider-autoplay-icon" />}
       </button>

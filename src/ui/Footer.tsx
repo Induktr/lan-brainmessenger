@@ -125,11 +125,11 @@ const Footer = () => {
         return (
           <div className="footer-brand-section">
             <h2 className="footer-brand-title">
-              {t(section.titleKey)}
+              {t(section.titleKey) as string}
             </h2>
             {section.contentKey && (
               <p className="footer-brand-content">
-                {t(section.contentKey)}
+                {t(section.contentKey) as string}
               </p>
             )}
           </div>
@@ -139,8 +139,8 @@ const Footer = () => {
         return (
           <div className="footer-quicklinks-section">
             <div className="footer-quicklinks-header">
-              <SvgIcon iconName={FOOTER_ICONS.quickLinks} title={t('footer.iconAlt.quickLinks')} className="footer-quicklinks-icon" />
-              <h3 className="footer-quicklinks-title">{t(section.titleKey)}</h3>
+              <SvgIcon iconName={FOOTER_ICONS.quickLinks} title={t('footer.iconAlt.quickLinks') as string} className="footer-quicklinks-icon" />
+              <h3 className="footer-quicklinks-title">{t(section.titleKey) as string}</h3>
             </div>
             <div className="footer-quicklinks-grid">
               {section.links?.map((link, index) => (
@@ -150,8 +150,8 @@ const Footer = () => {
                     onClick={() => handleNavigation(link)}
                     className="footer-quicklinks-item"
                   >
-                    <SvgIcon iconName={link.icon} title={t(link.altKey)} className="svg-icon" />
-                    {t(link.nameKey)}
+                    <SvgIcon iconName={link.icon} title={t(link.altKey) as string} className="svg-icon" />
+                    {t(link.nameKey) as string}
                   </button>
                 ) : (
                   <Link
@@ -159,8 +159,8 @@ const Footer = () => {
                     href={link.href}
                     className="footer-quicklinks-item"
                   >
-                    <SvgIcon iconName={link.icon} title={t(link.altKey)} className="svg-icon" />
-                    {t(link.nameKey)}
+                    <SvgIcon iconName={link.icon} title={t(link.altKey) as string} className="svg-icon" />
+                    {t(link.nameKey) as string}
                   </Link>
                 )
               ))}
@@ -171,7 +171,7 @@ const Footer = () => {
       case 'contact':
         return (
           <div className="footer-contact-section">
-            <h3 className="footer-contact-title">{t(section.titleKey)}</h3>
+            <h3 className="footer-contact-title">{t(section.titleKey) as string}</h3>
             <div className="footer-contact-list">
               {section.contacts?.map((contact, index) => (
                 <div
@@ -179,11 +179,11 @@ const Footer = () => {
                   className="footer-contact-item"
                 >
                   {contact.isCustomIcon ? (
-                    <SvgIcon iconName={contact.icon as string} title={contact.altKey ? t(contact.altKey) : ''} className="svg-icon" />
+                    <SvgIcon iconName={contact.icon as string} title={contact.altKey ? t(contact.altKey) as string : '' } className="svg-icon" />
                   ) : (
                     React.createElement(contact.icon as React.ElementType, { className: "footer-contact-item-icon" })
                   )}
-                  <span className="footer-contact-text">{t(contact.textKey)}</span>
+                  <span className="footer-contact-text">{t(contact.textKey) as string}</span>
                 </div>
               ))}
             </div>
@@ -193,17 +193,17 @@ const Footer = () => {
       case 'social':
         return (
           <div className="footer-social-section">
-            <h3 className="footer-social-title">{t(section.titleKey)}</h3>
+            <h3 className="footer-social-title">{t(section.titleKey) as string}</h3>
             <div className="footer-social-list">
               {section.socials?.map((social, index) => (
-                <a
+                <Link
                   key={index}
                   href={social.href}
                   className="footer-social-item"
-                  aria-label={t(social.labelKey)}
+                  aria-label={t(social.labelKey) as string}
                 >
                   <social.icon size={28} />
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -222,7 +222,7 @@ const Footer = () => {
           <button
             onClick={goToPreviousSection}
             className="footer-nav-button top"
-            aria-label={t('footer.previousSection')}
+            aria-label={t('footer.previousSection') as string}
           >
             <FaChevronUp size={20} />
           </button>
@@ -237,7 +237,7 @@ const Footer = () => {
           <button
             onClick={goToNextSection}
             className="footer-nav-button bottom"
-            aria-label={t('footer.nextSection')}
+            aria-label={t('footer.nextSection') as string}
           >
             <FaChevronDown size={20} />
           </button>
@@ -248,7 +248,7 @@ const Footer = () => {
       <div className="footer-copyright-wrapper">
         <div className="footer-copyright-content">
           <p className="footer-copyright-text">
-            {t('footer.copyright')}
+            {t('footer.copyright') as string}
           </p>
         </div>
       </div>

@@ -24,7 +24,7 @@ const LoadingOverlay = () => {
           <div className="loading-spinner-wrapper">
             <div className="loading-spinner" />
             <p className="loading-text">
-              {t('common.loading')}
+              {t('common.loading') as string}
             </p>
           </div>
         </motion.div>

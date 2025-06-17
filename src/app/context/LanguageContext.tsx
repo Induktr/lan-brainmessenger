@@ -85,6 +85,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
 
     let finalValue: unknown;
+    // If the value is undefined, check for a default value
+    // If the value is found, use it; otherwise, use the default value or fallback to the key
 
     if (value !== undefined) {
       finalValue = value;

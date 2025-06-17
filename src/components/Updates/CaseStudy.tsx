@@ -34,15 +34,15 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ titleKey, iconName, descriptionKe
       <div className="case-study-content">
         <div className="case-study-icon-wrapper">
           {/* Render icon using SvgIcon */}
-          <SvgIcon iconName={iconName} title={t(titleKey)} className="case-study-icon" />
+          <SvgIcon iconName={iconName} title={t(titleKey) as string} className="case-study-icon" />
         </div>
-        <h3 className="case-study-title">{t(titleKey)}</h3>
-        <p className="case-study-description">{t(descriptionKey)}</p>
+        <h3 className="case-study-title">{t(titleKey) as string}</h3>
+        <p className="case-study-description">{t(descriptionKey) as string}</p>
         <div className="case-study-metrics-grid">
           {metricsKeys.map((metric, index) => (
             <div key={index} className="case-study-metric-item">
-              <div className="case-study-metric-value">{t(metric.valueKey)}</div>
-              <div className="case-study-metric-label">{t(metric.labelKey)}</div>
+              <div className="case-study-metric-value">{t(metric.valueKey) as string}</div>
+              <div className="case-study-metric-label">{t(metric.labelKey) as string}</div>
             </div>
           ))}
         </div>

@@ -44,14 +44,14 @@ const Hero: React.FC = () => {
               className="hero-title"
               variants={heroVariants.title}
             >
-              {t('hero.title')}
+              {t('hero.title') as string}
             </motion.h1>
 
             <motion.p
               variants={heroVariants.paragraph}
               className="hero-subtitle"
             >
-              {t('hero.subtitle')}
+              {t('hero.subtitle') as string}
             </motion.p>
 
             <motion.div
@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <SvgIcon iconName="download" title="Download" className="svg-icon" />
-                  {t('hero.downloadButton')}
+                  {t('hero.downloadButton') as string}
                 </motion.button>
 
                 <AnimatePresence>
@@ -85,7 +85,7 @@ const Hero: React.FC = () => {
                           onClick={() => setShowDownloadMenu(false)}
                         >
                           <SvgIcon iconName="android" title="Android" className="svg-icon" />
-                          {t('hero.downloadAndroid')}
+                          {t('hero.downloadAndroid') as string}
                         </Link>
                       </div>
                     </motion.div>
@@ -105,7 +105,7 @@ const Hero: React.FC = () => {
                           onClick={() => setShowDownloadMenu(false)}
                         >
                           <SvgIcon iconName="globe" title="Web" className="svg-icon" />
-                          {t('hero.routingWebApp')}
+                          {t('hero.routingWebApp') as string}
                         </Link>
                       </div>
                     </motion.div>

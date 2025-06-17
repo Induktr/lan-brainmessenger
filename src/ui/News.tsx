@@ -81,15 +81,15 @@ const News: React.FC = () => {
       <div className="container">
         <div className="news-header">
           <h2 className="news-title">
-            {t('news.latestNews')}
+            {t('news.latestNews') as string}
           </h2>
           <Link
             href="/updates"
             className="news-read-more-link"
-            aria-label={t('news.readMore')}
+            aria-label={t('news.readMore') as string}
           >
-            <span>{t('news.readMore')}</span>
-            <SvgIcon iconName="arrowRight" title={t('news.readMore')} className="svg-icon" />
+            <span>{t('news.readMore') as string}</span>
+            <SvgIcon iconName="arrowRight" title={t('news.readMore') as string} className="svg-icon" />
           </Link>
         </div>
 

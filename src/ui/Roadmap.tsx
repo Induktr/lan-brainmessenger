@@ -168,11 +168,11 @@ const Roadmap: React.FC = () => {
   const getTranslatedStatus = (status: Milestone['status']): string => {
     switch (status) {
       case 'completed':
-        return t('roadmap.status.completed');
+        return t('roadmap.status.completed') as string;
       case 'in-progress':
-        return t('roadmap.status.inProgress');
+        return t('roadmap.status.inProgress') as string;
       default:
-        return t('roadmap.status.upcoming');
+        return t('roadmap.status.upcoming') as string;
     }
   };
 
@@ -224,10 +224,10 @@ const Roadmap: React.FC = () => {
           className="roadmap-header"
         >
           <h2 className="roadmap-title">
-            {t('roadmap.title.section')}
+            {t('roadmap.title.section') as string}
           </h2>
           <p className="roadmap-subtitle">
-            {t('roadmap.subtitle.section')}
+            {t('roadmap.subtitle.section') as string}
           </p>
         </motion.div>
 
@@ -275,18 +275,18 @@ const Roadmap: React.FC = () => {
                           variants={iconVariants}
                           custom={index}
                         >
-                          <SvgIcon iconName={milestone.icon} title={t(milestone.titleKey)} className="roadmap-milestone-icon" />
+                          <SvgIcon iconName={milestone.icon} title={t(milestone.titleKey) as string} className="roadmap-milestone-icon" />
                         </motion.div>
                         <h3 className="roadmap-milestone-title">
-                          {t(milestone.titleKey)}
+                          {t(milestone.titleKey) as string}
                         </h3>
                       </div>
                       <span className={`roadmap-milestone-status ${milestone.status}`}>
-                        {getTranslatedStatus(milestone.status)}
+                        {getTranslatedStatus(milestone.status) as string}
                       </span>
                     </div>
                     <p className="roadmap-milestone-description">
-                      {t(milestone.descriptionKey)}
+                      {t(milestone.descriptionKey) as string}
                     </p>
                     <ul className="roadmap-milestone-features-list">
                       {milestone.featuresKeys.map((featureKey, idx) => (
@@ -306,7 +306,7 @@ const Roadmap: React.FC = () => {
                             className="roadmap-milestone-feature-item"
                           >
                             <span className="roadmap-milestone-feature-bullet" />
-                            {t(featureKey)}
+                            {t(featureKey) as string}
                           </motion.li>
                         ))}
                       </ul>
@@ -346,7 +346,7 @@ const Roadmap: React.FC = () => {
                       }}
                       className="roadmap-milestone-date"
                     >
-                      {t(milestone.dateKey)}
+                      {t(milestone.dateKey) as string}
                     </motion.span>
                   </div>
                 </motion.div>

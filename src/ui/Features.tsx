@@ -71,10 +71,10 @@ const Features: React.FC = () => {
           className="features-header"
         >
           <h2 className="features-title">
-            {t('features.featuresTitle')}
+            {t('features.featuresTitle') as string}
           </h2>
           <p className="features-subtitle">
-            {t('features.featuresSubtitle')}
+            {t('features.featuresSubtitle') as string}
           </p>
         </motion.div>
 
@@ -83,8 +83,8 @@ const Features: React.FC = () => {
             <FeatureCard
               key={index}
               icon={feature.iconName}
-              title={t(feature.titleKey)}
-              description={t(feature.descriptionKey)}
+              title={t(feature.titleKey) as string}
+              description={t(feature.descriptionKey) as string}
               delay={index * 0.1}
             />
           ))}

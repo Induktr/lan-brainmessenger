@@ -67,17 +67,17 @@ const NewsCard: React.FC<NewsCardProps> = ({ titleKey, descriptionKey, originalT
                 width={24}
                 height={24}
                 src={iconUrl}
-                alt={t(titleKey) || originalTitle || ''}
+                alt={t(titleKey) as string || originalTitle || ''}
                 className="news-card-image news-card-image-icon"
               />
             )}
           </div>
           <div className="news-card-text-content">
             <h3 className={`news-card-title ${isMore ? 'more' : 'default'}`}>
-              {t(titleKey)}
+              {t(titleKey) as string}
             </h3>
             <p className={`news-card-description ${isMore ? 'more' : 'default'}`}>
-              {t(descriptionKey)}
+              {t(descriptionKey) as string}
             </p>
           </div>
           {isMore && (
