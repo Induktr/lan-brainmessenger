@@ -33,7 +33,7 @@ interface DocConfigItem {
 }
 
 const Docs: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, isLoading, languages } = useLanguage(); // Get isLoading from the hook
   const [activeDocId, setActiveDocId] = useState('general_docs'); // 'general_docs', 'design_system_docs', 'localization_guide_docs', or 'user_guide_docs'
 
   const generalSections = [
@@ -296,6 +296,290 @@ const Docs: React.FC = () => {
         { id: 'integrations-recommendations-error-handling', titleKey: 'docs.integrationsGuide.recommendations.errorHandling.title', listKey: 'docs.integrationsGuide.recommendations.errorHandling.points' },
         { id: 'integrations-recommendations-documentation', titleKey: 'docs.integrationsGuide.recommendations.documentation.title', contentKey: 'docs.integrationsGuide.recommendations.documentation.content' },
     ]},
+  ];
+
+  const optimizationGuideSections = [
+    {
+      id: 'introduction',
+      titleKey: 'docs.optimizationGuide.introduction.title',
+      contentKey: 'docs.optimizationGuide.introduction.description',
+      subSections: [
+        { id: 'goal', titleKey: 'docs.optimizationGuide.introduction.goalTitle', contentKey: 'docs.optimizationGuide.introduction.goalContent' },
+        { id: 'audience', titleKey: 'docs.optimizationGuide.introduction.audienceTitle', contentKey: 'docs.optimizationGuide.introduction.audienceContent' },
+        { id: 'principles', titleKey: 'docs.optimizationGuide.introduction.principlesTitle', listKey: 'docs.optimizationGuide.introduction.principles' },
+      ],
+    },
+    {
+      id: 'general-principle',
+      titleKey: 'docs.optimizationGuide.generalPrinciple.title',
+      contentKey: 'docs.optimizationGuide.generalPrinciple.intro',
+      subSections: [
+        { id: 'step1', titleKey: 'docs.optimizationGuide.generalPrinciple.step1.title', contentKey: 'docs.optimizationGuide.generalPrinciple.step1.content' },
+        { id: 'step2', titleKey: 'docs.optimizationGuide.generalPrinciple.step2.title', contentKey: 'docs.optimizationGuide.generalPrinciple.step2.content' },
+        { id: 'step3', titleKey: 'docs.optimizationGuide.generalPrinciple.step3.title', contentKey: 'docs.optimizationGuide.generalPrinciple.step3.content' },
+        { id: 'step4', titleKey: 'docs.optimizationGuide.generalPrinciple.step4.title', contentKey: 'docs.optimizationGuide.generalPrinciple.step4.content' },
+        { id: 'step5', titleKey: 'docs.optimizationGuide.generalPrinciple.step5.title', contentKey: 'docs.optimizationGuide.generalPrinciple.step5.content' },
+      ],
+    },
+    {
+      id: 'image-processing',
+      titleKey: 'docs.optimizationGuide.imageProcessing.title',
+      contentKey: 'docs.optimizationGuide.imageProcessing.intro',
+      subSections: [
+        { id: 'library', titleKey: 'docs.optimizationGuide.imageProcessing.libraryTitle', contentKey: 'docs.optimizationGuide.imageProcessing.libraryContent' },
+        { id: 'application-areas', titleKey: 'docs.optimizationGuide.imageProcessing.applicationAreasTitle', contentKey: 'docs.optimizationGuide.imageProcessing.applicationAreasContent' },
+        { id: 'key-technique', titleKey: 'docs.optimizationGuide.imageProcessing.keyTechniqueTitle', contentKey: 'docs.optimizationGuide.imageProcessing.keyTechniqueContent' },
+        {
+          id: 'implementation-steps',
+          titleKey: 'docs.optimizationGuide.imageProcessing.implementationStepsTitle',
+          subSections: [
+            { id: 'step1', titleKey: 'docs.optimizationGuide.imageProcessing.step1.title', contentKey: 'docs.optimizationGuide.imageProcessing.step1.content', codeExampleKey: 'docs.optimizationGuide.imageProcessing.step1.code' },
+            { id: 'step2', titleKey: 'docs.optimizationGuide.imageProcessing.step2.title', contentKey: 'docs.optimizationGuide.imageProcessing.step2.content', codeExampleKey: 'docs.optimizationGuide.imageProcessing.step2.code' },
+            { id: 'step3', titleKey: 'docs.optimizationGuide.imageProcessing.step3.title', contentKey: 'docs.optimizationGuide.imageProcessing.step3.content', codeExampleKey: 'docs.optimizationGuide.imageProcessing.step3.code' },
+            { id: 'step4', titleKey: 'docs.optimizationGuide.imageProcessing.step4.title', contentKey: 'docs.optimizationGuide.imageProcessing.step4.content' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'db-optimization',
+      titleKey: 'docs.optimizationGuide.dbOptimization.title',
+      contentKey: 'docs.optimizationGuide.dbOptimization.intro',
+      subSections: [
+        { id: 'platform', titleKey: 'docs.optimizationGuide.dbOptimization.platformTitle', contentKey: 'docs.optimizationGuide.dbOptimization.platformContent' },
+        { id: 'tool', titleKey: 'docs.optimizationGuide.dbOptimization.toolTitle', contentKey: 'docs.optimizationGuide.dbOptimization.toolContent' },
+        { id: 'analysis-tool', titleKey: 'docs.optimizationGuide.dbOptimization.analysisToolTitle', contentKey: 'docs.optimizationGuide.dbOptimization.analysisToolContent' },
+        { id: 'monitoring-tool', titleKey: 'docs.optimizationGuide.dbOptimization.monitoringToolTitle', contentKey: 'docs.optimizationGuide.dbOptimization.monitoringToolContent' },
+        {
+          id: 'indexing',
+          titleKey: 'docs.optimizationGuide.dbOptimization.indexing.title',
+          contentKey: 'docs.optimizationGuide.dbOptimization.indexing.intro',
+          subSections: [
+            { id: 'when', titleKey: 'docs.optimizationGuide.dbOptimization.indexing.whenTitle', contentKey: 'docs.optimizationGuide.dbOptimization.indexing.whenContent' },
+            { id: 'application-areas', titleKey: 'docs.optimizationGuide.dbOptimization.indexing.applicationAreasTitle', contentKey: 'docs.optimizationGuide.dbOptimization.indexing.applicationAreasContent' },
+            { id: 'prisma', titleKey: 'docs.optimizationGuide.dbOptimization.indexing.prismaTitle', contentKey: 'docs.optimizationGuide.dbOptimization.indexing.prismaContent', codeExampleKey: 'docs.optimizationGuide.dbOptimization.indexing.prismaCode' },
+            { id: 'application', titleKey: 'docs.optimizationGuide.dbOptimization.indexing.applicationTitle', contentKey: 'docs.optimizationGuide.dbOptimization.indexing.applicationContent' },
+          ],
+        },
+        {
+          id: 'query-optimization',
+          titleKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.title',
+          contentKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.intro',
+          subSections: [
+            { id: 'select-fields', titleKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.selectFieldsTitle', contentKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.selectFieldsContent', codeExampleKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.selectFieldsCode' },
+            { id: 'n-plus-1', titleKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.nPlus1Title', contentKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.nPlus1Content', codeExampleKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.nPlus1Code' },
+            { id: 'pagination', titleKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.paginationTitle', contentKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.paginationContent', codeExampleKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.paginationCode' },
+          ],
+        },
+        {
+          id: 'prisma-accelerate',
+          titleKey: 'docs.optimizationGuide.dbOptimization.prismaAccelerate.title',
+          contentKey: 'docs.optimizationGuide.dbOptimization.prismaAccelerate.intro',
+          subSections: [
+            { id: 'when', titleKey: 'docs.optimizationGuide.dbOptimization.prismaAccelerate.whenTitle', contentKey: 'docs.optimizationGuide.dbOptimization.prismaAccelerate.whenContent' },
+            { id: 'implementation', titleKey: 'docs.optimizationGuide.dbOptimization.prismaAccelerate.implementationTitle', contentKey: 'docs.optimizationGuide.dbOptimization.prismaAccelerate.implementationContent' },
+          ],
+        },
+        {
+          id: 'materialized-views',
+          titleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.title',
+          contentKey: 'docs.optimizationGuide.dbOptimization.materializedViews.intro',
+          subSections: [
+            { id: 'when', titleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.whenTitle', contentKey: 'docs.optimizationGuide.dbOptimization.materializedViews.whenContent' },
+            { id: 'application-areas', titleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.applicationAreasTitle', contentKey: 'docs.optimizationGuide.dbOptimization.materializedViews.applicationAreasContent' },
+            { id: 'implementation', titleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.implementationTitle', contentKey: 'docs.optimizationGuide.dbOptimization.materializedViews.implementationContent', codeExampleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.implementationCode' },
+            { id: 'update', titleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.updateTitle', contentKey: 'docs.optimizationGuide.dbOptimization.materializedViews.updateContent', codeExampleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.updateCode' },
+            { id: 'usage', titleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.usageTitle', contentKey: 'docs.optimizationGuide.dbOptimization.materializedViews.usageContent', codeExampleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.usageCode' },
+          ],
+        },
+        {
+          id: 'partitioning',
+          titleKey: 'docs.optimizationGuide.dbOptimization.partitioning.title',
+          contentKey: 'docs.optimizationGuide.dbOptimization.partitioning.intro',
+          subSections: [
+            { id: 'when', titleKey: 'docs.optimizationGuide.dbOptimization.partitioning.whenTitle', contentKey: 'docs.optimizationGuide.dbOptimization.partitioning.whenContent' },
+            { id: 'application-areas', titleKey: 'docs.optimizationGuide.dbOptimization.partitioning.applicationAreasTitle', contentKey: 'docs.optimizationGuide.dbOptimization.partitioning.applicationAreasContent' },
+            { id: 'implementation', titleKey: 'docs.optimizationGuide.dbOptimization.partitioning.implementationTitle', contentKey: 'docs.optimizationGuide.dbOptimization.partitioning.implementationContent', codeExampleKey: 'docs.optimizationGuide.dbOptimization.partitioning.implementationCode' },
+            { id: 'advantages', titleKey: 'docs.optimizationGuide.dbOptimization.partitioning.advantagesTitle', contentKey: 'docs.optimizationGuide.dbOptimization.partitioning.advantagesContent' },
+            { id: 'prisma-relation', titleKey: 'docs.optimizationGuide.dbOptimization.partitioning.prismaRelationTitle', contentKey: 'docs.optimizationGuide.dbOptimization.partitioning.prismaRelationContent' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'graphql-optimization',
+      titleKey: 'docs.optimizationGuide.graphqlOptimization.title',
+      contentKey: 'docs.optimizationGuide.graphqlOptimization.intro',
+      subSections: [
+        { id: 'analysis-tool', titleKey: 'docs.optimizationGuide.graphqlOptimization.analysisToolTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.analysisToolContent' },
+        {
+          id: 'dataloader',
+          titleKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.title',
+          contentKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.intro',
+          subSections: [
+            { id: 'when', titleKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.whenTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.whenContent' },
+            { id: 'application-areas', titleKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.applicationAreasTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.applicationAreasContent' },
+            { id: 'implementation', titleKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.implementationTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.implementationContent', codeExampleKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.implementationCode' },
+            { id: 'usage', titleKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.usageTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.usageContent', codeExampleKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.usageCode' },
+          ],
+        },
+        {
+          id: 'query-complexity-analysis',
+          titleKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.title',
+          contentKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.intro',
+          subSections: [
+            { id: 'tool', titleKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.toolTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.toolContent' },
+            { id: 'when', titleKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.whenTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.whenContent' },
+            { id: 'principle', titleKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.principleTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.principleContent' },
+            { id: 'implementation', titleKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.implementationTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.implementationContent' },
+          ],
+        },
+        {
+          id: 'persisted-queries',
+          titleKey: 'docs.optimizationGuide.graphqlOptimization.persistedQueries.title',
+          contentKey: 'docs.optimizationGuide.graphqlOptimization.persistedQueries.intro',
+          subSections: [
+            { id: 'why', titleKey: 'docs.optimizationGuide.graphqlOptimization.persistedQueries.whyTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.persistedQueries.whyContent' },
+            { id: 'when', titleKey: 'docs.optimizationGuide.graphqlOptimization.persistedQueries.whenTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.persistedQueries.whenContent' },
+            { id: 'implementation', titleKey: 'docs.optimizationGuide.graphqlOptimization.persistedQueries.implementationTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.persistedQueries.implementationContent' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'backend-logic-optimization',
+      titleKey: 'docs.optimizationGuide.backendLogicOptimization.title',
+      contentKey: 'docs.optimizationGuide.backendLogicOptimization.intro',
+      subSections: [
+        { id: 'tools', titleKey: 'docs.optimizationGuide.backendLogicOptimization.toolsTitle', contentKey: 'docs.optimizationGuide.backendLogicOptimization.toolsContent' },
+        { id: 'when', titleKey: 'docs.optimizationGuide.backendLogicOptimization.whenTitle', contentKey: 'docs.optimizationGuide.backendLogicOptimization.whenContent' },
+        { id: 'process', titleKey: 'docs.optimizationGuide.backendLogicOptimization.processTitle', contentKey: 'docs.optimizationGuide.backendLogicOptimization.processContent' },
+        { id: 'recommendations', titleKey: 'docs.optimizationGuide.backendLogicOptimization.recommendationsTitle', contentKey: 'docs.optimizationGuide.backendLogicOptimization.recommendationsContent' },
+      ],
+    },
+    {
+      id: 'caching',
+      titleKey: 'docs.optimizationGuide.caching.title',
+      contentKey: 'docs.optimizationGuide.caching.intro',
+      subSections: [
+        { id: 'library', titleKey: 'docs.optimizationGuide.caching.libraryTitle', contentKey: 'docs.optimizationGuide.caching.libraryContent' },
+        { id: 'pattern', titleKey: 'docs.optimizationGuide.caching.patternTitle', contentKey: 'docs.optimizationGuide.caching.patternContent' },
+        { id: 'application-areas', titleKey: 'docs.optimizationGuide.caching.applicationAreasTitle', contentKey: 'docs.optimizationGuide.caching.applicationAreasContent' },
+        { id: 'implementation', titleKey: 'docs.optimizationGuide.caching.implementationTitle', contentKey: 'docs.optimizationGuide.caching.implementationContent' },
+        { id: 'invalidation', titleKey: 'docs.optimizationGuide.caching.invalidationTitle', contentKey: 'docs.optimizationGuide.caching.invalidationContent' },
+      ],
+    },
+    {
+      id: 'async-processing',
+      titleKey: 'docs.optimizationGuide.asyncProcessing.title',
+      contentKey: 'docs.optimizationGuide.asyncProcessing.intro',
+      subSections: [
+        { id: 'library', titleKey: 'docs.optimizationGuide.asyncProcessing.libraryTitle', contentKey: 'docs.optimizationGuide.asyncProcessing.libraryContent' },
+        { id: 'why', titleKey: 'docs.optimizationGuide.asyncProcessing.whyTitle', contentKey: 'docs.optimizationGuide.asyncProcessing.whyContent' },
+        { id: 'application-areas', titleKey: 'docs.optimizationGuide.asyncProcessing.applicationAreasTitle', listKey: 'docs.optimizationGuide.asyncProcessing.applicationAreasContent' },
+        { id: 'pattern', titleKey: 'docs.optimizationGuide.asyncProcessing.patternTitle', contentKey: 'docs.optimizationGuide.asyncProcessing.patternContent' },
+        { id: 'partitioning', titleKey: 'docs.optimizationGuide.asyncProcessing.partitioningTitle', contentKey: 'docs.optimizationGuide.asyncProcessing.partitioningContent' },
+        { id: 'monitoring', titleKey: 'docs.optimizationGuide.asyncProcessing.monitoringTitle', contentKey: 'docs.optimizationGuide.asyncProcessing.monitoringContent' },
+      ],
+    },
+    {
+      id: 'push-notifications-optimization',
+      titleKey: 'docs.optimizationGuide.pushNotificationsOptimization.title',
+      contentKey: 'docs.optimizationGuide.pushNotificationsOptimization.intro',
+      subSections: [
+        { id: 'platform', titleKey: 'docs.optimizationGuide.pushNotificationsOptimization.platformTitle', contentKey: 'docs.optimizationGuide.pushNotificationsOptimization.platformContent' },
+        { id: 'techniques', titleKey: 'docs.optimizationGuide.pushNotificationsOptimization.techniquesTitle', listKey: 'docs.optimizationGuide.pushNotificationsOptimization.techniquesContent' },
+      ],
+    },
+    {
+      id: 'client-api-db-interaction',
+      titleKey: 'docs.optimizationGuide.clientApiDbInteraction.title',
+      contentKey: 'docs.optimizationGuide.clientApiDbInteraction.intro',
+      subSections: [
+        { id: 'client-level', titleKey: 'docs.optimizationGuide.clientApiDbInteraction.clientLevelTitle', contentKey: 'docs.optimizationGuide.clientApiDbInteraction.clientLevelContent' },
+        { id: 'network-level', titleKey: 'docs.optimizationGuide.optimizationGuide.clientApiDbInteraction.networkLevelTitle', contentKey: 'docs.optimizationGuide.clientApiDbInteraction.networkLevelContent' },
+        { id: 'backend-level', titleKey: 'docs.optimizationGuide.clientApiDbInteraction.backendLevelTitle', contentKey: 'docs.optimizationGuide.clientApiDbInteraction.backendLevelContent' },
+      ],
+    },
+    {
+      id: 'authentication-optimization',
+      titleKey: 'docs.optimizationGuide.authenticationOptimization.title',
+      contentKey: 'docs.optimizationGuide.authenticationOptimization.intro',
+      subSections: [
+        { id: 'stateless-jwt', titleKey: 'docs.optimizationGuide.authenticationOptimization.statelessJwtTitle', contentKey: 'docs.optimizationGuide.authenticationOptimization.statelessJwtContent' },
+        { id: 'rate-limiting', titleKey: 'docs.optimizationGuide.authenticationOptimization.rateLimitingTitle', contentKey: 'docs.optimizationGuide.authenticationOptimization.rateLimitingContent' },
+        { id: 'secure-headers', titleKey: 'docs.optimizationGuide.authenticationOptimization.secureHeadersTitle', contentKey: 'docs.optimizationGuide.authenticationOptimization.secureHeadersContent' },
+      ],
+    },
+    {
+      id: 'chat-websocket-optimization',
+      titleKey: 'docs.optimizationGuide.chatWebSocketOptimization.title',
+      contentKey: 'docs.optimizationGuide.chatWebSocketOptimization.intro',
+      subSections: [
+        { id: 'library', titleKey: 'docs.optimizationGuide.chatWebSocketOptimization.libraryTitle', contentKey: 'docs.optimizationGuide.chatWebSocketOptimization.libraryContent' },
+        { id: 'techniques', titleKey: 'docs.optimizationGuide.chatWebSocketOptimization.techniquesTitle', listKey: 'docs.optimizationGuide.chatWebSocketOptimization.techniquesContent' },
+      ],
+    },
+    {
+      id: 'animations-optimization',
+      titleKey: 'docs.optimizationGuide.animationsOptimization.title',
+      contentKey: 'docs.optimizationGuide.animationsOptimization.intro',
+      subSections: [
+        { id: 'mobile-desktop', titleKey: 'docs.optimizationGuide.animationsOptimization.mobileDesktopTitle', contentKey: 'docs.optimizationGuide.animationsOptimization.mobileDesktopContent' },
+        { id: 'web', titleKey: 'docs.optimizationGuide.animationsOptimization.webTitle', contentKey: 'docs.optimizationGuide.animationsOptimization.webContent' },
+        { id: 'doc-design', titleKey: 'docs.optimizationGuide.animationsOptimization.docDesignTitle', contentKey: 'docs.optimizationGuide.animationsOptimization.docDesignContent' },
+      ],
+    },
+    {
+      id: 'monitoring',
+      titleKey: 'docs.optimizationGuide.monitoring.title',
+      contentKey: 'docs.optimizationGuide.monitoring.intro',
+      subSections: [
+        { id: 'tools', titleKey: 'docs.optimizationGuide.monitoring.toolsTitle', contentKey: 'docs.optimizationGuide.monitoring.toolsContent' },
+        { id: 'when', titleKey: 'docs.optimizationGuide.monitoring.whenTitle', contentKey: 'docs.optimizationGuide.monitoring.whenContent' },
+        { id: 'implementation', titleKey: 'docs.optimizationGuide.monitoring.implementationTitle', contentKey: 'docs.optimizationGuide.monitoring.implementationContent' },
+        { id: 'principle', titleKey: 'docs.optimizationGuide.monitoring.principleTitle', contentKey: 'docs.optimizationGuide.monitoring.principleContent' },
+      ],
+    },
+    {
+      id: 'ci-cd-optimization',
+      titleKey: 'docs.optimizationGuide.ciCdOptimization.title',
+      contentKey: 'docs.optimizationGuide.ciCdOptimization.intro',
+      subSections: [
+        { id: 'tools', titleKey: 'docs.optimizationGuide.ciCdOptimization.toolsTitle', contentKey: 'docs.optimizationGuide.ciCdOptimization.toolsContent' },
+        { id: 'techniques', titleKey: 'docs.optimizationGuide.ciCdOptimization.techniquesTitle', listKey: 'docs.optimizationGuide.ciCdOptimization.techniquesContent' },
+      ],
+    },
+    {
+      id: 'frontend-optimization',
+      titleKey: 'docs.optimizationGuide.frontendOptimization.title',
+      contentKey: 'docs.optimizationGuide.frontendOptimization.intro',
+      subSections: [
+        { id: 'web-techniques', titleKey: 'docs.optimizationGuide.frontendOptimization.webTechniquesTitle', listKey: 'docs.optimizationGuide.frontendOptimization.webTechniquesContent' },
+        { id: 'react-native-techniques', titleKey: 'docs.optimizationGuide.frontendOptimization.reactNativeTechniquesTitle', listKey: 'docs.optimizationGuide.frontendOptimization.reactNativeTechniquesContent' },
+        { id: 'general-techniques', titleKey: 'docs.optimizationGuide.frontendOptimization.generalTechniquesTitle', listKey: 'docs.optimizationGuide.frontendOptimization.generalTechniquesContent' },
+      ],
+    },
+    {
+      id: 'db-scaling',
+      titleKey: 'docs.optimizationGuide.dbScaling.title',
+      contentKey: 'docs.optimizationGuide.dbScaling.intro',
+      subSections: [
+        { id: 'replication', titleKey: 'docs.optimizationGuide.dbScaling.replicationTitle', contentKey: 'docs.optimizationGuide.dbScaling.replicationContent' },
+        { id: 'sharding', titleKey: 'docs.optimizationGuide.dbScaling.shardingTitle', contentKey: 'docs.optimizationGuide.dbScaling.shardingContent' },
+        { id: 'when-to-apply', titleKey: 'docs.optimizationGuide.dbScaling.whenToApplyTitle', contentKey: 'docs.optimizationGuide.dbScaling.whenToApplyContent' },
+      ],
+    },
+    {
+      id: 'notes',
+      titleKey: 'docs.optimizationGuide.notes.title',
+      subSections: [
+        { id: 'prioritization', titleKey: 'docs.optimizationGuide.notes.prioritizationTitle', contentKey: 'docs.optimizationGuide.notes.prioritizationContent' },
+        { id: 'automation', titleKey: 'docs.optimizationGuide.notes.automationTitle', contentKey: 'docs.optimizationGuide.notes.automationContent' },
+        { id: 'documentation-notes', titleKey: 'docs.optimizationGuide.notes.documentationNotesTitle', contentKey: 'docs.optimizationGuide.notes.documentationNotesContent' },
+        { id: 'culture', titleKey: 'docs.optimizationGuide.notes.cultureTitle', contentKey: 'docs.optimizationGuide.notes.cultureContent' },
+      ],
+    },
   ];
 
   const technicalDocsSections = [
@@ -710,6 +994,11 @@ const Docs: React.FC = () => {
 
   const activeDoc = docsConfig.find((doc: DocConfigItem) => doc.id === activeDocId);
   const sectionsToRender = activeDoc ? activeDoc.sections : [];
+
+  // Add a loading check here
+  if (isLoading) {
+    return <div className="docs-loading">Loading documentation...</div>; // Display a loading message or spinner
+  }
 
   const renderSectionContent = (section: DocSection) => {
     // Get translated content for each potential key

@@ -87,6 +87,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     } else if (options?.defaultValue !== undefined) {
       result = options.defaultValue;
     } else {
+      // Добавляем логирование, если перевод не найден и нет defaultValue
+      console.warn(`Translation key "${key}" not found for language "${language}". Displaying key or default value.`);
       result = key; // Fallback to the key itself if no translation or default value
     }
 
@@ -104,7 +106,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
 
     return result;
-  }, [translations]);
+  }, [translations, language]); // Добавили 'language' в зависимости
 
   return (
     <LanguageContext.Provider value={{ language, changeLanguage, t, languages, isLoading }}>
