@@ -10,7 +10,7 @@ interface Language {
 interface LanguageContextType {
   language: string;
   changeLanguage: (lang: string) => void;
-  t: (key: string, options?: { defaultValue?: string; [key: string]: string | number | boolean | undefined }) => string;
+  t: (key: string, options?: { defaultValue?: string; [key: string]: string | number | boolean | undefined }) => unknown;
   languages: { [key: string]: Language };
   isLoading: boolean;
 }
@@ -32,15 +32,18 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const loadTranslations = useCallback(async (lang: string) => {
     setIsLoading(true);
+    console.log(`Attempting to load translations for language: ${lang}`);
     try {
       const response = await fetch(`/translations/${lang}.json`);
       if (!response.ok) {
+        console.error(`Failed to fetch translations for ${lang}: ${response.status}`);
         throw new Error(`Failed to load translations for ${lang}`);
       }
       const data = await response.json();
+      console.log(`Successfully loaded translations for ${lang}:`, data);
       setTranslations(data);
     } catch (error) {
-      console.error('Error loading translations:', error);
+      console.error('Caught error loading translations:', error);
       // Fallback to English if translation fails
       const response = await fetch('/translations/en.json');
       const data = await response.json();
@@ -81,19 +84,19 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       }
     }
 
-    let result: string;
-    if (typeof value === 'string') {
-      result = value;
+    let finalValue: unknown;
+
+    if (value !== undefined) {
+      finalValue = value;
     } else if (options?.defaultValue !== undefined) {
-      result = options.defaultValue;
+      finalValue = options.defaultValue;
     } else {
-      // Добавляем логирование, если перевод не найден и нет defaultValue
-      console.warn(`Translation key "${key}" not found for language "${language}". Displaying key or default value.`);
-      result = key; // Fallback to the key itself if no translation or default value
+      finalValue = key; // Fallback to the key itself if no translation or default value
     }
 
-    // Handle interpolation if options are provided
-    if (options) {
+    // Handle interpolation only if the final value is a string
+    if (typeof finalValue === 'string' && options) {
+      let result = finalValue;
       for (const optKey in options) {
         if (optKey !== 'defaultValue' && Object.prototype.hasOwnProperty.call(options, optKey)) {
           const placeholder = `{{${optKey}}}`;
@@ -103,10 +106,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
           }
         }
       }
+      return result;
     }
 
-    return result;
-  }, [translations, language]); // Добавили 'language' в зависимости
+    return finalValue;
+  }, [translations]);
 
   return (
     <LanguageContext.Provider value={{ language, changeLanguage, t, languages, isLoading }}>
