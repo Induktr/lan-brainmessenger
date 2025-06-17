@@ -14,8 +14,8 @@ const FAQPage: React.FC = () => {
     const translatedQuestions = category.questions.map(question => {
       const questionKey = `faq.questionsData.${category.categoryKey}.${question.id}.question`;
       const answerKey = `faq.questionsData.${category.categoryKey}.${question.id}.answer`;
-      const translatedQuestion = t(questionKey);
-      const translatedAnswer = t(answerKey);
+      const translatedQuestion = t(questionKey) as string;
+      const translatedAnswer = t(answerKey) as string;
 
       console.log(`Key: ${questionKey}, Translated: ${translatedQuestion}`);
       console.log(`Key: ${answerKey}, Translated: ${translatedAnswer}`);
@@ -38,10 +38,10 @@ const FAQPage: React.FC = () => {
     <Container className="faq-page-container">
       <header className="faq-header-section">
         <h1 className="faq-page-title">
-          {t('faq.title')}
+          {t('faq.title') as string}
         </h1>
         <p className="faq-page-subtitle">
-          {t('faq.subtitle')}
+          {t('faq.subtitle') as string}
         </p>
       </header>
       <div className="faq-accordion-wrapper">
