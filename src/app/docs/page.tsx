@@ -15,7 +15,7 @@ interface DocSection {
   outroKey?: string;
   tableKey?: string;
   codeExampleKey?: string;
-  codeExampleKey2?: string;
+  codeExampleKey2?: string; // Added codeExampleKey2
   additionalContentKeys?: string[];
   subSections?: DocSection[];
 }
@@ -32,58 +32,13 @@ interface DocConfigItem {
   sections: DocSection[];
 }
 
-// Helper component to render content that might be an array or a string
-const RenderContent: React.FC<{ contentKey: string }> = ({ contentKey }) => {
-  const { t } = useLanguage();
-  const content = t(contentKey);
-
-  if (Array.isArray(content)) {
-    return (
-      <ul className="docs-content-list">
-        {(content as string[]).map((item, index) => (
-          <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
-        ))}
-      </ul>
-    );
-  } else if (typeof content === 'string') {
-    // Check for table content
-    if (content.startsWith('<table>')) {
-      return <div dangerouslySetInnerHTML={{ __html: content }} />;
-    }
-    // Check for code blocks
-    if (content.includes('```')) {
-      const parts = content.split('```');
-      return (
-        <>
-          {parts.map((part, index) => {
-            if (index % 2 === 1) {
-              // This is a code block
-              const [lang, ...codeLines] = part.split('\n');
-              return (
-                <pre key={index} className="docs-code-block">
-                  <code className={`language-${lang.trim()}`}>{codeLines.join('\n').trim()}</code>
-                </pre>
-              );
-            } else {
-              // This is regular text
-              return <p key={index} className="docs-content-paragraph" dangerouslySetInnerHTML={{ __html: part }} />;
-            }
-          })}
-        </>
-      );
-    }
-    return <p className="mb-4" dangerouslySetInnerHTML={{ __html: content }} />;
-  }
-  return null;
-};
-
 const Docs: React.FC = () => {
   const { t } = useLanguage();
   const [activeDocId, setActiveDocId] = useState('general_docs'); // 'general_docs', 'design_system_docs', 'localization_guide_docs', or 'user_guide_docs'
 
   const generalSections = [
     { id: 'introduction', titleKey: 'docs.general.introduction.title', contentKey: 'docs.general.introduction.content' },
-    { id: 'vision-mission', titleKey: 'docs.general.visionAndMission.title', contentKey: 'docs.general.visionAndMission.visionContent', subSections: [
+    { id: 'vision-mission', titleKey: 'docs.general.visionAndMission.title', subSections: [
         { id: 'vision', titleKey: 'docs.general.visionAndMission.visionTitle', contentKey: 'docs.general.visionAndMission.visionContent' },
         { id: 'mission', titleKey: 'docs.general.visionAndMission.missionTitle', contentKey: 'docs.general.visionAndMission.missionContent' },
     ]},
@@ -92,7 +47,7 @@ const Docs: React.FC = () => {
         { id: 'mvp-features', titleKey: 'docs.general.aboutMVP.featuresTitle', listKey: 'docs.general.aboutMVP.features' },
     ], outroKey: 'docs.general.aboutMVP.outro' },
     { id: 'how-we-build', titleKey: 'docs.general.howWeBuild.title', contentKey: 'docs.general.howWeBuild.intro', listKey: 'docs.general.howWeBuild.steps', outroKey: 'docs.general.howWeBuild.outro' },
-    { id: 'technology-stack', titleKey: 'docs.general.technologyStack.title', contentKey: 'docs.general.technologyStack.intro', listKey: 'docs.general.technologyStack.stack' },
+    { id: 'technology-stack', titleKey: 'docs.general.technologyStack.title', contentKey: 'docs.general.technologyStack.intro', listKey: 'docs.general.technologyStack.stack' }, // Changed tableKey to listKey based on en.json structure
     { id: 'architecture', titleKey: 'docs.general.architecture.title', contentKey: 'docs.general.architecture.intro', additionalContentKeys: ['docs.general.architecture.future', 'docs.general.architecture.interaction'] },
     { id: 'project-status', titleKey: 'docs.general.projectStatus.title', contentKey: 'docs.general.projectStatus.content', additionalContentKeys: ['docs.general.projectStatus.progress'] },
     { id: 'getting-started', titleKey: 'docs.general.gettingStarted.title', contentKey: 'docs.general.gettingStarted.intro', listKey: 'docs.general.gettingStarted.steps', outroKey: 'docs.general.gettingStarted.outro' },
@@ -121,8 +76,8 @@ const Docs: React.FC = () => {
         { id: 'animation-principles', titleKey: 'docs.design.section4.principles_title', listKey: 'docs.design.section4.principles' },
         { id: 'animation-list', titleKey: 'docs.design.section4.list_title', tableKey: 'docs.design.section4.list_table' },
         { id: 'animation-examples', titleKey: 'docs.design.section4.implementation_examples_title', subSections: [
-            { id: 'css-ripple', titleKey: 'docs.design.section4.css_ripple_title', contentKey: 'docs.design.section4.css_ripple_code' },
-            { id: 'rn-icon', titleKey: 'docs.design.section4.rn_icon_title', contentKey: 'docs.design.section4.rn_icon_code' },
+            { id: 'css-ripple', titleKey: 'docs.design.section4.css_ripple_title', codeExampleKey: 'docs.design.section4.css_ripple_code' },
+            { id: 'rn-icon', titleKey: 'docs.design.section4.rn_icon_title', codeExampleKey: 'docs.design.section4.rn_icon_code' },
         ]},
     ]},
     { id: 'alignment-grid', titleKey: 'docs.design.section5.title', contentKey: 'docs.design.section5.intro', subSections: [
@@ -136,8 +91,8 @@ const Docs: React.FC = () => {
 
   const localizationGuideSections = [
     { id: 'localization-intro', titleKey: 'docs.localizationGuide.section1.title', contentKey: 'docs.localizationGuide.section1.description', subSections: [
-        { id: 'localization-goal', titleKey: 'docs.localizationGuide.section1.goal', contentKey: 'docs.localizationGuide.section1.goal' },
-        { id: 'localization-principles', titleKey: 'docs.localizationGuide.section1.principles_title', listKey: 'docs.localizationGuide.section1.principles' },
+        { id: 'localization-goal', titleKey: 'docs.localizationGuide.section1.goalTitle', contentKey: 'docs.localizationGuide.section1.goalContent' }, // Corrected keys
+        { id: 'localization-principles', titleKey: 'docs.localizationGuide.section1.principlesTitle', listKey: 'docs.localizationGuide.section1.principles' }, // Corrected keys
     ]},
     { id: 'localization-goals', titleKey: 'docs.localizationGuide.section2.title', listKey: 'docs.localizationGuide.section2.goals' },
     { id: 'localization-tools', titleKey: 'docs.localizationGuide.section3.title', contentKey: 'docs.localizationGuide.section3.intro', tableKey: 'docs.localizationGuide.section3.tools_table' },
@@ -148,14 +103,14 @@ const Docs: React.FC = () => {
     ]},
     { id: 'localization-setup', titleKey: 'docs.localizationGuide.section5.title', contentKey: 'docs.localizationGuide.section5.intro', subSections: [
         { id: 'localization-frontend', titleKey: 'docs.localizationGuide.section5.frontend_title', subSections: [
-            { id: 'localization-frontend-init', titleKey: 'docs.localizationGuide.section5.frontend_init_title', contentKey: 'docs.localizationGuide.section5.frontend_init_code' },
-            { id: 'localization-frontend-usage', titleKey: 'docs.localizationGuide.section5.frontend_usage_title', contentKey: 'docs.localizationGuide.section5.frontend_usage_code' },
+            { id: 'localization-frontend-init', titleKey: 'docs.localizationGuide.section5.frontend_init_title', codeExampleKey: 'docs.localizationGuide.section5.frontend_init_code' }, // Changed contentKey to codeExampleKey
+            { id: 'localization-frontend-usage', titleKey: 'docs.localizationGuide.section5.frontend_usage_title', codeExampleKey: 'docs.localizationGuide.section5.frontend_usage_code' }, // Changed contentKey to codeExampleKey
             { id: 'localization-frontend-change', titleKey: 'docs.localizationGuide.section5.frontend_change_title', contentKey: 'docs.localizationGuide.section5.frontend_change_content' },
         ]},
         { id: 'localization-backend', titleKey: 'docs.localizationGuide.section5.backend_title', contentKey: 'docs.localizationGuide.section5.backend_intro', codeExampleKey: 'docs.localizationGuide.section5.backend_code', additionalContentKeys: ['docs.localizationGuide.section5.backend_note'] },
         { id: 'localization-rtl-adaptation', titleKey: 'docs.localizationGuide.section5.rtl_adaptation_title', contentKey: 'docs.localizationGuide.section5.rtl_adaptation_intro', subSections: [
-            { id: 'localization-rtl-css', titleKey: 'docs.localizationGuide.section5.rtl_css_title', contentKey: 'docs.localizationGuide.section5.rtl_css_code' },
-            { id: 'localization-rtl-rn', titleKey: 'docs.localizationGuide.section5.rtl_rn_title', contentKey: 'docs.localizationGuide.section5.rtl_rn_code' },
+            { id: 'localization-rtl-css', titleKey: 'docs.localizationGuide.section5.rtl_css_title', codeExampleKey: 'docs.localizationGuide.section5.rtl_css_code' }, // Changed contentKey to codeExampleKey
+            { id: 'localization-rtl-rn', titleKey: 'docs.localizationGuide.section5.rtl_rn_title', codeExampleKey: 'docs.localizationGuide.section5.rtl_rn_code' }, // Changed contentKey to codeExampleKey
             { id: 'localization-rtl-icons', titleKey: 'docs.localizationGuide.section5.rtl_icons_title', contentKey: 'docs.localizationGuide.section5.rtl_icons_content' },
         ]},
     ]},
@@ -174,8 +129,8 @@ const Docs: React.FC = () => {
         { id: 'localization-recommendations-translator', titleKey: 'docs.localizationGuide.section8.translator_title', listKey: 'docs.localizationGuide.section8.translator_points' },
     ]},
     { id: 'localization-formatting', titleKey: 'docs.localizationGuide.section9.title', contentKey: 'docs.localizationGuide.section9.intro', subSections: [
-        { id: 'localization-formatting-dates', titleKey: 'docs.localizationGuide.section9.dates_title', contentKey: 'docs.localizationGuide.section9.dates_code' },
-        { id: 'localization-formatting-numbers', titleKey: 'docs.localizationGuide.section9.numbers_title', contentKey: 'docs.localizationGuide.section9.numbers_code' },
+        { id: 'localization-formatting-dates', titleKey: 'docs.localizationGuide.section9.dates_title', codeExampleKey: 'docs.localizationGuide.section9.dates_code' }, // Changed contentKey to codeExampleKey
+        { id: 'localization-formatting-numbers', titleKey: 'docs.localizationGuide.section9.numbers_title', codeExampleKey: 'docs.localizationGuide.section9.numbers_code' }, // Changed contentKey to codeExampleKey
     ]},
     { id: 'localization-testing', titleKey: 'docs.localizationGuide.section10.title', contentKey: 'docs.localizationGuide.section10.intro', subSections: [
         { id: 'localization-testing-scenarios', titleKey: 'docs.localizationGuide.section10.scenarios_title', listKey: 'docs.localizationGuide.section10.scenarios_points' },
@@ -249,22 +204,22 @@ const Docs: React.FC = () => {
         { id: 'set-methods', titleKey: 'docs.devGuide.setMethods.title', contentKey: 'docs.devGuide.setMethods.intro', subSections: [
             { id: 'set-methods-areas', titleKey: 'docs.devGuide.setMethods.areas.title', listKey: 'docs.devGuide.setMethods.areas.points' },
             { id: 'set-methods-keys', titleKey: 'docs.devGuide.setMethods.keys.title', listKey: 'docs.devGuide.setMethods.keys.points' },
-            { id: 'set-methods-examples', titleKey: 'docs.devGuide.setMethods.examples.title', contentKey: 'docs.devGuide.setMethods.examples.code', listKey: 'docs.devGuide.setMethods.examples.recommendations' },
+            { id: 'set-methods-examples', titleKey: 'docs.devGuide.setMethods.examples.title', codeExampleKey: 'docs.devGuide.setMethods.examples.code', listKey: 'docs.devGuide.setMethods.examples.recommendations' }, // Changed contentKey to codeExampleKey
         ]},
     ]},
     { id: 'dev-process', titleKey: 'docs.devGuide.devProcess.title', contentKey: 'docs.devGuide.devProcess.intro', subSections: [
         { id: 'env-setup', titleKey: 'docs.devGuide.devProcess.envSetup.title', contentKey: 'docs.devGuide.devProcess.envSetup.intro', subSections: [
-            { id: 'clone-repo', titleKey: 'docs.devGuide.devProcess.envSetup.cloneRepo.title', contentKey: 'docs.devGuide.devProcess.envSetup.cloneRepo.code' },
-            { id: 'install-deps', titleKey: 'docs.devGuide.devProcess.envSetup.installDeps.title', contentKey: 'docs.devGuide.devProcess.envSetup.installDeps.code' },
-            { id: 'env-vars', titleKey: 'docs.devGuide.devProcess.envSetup.envVars.title', contentKey: 'docs.devGuide.devProcess.envSetup.envVars.code', additionalContentKeys: ['docs.devGuide.devProcess.envVars.note'] },
-            { id: 'prisma-client', titleKey: 'docs.devGuide.devProcess.envSetup.prismaClient.title', contentKey: 'docs.devGuide.devProcess.envSetup.prismaClient.code' },
-            { id: 'local-db', titleKey: 'docs.devGuide.devProcess.envSetup.localDb.title', contentKey: 'docs.devGuide.devProcess.envSetup.localDb.code' },
+            { id: 'clone-repo', titleKey: 'docs.devGuide.devProcess.envSetup.cloneRepo.title', codeExampleKey: 'docs.devGuide.devProcess.envSetup.cloneRepo.code' }, // Changed contentKey to codeExampleKey
+            { id: 'install-deps', titleKey: 'docs.devGuide.devProcess.envSetup.installDeps.title', codeExampleKey: 'docs.devGuide.devProcess.envSetup.installDeps.code' }, // Changed contentKey to codeExampleKey
+            { id: 'env-vars', titleKey: 'docs.devGuide.devProcess.envSetup.envVars.title', codeExampleKey: 'docs.devGuide.devProcess.envSetup.envVars.code', additionalContentKeys: ['docs.devGuide.devProcess.envVars.note'] }, // Changed contentKey to codeExampleKey
+            { id: 'prisma-client', titleKey: 'docs.devGuide.devProcess.envSetup.prismaClient.title', codeExampleKey: 'docs.devGuide.devProcess.envSetup.prismaClient.code' }, // Changed contentKey to codeExampleKey
+            { id: 'local-db', titleKey: 'docs.devGuide.devProcess.envSetup.localDb.title', codeExampleKey: 'docs.devGuide.devProcess.envSetup.localDb.code' }, // Changed contentKey to codeExampleKey
         ]},
         { id: 'local-run', titleKey: 'docs.devGuide.devProcess.localRun.title', contentKey: 'docs.devGuide.devProcess.localRun.intro', subSections: [
-            { id: 'run-all', titleKey: 'docs.devGuide.devProcess.localRun.runAll.title', contentKey: 'docs.devGuide.devProcess.localRun.runAll.code' },
-            { id: 'run-backend', titleKey: 'docs.devGuide.devProcess.localRun.runBackend.title', contentKey: 'docs.devGuide.devProcess.localRun.runBackend.code' },
-            { id: 'run-mobile-desktop', titleKey: 'docs.devGuide.devProcess.localRun.runMobileDesktop.title', contentKey: 'docs.devGuide.devProcess.localRun.runMobileDesktop.code' },
-            { id: 'run-web', titleKey: 'docs.devGuide.devProcess.localRun.runWeb.title', contentKey: 'docs.devGuide.devProcess.localRun.runWeb.code' },
+            { id: 'run-all', titleKey: 'docs.devGuide.devProcess.localRun.runAll.title', codeExampleKey: 'docs.devGuide.devProcess.localRun.runAll.code' }, // Changed contentKey to codeExampleKey
+            { id: 'run-backend', titleKey: 'docs.devGuide.devProcess.localRun.runBackend.title', codeExampleKey: 'docs.devGuide.devProcess.localRun.runBackend.code' }, // Changed contentKey to codeExampleKey
+            { id: 'run-mobile-desktop', titleKey: 'docs.devGuide.devProcess.localRun.runMobileDesktop.title', codeExampleKey: 'docs.devGuide.devProcess.localRun.runMobileDesktop.code' }, // Changed contentKey to codeExampleKey
+            { id: 'run-web', titleKey: 'docs.devGuide.devProcess.localRun.runWeb.title', codeExampleKey: 'docs.devGuide.devProcess.localRun.runWeb.code' }, // Changed contentKey to codeExampleKey
         ]},
         { id: 'commits-branches', titleKey: 'docs.devGuide.devProcess.commitsBranches.title', contentKey: 'docs.devGuide.devProcess.commitsBranches.intro', subSections: [
             { id: 'main-branches', titleKey: 'docs.devGuide.devProcess.commitsBranches.mainBranches.title', listKey: 'docs.devGuide.devProcess.commitsBranches.mainBranches.points' },
@@ -276,7 +231,7 @@ const Docs: React.FC = () => {
             { id: 'pr-requirements', titleKey: 'docs.devGuide.devProcess.prCodeReview.prRequirements.title', listKey: 'docs.devGuide.devProcess.prCodeReview.prRequirements.points' },
         ]},
         { id: 'testing', titleKey: 'docs.devGuide.devProcess.testing.title', contentKey: 'docs.devGuide.devProcess.testing.intro', subSections: [
-            { id: 'run-all-tests', titleKey: 'docs.devGuide.devProcess.testing.runAllTests.title', contentKey: 'docs.devGuide.devProcess.testing.runAllTests.code' },
+            { id: 'run-all-tests', titleKey: 'docs.devGuide.devProcess.testing.runAllTests.title', codeExampleKey: 'docs.devGuide.devProcess.testing.runAllTests.code' }, // Changed contentKey to codeExampleKey
             { id: 'test-types', titleKey: 'docs.devGuide.devProcess.testing.testTypes.title', listKey: 'docs.devGuide.devProcess.testing.testTypes.points' },
             { id: 'ci-cd-tests', titleKey: 'docs.devGuide.devProcess.testing.ciCdTests.title', contentKey: 'docs.devGuide.devProcess.testing.ciCdTests.content' },
         ]},
@@ -294,157 +249,6 @@ const Docs: React.FC = () => {
     { id: 'notes', titleKey: 'docs.devGuide.notes.title', listKey: 'docs.devGuide.notes.points' },
   ];
 
-  const optimizationGuideSections = [
-    { id: 'introduction', titleKey: 'docs.optimizationGuide.introduction.title', contentKey: 'docs.optimizationGuide.introduction.description', subSections: [
-        { id: 'optimization-goal', titleKey: 'docs.optimizationGuide.introduction.goalTitle', contentKey: 'docs.optimizationGuide.introduction.goalContent' },
-        { id: 'optimization-audience', titleKey: 'docs.optimizationGuide.introduction.audienceTitle', contentKey: 'docs.optimizationGuide.introduction.audienceContent' },
-        { id: 'optimization-principles', titleKey: 'docs.optimizationGuide.introduction.principlesTitle', listKey: 'docs.optimizationGuide.introduction.principles' },
-    ]},
-    { id: 'general-principle', titleKey: 'docs.optimizationGuide.generalPrinciple.title', contentKey: 'docs.optimizationGuide.generalPrinciple.intro', subSections: [
-        { id: 'measure', titleKey: 'docs.optimizationGuide.generalPrinciple.step1.title', contentKey: 'docs.optimizationGuide.generalPrinciple.step1.content' },
-        { id: 'analyze', titleKey: 'docs.optimizationGuide.generalPrinciple.step2.title', contentKey: 'docs.optimizationGuide.generalPrinciple.step2.content' },
-        { id: 'improve', titleKey: 'docs.optimizationGuide.generalPrinciple.step3.title', contentKey: 'docs.optimizationGuide.generalPrinciple.step3.content' },
-        { id: 'verify', titleKey: 'docs.optimizationGuide.generalPrinciple.step4.title', contentKey: 'docs.optimizationGuide.generalPrinciple.step4.content' },
-        { id: 'repeat', titleKey: 'docs.optimizationGuide.generalPrinciple.step5.title', contentKey: 'docs.optimizationGuide.generalPrinciple.step5.content' },
-    ]},
-    { id: 'image-processing', titleKey: 'docs.optimizationGuide.imageProcessing.title', contentKey: 'docs.optimizationGuide.imageProcessing.intro', subSections: [
-        { id: 'image-library', titleKey: 'docs.optimizationGuide.imageProcessing.libraryTitle', contentKey: 'docs.optimizationGuide.imageProcessing.libraryContent' },
-        { id: 'image-application-areas', titleKey: 'docs.optimizationGuide.imageProcessing.applicationAreasTitle', contentKey: 'docs.optimizationGuide.imageProcessing.applicationAreasContent' },
-        { id: 'image-key-technique', titleKey: 'docs.optimizationGuide.imageProcessing.keyTechniqueTitle', contentKey: 'docs.optimizationGuide.imageProcessing.keyTechniqueContent' },
-        { id: 'image-implementation-steps', titleKey: 'docs.optimizationGuide.imageProcessing.implementationStepsTitle', subSections: [
-            { id: 'install-sharp', titleKey: 'docs.optimizationGuide.imageProcessing.step1.title', contentKey: 'docs.optimizationGuide.imageProcessing.step1.content', codeExampleKey: 'docs.optimizationGuide.imageProcessing.step1.code' },
-            { id: 'create-image-service', titleKey: 'docs.optimizationGuide.imageProcessing.step2.title', contentKey: 'docs.optimizationGuide.imageProcessing.step2.content', codeExampleKey: 'docs.optimizationGuide.imageProcessing.step2.code' },
-            { id: 'integrate-file-upload', titleKey: 'docs.optimizationGuide.imageProcessing.step3.title', contentKey: 'docs.optimizationGuide.imageProcessing.step3.content', codeExampleKey: 'docs.optimizationGuide.imageProcessing.step3.code' },
-            { id: 'async-kafka', titleKey: 'docs.optimizationGuide.imageProcessing.step4.title', contentKey: 'docs.optimizationGuide.imageProcessing.step4.content' },
-        ]},
-    ]},
-    { id: 'db-optimization', titleKey: 'docs.optimizationGuide.dbOptimization.title', contentKey: 'docs.optimizationGuide.dbOptimization.intro', subSections: [
-        { id: 'db-platform', titleKey: 'docs.optimizationGuide.dbOptimization.platformTitle', contentKey: 'docs.optimizationGuide.dbOptimization.platformContent' },
-        { id: 'db-tool', titleKey: 'docs.optimizationGuide.dbOptimization.toolTitle', contentKey: 'docs.optimizationGuide.dbOptimization.toolContent' },
-        { id: 'db-analysis-tool', titleKey: 'docs.optimizationGuide.dbOptimization.analysisToolTitle', contentKey: 'docs.optimizationGuide.dbOptimization.analysisToolContent' },
-        { id: 'db-monitoring-tool', titleKey: 'docs.optimizationGuide.dbOptimization.monitoringToolTitle', contentKey: 'docs.optimizationGuide.dbOptimization.monitoringToolContent' },
-        { id: 'indexing', titleKey: 'docs.optimizationGuide.dbOptimization.indexing.title', contentKey: 'docs.optimizationGuide.dbOptimization.indexing.intro', subSections: [
-            { id: 'indexing-when', titleKey: 'docs.optimizationGuide.dbOptimization.indexing.whenTitle', contentKey: 'docs.optimizationGuide.dbOptimization.indexing.whenContent' },
-            { id: 'indexing-application-areas', titleKey: 'docs.optimizationGuide.dbOptimization.indexing.applicationAreasTitle', contentKey: 'docs.optimizationGuide.dbOptimization.indexing.applicationAreasContent' },
-            { id: 'indexing-prisma', titleKey: 'docs.optimizationGuide.dbOptimization.indexing.prismaTitle', contentKey: 'docs.optimizationGuide.dbOptimization.indexing.prismaContent', codeExampleKey: 'docs.optimizationGuide.dbOptimization.indexing.prismaCode' },
-            { id: 'indexing-application', titleKey: 'docs.optimizationGuide.dbOptimization.indexing.applicationTitle', contentKey: 'docs.optimizationGuide.dbOptimization.indexing.applicationContent' },
-        ]},
-        { id: 'query-optimization', titleKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.title', contentKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.intro', subSections: [
-            { id: 'select-fields', titleKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.selectFieldsTitle', contentKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.selectFieldsContent', codeExampleKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.selectFieldsCode' },
-            { id: 'n-plus-1', titleKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.nPlus1Title', contentKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.nPlus1Content', codeExampleKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.nPlus1Code' },
-            { id: 'pagination', titleKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.paginationTitle', contentKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.paginationContent', codeExampleKey: 'docs.optimizationGuide.dbOptimization.queryOptimization.paginationCode' },
-        ]},
-        { id: 'prisma-accelerate', titleKey: 'docs.optimizationGuide.dbOptimization.prismaAccelerate.title', contentKey: 'docs.optimizationGuide.dbOptimization.prismaAccelerate.intro', subSections: [
-            { id: 'prisma-accelerate-when', titleKey: 'docs.optimizationGuide.dbOptimization.prismaAccelerate.whenTitle', contentKey: 'docs.optimizationGuide.dbOptimization.prismaAccelerate.whenContent' },
-            { id: 'prisma-accelerate-implementation', titleKey: 'docs.optimizationGuide.dbOptimization.prismaAccelerate.implementationTitle', contentKey: 'docs.optimizationGuide.dbOptimization.prismaAccelerate.implementationContent' },
-        ]},
-        { id: 'materialized-views', titleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.title', contentKey: 'docs.optimizationGuide.dbOptimization.materializedViews.intro', subSections: [
-            { id: 'materialized-views-when', titleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.whenTitle', contentKey: 'docs.optimizationGuide.dbOptimization.materializedViews.whenContent' },
-            { id: 'materialized-views-application-areas', titleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.applicationAreasTitle', contentKey: 'docs.optimizationGuide.dbOptimization.materializedViews.applicationAreasContent' },
-            { id: 'materialized-views-implementation', titleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.implementationTitle', contentKey: 'docs.optimizationGuide.dbOptimization.materializedViews.implementationContent', codeExampleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.implementationCode' },
-            { id: 'materialized-views-update', titleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.updateTitle', contentKey: 'docs.optimizationGuide.dbOptimization.materializedViews.updateContent', codeExampleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.updateCode' },
-            { id: 'materialized-views-usage', titleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.usageTitle', contentKey: 'docs.optimizationGuide.dbOptimization.materializedViews.usageContent', codeExampleKey: 'docs.optimizationGuide.dbOptimization.materializedViews.usageCode' },
-        ]},
-        { id: 'partitioning', titleKey: 'docs.optimizationGuide.dbOptimization.partitioning.title', contentKey: 'docs.optimizationGuide.dbOptimization.partitioning.intro', subSections: [
-            { id: 'partitioning-when', titleKey: 'docs.optimizationGuide.dbOptimization.partitioning.whenTitle', contentKey: 'docs.optimizationGuide.dbOptimization.partitioning.whenContent' },
-            { id: 'partitioning-application-areas', titleKey: 'docs.optimizationGuide.dbOptimization.partitioning.applicationAreasTitle', contentKey: 'docs.optimizationGuide.dbOptimization.partitioning.applicationAreasContent' },
-            { id: 'partitioning-implementation', titleKey: 'docs.optimizationGuide.dbOptimization.partitioning.implementationTitle', contentKey: 'docs.optimizationGuide.dbOptimization.partitioning.implementationContent', codeExampleKey: 'docs.optimizationGuide.dbOptimization.partitioning.implementationCode' },
-            { id: 'partitioning-advantages', titleKey: 'docs.optimizationGuide.dbOptimization.partitioning.advantagesTitle', contentKey: 'docs.optimizationGuide.dbOptimization.partitioning.advantagesContent' },
-            { id: 'partitioning-prisma-relation', titleKey: 'docs.optimizationGuide.dbOptimization.partitioning.prismaRelationTitle', contentKey: 'docs.optimizationGuide.dbOptimization.partitioning.prismaRelationContent' },
-        ]},
-    ]},
-    { id: 'graphql-optimization', titleKey: 'docs.optimizationGuide.graphqlOptimization.title', contentKey: 'docs.optimizationGuide.graphqlOptimization.intro', subSections: [
-        { id: 'graphql-analysis-tool', titleKey: 'docs.optimizationGuide.graphqlOptimization.analysisToolTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.analysisToolContent' },
-        { id: 'dataloader', titleKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.title', contentKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.intro', subSections: [
-            { id: 'dataloader-when', titleKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.whenTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.whenContent' },
-            { id: 'dataloader-application-areas', titleKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.applicationAreasTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.applicationAreasContent' },
-            { id: 'dataloader-implementation', titleKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.implementationTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.implementationContent', codeExampleKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.implementationCode' },
-            { id: 'dataloader-usage', titleKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.usageTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.usageContent', codeExampleKey: 'docs.optimizationGuide.graphqlOptimization.dataloader.usageCode' },
-        ]},
-        { id: 'query-complexity-analysis', titleKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.title', contentKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.intro', subSections: [
-            { id: 'query-complexity-tool', titleKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.toolTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.toolContent' },
-            { id: 'query-complexity-when', titleKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.whenTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.whenContent' },
-            { id: 'query-complexity-principle', titleKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.principleTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.principleContent' },
-            { id: 'query-complexity-implementation', titleKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.implementationTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.queryComplexityAnalysis.implementationContent' },
-        ]},
-        { id: 'persisted-queries', titleKey: 'docs.optimizationGuide.graphqlOptimization.persistedQueries.title', contentKey: 'docs.optimizationGuide.graphqlOptimization.persistedQueries.intro', subSections: [
-            { id: 'persisted-queries-why', titleKey: 'docs.optimizationGuide.graphqlOptimization.persistedQueries.whyTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.persistedQueries.whyContent' },
-            { id: 'persisted-queries-when', titleKey: 'docs.optimizationGuide.graphqlOptimization.persistedQueries.whenTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.persistedQueries.whenContent' },
-            { id: 'persisted-queries-implementation', titleKey: 'docs.optimizationGuide.graphqlOptimization.persistedQueries.implementationTitle', contentKey: 'docs.optimizationGuide.graphqlOptimization.persistedQueries.implementationContent' },
-        ]},
-    ]},
-    { id: 'backend-logic-optimization', titleKey: 'docs.optimizationGuide.backendLogicOptimization.title', contentKey: 'docs.optimizationGuide.backendLogicOptimization.intro', subSections: [
-        { id: 'backend-tools', titleKey: 'docs.optimizationGuide.backendLogicOptimization.toolsTitle', contentKey: 'docs.optimizationGuide.backendLogicOptimization.toolsContent' },
-        { id: 'backend-when', titleKey: 'docs.optimizationGuide.backendLogicOptimization.whenTitle', contentKey: 'docs.optimizationGuide.backendLogicOptimization.whenContent' },
-        { id: 'backend-process', titleKey: 'docs.optimizationGuide.backendLogicOptimization.processTitle', contentKey: 'docs.optimizationGuide.backendLogicOptimization.processContent' },
-        { id: 'backend-recommendations', titleKey: 'docs.optimizationGuide.backendLogicOptimization.recommendationsTitle', contentKey: 'docs.optimizationGuide.backendLogicOptimization.recommendationsContent' },
-    ]},
-    { id: 'caching', titleKey: 'docs.optimizationGuide.caching.title', contentKey: 'docs.optimizationGuide.caching.intro', subSections: [
-        { id: 'caching-library', titleKey: 'docs.optimizationGuide.caching.libraryTitle', contentKey: 'docs.optimizationGuide.caching.libraryContent' },
-        { id: 'caching-pattern', titleKey: 'docs.optimizationGuide.caching.patternTitle', contentKey: 'docs.optimizationGuide.caching.patternContent' },
-        { id: 'caching-application-areas', titleKey: 'docs.optimizationGuide.caching.applicationAreasTitle', contentKey: 'docs.optimizationGuide.caching.applicationAreasContent' },
-        { id: 'caching-implementation', titleKey: 'docs.optimizationGuide.caching.implementationTitle', contentKey: 'docs.optimizationGuide.caching.implementationContent' },
-        { id: 'caching-invalidation', titleKey: 'docs.optimizationGuide.caching.invalidationTitle', contentKey: 'docs.optimizationGuide.caching.invalidationContent' },
-    ]},
-    { id: 'async-processing', titleKey: 'docs.optimizationGuide.asyncProcessing.title', contentKey: 'docs.optimizationGuide.asyncProcessing.intro', subSections: [
-        { id: 'async-library', titleKey: 'docs.optimizationGuide.asyncProcessing.libraryTitle', contentKey: 'docs.optimizationGuide.asyncProcessing.libraryContent' },
-        { id: 'async-why', titleKey: 'docs.optimizationGuide.asyncProcessing.whyTitle', contentKey: 'docs.optimizationGuide.asyncProcessing.whyContent' },
-        { id: 'async-application-areas', titleKey: 'docs.optimizationGuide.asyncProcessing.applicationAreasTitle', listKey: 'docs.optimizationGuide.asyncProcessing.applicationAreasContent' },
-        { id: 'async-pattern', titleKey: 'docs.optimizationGuide.asyncProcessing.patternTitle', contentKey: 'docs.optimizationGuide.asyncProcessing.patternContent' },
-        { id: 'async-partitioning', titleKey: 'docs.optimizationGuide.asyncProcessing.partitioningTitle', contentKey: 'docs.optimizationGuide.asyncProcessing.partitioningContent' },
-        { id: 'async-monitoring', titleKey: 'docs.optimizationGuide.asyncProcessing.monitoringTitle', contentKey: 'docs.optimizationGuide.asyncProcessing.monitoringContent' },
-    ]},
-    { id: 'push-notifications-optimization', titleKey: 'docs.optimizationGuide.pushNotificationsOptimization.title', contentKey: 'docs.optimizationGuide.pushNotificationsOptimization.intro', subSections: [
-        { id: 'push-platform', titleKey: 'docs.optimizationGuide.pushNotificationsOptimization.platformTitle', contentKey: 'docs.optimizationGuide.pushNotificationsOptimization.platformContent' },
-        { id: 'push-techniques', titleKey: 'docs.optimizationGuide.pushNotificationsOptimization.techniquesTitle', listKey: 'docs.optimizationGuide.pushNotificationsOptimization.techniquesContent' },
-    ]},
-    { id: 'client-api-db-interaction', titleKey: 'docs.optimizationGuide.clientApiDbInteraction.title', contentKey: 'docs.optimizationGuide.clientApiDbInteraction.intro', subSections: [
-        { id: 'client-level', titleKey: 'docs.optimizationGuide.clientApiDbInteraction.clientLevelTitle', contentKey: 'docs.optimizationGuide.clientApiDbInteraction.clientLevelContent' },
-        { id: 'network-level', titleKey: 'docs.optimizationGuide.clientApiDbInteraction.networkLevelTitle', contentKey: 'docs.optimizationGuide.clientApiDbInteraction.networkLevelContent' },
-        { id: 'backend-level', titleKey: 'docs.optimizationGuide.clientApiDbInteraction.backendLevelTitle', contentKey: 'docs.optimizationGuide.clientApiDbInteraction.backendLevelContent' },
-    ]},
-    { id: 'authentication-optimization', titleKey: 'docs.optimizationGuide.authenticationOptimization.title', contentKey: 'docs.optimizationGuide.authenticationOptimization.intro', subSections: [
-        { id: 'stateless-jwt', titleKey: 'docs.optimizationGuide.authenticationOptimization.statelessJwtTitle', contentKey: 'docs.optimizationGuide.authenticationOptimization.statelessJwtContent' },
-        { id: 'rate-limiting', titleKey: 'docs.optimizationGuide.authenticationOptimization.rateLimitingTitle', contentKey: 'docs.optimizationGuide.authenticationOptimization.rateLimitingContent' },
-        { id: 'secure-headers', titleKey: 'docs.optimizationGuide.authenticationOptimization.secureHeadersTitle', contentKey: 'docs.optimizationGuide.authenticationOptimization.secureHeadersContent' },
-    ]},
-    { id: 'chat-websocket-optimization', titleKey: 'docs.optimizationGuide.chatWebSocketOptimization.title', contentKey: 'docs.optimizationGuide.chatWebSocketOptimization.intro', subSections: [
-        { id: 'chat-library', titleKey: 'docs.optimizationGuide.chatWebSocketOptimization.libraryTitle', contentKey: 'docs.optimizationGuide.chatWebSocketOptimization.libraryContent' },
-        { id: 'chat-techniques', titleKey: 'docs.optimizationGuide.chatWebSocketOptimization.techniquesTitle', listKey: 'docs.optimizationGuide.chatWebSocketOptimization.techniquesContent' },
-    ]},
-    { id: 'animations-optimization', titleKey: 'docs.optimizationGuide.animationsOptimization.title', contentKey: 'docs.optimizationGuide.animationsOptimization.intro', subSections: [
-        { id: 'mobile-desktop-animations', titleKey: 'docs.optimizationGuide.animationsOptimization.mobileDesktopTitle', contentKey: 'docs.optimizationGuide.animationsOptimization.mobileDesktopContent' },
-        { id: 'web-animations', titleKey: 'docs.optimizationGuide.animationsOptimization.webTitle', contentKey: 'docs.optimizationGuide.animationsOptimization.webContent' },
-        { id: 'doc-design-animations', titleKey: 'docs.optimizationGuide.animationsOptimization.docDesignTitle', contentKey: 'docs.optimizationGuide.animationsOptimization.docDesignContent' },
-    ]},
-    { id: 'monitoring', titleKey: 'docs.optimizationGuide.monitoring.title', contentKey: 'docs.optimizationGuide.monitoring.intro', subSections: [
-        { id: 'monitoring-tools', titleKey: 'docs.optimizationGuide.monitoring.toolsTitle', contentKey: 'docs.optimizationGuide.monitoring.toolsContent' },
-        { id: 'monitoring-when', titleKey: 'docs.optimizationGuide.monitoring.whenTitle', contentKey: 'docs.optimizationGuide.monitoring.whenContent' },
-        { id: 'monitoring-implementation', titleKey: 'docs.optimizationGuide.monitoring.implementationTitle', contentKey: 'docs.optimizationGuide.monitoring.implementationContent' },
-        { id: 'monitoring-principle', titleKey: 'docs.optimizationGuide.monitoring.principleTitle', contentKey: 'docs.optimizationGuide.monitoring.principleContent' },
-    ]},
-    { id: 'ci-cd-optimization', titleKey: 'docs.optimizationGuide.ciCdOptimization.title', contentKey: 'docs.optimizationGuide.ciCdOptimization.intro', subSections: [
-        { id: 'ci-cd-tools', titleKey: 'docs.optimizationGuide.ciCdOptimization.toolsTitle', contentKey: 'docs.optimizationGuide.ciCdOptimization.toolsContent' },
-        { id: 'ci-cd-techniques', titleKey: 'docs.optimizationGuide.ciCdOptimization.techniquesTitle', listKey: 'docs.optimizationGuide.ciCdOptimization.techniquesContent' },
-    ]},
-    { id: 'frontend-optimization', titleKey: 'docs.optimizationGuide.frontendOptimization.title', contentKey: 'docs.optimizationGuide.frontendOptimization.intro', subSections: [
-        { id: 'web-techniques', titleKey: 'docs.optimizationGuide.frontendOptimization.webTechniquesTitle', listKey: 'docs.optimizationGuide.frontendOptimization.webTechniquesContent' },
-        { id: 'react-native-techniques', titleKey: 'docs.optimizationGuide.frontendOptimization.reactNativeTechniquesTitle', listKey: 'docs.optimizationGuide.frontendOptimization.reactNativeTechniquesContent' },
-        { id: 'general-techniques', titleKey: 'docs.optimizationGuide.frontendOptimization.generalTechniquesTitle', listKey: 'docs.optimizationGuide.frontendOptimization.generalTechniquesContent' },
-    ]},
-    { id: 'db-scaling', titleKey: 'docs.optimizationGuide.dbScaling.title', contentKey: 'docs.optimizationGuide.dbScaling.intro', subSections: [
-        { id: 'replication', titleKey: 'docs.optimizationGuide.dbScaling.replicationTitle', contentKey: 'docs.optimizationGuide.dbScaling.replicationContent' },
-        { id: 'sharding', titleKey: 'docs.optimizationGuide.dbScaling.shardingTitle', contentKey: 'docs.optimizationGuide.dbScaling.shardingContent' },
-        { id: 'when-to-apply', titleKey: 'docs.optimizationGuide.dbScaling.whenToApplyTitle', contentKey: 'docs.optimizationGuide.dbScaling.whenToApplyContent' },
-    ]},
-    { id: 'notes', titleKey: 'docs.optimizationGuide.notes.title', subSections: [
-        { id: 'prioritization', titleKey: 'docs.optimizationGuide.notes.prioritizationTitle', contentKey: 'docs.optimizationGuide.notes.prioritizationContent' },
-        { id: 'automation', titleKey: 'docs.optimizationGuide.notes.automationTitle', contentKey: 'docs.optimizationGuide.notes.automationContent' },
-        { id: 'documentation-notes', titleKey: 'docs.optimizationGuide.notes.documentationNotesTitle', contentKey: 'docs.optimizationGuide.notes.documentationNotesContent' },
-        { id: 'culture', titleKey: 'docs.optimizationGuide.notes.cultureTitle', contentKey: 'docs.optimizationGuide.notes.cultureContent' },
-    ]},
-  ];
-
   const integrationsGuideSections = [
     { id: 'integrations-intro', titleKey: 'docs.integrationsGuide.introduction.title', contentKey: 'docs.integrationsGuide.introduction.description', subSections: [
         { id: 'integrations-intro-principles', titleKey: 'docs.integrationsGuide.introduction.principlesTitle', listKey: 'docs.integrationsGuide.introduction.principles' },
@@ -452,11 +256,11 @@ const Docs: React.FC = () => {
     { id: 'integrations-overview', titleKey: 'docs.integrationsGuide.overview.title', tableKey: 'docs.integrationsGuide.overview.table' },
     { id: 'neon-integration', titleKey: 'docs.integrationsGuide.neonIntegration.title', subSections: [
         { id: 'neon-general-info', titleKey: 'docs.integrationsGuide.neonIntegration.generalInfo.title', contentKey: 'docs.integrationsGuide.neonIntegration.generalInfo.description', listKey: 'docs.integrationsGuide.neonIntegration.generalInfo.advantages', additionalContentKeys: ['docs.integrationsGuide.neonIntegration.generalInfo.role'] },
-        { id: 'neon-configuration', titleKey: 'docs.integrationsGuide.neonIntegration.configuration.title', listKey: 'docs.integrationsGuide.neonIntegration.configuration.steps', codeExampleKey: 'docs.integrationsGuide.neonIntegration.configuration.envExample', additionalContentKeys: ['docs.integrationsGuide.neonIntegration.configuration.note1'], codeExampleKey2: 'docs.integrationsGuide.neonIntegration.configuration.backendCode' },
+        { id: 'neon-configuration', titleKey: 'docs.integrationsGuide.neonIntegration.configuration.title', listKey: 'docs.integrationsGuide.neonIntegration.configuration.steps', codeExampleKey: 'docs.integrationsGuide.neonIntegration.configuration.envExample', additionalContentKeys: ['docs.integrationsGuide.neonIntegration.configuration.note1'], codeExampleKey2: 'docs.integrationsGuide.neonIntegration.configuration.backendCode' }, // Added codeExampleKey2
         { id: 'neon-interaction-scenarios', titleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.title', subSections: [
-            { id: 'neon-scenario-signup', titleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.signup.title', contentKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.signup.interaction', codeExampleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.signup.code', additionalContentKeys: ['docs.integrationsGuide.neonIntegration.interactionScenarios.signup.result'] },
-            { id: 'neon-scenario-get-chats', titleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.getChats.title', contentKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.getChats.interaction', codeExampleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.getChats.code' },
-            { id: 'neon-scenario-save-message', titleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.saveMessage.title', contentKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.saveMessage.interaction', codeExampleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.saveMessage.code' },
+            { id: 'neon-scenario-signup', titleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.signup.title', contentKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.signup.interaction', codeExampleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.signup.code', additionalContentKeys: ['docs.integrationsGuide.neonIntegration.interactionScenarios.signup.result'] }, // Changed contentKey to codeExampleKey
+            { id: 'neon-scenario-get-chats', titleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.getChats.title', contentKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.getChats.interaction', codeExampleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.getChats.code' }, // Changed contentKey to codeExampleKey
+            { id: 'neon-scenario-save-message', titleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.saveMessage.title', contentKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.saveMessage.interaction', codeExampleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.saveMessage.code' }, // Changed contentKey to codeExampleKey
         ]},
         { id: 'neon-error-handling', titleKey: 'docs.integrationsGuide.neonIntegration.errorHandling.title', subSections: [
             { id: 'neon-error-connection', titleKey: 'docs.integrationsGuide.neonIntegration.errorHandling.connectionError.title', contentKey: 'docs.integrationsGuide.neonIntegration.errorHandling.connectionError.cause', additionalContentKeys: ['docs.integrationsGuide.neonIntegration.errorHandling.connectionError.solution'] },
@@ -466,11 +270,11 @@ const Docs: React.FC = () => {
     ]},
     { id: 'r2-integration', titleKey: 'docs.integrationsGuide.r2Integration.title', subSections: [
         { id: 'r2-general-info', titleKey: 'docs.integrationsGuide.r2Integration.generalInfo.title', contentKey: 'docs.integrationsGuide.r2Integration.generalInfo.description', listKey: 'docs.integrationsGuide.r2Integration.generalInfo.advantages', additionalContentKeys: ['docs.integrationsGuide.r2Integration.generalInfo.role'] },
-        { id: 'r2-configuration', titleKey: 'docs.integrationsGuide.r2Integration.configuration.title', listKey: 'docs.integrationsGuide.r2Integration.configuration.steps', codeExampleKey: 'docs.integrationsGuide.r2Integration.configuration.envExample', additionalContentKeys: ['docs.integrationsGuide.r2Integration.configuration.note'], codeExampleKey2: 'docs.integrationsGuide.r2Integration.configuration.backendCode' },
+        { id: 'r2-configuration', titleKey: 'docs.integrationsGuide.r2Integration.configuration.title', listKey: 'docs.integrationsGuide.r2Integration.configuration.steps', codeExampleKey: 'docs.integrationsGuide.r2Integration.configuration.envExample', additionalContentKeys: ['docs.integrationsGuide.r2Integration.configuration.note'], codeExampleKey2: 'docs.integrationsGuide.r2Integration.configuration.backendCode' }, // Added codeExampleKey2
         { id: 'r2-interaction-scenarios', titleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.title', subSections: [
-            { id: 'r2-scenario-upload', titleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.uploadFile.title', contentKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.uploadFile.interaction', codeExampleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.uploadFile.code', additionalContentKeys: ['docs.integrationsGuide.r2Integration.interactionScenarios.uploadFile.result'] },
-            { id: 'r2-scenario-sensitive-data', titleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.sensitiveData.title', contentKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.sensitiveData.interaction', codeExampleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.sensitiveData.code', additionalContentKeys: ['docs.integrationsGuide.r2Integration.interactionScenarios.sensitiveData.result'] },
-            { id: 'r2-scenario-get-file', titleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.getFile.title', contentKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.getFile.interaction', codeExampleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.getFile.code' },
+            { id: 'r2-scenario-upload', titleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.uploadFile.title', contentKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.uploadFile.interaction', codeExampleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.uploadFile.code', additionalContentKeys: ['docs.integrationsGuide.r2Integration.interactionScenarios.uploadFile.result'] }, // Changed contentKey to codeExampleKey
+            { id: 'r2-scenario-sensitive-data', titleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.sensitiveData.title', contentKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.sensitiveData.interaction', codeExampleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.sensitiveData.code', additionalContentKeys: ['docs.integrationsGuide.r2Integration.interactionScenarios.sensitiveData.result'] }, // Changed contentKey to codeExampleKey
+            { id: 'r2-scenario-get-file', titleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.getFile.title', contentKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.getFile.interaction', codeExampleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.getFile.code' }, // Changed contentKey to codeExampleKey
         ]},
         { id: 'r2-error-handling', titleKey: 'docs.integrationsGuide.r2Integration.errorHandling.title', subSections: [
             { id: 'r2-error-forbidden', titleKey: 'docs.integrationsGuide.r2Integration.errorHandling.forbidden.title', contentKey: 'docs.integrationsGuide.r2Integration.errorHandling.forbidden.cause', additionalContentKeys: ['docs.integrationsGuide.r2Integration.errorHandling.forbidden.solution'] },
@@ -533,7 +337,7 @@ const Docs: React.FC = () => {
         { id: 'message-queue', titleKey: 'docs.technicalDocs.architecture.messageQueue.title', contentKey: 'docs.technicalDocs.architecture.messageQueue.content' },
         { id: 'workers', titleKey: 'docs.technicalDocs.architecture.workers.title', listKey: 'docs.technicalDocs.architecture.workers.list' },
         { id: 'external-services', titleKey: 'docs.technicalDocs.architecture.externalServices.title', listKey: 'docs.technicalDocs.architecture.externalServices.list' },
-        { id: 'mermaid-diagram', titleKey: 'docs.technicalDocs.architecture.mermaidDiagram.title', codeExampleKey: 'docs.technicalDocs.architecture.mermaidDiagram.code' },
+        { id: 'mermaid-diagram', titleKey: 'docs.technicalDocs.architecture.mermaidDiagram.title', codeExampleKey: 'docs.technicalDocs.architecture.mermaidDiagram.code' }, // Changed contentKey to codeExampleKey
       ],
     },
     {
@@ -672,11 +476,11 @@ const Docs: React.FC = () => {
           id: 'data-types',
           titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.title',
           subSections: [
-            { id: 'user-type', titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.user.title', codeExampleKey: 'docs.apiSpec.graphqlSchema.dataTypes.user.code' },
-            { id: 'chat-type', titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.chat.title', codeExampleKey: 'docs.apiSpec.graphqlSchema.dataTypes.chat.code' },
-            { id: 'message-type', titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.message.title', codeExampleKey: 'docs.apiSpec.graphqlSchema.dataTypes.message.code' },
-            { id: 'pagination-input', titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.paginationInput.title', codeExampleKey: 'docs.apiSpec.graphqlSchema.dataTypes.paginationInput.code' },
-            { id: 'auth-payload', titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.authPayload.title', codeExampleKey: 'docs.apiSpec.graphqlSchema.dataTypes.authPayload.code' },
+            { id: 'user-type', titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.user.title', codeExampleKey: 'docs.apiSpec.graphqlSchema.dataTypes.user.code' }, // Changed contentKey to codeExampleKey
+            { id: 'chat-type', titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.chat.title', codeExampleKey: 'docs.apiSpec.graphqlSchema.dataTypes.chat.code' }, // Changed contentKey to codeExampleKey
+            { id: 'message-type', titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.message.title', codeExampleKey: 'docs.apiSpec.graphqlSchema.dataTypes.message.code' }, // Changed contentKey to codeExampleKey
+            { id: 'pagination-input', titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.paginationInput.title', codeExampleKey: 'docs.apiSpec.graphqlSchema.dataTypes.paginationInput.code' }, // Changed contentKey to codeExampleKey
+            { id: 'auth-payload', titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.authPayload.title', codeExampleKey: 'docs.apiSpec.graphqlSchema.dataTypes.authPayload.code' }, // Changed contentKey to codeExampleKey
             { id: 'datetime-json', titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.dateTimeJson.title', contentKey: 'docs.apiSpec.graphqlSchema.dataTypes.dateTimeJson.content' },
           ],
         },
@@ -736,7 +540,7 @@ const Docs: React.FC = () => {
       titleKey: 'docs.apiSpec.errorHandling.title',
       contentKey: 'docs.apiSpec.errorHandling.description',
       subSections: [
-        { id: 'error-format', titleKey: 'docs.apiSpec.errorHandling.errorFormatTitle', codeExampleKey: 'docs.apiSpec.errorHandling.errorFormatCode' },
+        { id: 'error-format', titleKey: 'docs.apiSpec.errorHandling.errorFormatTitle', codeExampleKey: 'docs.apiSpec.errorHandling.errorFormatCode' }, // Changed contentKey to codeExampleKey
         { id: 'key-error-codes', titleKey: 'docs.apiSpec.errorHandling.keyErrorCodesTitle', listKey: 'docs.apiSpec.errorHandling.keyErrorCodesList' },
         { id: 'localization-errors', titleKey: 'docs.apiSpec.errorHandling.localizationErrorsTitle', contentKey: 'docs.apiSpec.errorHandling.localizationErrorsContent' },
       ],
@@ -837,7 +641,8 @@ const Docs: React.FC = () => {
       titleKey: 'docs.uiDocs.notes.title',
       listKey: 'docs.uiDocs.notes.notesList',
     },
-  ]
+  ];
+
 
   const docsConfig = [
     {
@@ -902,23 +707,27 @@ const Docs: React.FC = () => {
     },
   ];
 
+
   const activeDoc = docsConfig.find((doc: DocConfigItem) => doc.id === activeDocId);
   const sectionsToRender = activeDoc ? activeDoc.sections : [];
 
   const renderSectionContent = (section: DocSection) => {
-    // Only call t(contentKey) if contentKey is defined
+    // Get translated content for each potential key
     const content = section.contentKey ? t(section.contentKey) : null;
     const list = section.listKey ? t(section.listKey) : null;
     const outro = section.outroKey ? t(section.outroKey) : null;
     const table = section.tableKey ? t(section.tableKey) : null;
-    const codeExample = section.codeExampleKey ? t(section.codeExampleKey) : null; // Handle code examples
+    const codeExample = section.codeExampleKey ? t(section.codeExampleKey) : null;
+    const codeExample2 = section.codeExampleKey2 ? t(section.codeExampleKey2) : null; // Get second code example
     const additionalContent = section.additionalContentKeys ? section.additionalContentKeys.map((key: string) => t(key)) : [];
 
     return (
       <>
-        {content && typeof content === 'string' && !content.startsWith('<table>') && !content.includes('```') && (
+        {/* Render main content string */}
+        {content && typeof content === 'string' && (
             <p className="docs-content-paragraph" dangerouslySetInnerHTML={{ __html: content }} />
         )}
+         {/* Handle specific case for color_application which is an array of objects */}
         {content && typeof content === 'object' && Array.isArray(content) && section.contentKey === 'docs.design.section2.color_application' && (
             (content as ColorApplicationItem[]).map((item: ColorApplicationItem, idx: number) => (
                 <div key={idx} className="mb-4">
@@ -931,20 +740,18 @@ const Docs: React.FC = () => {
                 </div>
             ))
         )}
-        {content && typeof content === 'string' && (content.startsWith('<table>') || content.includes('```')) && section.contentKey && (
-            <RenderContent contentKey={section.contentKey} />
-        )}
-        {codeExample && section.codeExampleKey && (
-            <RenderContent contentKey={section.codeExampleKey} />
-        )}
+
+        {/* Render list content */}
         {list && Array.isArray(list) && (
-          <ul className={`docs-content-list ${section.listKey === 'docs.general.howWeBuild.steps' || section.listKey === 'docs.general.gettingStarted.steps' || section.listKey === 'docs.localizationGuide.section6.testing_scenarios' || section.listKey === 'docs.localizationGuide.section10.scenarios_points' ? 'list-decimal' : ''}`}>
+          <ul className={`docs-content-list ${section.listKey === 'docs.general.howWeBuild.steps' || section.listKey === 'docs.general.gettingStarted.steps' || section.listKey === 'docs.localizationGuide.section6.testing_scenarios' || section.listKey === 'docs.localizationGuide.section10.scenarios_points' || section.listKey === 'docs.devGuide.devProcess.envSetup.steps' ? 'list-decimal' : ''}`}> {/* Added devGuide steps */}
             {(list as string[]).map((item, index) => (
               <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
             ))}
           </ul>
         )}
-        {table && Array.isArray(table) && (
+
+        {/* Render table content */}
+        {table && Array.isArray(table) && table.length > 0 && Array.isArray(table[0]) && (
             <div className="docs-table-container">
                 <table className="docs-table">
                     <thead>
@@ -966,9 +773,34 @@ const Docs: React.FC = () => {
                 </table>
             </div>
         )}
-        {outro && <p className="docs-content-paragraph" dangerouslySetInnerHTML={{ __html: outro }} />}
+
+        {/* Render code example 1 */}
+        {codeExample && typeof codeExample === 'string' && (
+             <pre className="docs-code-block">
+                 {/* Extract language from the first line if needed, or assume a default */}
+                 {/* For simplicity, just render the raw string with HTML */}
+                 <code dangerouslySetInnerHTML={{ __html: codeExample }} />
+             </pre>
+        )}
+
+         {/* Render code example 2 */}
+         {codeExample2 && typeof codeExample2 === 'string' && (
+             <pre className="docs-code-block">
+                 <code dangerouslySetInnerHTML={{ __html: codeExample2 }} />
+             </pre>
+         )}
+
+
+        {/* Render outro string */}
+        {outro && typeof outro === 'string' && (
+            <p className="docs-content-paragraph" dangerouslySetInnerHTML={{ __html: outro }} />
+        )}
+
+        {/* Render additional content strings */}
         {additionalContent.map((item: string, index: number) => (
-            <p key={`add-content-${index}`} className="docs-content-paragraph" dangerouslySetInnerHTML={{ __html: item }} />
+             item && typeof item === 'string' && ( // Ensure item is a non-empty string
+                <p key={`add-content-${index}`} className="docs-content-paragraph" dangerouslySetInnerHTML={{ __html: item }} />
+             )
         ))}
       </>
     );
