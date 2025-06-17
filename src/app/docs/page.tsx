@@ -33,7 +33,7 @@ interface DocConfigItem {
 }
 
 const Docs: React.FC = () => {
-  const { t, isLoading, languages } = useLanguage(); // Get isLoading from the hook
+  const { t, isLoading } = useLanguage(); // Get isLoading from the hook
   const [activeDocId, setActiveDocId] = useState('design_system_docs'); // 'general_docs', 'design_system_docs', 'localization_guide_docs', or 'user_guide_docs'
 
 
