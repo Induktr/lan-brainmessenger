@@ -1,318 +1,502 @@
 {
   "header": {
-    "features": "Features",
-    "news": "News",
-    "faq": "FAQ",
-    "faqLink": "FAQ",
-    "docs": "Docs",
-    "updates": "Updates",
-    "selectLanguage": "Select language",
-    "changeLanguageTooltip": "Change language",
-    "lightMode": "Light Mode",
-    "darkMode": "Dark Mode",
-    "openMenu": "Open menu",
-    "closeMenu": "Close menu",
-    "settings": "Settings",
-    "signOut": "Sign Out",
-    "deleteAccount": "Delete Account",
-    "deleteAccountConfirmTitle": "Confirm Account Deletion",
-    "deleteAccountConfirmMessage": "Are you sure you want to delete your account? This action cannot be undone.",
-    "cancel": "Cancel",
-    "confirmDelete": "Confirm Deletion",
-    "signIn": "Sign In"
-  },
-  "hero": {
-    "title": "Welcome to BrainMessenger",
-    "subtitle": "Your Smart Communication Platform",
-    "getStarted": "Get Started",
-    "learnMore": "Learn More",
-    "connectSmarterTitle": "Connect Smarter with BrainMessenger",
-    "connectSmarterSubtitle": "Experience the next generation of messaging with advanced features, unparalleled security, and seamless communication across all your devices.",
-    "downloadButton": "Download",
-    "downloadAndroid": "Download for Android"
-  },
-  "features": {
-    "featuresTitle": "Key Features",
-    "featuresSubtitle": "Discover what makes us unique",
-    "secureMessaging": "Secure Messaging",
-    "secureMessagingDesc": "End-to-end encryption for your privacy",
-    "smartAssistant": "Smart Assistant",
-    "smartAssistantDesc": "AI-powered help at your fingertips",
-    "crossPlatform": "Cross Platform",
-    "crossPlatformDesc": "Use on any device, anywhere",
-    "groupChats": "Group Chats",
-    "groupChatsDesc": "Connect with multiple people at once",
-    "privacyFirst": "Privacy First",
-    "privacyFirstDesc": "Your data is yours, always"
-  },
-  "news": {
-    "latestNews": "Latest news",
-    "readMore": "Read More",
-    "previousButton": "Previous news item",
-    "nextButton": "Next news item",
-    "pauseAutoplay": "Pause autoplay",
-    "playAutoplay": "Play autoplay"
-  },
-  "roadmap": {
-    "title": {
-      "section": "Roadmap",
-      "projectLaunch": "Project Launch",
-      "enhancedSecurity": "Enhanced Security",
-      "advancedCollaboration": "Advanced Collaboration",
-      "mobileEnhancement": "Mobile Enhancement",
-      "aiIntegration": "AI Integration",
-      "globalExpansion": "Global Expansion",
-      "enterpriseSolutions": "Enterprise Solutions",
-      "futureInnovation": "Future Innovation"
+      "features": "Features",
+      "news": "News",
+      "faq": "FAQ",
+      "faqLink": "FAQ",
+      "docs": "Docs",
+      "updates": "Updates",
+      "selectLanguage": "Select Language",
+      "changeLanguageTooltip": "Change Language",
+      "lightMode": "Light Mode",
+      "darkMode": "Dark Mode",
+      "openMenu": "Open Menu",
+      "closeMenu": "Close Menu",
+      "settings": "Settings",
+      "signOut": "Sign Out",
+      "deleteAccount": "Delete Account",
+      "deleteAccountConfirmTitle": "Confirm Account Deletion",
+      "deleteAccountConfirmMessage": "Are you sure you want to delete your account? This action cannot be undone.",
+      "cancel": "Cancel",
+      "confirmDelete": "Confirm Delete",
+      "signIn": "Sign In"
     },
-    "subtitle": {
-      "section": "Our Future Vision"
+    "common": {
+      "backToHome": "Back to Home"
     },
-    "status": {
-      "completed": "Completed",
-      "inProgress": "In Progress",
-      "upcoming": "Upcoming"
-    },
-    "description": {
-      "projectLaunch": "Initial launch of BrainMessenger with core features.",
-      "enhancedSecurity": "Strengthening security protocols and features.",
-      "advancedCollaboration": "Introducing advanced collaboration tools.",
-      "mobileEnhancement": "Enhancing mobile application experience.",
-      "aiIntegration": "Integrating AI-powered features for smarter communication.",
-      "globalExpansion": "Expanding BrainMessenger's reach globally.",
-      "enterpriseSolutions": "Developing solutions for enterprise clients.",
-      "futureInnovation": "Exploring and implementing future technologies."
+    "hero": {
+      "title": "Welcome to BrainMessenger",
+      "subtitle": "Your intelligent communication platform",
+      "getStarted": "Get Started",
+      "learnMore": "Learn More",
+      "connectSmarterTitle": "Connect Smarter with BrainMessenger",
+      "connectSmarterSubtitle": "Experience the next generation of messaging with advanced features, unparalleled security, and seamless connectivity across all your devices.",
+      "downloadButton": "Download",
+      "downloadAndroid": "Download for Android"
     },
     "features": {
-      "secureMessagingInfrastructure": "Secure messaging infrastructure",
-      "crossPlatformCompatibility": "Cross-platform compatibility",
-      "basicUserInterface": "Basic user interface",
-      "endToEndEncryption": "End-to-end encryption",
-      "twoFactorAuthentication": "Two-factor authentication",
-      "fileSharingCapabilities": "File sharing capabilities",
-      "teamWorkspaces": "Team workspaces",
-      "realTimeCollaboration": "Real-time collaboration",
-      "advancedFileSharing": "Advanced file sharing",
-      "nativeMobileApps": "Native mobile apps",
-      "offlineFunctionality": "Offline functionality",
-      "pushNotifications": "Push notifications",
-      "smartMessageCategorization": "Smart message categorization",
-      "automatedResponses": "Automated responses",
-      "contentAnalysis": "Content analysis",
-      "multiLanguageSupport": "Multi-language support",
-      "regionalDataCenters": "Regional data centers",
-      "culturalAdaptations": "Cultural adaptations",
-      "advancedAdminControls": "Advanced admin controls",
-      "customIntegrations": "Custom integrations",
-      "enterpriseSupport": "Enterprise support",
-      "emergingTechnologies": "Emerging technologies",
-      "communityDrivenFeatures": "Community-driven features",
-      "platformExpansion": "Platform expansion"
+      "featuresTitle": "Key Features",
+      "featuresSubtitle": "Discover what makes us unique",
+      "secureMessaging": "Secure Messaging",
+      "secureMessagingDesc": "End-to-end encryption for your privacy",
+      "smartAssistant": "Smart Assistant",
+      "smartAssistantDesc": "AI-powered assistance at your fingertips",
+      "crossPlatform": "Cross-Platform",
+      "crossPlatformDesc": "Use on any device, anywhere",
+      "groupChats": "Group Chats",
+      "groupChatsDesc": "Connect with multiple people at once",
+      "privacyFirst": "Privacy First",
+      "privacyFirstDesc": "Your data is yours, always"
     },
-    "date": {
-      "jan2024": "January 2024",
-      "mar2024": "March 2024",
-      "jun2024": "June 2024",
-      "sep2024": "September 2024",
-      "nov2024": "November 2024",
-      "jan2025": "January 2025",
-      "mar2025": "March 2025",
-      "jun2025": "June 2025",
-      "beyond2025": "Beyond 2025"
-    }
-  },
-  "faq": {
-    "title": "Frequently Asked Questions",
-    "subtitle": "Find answers to common questions about BrainMessenger",
-    "searchAlt": "Search icon",
-    "searchPlaceholder": "Search questions...",
-    "allQuestions": "All Questions",
-    "noResults": "No questions found matching your search.",
-    "categories": {
-      "general": "General",
-      "technical": "Technical",
-      "security": "Security",
-      "pricing": "Pricing",
-      "generalProject": "General Project Questions",
-      "technicalQuestions": "Technical Questions",
-      "developmentProcesses": "Development Processes",
-      "statusRoadmapFuture": "Status, Roadmap, and Future",
-      "challengesOpportunitiesLimitations": "Challenges, Opportunities, and Limitations",
-      "learnMoreContribute": "Learn More and Contribute"
+    "news": {
+      "latestNews": "Latest News",
+      "readMore": "Read More",
+      "previousButton": "Previous news",
+      "nextButton": "Next news",
+      "pauseAutoplay": "Pause autoplay",
+      "playAutoplay": "Play autoplay"
     },
-    "questionsData": {
-      "generalProject": {
-        "q1": {
-          "question": "What is the main idea behind BrainMessenger? What makes it special?",
-          "answer": "BrainMessenger is not just another messenger. Our main idea is to create a Digital ASSET (Principle 10) that simplifies complex interaction (Margulan Seisembayev's principle) and serves as a reliable tool for effective communication. We are focused on quality (Principle 3), security (Principle 5), and reliability (Principle 3), not just a set of features. We are building a SYSTEM (Principle 9) that reflects our principles and is constantly improving."
-        },
-        "q2": {
-          "question": "What key principles underpin the development of BrainMessenger?",
-          "answer": "The project is based on a set of 15 key principles (see My Key Principles), inspired by Margulan Seisembayev and IT industry best practices. The most important ones influencing code and processes are: Continuous Learning (Principle 1), Value Creation (Principle 2), Quality > Quantity (Principle 3), System and Optimization (Kaizen, Principle 9), Long-Term Thinking (Principle 8), Pragmatism and Realism (Principle 12), Persistence (Principle 13), Bias for Action (Principle 15). We strive for these principles to permeate all aspects of the project."
-        },
-        "q3": {
-          "question": "Who is behind the project? Is it an open community or a team?",
-          "answer": "Currently, the project is at an early stage and is actively being developed by one person (you), who is the driving force and bears responsibility (Principle 6) for its construction. In the future, it is planned to attract contributors and possibly form a team. The project is open for contributions (see CONTRIBUTING.md)."
-        }
+    "updates": {
+      "item1": {
+        "title": "Update Title 1",
+        "description": "Update Description 1"
       },
-      "technicalQuestions": {
-        "q1": {
-          "question": "Why was this particular technology stack chosen (TypeScript, NestJS, React/RN, PostgreSQL/Neon, GraphQL, Kafka, Redis, Cloudflare R2, etc.)?",
-          "answer": "The choice of stack is based on pragmatism (Principle 12), long-term thinking (Principle 8), and the pursuit of quality (Principle 3) and scalability (NFR-14, NFR-15).\n*   TypeScript: Increases code reliability and maintainability through strong typing.\n*   NestJS: Provides a powerful, modular architecture for the Backend, simplifying the construction of scalable applications.\n*   React/React Native/Next.js: Allow building UI for different platforms from a single codebase (cross-platform) and provide good performance.\n*   PostgreSQL (Neon): A reliable, proven relational database with extensive scaling and optimization capabilities. Neon as a managed service reduces operational overhead (Pragmatism).\n*   Prisma: Chosen as a reliable ORM, providing type safety and built-in protection against SQL injection (Quality, Security).\n*   GraphQL: Allows clients to request only the data they actually need with a single query, optimizing network interaction (especially for mobile clients) and reducing data redundancy compared to REST. GraphQL also simplifies fetching related data (solving N+1 problems with DataLoader).\n*   Kafka: Chosen for reliable asynchronous task processing, which is critical for scalability and fault tolerance.\n*   Redis: High-performance In-memory store for caching, Rate Limiting, and real-time state management.\n*   Cloudflare R2: Object storage with very favorable terms (no egress fees), ideal for storing user files (Pragmatism, ASSET).\n\nThis stack allows laying a solid technical foundation (Principle 8) for future development."
-        },
-        "q2": {
-          "question": "Why is a monolithic architecture used at the start, rather than microservices immediately?",
-          "answer": "Using a monolithic architecture at the start (MVP) is a pragmatic and realistic decision (Principle 12). It allows for rapid development and iteration of basic functionality, minimizing complexity at an early stage when the team is small. Launching the MVP is more important than building an overly complex architecture. Once the MVP will be completed and the project starts to grow, a phased transition to microservices is planned (see Microservice Migration Plan)."
-        },
-        "q3": {
-          "question": "What approaches are used to ensure security?",
-          "answer": "Security is a fundamental aspect (Principle 5) and a priority (see Security Guide).\n*   Data encryption in transit (TLS 1.2+) and at rest (AES for sensitive data, encryption in R2).\n*   Strong password hashing (bcrypt/argon2).\n*   Using Prisma to prevent SQL injection.\n*   Validation of all input data on the Backend.\n*   Two-factor authentication (2FA) via email.\n*   Rate Limiting to protect against brute-force and DDoS attacks.\n*   Regular vulnerability scanning.\n*   Storing secrets in secure locations (Kubernetes Secrets)."
-        },
-        "q4": {
-          "question": "How is real-time functionality implemented (message exchange)?",
-          "answer": "Real-time functionality (message exchange) is implemented using WebSockets. The Backend (NestJS Gateway) manages WebSocket connections, and clients subscribe to chat events. Message delivery occurs via WebSocket. For scaling WebSockets in a microservice architecture, Redis Pub/Sub or Kafka will be used."
-        },
-        "q5": {
-          "question": "Why is GraphQL used instead of REST API?",
-          "answer": "GraphQL allows clients to request only the data they actually need with a single query. This optimizes network interaction (especially for mobile clients) and reduces data redundancy compared to REST. GraphQL also simplifies fetching related data (solving N+1 problems with DataLoader)."
-        },
-        "q6": {
-          "question": "How are large volumes of data and files managed?",
-          "answer": "*   Structured data (messages, users, chats): Stored in PostgreSQL (Neon). Indexes and query optimization (Prisma) are used for fast retrieval. As it grows, table partitioning and database replication are planned.\n*   Unstructured data (files, images): Stored in Cloudflare R2. Asynchronous processing (Kafka) is used for image optimization before uploading. R2 is chosen for scalability and favorable traffic rates."
-        }
+      "item2": {
+        "title": "Update Title 2",
+        "description": "Update Description 2"
       },
-      "developmentProcesses": {
-        "q1": {
-          "question": "What is the approach to project and task management?",
-          "answer": "The project is managed using a planning system (see My Planning System 2025-2026) in Notion. Global goals are decomposed into stages (Roadmap), weekly planning, and a task tracker are used. An important element is the Kaizen Hour (Principle 9) for daily reflection, analyzing bottlenecks, and finding ways to improve."
-        },
-        "q2": {
-          "question": "How is code quality ensured?",
-          "answer": "Code quality is ensured through systematic approaches (Principle 3, 9):\n*   Using TypeScript with strict typing.\n*   Adhering to coding standards (ESLint, Prettier).\n*   Code review of all changes.\n*   Automated testing at different levels (Unit, Integration, E2E).\n*   Continuous Integration (CI) for automatic code and test checks on every commit/PR."
-        },
-        "q3": {
-          "question": "What testing strategy is used?",
-          "answer": "A multi-level testing strategy is used (see Testing Guide), combining manual and automated testing: Unit, Integration, API, E2E, Load, Security, Regression. Tests are integrated into CI/CD. The focus is on verifying key requirements (FRs, NFRs)."
-        },
-        "q4": {
-          "question": "How are errors handled?",
-          "answer": "Errors are handled centrally and uniformly on the Backend (NestJS Exception Filters) and converted to a standard API response format with codes (extensions.code). On the Frontend, errors are processed based on these codes, displaying a clear message to the user and suggesting an action. All errors are thoroughly logged (Winston → ELK) and sent to Sentry for tracking and analysis (see Error Specification, Monitoring Guide)."
-        },
-        "q5": {
-          "question": "How is the project deployed?",
-          "answer": "Deployment is automated through a CI/CD pipeline (GitHub Actions). Docker is used for containerization and Kubernetes for orchestration in the cloud. Infrastructure is described as code (Terraform). The process includes automatic build, testing, image publishing, and Rolling Updates in Kubernetes for zero-downtime deployment (see Deployment Guide)."
-        },
-        "q6": {
-          "question": "How is the system monitored in production?",
-          "answer": "The monitoring system is the eyes and ears of the project (Principle 9, 5). The following are used:\n*   Prometheus for collecting performance and resource metrics.\n*   Grafana for visualizing metrics and dashboards.\n*   Sentry for tracking application errors (Frontend and Backend).\n*   ELK Stack (or Kibana with Winston) for centralized logging and analysis.\n*   Alertmanager for configuring automatic alerts about problems.\nThese tools allow for proactive problem identification and optimization (see Monitoring Guide)."
-        }
+      "item3": {
+        "title": "Update Title 3",
+        "description": "Update Description 3"
       },
-      "statusRoadmapFuture": {
-        "q1": {
-          "question": "What is the current status of the project?",
-          "answer": "The project is in the active development phase of the Minimum Viable Product (MVP). The main technological foundation has been laid, key UI elements and basic security have been implemented. The core messaging, file handling, and group/channel creation are in progress. (See BrainMessenger Project Requirements (MVP) Guide)."
-        },
-        "q2": {
-          "question": "What are the next steps after completing the MVP?",
-          "answer": "After completing the MVP, the next steps include adding advanced functions (audio/video calls, Premium, extended security, full set of animations and localization), further performance optimization, and preparing for scaling. A detailed plan is presented in the BrainMessenger Roadmap (see Roadmap)."
-        },
-        "q3": {
-          "question": "Is a transition to a microservice architecture planned?",
-          "answer": "Yes, the transition to microservices is part of the long-term development strategy (Principle 8). It is planned in stages, starting from Q1 2026, using the Strangler Pattern approach. This will allow components to be scaled independently, increasing fault tolerance and flexibility (see Microservice Migration Plan)."
-        }
+      "item4": {
+        "title": "Update Title 4",
+        "description": "Update Description 4"
       },
-      "challengesOpportunitiesLimitations": {
-        "q1": {
-          "question": "What are the main technical challenges (pitfalls) in the project?",
-          "answer": "*   Implementing reliable real-time functionality (WebSockets): Managing thousands of simultaneous connections, reliable message delivery, managing online/offline status.\n*   Scaling the database with large data volumes: Managing the growth of the messages table (partitioning), optimizing complex queries.\n*   Handling and delivering files: Efficient uploading, image optimization, secure downloading from Cloudflare R2.\n*   Transitioning to microservices: Increased operational complexity, configuring inter-service communication (Kafka, GraphQL Federation), data migration.\n*   Maintaining high quality and performance: Continuous optimization at all levels (Backend, Frontend, Infrastructure) as load and functionality grow."
-        },
-        "q2": {
-          "question": "What opportunities and advantages does the project's architecture and stack provide?",
-          "answer": "*   High scalability: The chosen technologies (NestJS, Kubernetes, Kafka, Redis, Neon, R2) allow the application to be scaled horizontally to support a large number of users.\n*   Reliability and fault tolerance: Using reliable services, asynchronous processing (Kafka), monitoring, and, in the future, microservices increases the system's resilience to failures.\n*   High performance: GraphQL, caching, query optimization, asynchronous processing contribute to the application's fast operation.\n*   Cross-platform compatibility: React Native and Next.js allow creating applications for all major platforms from a single codebase (for UI).\n*   Code quality and maintainability: TypeScript, NestJS, Prisma, coding standards, testing simplify development and reduce the number of defects.\n*   Cost-effectiveness (at the start): Using free/affordable tiers (Neon, R2) and proven open-source solutions.\n*   Rich ecosystem: Using popular technologies with a large community and many ready-made libraries."
-        },
-        "q3": {
-          "question": "What are the project's limitations at the current stage (MVP)?",
-          "answer": "*   Limited set of features compared to the vision (no calls, Premium, enhanced security).\n*   Limited multilingualism and accessibility options (expansion planned).\n*   The architecture is currently monolithic, which imposes limitations on independent scaling of individual parts.\n*   There may be performance limitations under load significantly exceeding the target for MVP (~1000 simultaneous users) before implementing deep optimizations and microservices."
-        }
-      },
-      "learnMoreContribute": {
-        "q1": {
-          "question": "Where can I get more detailed information about the project?",
-          "answer": "More detailed information can be found in our documentation (the link will be added later) and on the project's GitHub page (if the project is open source)."
-        },
-        "q2": {
-          "question": "How can I join the project's development or contribute?",
-          "answer": "We are always happy to welcome new participants! Contact us via the contact form on the website or via GitHub (if the project is open) to discuss possible options for cooperation."
-        },
-        "q3": {
-          "question": "Where can I ask additional questions?",
-          "answer": "Additional questions can be asked via the contact form on the website, in our community (link will be added) or by creating an issue on GitHub (if the project is open)."
-        }
+      "item5": {
+        "title": "Update Title 5",
+        "description": "Update Description 5"
       }
     },
-    "docs": {
-  "design": {
-    "title": "BrainMessenger Design Documentation",
-    "subtitle": "Quality and Value System",
-    "section1": {
-      "title": "1. Introduction: Design as the Foundation of Value",
-      "name": "BrainMessenger Design System",
-      "description": "This design system defines the visual and functional standards for the BrainMessenger interface. Our goal is to create an interface that not simply looks good, but is also <strong>intuitive, efficient, and accessible</strong> (Principle 2: Value Creation), relying on the principles of <strong>quality > quantity</strong> (Principle 3) and <strong>pragmatism</strong> (Principle 12) in choosing solutions.",
-      "goal": "Ensure <strong>consistency, reliability, and a positive user experience</strong> across all platforms (Windows, Android, Web), making BrainMessenger a <strong>useful ASSET</strong> (Principle 10) for users.",
-      "principles_title": "Principles guiding the design:",
-      "principles": [
-        "<strong>Value Creation (Principle 2):</strong> Design must be functional and solve user tasks as conveniently and efficiently as possible.",
-        "<strong>Quality > Quantity (Principle 3):</strong> Focus on the refinement of key elements rather than a multitude of poorly thought-out details. Design must be <strong>reliable</strong> and <strong>well-designed</strong>.",
-        "<strong>Pragmatism and Realism (Principle 12):</strong> Choosing design solutions that are feasible considering technical constraints (e.g., animation optimization).",
-        "<strong>Integrity (Principle 7):</strong> Visual and functional integrity across all platforms.",
-        "<strong>Health as a Foundation (Principle 5):</strong> Attention to accessibility (WCAG) so that the design does not create excessive load (visual, cognitive) on the user."
-      ]
+    "roadmap": {
+      "title": {
+        "section": "Roadmap",
+        "projectLaunch": "Project Launch",
+        "enhancedSecurity": "Enhanced Security",
+        "advancedCollaboration": "Advanced Collaboration",
+        "mobileEnhancement": "Mobile Enhancement",
+        "aiIntegration": "AI Integration",
+        "globalExpansion": "Global Expansion",
+        "enterpriseSolutions": "Enterprise Solutions",
+        "futureInnovation": "Future Innovation"
+      },
+      "subtitle": {
+        "section": "Our Vision for the Future"
+      },
+      "status": {
+        "completed": "Completed",
+        "inProgress": "In Progress",
+        "upcoming": "Upcoming"
+      },
+      "description": {
+        "projectLaunch": "Initial launch of BrainMessenger with core features.",
+        "enhancedSecurity": "Strengthening security protocols and features.",
+        "advancedCollaboration": "Introducing advanced tools for collaboration.",
+        "mobileEnhancement": "Improving the mobile app experience.",
+        "aiIntegration": "Integrating AI-powered features for smarter communication.",
+        "globalExpansion": "Expanding BrainMessenger's reach worldwide.",
+        "enterpriseSolutions": "Developing solutions for enterprise clients.",
+        "futureInnovation": "Researching and implementing future technologies."
+      },
+      "features": {
+        "secureMessagingInfrastructure": "Secure Messaging Infrastructure",
+        "crossPlatformCompatibility": "Cross-Platform Compatibility",
+        "basicUserInterface": "Basic User Interface",
+        "endToEndEncryption": "End-to-End Encryption",
+        "twoFactorAuthentication": "Two-Factor Authentication",
+        "fileSharingCapabilities": "File Sharing Capabilities",
+        "teamWorkspaces": "Team Workspaces",
+        "realTimeCollaboration": "Real-Time Collaboration",
+        "advancedFileSharing": "Advanced File Sharing",
+        "nativeMobileApps": "Native Mobile Apps",
+        "offlineFunctionality": "Offline Functionality",
+        "pushNotifications": "Push Notifications",
+        "smartMessageCategorization": "Smart Message Categorization",
+        "automatedResponses": "Automated Responses",
+        "contentAnalysis": "Content Analysis",
+        "multiLanguageSupport": "Multi-Language Support",
+        "regionalDataCenters": "Regional Data Centers",
+        "culturalAdaptations": "Cultural Adaptations",
+        "advancedAdminControls": "Advanced Admin Controls",
+        "customIntegrations": "Custom Integrations",
+        "enterpriseSupport": "Enterprise Support",
+        "emergingTechnologies": "Emerging Technologies",
+        "communityDrivenFeatures": "Community-Driven Features",
+        "platformExpansion": "Platform Expansion"
+      },
+      "date": {
+        "jan2024": "January 2024",
+        "mar2024": "March 2024",
+        "jun2024": "June 2024",
+        "sep2024": "September 2024",
+        "nov2024": "November 2024",
+        "jan2025": "January 2025",
+        "mar2025": "March 2025",
+        "jun2025": "June 2025",
+        "beyond2025": "Beyond 2025"
+      }
     },
-    "section2": {
-      "title": "2. Color Palette: The Visual Language of BrainMessenger",
-      "intro": "Colors are separated for Light and Dark modes, supporting theme switching (\"Night Mode\" feature). All colors are specified in HEX.",
-      "light_mode_title": "2.1. Light Mode",
-      "light_mode_table": [
-        ["Category", "Color (HEX)", "Purpose"],
-        ["<strong>Primary Gradient</strong>", "`#A7F43A` → `#00C853`", "Main gradient for accent elements (\"Get Started\" buttons, icons)"],
-        ["<strong>Accent</strong>", "`#FF6347`", "Accent elements (errors, important notifications)"],
-        ["<strong>Secondary</strong>", "`#00BFFF`", "Secondary buttons, links, interactive elements"],
-        ["<strong>Success</strong>", "`#96C93D`", "Confirmations, successful actions"],
-        ["<strong>Background</strong>", "`#FFFFFF`", "Main background"],
-        ["<strong>Surface</strong>", "`#F0F0F0`", "Cards, panels, message backgrounds"],
-        ["<strong>Text Primary</strong>", "`#333333`", "Primary text"],
-        ["<strong>Text Secondary</strong>", "`#4D4D4D`", "Secondary text, hints, metadata"],
-        ["<strong>Disabled</strong>", "`#B0B0B0`", "Inactive elements"],
-        ["<strong>Border</strong>", "`#E8E8D9`", "Borders, separators"]
-      ],
-      "dark_mode_title": "2.2. Dark Mode",
-      "dark_mode_table": [
-        ["Category", "Color (HEX)", "Purpose"],
-        ["<strong>Primary Gradient</strong>", "`#F2F047` → `#1ED94F`", "Main gradient for accent elements"],
-        ["<strong>Accent</strong>", "`#FF6347`", "Accent elements (errors)"],
-        ["<strong>Secondary</strong>", "`#00BFFF`", "Secondary buttons, links"],
-        ["<strong>Success</strong>", "`#96C93D`", "Confirmations, successful actions"],
-        ["<strong>Background</strong>", "`#1A1A1A`", "Main background"],
-        ["<strong>Surface</strong>", "`#333333`", "Cards, panels, message backgrounds"],
-        ["<strong>Text Primary</strong>", "`#FFFFFF`", "Primary text"],
-        ["<strong>Text Secondary</strong>", "`#D9E8D9`", "Secondary text, hints"],
-        ["<strong>Disabled</strong>", "`#4D4D4D`", "Inactive elements"],
-        ["<strong>Border</strong>", "`#B0B0B0`", "Borders, separators"]
-      ],
-      "premium_colors_title": "2.3. Premium Feature Colors (Visual Highlighting of Value)",
-      "premium_colors": [
-        "<strong>Premium Accent:</strong> `#FFD600` (Gold)",
-        "<strong>Premium Secondary:</strong> `#2196F3` (Blue)",
-        "Used for visually highlighting premium features (e.g., in neural connection animations, special UI elements), emphasizing their <strong>additional value</strong> (Principle 2, 10)."
-      ],
-      "color_application_title": "2.4. Color Application (Examples)",
+  "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Find answers to common questions about BrainMessenger",
+      "searchAlt": "Search icon",
+      "searchPlaceholder": "Search for questions...",
+      "allQuestions": "All questions",
+      "noResults": "No questions found for your query.",
+      "categories": {
+        "general": "General",
+        "technical": "Technical",
+        "security": "Security",
+        "pricing": "Pricing",
+        "generalProject": "General Project Questions",
+        "technicalQuestions": "Technical Questions",
+        "developmentProcesses": "Development Processes",
+        "statusRoadmapFuture": "Status, Roadmap, and Future",
+        "challengesOpportunitiesLimitations": "Challenges, Opportunities, and Limitations",
+        "learnMoreContribute": "Learn More and Contribute"
+      },
+      "questionsData": {
+        "generalProject": {
+          "q1": {
+            "question": "What is the main idea behind BrainMessenger? What makes it special?",
+            "answer": "BrainMessenger is not just another messenger. Our main idea is to create a Digital ASSET (Principle 10) that simplifies complex interactions (Margulan Seisembayev's principle) and serves as a reliable tool for effective communication. We focus on quality (Principle 3), security (Principle 5), and reliability (Principle 3), not just a set of features. We are building a SYSTEM (Principle 9) that reflects our principles and is constantly improving."
+          },
+          "q2": {
+            "question": "What are the key principles behind the development of BrainMessenger?",
+            "answer": "The project is based on a set of 15 key principles (see My Key Principles), inspired by Margulan Seisembayev and best practices in the IT industry. The most important ones influencing the code and processes are: Continuous Learning (Principle 1), Value Creation (Principle 2), Quality > Quantity (Principle 3), System and Optimization (Kaizen, Principle 9), Long-Term Thinking (Principle 8), Pragmatism and Realism (Principle 12), Persistence (Principle 13), Bias for Action (Principle 15). We strive for these principles to permeate all aspects of the project."
+          },
+          "q3": {
+            "question": "Who is behind the project? Is it an open community or a team?",
+            "answer": "Currently, the project is in its early stages and is actively being developed by one person (you), who is the driving force and holds responsibility (Principle 6) for its construction. In the future, there are plans to involve contributors and possibly form a team. The project is open for contributions (see CONTRIBUTING.md)."
+          }
+        },
+        "technicalQuestions": {
+          "q1": {
+            "question": "Why was this specific technology stack chosen (TypeScript, NestJS, React/RN, PostgreSQL/Neon, GraphQL, Kafka, Redis, Cloudflare R2, etc.)?",
+            "answer": "The choice of stack is based on pragmatism (Principle 12), long-term thinking (Principle 8), and a commitment to quality (Principle 3) and scalability (NFR-14, NFR-15).\n*   TypeScript: Increases code reliability and maintainability through strict typing.\n*   NestJS: Provides a powerful, modular architecture for the backend, simplifying the construction of scalable applications.\n*   React/React Native/Next.js: Allow creating UIs for different platforms from a single codebase (cross-platform) and ensure good performance.\n*   PostgreSQL (Neon): A reliable, proven relational database with extensive scaling and optimization capabilities. Neon as a managed service reduces operational costs (Pragmatism).\n*   Prisma: Chosen as a reliable ORM that provides type safety and built-in protection against SQL injections (Quality, Security).\n*   GraphQL: Allows clients to request only the data they truly need in a single query, optimizing network interaction (especially for mobile clients) and reducing data redundancy compared to REST. GraphQL also simplifies fetching related data (solving N+1 problems with DataLoader).\n*   Kafka: Chosen for reliable asynchronous task processing, which is critical for scalability and fault tolerance.\n*   Redis: A high-performance in-memory store for caching, rate limiting, and real-time state management.\n*   Cloudflare R2: Object storage with very favorable terms (no egress fees), ideal for storing user files (Pragmatism, ASSET).\n\nThis stack allows for laying a solid technical foundation (Principle 8) for future development."
+          },
+          "q2": {
+            "question": "Why is a monolithic architecture used at the start, instead of microservices right away?",
+            "answer": "Using a monolithic architecture at the start (MVP) is a pragmatic and realistic decision (Principle 12). It allows for rapid development and iteration of core functionality, minimizing complexity in the early stage when the team is small. Launching an MVP is more important than building an overly complex architecture. After the MVP is complete and the project grows, a gradual transition to microservices is planned (see Microservices Migration Plan)."
+          },
+          "q3": {
+            "question": "What approaches are used to ensure security?",
+            "answer": "Security is a fundamental aspect (Principle 5) and a priority (see Security Guide).\n*   Encryption of data in transit (TLS 1.2+) and at rest (AES for sensitive data, encryption in R2).\n*   Secure password hashing (bcrypt/argon2).\n*   Using Prisma to prevent SQL injections.\n*   Validation of all incoming data on the backend.\n*   Two-factor authentication (2FA) via email.\n*   Rate limiting to protect against brute-force and DDoS attacks.\n*   Regular vulnerability scanning.\n*   Storing secrets in secure locations (Kubernetes Secrets)."
+          },
+          "q4": {
+            "question": "How is the real-time functionality (messaging) implemented?",
+            "answer": "The real-time functionality (messaging) is implemented using WebSockets. The backend (NestJS Gateway) manages WebSocket connections, and clients subscribe to chat events. Message delivery occurs via WebSocket. For scaling WebSockets in a microservices architecture, Redis Pub/Sub or Kafka will be used."
+          },
+          "q5": {
+            "question": "Why is GraphQL used instead of a REST API?",
+            "answer": "GraphQL allows clients to request only the data they truly need in a single query. This optimizes network interaction (especially for mobile clients) and reduces data redundancy compared to REST. GraphQL also simplifies fetching related data (solving N+1 problems with DataLoader)."
+          },
+          "q6": {
+            "question": "How are large volumes of data and files managed?",
+            "answer": "*   Structured data (messages, users, chats): Stored in PostgreSQL (Neon). Indexes and query optimization (Prisma) are used for fast retrieval. As the data grows, table partitioning and database replication are planned.\n*   Unstructured data (files, images): Stored in Cloudflare R2. Asynchronous processing (Kafka) is used for image optimization before uploading. R2 was chosen for its scalability and favorable traffic pricing."
+          }
+        },
+        "developmentProcesses": {
+          "q1": {
+            "question": "What approach is used for project and task management?",
+            "answer": "Project management is handled using a planning system (see My 2025-2026 Planning System) in Notion. It involves decomposing global goals into stages (Roadmap), weekly planning, and a task tracker. An important element is the Kaizen Hour (Principle 9) for daily reflection, bottleneck analysis, and finding ways to improve."
+          },
+          "q2": {
+            "question": "How is code quality ensured?",
+            "answer": "Code quality is ensured through systematic approaches (Principles 3, 9):\n*   Using TypeScript with strict typing.\n*   Adhering to coding standards (ESLint, Prettier).\n*   Code review of all changes.\n*   Automated testing at various levels (Unit, Integration, E2E).\n*   Continuous Integration (CI) for automatic code and test verification on every commit/PR."
+          },
+          "q3": {
+            "question": "What is the testing strategy?",
+            "answer": "A multi-layered testing strategy is used (see Testing Guide), combining manual and automated testing: Unit, Integration, API, E2E, Load, Security, Regression. Tests are integrated into the CI/CD pipeline. The focus is on verifying key requirements (FR, NFR)."
+          },
+          "q4": {
+            "question": "How are errors handled?",
+            "answer": "Errors are handled centrally and uniformly on the backend (NestJS Exception Filters) and are converted to a standard API response format with codes (extensions.code). On the frontend, errors are handled based on these codes, displaying a user-friendly message and suggesting an action. All errors are thoroughly logged (Winston → ELK) and sent to Sentry for tracking and analysis (see Error Specification, Monitoring Guide)."
+          },
+          "q5": {
+            "question": "How is the project deployed?",
+            "answer": "Deployment is automated through a CI/CD pipeline (GitHub Actions). Docker is used for containerization, and Kubernetes for cloud orchestration. Infrastructure is described as code (Terraform). The process includes automatic builds, testing, image publication, and Rolling Updates in Kubernetes for zero-downtime deployment (see Deployment Guide)."
+          },
+          "q6": {
+            "question": "How is the system monitored in production?",
+            "answer": "The monitoring system is the eyes and ears of the project (Principles 9, 5). We use:\n*   Prometheus for collecting performance and resource metrics.\n*   Grafana for visualizing metrics and dashboards.\n*   Sentry for tracking application errors (frontend and backend).\n*   ELK Stack (or Kibana with Winston) for centralized logging and analysis.\n*   Alertmanager for configuring automatic alerts for issues.\nThese tools allow for early problem detection and optimization (see Monitoring Guide)."
+          }
+        },
+        "statusRoadmapFuture": {
+          "q1": {
+            "question": "What is the current status of the project?",
+            "answer": "The project is in the active development phase of the Minimum Viable Product (MVP). The core technological foundation has been laid, key UI elements and basic security have been implemented. The core messaging functionality, file handling, and group/channel creation are currently in progress. (See BrainMessenger Project Requirements Guide (MVP))."
+          },
+          "q2": {
+            "question": "What are the next steps after the MVP is completed?",
+            "answer": "After completing the MVP, the next steps include adding advanced features (audio/video calls, Premium, enhanced security, full set of animations and localization), further performance optimization, and preparation for scaling. A detailed plan is presented in the BrainMessenger Roadmap (see Roadmap)."
+          },
+          "q3": {
+            "question": "Is a transition to a microservices architecture planned?",
+            "answer": "Yes, the transition to microservices is part of the long-term development strategy (Principle 8). It is planned to be carried out in stages, starting from Q1 2026, using the Strangler Pattern approach. This will allow for independent scaling of components, increasing fault tolerance and flexibility (see Microservices Migration Plan)."
+          }
+        },
+        "challengesOpportunitiesLimitations": {
+          "q1": {
+            "question": "What are the main technical challenges (pitfalls) in the project?",
+            "answer": "*   Implementing reliable real-time functionality (WebSockets): Managing thousands of concurrent connections, reliable message delivery, managing online/offline status.\n*   Scaling the database with large data volumes: Managing the growth of the messages table (partitioning), optimizing complex queries.\n*   File processing and delivery: Efficient uploading, image optimization, secure downloading from Cloudflare R2.\n*   Transitioning to microservices: Increased operational complexity, setting up inter-service communication (Kafka, GraphQL Federation), data migration.\n*   Maintaining high quality and performance: Continuous optimization at all levels (backend, frontend, infrastructure) as load and functionality grow."
+          },
+          "q2": {
+            "question": "What opportunities and advantages does the project's architecture and stack provide?",
+            "answer": "*   High scalability: The chosen technologies (NestJS, Kubernetes, Kafka, Redis, Neon, R2) allow for horizontal scaling of the application to support a large number of users.\n*   Reliability and fault tolerance: Using reliable services, asynchronous processing (Kafka), monitoring, and, in the future, microservices increase the system's resilience to failures.\n*   High performance: GraphQL, caching, query optimization, and asynchronous processing contribute to the application's fast performance.\n*   Cross-platform: React Native and Next.js allow creating applications for all major platforms from a single codebase (for the UI).\n*   Code quality and maintainability: TypeScript, NestJS, Prisma, coding standards, and testing simplify development and reduce the number of defects.\n*   Cost-effectiveness (at the start): Using free/affordable plans (Neon, R2) and proven open-source solutions.\n*   Rich ecosystem: Using popular technologies with large communities and many ready-made libraries."
+          },
+          "q3": {
+            "question": "What are the project's limitations at the current stage (MVP)?",
+            "answer": "*   Limited feature set compared to the vision (no calls, Premium, enhanced security).\n*   Limited multilingual and accessibility features (expansion is planned).\n*   The architecture is currently monolithic, which limits independent scaling of individual parts.\n*   There may be performance limitations under loads significantly exceeding the MVP target (~1000 concurrent users) until deep optimizations and microservices are implemented."
+          }
+        },
+        "learnMoreContribute": {
+          "q1": {
+            "question": "Where can I get more detailed information about the project?",
+            "answer": "More detailed information can be found in our documentation (link to be added later) and on the project's GitHub page (if the project is open source)."
+          },
+          "q2": {
+            "question": "How can I join the project's development or contribute?",
+            "answer": "We are always happy to welcome new participants! Contact us through the contact form on the website or via GitHub (if the project is open source) to discuss possible collaboration options."
+          },
+          "q3": {
+            "question": "Where can I ask additional questions?",
+            "answer": "Additional questions can be asked through the contact form on the website, in our community (link to be added), or by creating an issue on GitHub (if the project is open source)."
+          }
+        }
+      },
+      "docs": {
+        "general": {
+        "title": "General BrainMessenger Documentation",
+        "subtitle": "Introduction and Core Principles",
+        "section1": {
+          "title": "1. Introduction: Building a Value System",
+          "content": "Welcome to the BrainMessenger repository. This is not just another messenger. It is a purposeful project aimed at creating a <strong>reliable, scalable, and secure SYSTEM</strong> (Principle 9) that will become a <strong>key digital ASSET</strong> (Principle 10) for every user. Our main goal is to <strong>simplify complexity</strong> (a principle from Margulan Seisembayev), providing intuitive and powerful tools for effective communication and interaction in the modern digital world.\n\nBrainMessenger is built on a <strong>strong foundation</strong> (Principle 8) of deep principles, conscious planning, and <strong>continuous learning</strong> (Principle 1). Every line of code, every decision made, is a <strong>long-term investment</strong> (Principle 8) in the <strong>quality</strong> (Principle 3) and <strong>value</strong> (Principle 2) of our product."
+        },
+        "section2": {
+          "title": "2. Vision and Mission: Our Long-Term Perspective",
+          "vision_title": "Our Vision:",
+          "vision_content": "To create a leading digital asset for communication that helps millions of users worldwide to effectively exchange information, build communities, and achieve their goals.",
+          "mission_title": "Our Mission:",
+          "mission_content": "To simplify complex interactions by providing a reliable, secure, and user-friendly messenger built on the principles of quality, transparency, and continuous improvement."
+        },
+        "section3": {
+          "title": "3. Key Principles: The Foundation of Our System",
+          "intro": "Our actions and decisions are guided by a set of key principles that serve as the <strong>foundation</strong> (Principle 8) of the entire BrainMessenger project. These are not just words, but <strong>personal algorithms and standards (Kaizen, Principle 9)</strong>, developed through experience and reflection (Principle 1):",
+          "principles": [
+            "<strong>Continuous Learning and Growth (Principle 1):</strong> The process of creating BrainMessenger is a training ground for deep learning in technology, architecture, and user psychology. We learn at every step, turning mistakes into lessons.",
+            "<strong>Value Creation (Principle 2):</strong> At the core of everything is user benefit. We build what truly solves problems and makes life better.",
+            "<strong>Quality > Quantity (Principle 3):</strong> Focus on polishing key elements rather than a multitude of ill-conceived details. The design must be <strong>reliable</strong> and <strong>thoughtful</strong>.",
+            "<strong>Mindfulness and Presence (Principle 4):</strong> An attentive attitude towards the process, users, and team.",
+            "<strong>Health as a Foundation (Principle 5):</strong> The physical and mental well-being of the team (and future users) is the basis of productivity and resilience.",
+            "<strong>Responsibility and Proactivity (Principle 6):</strong> We take responsibility for the result and act preemptively.",
+            "<strong>Integrity (Principle 7):</strong> Our words match our actions.",
+            "<strong>Long-Term Thinking (Principle 8):</strong> We invest time and effort with an eye on the future.",
+            "<strong>System and Optimization (Principle 9):</strong> We build processes and architecture as a system, constantly seeking ways to improve efficiency (Kaizen).",
+            "<strong>Building Wealth > Making Money (Principle 10):</strong> Focus on creating an ASSET (BrainMessenger) that brings value and works for the long term.",
+            "<strong>Flexibility and Adaptability (Principle 11):</strong> Willingness to change tactics and tools while maintaining the vision.",
+            "<strong>Pragmatism and Realism (Principle 12):</strong> Making decisions based on real data and capabilities.",
+            "<strong>Persistence (Principle 13):</strong> Not giving up in the face of difficulties, drawing lessons from failures.",
+            "<strong>Using External Expertise and Feedback (Principle 14):</strong> We learn from others and listen to constructive criticism.",
+            "<strong>Bias for Action (Principle 15):</strong> In the early stages, it is more important to start doing and getting feedback than to plan endlessly."
+          ],
+          "outro": "These principles, inspired by the philosophy of Margulan Seisembayev and the practices of leading IT companies, shape our culture and approach to development."
+        },
+        "section4": {
+          "title": "4. About the BrainMessenger Project (Focus on MVP)",
+          "intro": "Our current focus is the development of a <strong>Minimum Viable Product (MVP)</strong>. The MVP is the first, <strong>pragmatic</strong> (Principle 12) step towards realizing our vision. We are building a <strong>strong technical foundation</strong> (Principle 8) that will allow for rapid and effective product development in the future.",
+          "mvp_features_title": "The MVP includes basic but <strong>high-quality and reliable</strong> (Principle 3) features that provide key <strong>value</strong> (Principle 2):",
+          "mvp_features": [
+            "<strong>Basic Messaging:</strong> Sending and receiving text messages in private chats and groups/channels.",
+            "<strong>File Sharing:</strong> Uploading and downloading files (with image optimization).",
+            "<strong>Channels and Groups:</strong> Basic creation of groups/channels, joining public channels, and reading content.",
+            "<strong>Basic Account Management:</strong> Registration, login/logout, profile editing (name, avatar), basic security settings.",
+            "<strong>Basic UI Settings:</strong> Theme selection (Light/Dark), basic notification and language settings.",
+            "<strong>Basic Security:</strong> Data encryption in transit (TLS, password hashing, basic measures against SQLi/XSS/DDoS), email confirmation upon registration.",
+            "<strong>Responsive UI:</strong> An interface adapted for mobile (Android, iOS) and web platforms.",
+            "<strong>Basic Multilingual Support:</strong> Support for multiple interface languages (English, Russian, and others according to DocLocIn.md)."
+          ],
+          "outro": "Functionality beyond the MVP (audio/video calls, advanced security/privacy features, premium subscription, full set of animations, AI integrations) is planned for the next stages of the Roadmap."
+        },
+        "section5": {
+          "title": "5. How We Build: The Story of Creation and the Kaizen Process",
+          "intro": "The process of creating BrainMessenger is a living story based on our principles. We build it <strong>systematically</strong> (Principle 9), step by step, documenting each stage and constantly looking for opportunities for <strong>improvement (Kaizen)</strong>.",
+          "steps": [
+            "<strong>Conscious Planning (Principle 4):</strong> The project began with a clear definition of global goals and their decomposition into achievable stages (Roadmap).",
+            "<strong>Choosing the Foundation (Principle 8, 12):</strong> We carefully approached the choice of our technology stack—reliable and <strong>pragmatic</strong> tools (TypeScript, NestJS, React/RN, PostgreSQL/Neon, Cloudflare R2, Kafka, Redis) that form a <strong>strong technical foundation</strong>.",
+            "<strong>Building the MVP Core:</strong> Implementation started with the basic, critically important parts of the system (Authentication, Basic UI, Infrastructure, File Handling). We apply a <strong>Bias for Action</strong> (Principle 15), focusing on building working components, even if they are minimal for now.",
+            "<strong>Continuous Learning and Application of Knowledge (Principle 1):</strong> Every new task, especially those related to learning or integrating technologies (as seen in the [Video Tracker](https://www.notion.so/2025-2026-1576e78881b7435e9c3c2cf174e61b91?pvs=4) and tasks), is seen as an opportunity for growth. We document this process through videos and reflection (Kaizen Hour).",
+            "<strong>Systematic Approach to Quality (Principle 3, 9):</strong> We integrate testing early in the development cycle (Unit tests), set up CI/CD pipelines for automatic checks, use monitoring tools (Prometheus, Grafana, Sentry) and logging (Winston, ELK) for continuous control over the <strong>system's health</strong> (Principle 5) in real time.",
+            "<strong>Documentation as Part of the Knowledge System:</strong> The entire development process, architectural decisions, standards, and requirements are thoroughly documented. This is not just a formality, but part of creating a <strong>knowledge system</strong> that speeds up onboarding, simplifies maintenance, and allows for informed decisions in the future."
+          ],
+          "outro": "We are building BrainMessenger as a living, evolving organism, constantly adapting and improving based on our principles and feedback from the development process and future users."
+        },
+        "section6": {
+          "title": "6. Technology Stack: Our Tools for Building an Asset",
+          "intro": "We have chosen a stack that is <strong>pragmatic</strong> (Principle 12), <strong>reliable</strong> (Principle 3), and <strong>scalable</strong> (Principle 8) for creating our <strong>digital ASSET</strong>.",
+          "stack": [
+            "<strong>Language:</strong> [TypeScript](https://www.typescriptlang.org/) - Static typing to improve code quality and reliability.",
+            "<strong>Backend:</strong> [Node.js](https://nodejs.org/), [NestJS](https://nestjs.com/) - An efficient and structured framework for server-side logic and GraphQL API.",
+            "<strong>Frontend:</strong> [React](https://react.dev/), [Next.js](https://next.org/) (Web), [React Native](https://reactnative.dev/) (Mobile/Desktop) - Cross-platform UI development with a focus on performance.",
+            "<strong>API:</strong> [GraphQL](https://graphql.org/) - Flexible interaction between client and server.",
+            "<strong>Real-time:</strong> WebSockets - Instant message delivery.",
+            "<strong>Database:</strong> [PostgreSQL](https://www.postgresql.org/) (via [Neon](https://neon.tech/)) - Reliable and scalable database. Neon as a managed service reduces operational costs (Pragmatism).",
+            "<strong>ORM:</strong> [Prisma](https://www.prisma.io/) - Type-safe and reliable database interaction, protection against SQL injections (Quality, Security).",
+            "<strong>Caching:</strong> [Redis](https://redis.io/) - High-performance in-memory storage for caching and real-time state management.",
+            "<strong>Queues:</strong> [Kafka](https://kafka.apache.org/) - Reliable asynchronous task processing.",
+            "<strong>File Storage:</strong> [Cloudflare R2](https://www.cloudflare.com/developer/r2/) - Object storage with favorable pricing and no egress fees (Pragmatism, ASSET).",
+            "<strong>Notifications:</strong> [Firebase](https://firebase.google.com/) - Managed service for push notifications.",
+            "<strong>Email/2FA:</strong> [Gmail API](https://developers.google.com/gmail/api) - Reliable delivery of transactional emails (confirmation codes, 2FA).",
+            "<strong>Payments:</strong> [Stripe](https://stripe.com/), Cryptomus (Beyond MVP) - Monetization of the ASSET, Pragmatism.",
+            "<strong>Testing:</strong> Jest, Cypress, Detox, k6, OWASP ZAP/Burp Suite (planned) - A comprehensive approach to quality assurance.",
+            "<strong>Deployment:</strong> [Vercel](https://vercel.com/) (Web), Docker, [Kubernetes](https://kubernetes.io/) - Automated and scalable deployment.",
+            "<strong>Monitoring:</strong> Prometheus, Grafana, Sentry (planned) - System visibility and Kaizen analysis."
+          ]
+        },
+        "section7": {
+          "title": "7. Architecture: System Evolution",
+          "intro": "Currently, BrainMessenger is implemented as a <strong>monolithic application based on NestJS</strong>. This is a <strong>pragmatic</strong> (Principle 12) solution for the MVP, allowing for a quick product launch and validation of core hypotheses.",
+          "outro": "In the future, as the project grows and the load increases, we plan a phased transition to a <strong>microservices architecture</strong> using the <strong>Strangler Pattern</strong> approach. This is a <strong>long-term strategy</strong> (Principle 8) that will allow for independent scaling and development of individual components (chats, calls, AI, payments), increasing the overall <strong>reliability and flexibility</strong> of the system (Principle 3, 11).\n\nInteraction between components will be handled via <strong>GraphQL API</strong> (synchronously) and <strong>Kafka</strong> (asynchronously), using <strong>Apollo Federation</strong> (in the future) to build a unified API schema from multiple microservices."
+        },
+        "section8": {
+          "title": "8. Project Status: Current Stage (MVP)",
+          "content": "The project is currently in the active development phase of the <strong>Minimum Viable Product (MVP)</strong> (according to the [BrainMessenger Project Requirements Guide (MVP)](https://www.notion.so/MVP-11a2a21315e54eb3b3c90171b4c7493d?pvs=4)). We are focused on completing the core functionality of messaging, file handling, group/channel creation, and basic settings, while simultaneously strengthening the <strong>technical foundation</strong> (Principle 8) and implementing processes of <strong>continuous learning</strong> and <strong>Kaizen</strong> into our daily work.\n\nThe progress is documented through tasks, code in the repository, and video recordings that demonstrate our journey and the <strong>creation process</strong> (Principle 1)."
+        },
+        "section9": {
+          "title": "9. Getting Started (For Developers)",
+          "intro": "Want to join us in creating this digital ASSET? Here's how to start:",
+          "steps": [
+            "Clone the repository:\n```bash\ngit clone <URL_of_your_repository>\ncd BrainMessenger\n```",
+            "Install dependencies:\n```bash\nnpm install # Turborepo will install dependencies for all packages\n```",
+            "Set up environment variables: Copy `.env.example` to `.env` and fill in the necessary data for integrations (Neon, R2, Firebase, etc.). <strong>Do not commit your `.env` file!</strong>\n```bash\ncp .env.example .env\n# Fill in .env\n```",
+            "Set up the database: Run a local PostgreSQL or use a Neon instance, then apply Prisma migrations.\n```bash\ncd backend\nnpx prisma migrate dev --name initial_setup # Or npx prisma migrate deploy for production\ncd ..\n```",
+            "Run services in development mode:\n```bash\nturbo run dev # This will start the dev servers for backend and frontend\n# Or navigate to specific packages and run their dev scripts:\n# cd backend && npm run start:dev\n# cd packages/web && npm run dev\n# cd packages/mobile-desktop && npm run android / npm run windows\n```"
+          ],
+          "outro": "More detailed instructions on local setup and development can be found in the [Developer Guide](link_to_development_guide_doc)."
+        },
+        "section10": {
+          "title": "10. Documentation: Our Knowledge System",
+          "intro": "This README provides a high-level overview. All detailed information about the project is contained in our <strong>comprehensive documentation system</strong>. Studying these documents is part of the <strong>learning</strong> (Principle 1) process and understanding the <strong>system</strong> (Principle 9):",
+          "docs_list": [
+            "[<strong>Requirements Documentation</strong>](docs/AllRequirements/Docs/Planning/DocReq.md): What we are building (functional and non-functional requirements).",
+            "[<strong>Developer Guide</strong>](docs/AllRequirements/Docs/Dev/DocDevIn.md): How we write code (structure, standards, tools, CI/CD process).",
+            "[<strong>Technical Documentation</strong>](docs/AllRequirements/Docs/Dev/DocTech.md): High-level overview of the architecture and stack.",
+            "[<strong>API Specification</strong>](docs/AllRequirements/Docs/Dev/DocSpec.md): How components interact (GraphQL API description).",
+            "[<strong>Integration Documentation</strong>](docs/AllRequirements/Docs/Dev/DocInt.md): How we use external services (Neon, R2, Firebase, Stripe, etc.) as <strong>leverage</strong>.",
+            "[<strong>Security Guide</strong>](docs/AllRequirements/Docs/Infrastructure/DocSecurity.md): How we protect the ASSET and data (principles, methods, tools, process).",
+            "[<strong>Performance Guide</strong>](docs/AllRequirements/Docs/Infrastructure/DocPer.md): How we make the system fast (metrics, techniques, optimization tools).",
+            "[<strong>Monitoring and Logging Guide</strong>](docs/AllRequirements/Docs/Infrastructure/DocMonLog.md): How we see the system's state (metrics, logs, alerts).",
+            "[<strong>UI Documentation</strong>](docs/AllRequirements/Docs/Design/Design/DocUI.md): What the application looks like and why (layouts, components, design principles).",
+            "[<strong>Audio Guide</strong>](docs/AllRequirements/Docs/Sound/DocSound.md): How audio is used to enhance UX.",
+            "[<strong>Support and Maintenance Guide</strong>](docs/AllRequirements/Docs/Support/DocSupport.md): How we support the system and users post-release.",
+            "[<strong>Error Specification</strong>](docs/AllRequirements/Docs/Testing/DocSpecError.md): How we handle and report errors.",
+            "[<strong>Testing Guide</strong>](docs/AllRequirements/Docs/Testing/DocTesting.md): How we verify quality and reliability.",
+            "[<strong>Microservices Migration Plan</strong>](docs/AllRequirements/Docs/Infrastructure/DocMigrationMicro.md): Our long-term architecture evolution strategy.",
+            "[<strong>Project Requirements Guide (MVP)</strong>](docs/AllRequirements/Docs/Planning/DocReq.md): Detailed analysis of MVP requirements and implementation status."
+          ]
+        },
+        "section11": {
+          "title": "11. Contribution",
+          "content": "We welcome contributions to the creation of this digital ASSET! If you have ideas, suggestions, or want to help with the code, please refer to the [Contribution Guide](CONTRIBUTING.md) (if available)."
+        }
+      },
+        "design": {
+      "title": "BrainMessenger Design Documentation",
+      "subtitle": "Quality and Value System",
+      "section1": {
+        "title": "1. Introduction: Design as a Foundation of Value",
+        "name": "BrainMessenger Design System",
+        "description": "This design system defines the visual and functional standards for the BrainMessenger interface. Our goal is to create an interface that not only looks good but is also <strong>intuitive, efficient, and accessible</strong> (Principle 2: Creating Value), based on the principles of <strong>quality > quantity</strong> (Principle 3) and <strong>pragmatism</strong> (Principle 12) in decision-making.",
+        "goal": "To ensure <strong>consistency, reliability, and a positive user experience</strong> across all platforms (Windows, Android, web), making BrainMessenger a <strong>useful ASSET</strong> (Principle 10) for users.",
+        "principles_title": "Principles guiding the design:",
+        "principles": [
+          "<strong>Creating Value (Principle 2):</strong> The design must be functional and solve user tasks as conveniently and efficiently as possible.",
+          "<strong>Quality > Quantity (Principle 3):</strong> Focus on polishing key elements rather than a multitude of ill-conceived details. The design must be <strong>reliable</strong> and <strong>thoughtful</strong>.",
+          "<strong>Pragmatism and Realism (Principle 12):</strong> Choosing design solutions that can be implemented considering technical limitations (e.g., optimizing animations).",
+          "<strong>Integrity (Principle 7):</strong> Visual and functional integrity across all platforms.",
+          "<strong>Health as a Foundation (Principle 5):</strong> Attention to accessibility (WCAG) to ensure the design does not create unnecessary strain (visual, cognitive) on the user."
+        ]
+      },
+      "section2": {
+        "title": "2. Color Palette: The Visual Language of BrainMessenger",
+        "intro": "Colors are separated for Light and Dark modes, supporting theme switching (\"Night Mode\"). All colors are specified in HEX.",
+        "light_mode_title": "2.1. Light Mode",
+        "light_mode_table": [
+          ["Category", "Color (HEX)", "Purpose"],
+          ["<strong>Primary Gradient</strong>", "`#A7F43A` → `#00C853`", "Main gradient for accent elements (e.g., 'Get Started' buttons, icons)"],
+          ["<strong>Accent</strong>", "`#FF6347`", "Accent elements (errors, important notifications)"],
+          ["<strong>Secondary</strong>", "`#00BFFF`", "Secondary buttons, links, interactive elements"],
+          ["<strong>Success</strong>", "`#96C93D`", "Confirmations, successful actions"],
+          ["<strong>Background</strong>", "`#FFFFFF`", "Main background"],
+          ["<strong>Surface</strong>", "`#F0F0F0`", "Cards, panels, message backgrounds"],
+          ["<strong>Text Primary</strong>", "`#333333`", "Main text"],
+          ["<strong>Text Secondary</strong>", "`#4D4D4D`", "Secondary text, hints, metadata"],
+          ["<strong>Disabled</strong>", "`#B0B0B0`", "Inactive elements"],
+          ["<strong>Border</strong>", "`#E8E8D9`", "Borders, separators"]
+        ],
+        "dark_mode_title": "2.2. Dark Mode",
+        "dark_mode_table": [
+          ["Category", "Color (HEX)", "Purpose"],
+          ["<strong>Primary Gradient</strong>", "`#F2F047` → `#1ED94F`", "Main gradient for accent elements"],
+          ["<strong>Accent</strong>", "`#FF6347`", "Accent elements (errors)"],
+          ["<strong>Secondary</strong>", "`#00BFFF`", "Secondary buttons, links"],
+          ["<strong>Success</strong>", "`#96C93D`", "Confirmations, successful actions"],
+          ["<strong>Background</strong>", "`#1A1A1A`", "Main background"],
+          ["<strong>Surface</strong>", "`#333333`", "Cards, panels, message backgrounds"],
+          ["<strong>Text Primary</strong>", "`#FFFFFF`", "Main text"],
+          ["<strong>Text Secondary</strong>", "`#D9E8D9`", "Secondary text, hints"],
+          ["<strong>Disabled</strong>", "`#4D4D4D`", "Inactive elements"],
+          ["<strong>Border</strong>", "`#B0B0B0`", "Borders, separators"]
+        ],
+        "premium_colors_title": "2.3. Premium Feature Colors (Visual Highlighting of Value)",
+        "premium_colors": [
+          "<strong>Premium Accent:</strong> `#FFD600` (Gold)",
+          "<strong>Premium Secondary:</strong> `#2196F3` (Blue)",
+          "Used to visually highlight premium features (e.g., in neural connection animations, special UI elements), emphasizing their <strong>additional value</strong> (Principles 2, 10)."
+        ],
+        "color_application_title": "2.4. Color Application (Examples)",
+        "color_application": [
+          {
+            "title": "Welcome Screen (from screenshot):",
+            "items": [
+              "Background: `#1A1A1A` (Dark Mode).",
+              "\"Get Started\" button: Gradient `#F2F047` → `#1ED94F`.",
+              "Chat icon: `#F2F047` (outline) with a white symbol inside.",
+              "Text: `#FFFFFF` (Welcome to Brain Messenger), `#D9E8D9` (hint)."
+            ]
+          },
+          {
+            "title": "Theme Switching:",
+            "items": [
+              "Implemented via a global `themeMode` flag (`Light`/`Dark`).",
+              "Example in React Native:\n```jsx\nimport { useColorScheme } from 'react-native';\nconst themeMode = useColorScheme() === 'dark' ? 'Dark' : 'Light';\nconst backgroundColor = themeMode === 'Dark' ? '#1A1A1A' : '#FFFFFF'; // Example of background selection\n```"
+            ]
+          }
+        ],
+        "usage_recommendations_title": "2.5. Color Usage Recommendations",
+        "usage_recommendations": [
+          "<strong>Gradients:</strong> Use `#A7F43A` → `#00C853` or `#F2F047` → `#1ED94F` (depending on the theme) for key actions and accent elements that draw attention to <strong>value</strong> (Principle 2).",
+          "<strong>Dark Theme:</strong> Use `#1A1A1A` or `#212121` as the main background to reduce eye strain (related to Principle 5: Health).",
+          "<strong>Contrast:</strong> Always check the contrast of text and elements to ensure <strong>accessibility</strong> (WCAG 2.1 AA) and compliance with Principle 7 (Integrity). Use tools like WebAIM Contrast Checker."
+        ]
+      },
       "color_application": [
         {
           "title": "Welcome Screen (from screenshot):",
           "items": [
             "Background: `#1A1A1A` (Dark Mode).",
-            "\"Get Started\" Button: Gradient `#F2F047` → `#1ED94F`.",
-            "Chat Icon: `#F2F047` (outline) with a white symbol inside.",
+            "\"Get Started\" button: Gradient `#F2F047` → `#1ED94F`.",
+            "Chat icon: `#F2F047` (outline) with a white symbol inside.",
             "Text: `#FFFFFF` (Welcome to Brain Messenger), `#D9E8D9` (hint)."
           ]
         },
@@ -324,115 +508,328 @@
           ]
         }
       ],
-      "usage_recommendations_title": "2.5. Color Usage Recommendations",
-      "usage_recommendations": [
-        "<strong>Gradients:</strong> Use `#A7F43A` → `#00C853` or `#F2F047` → `#1ED94F` (depending on the theme) for key actions and accent elements that draw attention to <strong>value</strong> (Principle 2).",
-        "<strong>Dark Theme:</strong> Use `#1A1A1A` or `#212121` as the main background to reduce eye strain (related to Principle 5: Health).",
-        "<strong>Contrast:</strong> Always check text and element contrast to ensure <strong>accessibility</strong> (WCAG 2.1 AA) and compliance with Principle 7 (Integrity). Use tools like WebAIM Contrast Checker."
-      ]
+      "section3": {
+        "title": "3. Typography: Readability as the Core of Efficiency",
+        "intro": "The choice of font and its application are based on ensuring maximum readability and accessibility, which is critical for effective information absorption and reducing cognitive load (related to Principle 5: Health and Principle 2: Value).",
+        "primary_font_title": "3.1. Primary Font",
+        "primary_font": [
+          "<strong>Family:</strong> Roboto (Google Fonts)",
+          "<strong>Fallback:</strong> Sans-serif",
+          "<strong>Reason:</strong> High readability on various screen sizes, broad character support (multilingual), open license, and availability."
+        ],
+        "sizes_styles_title": "3.2. Sizes and Styles (Hierarchy Scale)",
+        "sizes_styles_table": [
+          ["Level", "Size", "Style", "Usage"],
+          ["H1 (Heading)", "24px", "Bold", "Main screen titles (e.g., \"Chats\")"],
+          ["H2 (Subheading)", "18px", "Medium", "Secondary headings, group names"],
+          ["Body", "16px", "Regular", "Main text of messages, chat list"],
+          ["Caption", "14px", "Regular", "Photo captions, message times, small text"],
+          ["Button", "16px", "Medium", "Action button text"]
+        ],
+        "notes_title": "Notes:",
+        "notes": [
+          "<strong>Line Height:</strong> Minimum 1.5 for body text to improve readability.",
+          "<strong>Customization (Principle 2):</strong> The user can select an alternative font in settings (e.g., Open Sans) to adapt to their preferences.",
+          "<strong>Accessibility:</strong> Adherence to contrast and minimum font size to comply with WCAG."
+        ]
+      },
+      "section4": {
+        "title": "4. Animations: Optimization and Meaning (Principle 12: Pragmatism)",
+        "intro": "Animations in BrainMessenger are used to enhance the user experience, provide visual feedback, and give the interface life. However, they must be <strong>pragmatic, optimized</strong> (<2 GB RAM), and <strong>not create unnecessary load</strong> (related to Principle 5: Health).",
+        "principles_title": "4.1. Animation Principles",
+        "principles": [
+          "<strong>Meaning:</strong> Every animation must have a clear purpose – to explain a transition, draw attention to something important, or confirm an action.",
+          "<strong>Smoothness:</strong> Use `ease-in-out` or `ease-out` for natural movement.",
+          "<strong>Optimization:</strong> Animations should not slow down the interface or consume many resources. Duration is chosen to balance smoothness and speed.",
+          "<strong>Accessibility:</strong> Avoid overly fast or flashing animations that could cause discomfort or seizures in sensitive users."
+        ],
+        "list_title": "4.2. List of Animations (Examples)",
+        "list_table": [
+          ["Name", "Description", "Trigger", "Parameters", "Principle Link", "Colors (Light/Dark)"],
+          ["Slide Switching", "Shifting slides (Welcome Screen)", "Swipe/click on arrow", "0.3s, slide left/right", "P2 (Onboarding)", "#96C93D / #96C9D"],
+          ["Opening Chat", "Chat appears from bottom to top", "Click on chat in list", "0.3s, ease-in-out", "P2 (Navigation)", "#00BFFF / #00BFFF"],
+          ["Button Press", "Visual feedback on click (scaling down)", "Click on button", "0.2s, scale", "P2 (Feedback)", "Gradient #F2F047→#1ED94F"],
+          ["Sending Message", "Message appears with a smooth fade-in", "Click \"Send\"", "0.3s, fade-in", "P2 (Feedback)", "#96C93D / #96C93D"],
+          ["Screen Transition", "Screen slides left/right (basic navigation)", "Navigation", "0.3s, slide", "P2 (Navigation)", "#B0B0B0 / #4D4D4D"],
+          ["Icon Animation (Morph)", "Icon transformation (e.g., mute → unmute)", "Click (state toggle)", "0.4s, morph", "P2 (State)", "#FF6347 / #FF6347"],
+          ["Ripple Effect on Press", "Radial waves from the point of press (feedback)", "Click on button/element", "0.3s, ripple", "P2 (Feedback)", "#F2F047 / #F2F047"],
+          ["Glitch Effect (Premium)", "Text distortion for premium (visualization)", "Subscription activation", "0.2s, glitch", "P2, P10 (Highlighting)", "#FF6347 / #FF6347"],
+          ["Neural Connections (Premium)", "Pulsing lines (Asset visualization)", "Premium screen", "0.5s, pulse", "P2, P10 (Highlighting)", "#96C93D / #96C93D"]
+        ],
+        "implementation_examples_title": "4.3. Implementation Examples (Code Snippets)",
+        "css_ripple_title": "CSS for Ripple Effect:",
+        "css_ripple_code": ".ripple {\n  background: linear-gradient(45deg, #F2F047, #1ED94F); /* Or other colors/gradient */\n  border-radius: 50%;\n  animation: ripple 0.3s ease-out;\n}\n@keyframes ripple {\n  to { transform: scale(2); opacity: 0; }\n}",
+        "rn_icon_title": "React Native for Animated Icon:",
+        "rn_icon_code": "import Animated from 'react-native-reanimated'; // Example library\nimport Icon from 'react-native-vector-icons/MaterialIcons'; // Example library\n\nconst color = themeMode === 'Dark' ? '#FFFFFF' : '#333333';\n// Creating an animated Icon component\nconst AnimatedIcon = Animated.createAnimatedComponent(Icon);\n\n// Example usage with scale animation (assuming 'scale' is an Animated.Value)\n<AnimatedIcon name=\"volume-up\" color={color} style={{ transform: [{ scale: scale }] }} />"
+      },
+      "section5": {
+        "title": "5. Alignment and Grid: Structure and Order (Principle 9: System)",
+        "intro": "Using a consistent alignment system and a modular grid is the foundation for creating a <strong>systematic, easily maintainable, and visually harmonious</strong> interface (Principle 9: System).",
+        "base_grid": "<strong>Base Grid:</strong> 8px (base unit for defining element sizes, paddings, and margins). All values should be multiples of 8 (or 4 for very small elements).",
+        "alignment": [
+          "The principle of <strong>visual hierarchy</strong> is used: more important elements are placed higher or are visually dominant.",
+          "<strong>Vertical Flow:</strong> Content on screens is organized from top to bottom: Header → Input Field → Action Button.",
+          "<strong>Horizontal Alignment:</strong> Elements within containers are aligned to the left (for LTR) or right (for RTL), unless centering is required (e.g., titles in the header).",
+          "<strong>Spacing (Padding/Margin):</strong> Values from the 8px scale (8, 16, 24, 32, 40, 48 px, etc.) are used to create clear intervals between elements and groups of elements."
+        ],
+        "adaptability_title": "<strong>Adaptability and Responsiveness:</strong>",
+        "adaptability": [
+          "The design adapts to different screen sizes to provide <strong>value</strong> (Principle 2) on any device.",
+          "<strong>Mobile Devices:</strong> 320px–767px (Typically a single-column layout).",
+          "<strong>Tablets:</strong> 768px–1023px (Possibly a two-column layout, side panels).",
+          "<strong>Desktop:</strong> 1024px+ (Wide layout, multi-column design, side panels)."
+        ]
+      },
+      "section6": {
+        "title": "6. Accessibility Principles (WCAG 2.1 AA): Design for All (Principle 5: Health, Principle 7: Integrity)",
+        "intro": "<strong>Accessibility is not an option, but a fundamental requirement</strong> (similar to Principle 5: Health as a Foundation) for creating a <strong>holistic</strong> (Principle 7) and <strong>valuable</strong> (Principle 2) product that can be used by everyone, regardless of their abilities or the technologies they use. We aim to comply with WCAG 2.1 AA level.",
+        "principles": [
+          "<strong>Color Contrast:</strong> Text elements must have a minimum contrast ratio of 4.5:1 (for normal text) and 3:1 (for large text or icons) against the background. This is checked for both themes (Light/Dark).",
+          "<strong>Keyboard Navigation:</strong> All interactive elements (buttons, links, input fields) must be accessible via keyboard (Tab, Shift+Tab) and activatable (Enter, Space).",
+          "<strong>Screen Reader Support:</strong> Use semantic markup (HTML) and ARIA attributes to provide context and information to screen reader users (e.g., descriptions for icons, element states).",
+          "<strong>Visual Focus Indicator:</strong> There must be a clear and visible indicator of the currently focused element for keyboard users (e.g., a blue outline `#007BFF`).",
+          "<strong>Error Handling:</strong> Error messages must be clear, understandable, and easily identifiable by users, including screen reader users.",
+          "<strong>RTL (Right-to-Left) Support:</strong> The design adapts for languages with right-to-left writing direction (e.g., Arabic), including mirroring the layout, icons, and text (see DocLocIn.md)."
+        ]
+      },
+      "section7": {
+        "title": "7. Notes and Recommendations",
+        "notes": [
+          "<strong>User Settings:</strong> Remember that some design aspects (chat colors, fonts) can be changed by the user in settings. The design system should accommodate this flexibility.",
+          "<strong>Testing on Real Devices:</strong> All design components must be tested on various devices, with different screen resolutions, and in different lighting conditions to ensure their effectiveness and accessibility.",
+          "<strong>Living Documentation:</strong> This design system is a living document. It will be updated with new components, patterns, and recommendations as the product evolves, reflecting the principles of <strong>continuous improvement</strong> (Principle 1) and a <strong>systemic approach</strong> (Principle 9).",
+          "<strong>Design as part of the Kaizen Process:</strong> Design decisions are analyzed and improved based on feedback and real-world usage, integrating into the overall Kaizen process (Principles 9, 14)."
+        ]
+      }
     },
-    "section3": {
-      "title": "3. Typography: Readability as the Basis of Efficiency",
-      "intro": "Font selection and its application are based on ensuring maximum readability and accessibility, which is critical for effective information absorption and reducing cognitive load (related to Principle 5: Health and Principle 2: Value).",
-      "primary_font_title": "3.1. Primary Font",
-      "primary_font": [
-        "<strong>Family:</strong> Roboto (Google Fonts)",
-        "<strong>Fallback:</strong> Sans-serif",
-        "<strong>Reason:</strong> High readability on different screen sizes, broad character support (multilingualism), open license, and availability."
-      ],
-      "sizes_styles_title": "3.2. Sizes and Styles (Scale for Hierarchy)",
-      "sizes_styles_table": [
-        ["Level", "Size", "Weight", "Usage"],
-        ["H1 (Heading)", "24px", "Bold", "Main screen titles (e.g., \"Chats\")"],
-        ["H2 (Subheading)", "18px", "Medium", "Secondary titles, group names"],
-        ["Body", "16px", "Regular", "Main message text, chat list"],
-        ["Caption", "14px", "Regular", "Photo captions, message time, small text"],
-        ["Button", "16px", "Medium", "Action button text"]
-      ],
-      "notes_title": "Notes:",
-      "notes": [
-        "<strong>Line Height:</strong> Minimum 1.5 for body text to improve readability.",
-        "<strong>Customization (Principle 2):</strong> The user can choose an alternative font in settings (e.g., Open Sans) to adapt to their preferences.",
-        "<strong>Accessibility:</strong> Adherence to contrast and minimum font size for WCAG compliance."
-      ]
-    },
-    "section4": {
-      "title": "4. Animations: Optimization and Meaning (Principle 12: Pragmatism)",
-      "intro": "Animations in BrainMessenger are used to enhance the user experience, provide visual feedback, and add liveliness to the interface. However, they must be <strong>pragmatic, optimized</strong> (<2 GB RAM), and <strong>not create excessive load</strong> (related to Principle 5: Health).",
-      "principles_title": "4.1. Animation Principles",
-      "principles": [
-        "<strong>Meaning:</strong> Every animation must have a clear purpose – explain a transition, draw attention to something important, confirm an action.",
-        "<strong>Smoothness:</strong> Use `ease-in-out` or `ease-out` for natural movement.",
-        "<strong>Optimization:</strong> Animations should not slow down the interface or consume many resources. Duration is chosen for a balance between smoothness and speed.",
-        "<strong>Accessibility:</strong> Avoid overly fast or flashing animations that can cause discomfort or seizures in sensitive users."
-      ],
-      "list_title": "4.2. Animation List (Examples)",
-      "list_table": [
-        ["Name", "Description", "Trigger", "Parameters", "Relation to Principles", "Colors (Light/Dark)"],
-        ["Slide Transition", "Slide transition (Welcome Screen)", "Swipe/click on arrow", "0.3 sec, slide left/right", "P2 (Onboarding)", "#96C93D / #96C93D"],
-        ["Chat Opening", "Chat appears from bottom up", "Click on chat in list", "0.3 sec, ease-in-out", "P2 (Navigation)", "#00BFFF / #00BFFF"],
-        ["Button Press", "Visual feedback on click (scaling down)", "Click on button", "0.2 sec, scale", "P2 (Feedback)", "Gradient #F2F047→#1ED94F"],
-        ["Message Sending", "Message appears with smooth fade-in", "Click \"Send\"", "0.3 sec, fade-in", "P2 (Feedback)", "#96C93D / #96C93D"],
-        ["Screen Transition", "Screen slide right/left (basic navigation)", "Navigation", "0.3 sec, slide", "P2 (Navigation)", "#B0B0B0 / #4D4D4D"],
-        ["Icon Animation (Morph)", "Icon transformation (e.g., mute → unmute)", "Click (state toggle)", "0.4 sec, morph", "P2 (State)", "#FF6347 / #FF6347"],
-        ["Ripple Effect on Press", "Radial waves from press point (feedback)", "Click on button/element", "0.3 sec, ripple", "P2 (Feedback)", "#F2F047 / #F2F047"],
-        ["Glitch Effect (Premium)", "Text distortion for premium (visualization)", "Subscription activation", "0.2 sec, glitch", "P2, P10 (Highlight)", "#FF6347 / #FF6347"],
-        ["Neural Connections (Premium)", "Pulsating lines (Asset visualization)", "Premium screen", "0.5 sec, pulse", "P2, P10 (Highlight)", "#96C93D / #96C93D"]
-      ],
-      "implementation_examples_title": "4.3. Implementation Examples (Code Snippets)",
-      "css_ripple_title": "CSS for Ripple Effect:",
-      "css_ripple_code": ".ripple {\n  background: linear-gradient(45deg, #F2F047, #1ED94F); /* Or other colors/gradient */\n  border-radius: 50%;\n  animation: ripple 0.3s ease-out;\n}\n@keyframes ripple {\n  to { transform: scale(2); opacity: 0; }\n}",
-      "rn_icon_title": "React Native for Animated Icon:",
-      "rn_icon_code": "import Animated from 'react-native-reanimated'; // Example library\nimport Icon from 'react-native-vector-icons/MaterialIcons'; // Example library\n\nconst color = themeMode === 'Dark' ? '#FFFFFF' : '#333333';\n// Create an animated Icon component\nconst AnimatedIcon = Animated.createAnimatedComponent(Icon);\n\n// Example usage with scale animation (assuming 'scale' is an Animated.Value)\n<AnimatedIcon name=\"volume-up\" color={color} style={{ transform: [{ scale: scale }] }} />"
-    },
-    "section5": {
-      "title": "5. Alignment and Grid: Structure and Order (Principle 9: System)",
-      "intro": "Using a consistent alignment system and a modular grid is the foundation for creating a <strong>systematic, easily maintainable, and visually harmonious</strong> interface (Principle 9: System).",
-      "base_grid": "<strong>Base Grid:</strong> 8px (base step for defining element sizes, padding, spacing). All values should be multiples of 8 (or 4 for very small elements).",
-      "alignment_title": "<strong>Alignment:</strong>",
-      "alignment": [
-        "The principle of <strong>visual hierarchy</strong> is used: more important elements are placed higher or visually dominate.",
-        "<strong>Vertical flow:</strong> Content on screens is organized from top to bottom: Title → Input Field → Action Button.",
-        "<strong>Horizontal alignment:</strong> Elements in containers are aligned to the left (for LTR) or right (for RTL), unless centering is necessary (e.g., header titles).",
-        "<strong>Padding/Margin:</strong> Values from the 8px scale (8, 16, 24, 32, 40, 48 px, etc.) are used to create clear spacing between elements and groups of elements."
-      ],
-      "adaptability_title": "<strong>Adaptability and Responsiveness:</strong>",
-      "adaptability": [
-        "The design adapts to different screen sizes to ensure <strong>value</strong> (Principle 2) on any device.",
-        "<strong>Mobile devices:</strong> 320px–767px (Usually single-column layout).",
-        "<strong>Tablets:</strong> 768px–1023px (Possibly two-column layout, side panels).",
-        "<strong>Desktop:</strong> 1024px+ (Wide layout, multi-column design, side panels)."
-      ]
-    },
-    "section6": {
-      "title": "6. Accessibility Principles (WCAG 2.1 AA): Design for All (Principle 5: Health, Principle 7: Integrity)",
-      "intro": "<strong>Accessibility is not an option, but a fundamental requirement</strong> (similar to Principle 5: Health as a Foundation) for creating a <strong>holistic</strong> (Principle 7) and <strong>valuable</strong> (Principle 2) product that everyone can use, regardless of their abilities or the technologies they use. We strive to meet WCAG 2.1 AA level.",
-      "principles": [
-        "<strong>Color Contrast:</strong> Text elements must have a minimum contrast ratio of 4.5:1 (for normal text) and 3:1 (for large text or icons) against the background. This is checked for both themes (Light/Dark).",
-        "<strong>Keyboard Navigation:</strong> All interactive elements (buttons, links, input fields) must be accessible for navigation using the keyboard (Tab, Shift+Tab) and activation (Enter, Space).",
-        "<strong>Screen Reader Support:</strong> Use semantic markup (HTML) and ARIA attributes to provide context and information to screen reader users (e.g., descriptions for icons, element states).",
-        "<strong>Visual Focus Indicator:</strong> For keyboard users, there must be a clear and visible indicator of the currently focused element (e.g., a blue outline `#007BFF`).",
-        "<strong>Error Handling:</strong> Error messages must be clear, understandable, and easily identifiable by users, including screen reader users.",
-        "<strong>RTL Support (Right-to-Left):</strong> The design adapts for languages with right-to-left writing direction (e.g., Arabic), including mirroring the layout, icons, and text (see DocLocIn.md)."
-      ]
-    },
-    "section7": {
-      "title": "7. Notes and Recommendations",
-      "notes": [
-        "<strong>User Customization:</strong> Remember that some aspects of the design (chat colors, fonts) can be changed by the user in settings. The design system must account for this flexibility.",
-        "<strong>Testing on Real Devices:</strong> All design components must be tested on various devices, with different screen resolutions and in different lighting conditions, to ensure their effectiveness and accessibility.",
-        "<strong>Living Documentation:</strong> This design system is a living document. It will be supplemented with new components, templates, and recommendations as the product evolves, reflecting the principles of <strong>continuous improvement</strong> (Principle 1) and a <strong>systematic approach</strong> (Principle 9).",
-        "<strong>Design as part of the Kaizen Process:</strong> Design decisions are analyzed and improved based on feedback and real usage, integrating into the overall Kaizen process (Principle 9, 14)."
-      ]
+    "localization_guide": {
+      "title": "BrainMessenger Localization Guide (Accessibility and Scaling)",
+      "subtitle": "Creating Value through Systematic Localization",
+      "section1": {
+        "title": "1. Introduction: Expanding Value through Accessibility",
+        "project_name": "<strong>Project Name:</strong> BrainMessenger",
+        "description": "<strong>Description:</strong> This guide describes the localization process for BrainMessenger — a key step in ensuring the product's <strong>accessibility</strong> and <strong>value</strong> (Principle 2) for a wide global audience. We view localization not just as translating strings, but as a <strong>systematic process</strong> (Principle 9) of adapting the interface and content, which will allow us to <strong>scale our impact</strong> (Principles 2, 8).",
+        "goal": "<strong>Goal:</strong> To make BrainMessenger understandable and convenient for users from different cultures, starting with a basic set of languages and creating a <strong>reliable system</strong> (Principle 9) for easily adding new ones in the future.",
+        "current_status": "<strong>Current Status:</strong> Basic English language support (MVP). Planning and preparation for adding new languages are underway as part of the current development stages (see Roadmap).",
+        "principles_title": "<strong>Principles guiding localization:</strong>",
+        "principles": [
+          "<strong>Creating Value (Principle 2):</strong> Localization directly increases the product's value for non-English-speaking users.",
+          "<strong>System and Optimization (Principle 9):</strong> The localization process is built as a clear, repeatable system for efficiency.",
+          "<strong>Pragmatism and Realism (Principle 12):</strong> The choice of the initial set of languages is based on potential reach and resources.",
+          "<strong>External Expertise and Feedback (Principle 14):</strong> Involving professional translators and collecting feedback from users in different languages."
+        ]
+      },
+      "section2": {
+        "title": "2. Localization Goals",
+        "goals": [
+          "Ensure support for at least <strong>5 key languages</strong> (English, Spanish, French, Russian, Arabic) for the MVP launch — (Requirement NFR-11, corresponding to Principle 12: Pragmatism).",
+          "Implement <strong>UI adaptation for right-to-left (RTL) languages</strong>, such as Arabic (Principle 2: Accessibility).",
+          "Maintain <strong>consistency in terminology and style</strong> across all translations using centralized tools (Principle 9: System).",
+          "Create an <strong>efficient and simple process</strong> for adding new languages as the user base grows and requests come in (Principle 9: Scaling, Principle 12: Pragmatism, Principle 14: Feedback)."
+        ]
+      },
+      "section3": {
+        "title": "3. Tools and Technologies: A Reliable Foundation (Principles 8, 9)",
+        "intro": "The choice of tools is based on <strong>pragmatism</strong> (Principle 12), <strong>reliability</strong>, and support for a <strong>systematic approach</strong> (Principle 9).",
+        "table": [
+          ["Tool", "Purpose", "Installation/Configuration"],
+          ["`i18next`", "Main library for managing translations in the Frontend (React Native). Supports interpolation, contexts.", "`npm install i18next react-i18next`"],
+          ["`react-intl`", "Library for localized formatting of dates, numbers, currencies in the Frontend.", "`npm install react-intl`"],
+          ["`Transifex`", "Professional platform for translation management, engaging translators, and ensuring translation quality.", "Register at [transifex.com](http://transifex.com/)"],
+          ["`rtlcss`", "Utility for automatic transformation of CSS styles to support RTL languages.", "`npm install -g rtlcss` (global) or `npm install rtlcss --save-dev`"],
+          ["<strong>JSON files</strong>", "Format for storing translations.", "Standard."]
+        ]
+      },
+      "section4": {
+        "title": "4. Translation File Structure: Order in the System (Principle 9)",
+        "intro": "Translations are organized in a clear file structure for ease of management (Principle 9: System).",
+        "subsection4_1": {
+          "title": "4.1. Location",
+          "description": "Translation files are stored in the `locales` directory inside `frontend/src`:",
+          "code_block": "frontend/\n├── src/\n│ ├── locales/\n│ │ ├── en.json # English (base)\n│ │ ├── es.json # Spanish\n│ │ ├── fr.json # French\n│ │ ├── ru.json # Russian\n│ │ ├── ar.json # Arabic (RTL example)\n│ └── index.ts # i18next configuration"
+        },
+        "subsection4_2": {
+          "title": "4.2. JSON Format: Context and Flexibility",
+          "points": [
+            "<strong>Keys:</strong> `camelCase` is used. Keys should be <strong>descriptive and reflect the context</strong> of the string's use (e.g., `sendButton` instead of just `send`).",
+            "<strong>Values:</strong> Contain the translatable text. <strong>Interpolation</strong> is supported for inserting dynamic data (e.g., usernames).",
+            "<strong>Example `en.json`:</strong>"
+          ],
+          "code_block": "{\n  \"welcomeTitle\": \"Welcome to BrainMessenger!\",\n  \"sendButton\": \"Send\",\n  \"errors\": {\n    \"unauthorized\": \"Please log in again to continue.\",\n    \"notFound\": \"The requested item could not be found.\"\n  },\n  \"chat\": {\n    \"newMessageNotification\": \"New message from {{name}}\",\n    \"unreadCount\": \"{{count}} unread messages\"\n  },\n  \"settings\": {\n    \"language\": \"Language\",\n    \"theme\": \"Theme\"\n  }\n}"
+        },
+        "subsection4_3": {
+          "title": "4.3. RTL Flag: Interface Adaptation",
+          "description": "For right-to-left languages, metadata is added to the beginning of the corresponding JSON file for indication:",
+          "code_block": "{\n  \"rtl\": true,\n  \"welcomeTitle\": \"مرحبًا بك في BrainMessenger!\"\n  // ... other translations\n}",
+          "outro": "This flag is used by the Frontend application for corresponding style and layout adaptation."
+        }
+      },
+      "section5": {
+        "title": "5. Localization Setup: Integration into the System (Principle 9)",
+        "intro": "Localization is integrated into both the Frontend (for displaying translated UI) and Backend (for returning localized errors or notifications).",
+        "subsection5_1": {
+          "title": "5.1. Frontend (React Native): Using i18next",
+          "step1_title": "1. Initializing i18next:",
+          "step1_intro": "In the main application file or configuration file (frontend/src/index.ts or similar):",
+          "step1_code": "import i18n from 'i18next'\nimport { initReactI18next } from 'react-i18next'\n\n// Import all locale files\nimport en from './locales/en.json'\nimport es from './locales/es.json'\nimport fr from './locales/fr.json'\nimport ru from './locales/ru.json'\nimport ar from './locales/ar.json'\n\n// Define resources\nconst resources = {\n  en: { translation: en },\n  es: { translation: es },\n  fr: { translation: fr },\n  ru: { translation: ru },\n  ar: { translation: ar },\n};\n\ni18n\n  .use(initReactI18next) // Connect react-i18next\n  .init({\n    resources,\n    lng: 'en', // Default language on first launch (can be determined by system settings or user choice)\n    fallbackLng: 'en', // Fallback language if the current translation is missing\n    interpolation: {\n      escapeValue: false // Allows using HTML tags in translations (use with caution!)\n    }\n  });\n\nexport default i18n;",
+          "step2_title": "2. Using translations in components:",
+          "step2_intro": "Use the `useTranslation` hook to access the `t` function and the `i18n` object.",
+          "step2_code": "import { useTranslation } from 'react-i18next';\nimport { Text, Button, View } from 'react-native';\n\nconst WelcomeScreen = () => {\n  const { t, i18n } = useTranslation(); // Get the t function and i18n object\n\n  return (\n    <View>\n      {/* Using a simple translation */}\n      <Text>{t('welcomeTitle')}</Text>\n      \n      {/* Using translation with interpolation */}\n      {/* Assuming there is an unreadCount state somewhere */}\n      <Text>{t('chat.unreadCount', { count: 5 })}</Text> \n\n      {/* Using translation for button text */}\n      <Button title={t('sendButton')} onPress={sendMessage} />\n      \n      {/* Example of changing the language */}\n      <Button title={t('settings.language')} onPress={() => i18n.changeLanguage('ar')} />\n    </View>\n  );\n};",
+          "step3_title": "3. Changing the language:",
+          "step3_description": "The language is changed by calling `i18n.changeLanguage('language_code')`. This is usually done in the user settings."
+        },
+        "subsection5_2": {
+          "title": "5.2. Backend (NestJS): Localizing Errors and Notifications",
+          "intro": "The Backend can return localized error messages or notifications based on the language passed by the Frontend (e.g., in the Accept-Language header or user settings).",
+          "example_title": "Using localized messages when throwing errors:",
+          "example_code": "import { HttpException, HttpStatus } from '@nestjs/common';\nimport { t } from 'i18next'; // Assuming i18next is initialized in the Backend\n\n// In a service or controller\nif (!user) {\n  // Determine the user's language (e.g., from request.headers['accept-language'])\n  const userLang = determineUserLanguage(request); \n  throw new HttpException(t('errors.unauthorized', { lng: userLang }), HttpStatus.UNAUTHORIZED);\n}",
+          "outro": "The user's locale is determined from the `Accept-Language` header (standard approach) or is saved in the user's profile in the database after being selected in the app settings."
+        },
+        "subsection5_3": {
+          "title": "5.3. RTL Adaptation (Right-to-Left): Mirroring the System",
+          "intro": "For languages with RTL (Arabic, Hebrew, etc.), it is necessary to mirror the layout and some interface elements.",
+          "styles_title": "Styles (CSS/CSS-in-JS):",
+          "styles_description": "Use `rtlcss` in the build process or conditional styles in the code. `rtlcss` automatically converts properties like `margin-left`, `padding-right`, `text-align: left`, etc., into their RTL equivalents (`margin-right`, `padding-left`, `text-align: right`).",
+          "styles_code": "/* Original CSS for LTR */\n.message-bubble {\n  margin-left: 10px;\n  text-align: left;\n}\n/* After processing with rtlcss for RTL */\n.message-bubble {\n  margin-right: 10px;\n  text-align: right;\n}",
+          "react_native_title": "React Native:",
+          "react_native_description": "React Native has built-in support for RTL through `I18nManager`.",
+          "react_native_code": "import { I18nManager } from 'react-native';\nimport i18n from './index'; // Your i18next initialization file\n\n// In the main app file, before rendering\nconst isRTL = i18n.language === 'ar' || i18n.language === 'he'; // Check if the current language is RTL\n\n// forceRTL may require an app restart to take full effect\nif (isRTL !== I18nManager.isRTL) {\n  I18nManager.forceRTL(isRTL);\n  // Optional: Restart the app to apply RTL layout fully\n  // RNRestart.Restart(); \n}\n\n// Some styles may require manual adaptation if auto-conversion is not sufficient\nconst containerStyle = {\n  flexDirection: isRTL ? 'row-reverse' : 'row',\n  textAlign: isRTL ? 'right' : 'left',\n};",
+          "icons_title": "Icons:",
+          "icons_description": "Some icons (e.g., 'back', 'next' arrows) must be mirrored for RTL. This can be done conditionally in the code or by using RTL-ready icon sets."
+        }
+      },
+      "section6": {
+        "title": "6. Process for Adding a New Language: A Scalable System (Principle 9)",
+        "intro": "The process of adding a new language is structured as a clear, repeatable sequence of actions to ensure efficiency (Principle 9).",
+        "steps": [
+          {
+            "title": "1. Create a base translation file:",
+            "description": "Copy the current `en.json` (or another most complete file) to `frontend/src/locales/<code>.json`, where `<code>` is the two-letter code for the new language (e.g., `de.json` for German). Add `\"rtl\": true` at the beginning of the file if the new language is RTL."
+          },
+          {
+            "title": "2. Upload to the translation platform (Transifex):",
+            "description": "Upload the new `<code>.json` file to the BrainMessenger project on Transifex. The system will automatically identify which strings need translation."
+          },
+          {
+            "title": "3. Organize the translation process:",
+            "description": "Assign translators (professionals or verified community members, Principle 14) for the new language in Transifex. Answer their questions about the context of the strings. Monitor the translation progress in Transifex."
+          },
+          {
+            "title": "4. Export and Integrate the translation:",
+            "description": "Once the translation is complete, export the finished `<code>.json` file from Transifex. Place it back into the `frontend/src/locales/` directory. Import the new resource in the i18next initialization file (`frontend/src/index.ts`) and add it to the `resources` object."
+          },
+          {
+            "title": "5. Add the language selection option in the UI:",
+            "description": "Add the new language to the list of available languages in the 'Settings' > 'Language' section."
+          },
+          {
+            "title": "6. Testing:",
+            "description": "A critically important step (Principle 3: Quality). Switch the language in the app settings. Check:\n- Correct translation of all UI strings.\n- No text truncation (some languages are longer than English).\n- Correct UI display for RTL languages (mirroring, alignment).\n- Localized formatting of dates and numbers.\n- Translated error messages from the Backend.\n- Use the test scenarios described in section 10."
+          }
+        ]
+      },
+      "section7": {
+        "title": "7. Supported Languages (Initial List and Plan)",
+        "intro": "The initial list of languages, chosen for pragmatic reasons (Principle 12) and potential reach.",
+        "table": [
+          ["Code", "Language", "Direction", "Status", "Plan (Q 2025)"],
+          ["en", "English", "LTR", "Implemented (Base)", "-"],
+          ["es", "Spanish", "LTR", "Planned (Q3)", "Q3"],
+          ["fr", "French", "LTR", "Planned (Q3)", "Q3"],
+          ["ru", "Russian", "LTR", "Planned (Q3)", "Q3"],
+          ["ar", "Arabic", "RTL", "Planned (Q3, requires RTL)", "Q3"]
+        ],
+        "expansion_title": "<strong>List Expansion:</strong>",
+        "expansion_description": "New languages will be added based on feedback (Principle 14) and analysis of potential value (Principle 2) for audience growth (e.g., if >10% of requests are for a new language)."
+      },
+      "section8": {
+        "title": "8. Recommendations: Best Practices for Localization",
+        "subsection8_1": {
+          "title": "8.1. For Developers (Writing World-Ready Code)",
+          "recommendations": [
+            "<strong>Don't hardcode strings!</strong> All user-facing strings must be moved to localization files and used via the `t('key')` function (Principle 9: System).",
+            "<strong>Use interpolation</strong> for strings with variable data (`t('chat.newMessageNotification', { name: user.name })`), not string concatenation in the code.",
+            "<strong>Consider pluralization</strong> (singular/plural forms) when working with counters (`{{count}} unread messages`). `i18next` and `react-intl` support this.",
+            "<strong>Use `react-intl`</strong> for all operations with dates, numbers, and currencies to ensure their format is correct for each locale (Principle 3: Quality, Principle 2: Value).",
+            "<strong>Test the UI with long translations</strong> (e.g., German, which is often longer than English) and RTL languages to ensure the layout doesn't break and text isn't truncated (Principle 3: Quality)."
+          ]
+        },
+        "subsection8_2": {
+          "title": "8.2. For Designers (Creating Language-Flexible Layouts)",
+          "recommendations": [
+            "<strong>Consider that text in other languages can be 30% (or more) longer</strong> than in English. Leave enough space in components.",
+            "<strong>Design layouts with mirroring in mind for RTL.</strong> Directional icons, text placement, and elements should be reversed (Principle 2: Accessibility)."
+          ]
+        },
+        "subsection8_3": {
+          "title": "8.3. For Translators (Creating Understandable Content)",
+          "recommendations": [
+            "<strong>Maintain context.</strong> The same English word can be translated differently depending on where it's used (e.g., 'Send' for a message or a request). Platforms like Transifex help add contextual comments.",
+            "<strong>Adhere to consistent terminology;</strong> use a glossary if available.",
+            "<strong>Maintain the application's tone</strong> (friendly but professional, especially in system messages and errors).",
+            "<strong>Use interpolation and pluralization features</strong> in translation files."
+          ]
+        },
+        "section9": {
+          "title": "9. Formatting (Dates, Numbers, Currencies): Details that Create Quality (Principle 3)",
+          "intro": "Correct display of localized data is critically important for quality (Principle 3) and usability (Principle 2).",
+          "dates_title": "<strong>Dates and Times:</strong>",
+          "dates_code": "import { FormattedDate, FormattedTime } from 'react-intl';\n\n// Will display the date in a format corresponding to the current locale\n<FormattedDate value={new Date()} /> // e.g., \"3/14/2025\" (en-US) or \"14.3.2025\" (de-DE)\n<FormattedDate value={new Date()} weekday=\"long\" year=\"numeric\" month=\"long\" day=\"numeric\" /> // \"Friday, March 14, 2025\"\n\n// Will display the time\n<FormattedTime value={new Date()} /> // e.g., \"3:00:00 PM\" (en-US) or \"15:00:00\" (de-DE)",
+          "numbers_title": "<strong>Numbers and Currencies:</strong>",
+          "numbers_code": "import { FormattedNumber, FormattedCurrency } from 'react-intl';\n\n// Will display a number with a local thousands separator and decimal point\n<FormattedNumber value={1234.56} /> // \"1,234.56\" (en-US) or \"1.234,56\" (de-DE)\n\n// Will display a number as a percentage\n<FormattedNumber value={0.75} style=\"percent\" /> // \"75%\"\n\n// Will display a number as currency (requires currency code)\n<FormattedCurrency value={123.45} currency=\"USD\" /> // \"$123.45\" (en-US)",
+          "outro": "To work with `react-intl`, you need to wrap your application in an `IntlProvider` and load the corresponding locale data (`react-intl/locale-data`)."
+        },
+        "section10": {
+          "title": "10. Testing Localization: Quality Assurance (Principles 3, 9)",
+          "intro": "Testing is an integral part of the quality assurance system (Principles 3, 9).",
+          "scenarios_title": "<strong>Test Scenarios:</strong>",
+          "scenarios": [
+            "<strong>Language Switching:</strong> Ensure that changing the language in the settings instantly (or after a restart, if `I18nManager` requires it) applies the new translation and RTL layout.",
+            "<strong>Display of All Strings:</strong> Check main screens and dialogs to ensure all user-visible strings are translated.",
+            "<strong>Long Text:</strong> Test the UI with languages known for their length (e.g., German, Russian) to ensure text is not truncated and elements do not overlap.",
+            "<strong>RTL Interface:</strong> Thoroughly check the UI in Arabic (or another RTL language): text direction, element alignment, display of directional icons, scrollbar positions.",
+            "<strong>Interpolation and Formatting:</strong> Check screens where dynamic data (names, counters, dates, numbers) is used, ensure it is formatted correctly for the current locale.",
+            "<strong>Localized Errors:</strong> Trigger various errors (incorrect login, missing item), check that error messages appear in the selected language."
+          ],
+          "tools_title": "<strong>Tools:</strong>",
+          "tools": [
+            "<strong>Manual Testing:</strong> The primary method. Testing on real devices with different locales.",
+            "<strong>Automated Tests (Cypress/Detox):</strong> Tests can be written to check for the presence of specific translation keys on a page or even take screenshots of the UI to compare LTR/RTL layouts (Principle 9: System)."
+          ],
+          "success_criteria_title": "<strong>Testing Success Criteria:</strong>",
+          "success_criteria": [
+            "100% of user strings are translated.",
+            "No text truncation or overlap in the UI.",
+            "Correct and complete RTL display for corresponding languages.",
+            "Correct localized formatting of dates, numbers, and currencies."
+          ]
+        },
+        "section11": {
+          "title": "11. Notes",
+          "notes": [
+            {
+              "title": "<strong>Plan:</strong>",
+              "description": "Full implementation of support for 5 key languages is planned for Q3 2025 (see Roadmap), after the completion of the technology foundation stage and the start of MVP development."
+            },
+            {
+              "title": "<strong>Scaling:</strong>",
+              "description": "The system is designed so that adding new languages in the future will be efficient (Principle 9). The main cost is the translation itself."
+            },
+            {
+              "title": "<strong>Limitations:</strong>",
+              "description": "Technical logs and server messages for debugging are not translated. Localization only concerns the user interface and messages intended for the end-user."
+            }
+          ]
+        }
+      }
     }
   }
-}
   },
-  "footer": {
+    "footer": {
     "sectionTitle": {
       "brand": "BrainMessenger"
     },
-    "brandContent": "Your Smart Communication Platform",
+    "brandContent": "Your smart platform for communication.",
     "copyright": "© 2025 BrainMessenger. All rights reserved."
   }
 }

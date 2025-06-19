@@ -97,7 +97,7 @@ const FAQPage: React.FC = () => {
             className={`faq-category-button ${selectedCategory === null ? 'active' : ''}`}
             onClick={() => setSelectedCategory(null)}
           >
-            {t('faq.allCategories') as string} {/* Assuming you have a translation key for "All Categories" */}
+            {t('faq.allQuestions') as string} {/* Assuming you have a translation key for "All Questions" */}
           </button>
           {faqData.map(category => (
             <button
@@ -116,7 +116,7 @@ const FAQPage: React.FC = () => {
           <Accordion items={finalFaqData} />
         ) : (
           <div className="faq-no-results">
-            {t('faq.notFound') as string} {/* Assuming translation key for "Not found questions" */}
+            {t('faq.noResults') as string} {/* Assuming translation key for "Not found questions" */}
           </div>
         )}
       </div>
