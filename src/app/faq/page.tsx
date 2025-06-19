@@ -5,7 +5,8 @@ import Accordion from '@/components/Accordion/Accordion';
 import { faqData } from '@/data/faqData';
 import Container from '@/components/Container';
 import { useLanguage } from '@/app/context/LanguageContext'; // Import useLanguage hook
-import Input from '../../components/Input'; // Import Input component for search functionality
+import Input from '@/components/Input'; // Import Input component
+import SvgIcon from '@/ui/SvgIcon'; // Import SvgIcon component
 
 const FAQPage: React.FC = () => {
   const { t } = useLanguage(); // Use the language hook
@@ -79,13 +80,16 @@ const FAQPage: React.FC = () => {
         <p className="faq-page-subtitle">
           {t('faq.subtitle') as string}
         </p>
-        <Input
-          className="faq-search-input"
-          placeholder={t('faq.searchPlaceholder') as string}
-          // Add any additional props or handlers for search functionality
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+        <div className="faq-search-input-centered">
+          <Input
+            placeholder={t('faq.searchPlaceholder') as string}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            icon={<SvgIcon iconName="search" className="faq-search-icon" />} // Add search icon
+          >
+          </Input>
+        </div>
+
 
         {/* Category buttons */}
         <div className="faq-category-buttons">
@@ -108,15 +112,16 @@ const FAQPage: React.FC = () => {
 
       </header>
       <div className="faq-accordion-wrapper">
-        <Accordion items={finalFaqData} />
+        {finalFaqData.length > 0 ? (
+          <Accordion items={finalFaqData} />
+        ) : (
+          <div className="faq-no-results">
+            {t('faq.notFound') as string} {/* Assuming translation key for "Not found questions" */}
+          </div>
+        )}
       </div>
     </Container>
   );
 };
 
 export default FAQPage;
-// КНопка здесь нужно для того, чтобы пользователь мог найти нужную категорию вопросов, и найти нужный вопрос, и ответ на него.
-// Компонент Accordion будет использоваться для отображения вопросов и ответов в виде аккордеона, где пользователь может раскрывать и скрывать ответы на вопросы.
-// Компонент Input будет использоваться для поиска вопросов по категориям и тегам. Он позволяет пользователю вводить текст,
-// который будет использоваться для фильтрации вопросов. Компонент Input также поддерживает отображение метки и сообщения об ошибке, если это необходимо.
-//// Этот компонент FAQPage будет использоваться для отображения страницы часто задаваемых вопросов (FAQ)

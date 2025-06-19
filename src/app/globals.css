@@ -1945,6 +1945,9 @@ p {
 
 .faq-header-section {
   margin-bottom: var(--spacing-xxl); /* mb-12 */
+  max-width: 768px; /* max-w-3xl */
+  margin-left: auto; /* mx-auto */
+  margin-right: auto; /* mx-auto */
 }
 
 .faq-back-link {
@@ -1982,6 +1985,12 @@ p {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md); /* space-y-4 */
+}
+
+.faq-search-input-centered {
+  max-width: 768px; /* max-w-3xl */
+  margin-left: auto; /* mx-auto */
+  margin-right: auto; /* mx-auto */
 }
 
 .faq-search-input-wrapper {
@@ -2524,8 +2533,8 @@ p {
   }
 }
 
-.faq-header-section {
-  max-width: 672px; /* max-w-2xl (2xl is 24rem = 384px, but 672px is used in other places for 2xl) */
+.faq-header-section .faq-back-link {
+  margin: 0 auto; /* Center the div */
   margin-bottom: var(--spacing-xl); /* mb-10 */
 }
 
@@ -2642,6 +2651,9 @@ p {
   padding-bottom: var(--spacing-xs); /* Add some padding for scrollbar */
   scrollbar-width: thin; /* For Firefox */
   scrollbar-color: var(--color-primary) var(--color-surface-dark); /* For Firefox */
+  max-width: 768px; /* max-w-3xl */
+  margin-left: auto; /* mx-auto */
+  margin-right: auto; /* mx-auto */
 }
 
 /* Custom scrollbar for Webkit browsers */
@@ -2681,3 +2693,68 @@ p {
   color: var(--color-background-dark); /* Active text color */
   border-color: var(--color-primary); /* Active border color */
 }
+
+/* Adjust input field padding to make space for the icon */
+
+/* The specific faq-search-input padding might override this,
+   but this provides a default for any input with an icon.
+   The existing .faq-search-input rule has padding-left: 48px,
+   which is sufficient for the icon (16px left + 20px icon + 8px gap = 44px).
+   So, no specific .faq-search-input padding adjustment is needed.
+*/
+
+/* Input Component Styles */
+.input-container {
+  position: relative; /* Needed for positioning the icon */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: var(--spacing-md); /* Space below the input group */
+}
+
+.input-field {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md); /* Default padding */
+  border-radius: var(--spacing-md); /* Rounded corners */
+  background-color: var(--color-surface-dark); /* Background color */
+  border: 1px solid var(--color-border); /* Default border */
+  color: var(--color-text-primary); /* Text color */
+  font-size: var(--font-size-base);
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Adjust padding-left for input field when there is an icon */
+.input-container .input-field {
+    padding-left: calc(var(--spacing-md) + 20px + var(--spacing-xs)); /* left position + icon width + gap */
+}
+
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--color-primary); /* Highlight border on focus */
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.2); /* Subtle glow on focus */
+}
+
+.input-field.input-error {
+  border-color: var(--color-error); /* Error border color */
+}
+
+.input-error-message {
+  display: block;
+  margin-top: var(--spacing-xs); /* Space above error message */
+  font-size: var(--font-size-sm);
+  color: var(--color-error); /* Error text color */
+}
+
+/* No Results Message styles */
+.faq-no-results {
+  text-align: center; /* Center the text */
+  padding: var(--spacing-xxl) 0; /* Add vertical padding */
+  color: var(--color-text-secondary); /* Use secondary text color */
+  font-size: var(--font-size-lg); /* Slightly larger font size */
+  font-weight: var(--font-weight-medium); /* Medium font weight */
+}
+
+
+/* The icon positioning within the input container is already handled by .input-icon */
+/* The padding-left of the input field is already handled by .input-container .input-field */
