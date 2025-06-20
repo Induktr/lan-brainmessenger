@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useLanguage } from '../../app/context/LanguageContext'; // Adjust path as needed
+import { useTranslation } from 'react-i18next';
 import SvgIcon from '../../ui/SvgIcon'; // Import SvgIcon
 
 
@@ -14,7 +14,7 @@ interface CaseStudyProps {
 }
 
 const CaseStudy: React.FC<CaseStudyProps> = ({ titleKey, iconName, descriptionKey, metricsKeys }) => {
-  const { t } = useLanguage();
+  const { t } = useTranslation();
 
   return (
     <motion.div

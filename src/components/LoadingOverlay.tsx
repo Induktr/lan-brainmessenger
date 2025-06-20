@@ -2,10 +2,10 @@
 
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLanguage } from '../app/context/LanguageContext'; // Corrected path
+import { useTranslation } from 'react-i18next';
 
 const LoadingOverlay = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslation();
 
   return (
     <AnimatePresence>

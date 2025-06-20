@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../app/context/ThemeContext';
-import { useLanguage } from '../app/context/LanguageContext';
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 import Image from 'next/image';
 import SvgIcon from './SvgIcon';
 
@@ -18,7 +18,7 @@ interface NewsCardProps {
 
 const NewsCard: React.FC<NewsCardProps> = ({ titleKey, descriptionKey, originalTitle, iconUrl, isMore = false, isActive = false }) => {
   const { } = useTheme();
-  const { t } = useLanguage();
+  const { t } = useTranslation(); // Use the useTranslation hook
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>): void => {

@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image'; // Import Image component
-import { useLanguage } from '../../app/context/LanguageContext'; // Adjust path as needed
+import { useTranslation } from 'react-i18next';
 import { UpdateItem } from '../../data/updates'; // Corrected path
 import SvgIcon from '../../ui/SvgIcon'; // Corrected path
 
@@ -15,7 +15,7 @@ const UpdateSlider: React.FC<UpdateSliderProps> = ({ updates }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  const { t } = useLanguage();
+  const { t } = useTranslation();
 
   const startAutoPlay = useCallback(() => {
     if (intervalRef.current) {

@@ -81,14 +81,11 @@
     "roadmap": {
       "title": {
         "section": "Roadmap",
-        "projectLaunch": "Project Launch",
-        "enhancedSecurity": "Enhanced Security",
-        "advancedCollaboration": "Advanced Collaboration",
-        "mobileEnhancement": "Mobile Enhancement",
-        "aiIntegration": "AI Integration",
-        "globalExpansion": "Global Expansion",
-        "enterpriseSolutions": "Enterprise Solutions",
-        "futureInnovation": "Future Innovation"
+        "phase0": "0. Landing Page: Launch and Basic Optimization",
+        "phase1": "1. Foundation and Stack",
+        "phase2": "2. Core MVP Features",
+        "phase3": "3. Testing, Optimization, and Launch",
+        "phase4": "4. Launch and Iterations"
       },
       "subtitle": {
         "section": "Our Vision for the Future"
@@ -99,51 +96,37 @@
         "upcoming": "Upcoming"
       },
       "description": {
-        "projectLaunch": "Initial launch of BrainMessenger with core features.",
-        "enhancedSecurity": "Strengthening security protocols and features.",
-        "advancedCollaboration": "Introducing advanced tools for collaboration.",
-        "mobileEnhancement": "Improving the mobile app experience.",
-        "aiIntegration": "Integrating AI-powered features for smarter communication.",
-        "globalExpansion": "Expanding BrainMessenger's reach worldwide.",
-        "enterpriseSolutions": "Developing solutions for enterprise clients.",
-        "futureInnovation": "Researching and implementing future technologies."
+        "phase0": "Goal of the phase: Publish a minimally viable landing page (MVP) on brain-messenger.com, providing basic information about the project and channels to transition to the web application, with elimination of critical visual flaws (text keys).",
+        "phase1": "The \"Foundation and Stack\" phase is the initial stage of BrainMessenger development, where the foundation for creating a Minimum Viable Product (MVP) will be laid. This phase will define the key technologies, architecture, and basic features necessary for launching the project. Implementing this phase is critical to ensuring the reliability, scalability, and security of the product.",
+        "phase2": "The \"Core MVP Features\" phase is a fundamental step in developing BrainMessenger, aimed at creating a Minimum Viable Product (MVP) that will demonstrate the key value of the digital asset to potential users and investors. Implementing this phase is critical for launching the first user scenarios, collecting feedback, and subsequent scaling of the product.",
+        "phase3": "Testing, Optimization, and Launch. This phase includes comprehensive testing of all features, performance optimization, and preparation for launching BrainMessenger. The goal is to ensure the reliability, security, and usability of the product before its official launch.",
+        "phase4": "The \"Launch and Iterations\" phase is the final stage of BrainMessenger development, where the product will be officially launched to a wide audience. The main focus will be on collecting user feedback, fixing bugs, and adding new features based on real user needs. This phase is critical for the further development and scaling of the product."
       },
       "features": {
-        "secureMessagingInfrastructure": "Secure Messaging Infrastructure",
-        "crossPlatformCompatibility": "Cross-Platform Compatibility",
-        "basicUserInterface": "Basic User Interface",
-        "endToEndEncryption": "End-to-End Encryption",
-        "twoFactorAuthentication": "Two-Factor Authentication",
-        "fileSharingCapabilities": "File Sharing Capabilities",
-        "teamWorkspaces": "Team Workspaces",
-        "realTimeCollaboration": "Real-Time Collaboration",
-        "advancedFileSharing": "Advanced File Sharing",
-        "nativeMobileApps": "Native Mobile Apps",
-        "offlineFunctionality": "Offline Functionality",
-        "pushNotifications": "Push Notifications",
-        "smartMessageCategorization": "Smart Message Categorization",
-        "automatedResponses": "Automated Responses",
-        "contentAnalysis": "Content Analysis",
-        "multiLanguageSupport": "Multi-Language Support",
-        "regionalDataCenters": "Regional Data Centers",
-        "culturalAdaptations": "Cultural Adaptations",
-        "advancedAdminControls": "Advanced Admin Controls",
-        "customIntegrations": "Custom Integrations",
-        "enterpriseSupport": "Enterprise Support",
-        "emergingTechnologies": "Emerging Technologies",
-        "communityDrivenFeatures": "Community-Driven Features",
-        "platformExpansion": "Platform Expansion"
+        "landingPageTextKey": "Task: 1: Landing Page: Initial Setup and Basic Optimization",
+        "settingsNavCta": "Task 2: Landing Page: Settings, Navigation, and Call to Action",
+        "basicAdaptationCrossBrowse": "Task 3: Landing Page: Basic Adaptation for Cross-Browser and Mobile",
+        "basicLoc": "Task 4: Landing Page: Basic Localization (English/Russian)",
+        "seoAnalytics": "Task 5: Landing Page: Basic SEO Optimization and Analytics Setup",
+        "tehnoStack": "Task 1: Foundation: Selection of Technology Stack and Architecture",
+        "mvpFunc": "Task 2: Foundation: Definition of Core MVP Functionality",
+        "coreMvp": "Task 3: Foundation: Implementation of Core MVP Features",
+        "authentication": "Task 1: Core MVP Features: Implementation of Authentication (Registration/Login)",
+        "basicBackenChatLogic": "Task 2: Core MVP Features: Basic Backend Chat Logic (Message Sending/Receiving)",
+        "frontendUiChat": "Task 3: Core MVP Features: Basic Frontend UI for Chat (React Native)",
+        "integrationFrontBack": "Task 4: Core MVP Features: Integration of Frontend and Backend (GraphQL)",
+        "basicTesting": "Task 5: Core MVP Features: Basic Testing (Unit Tests, E2E)",
+        "initAndroidProject": "Task 6: Core MVP Features: Initial Android Project Setup (React Native)",
+        "authAndroid": "Task 7: Core MVP Features: Authentication on Android (Registration/Login)",
+        "UiChatAndroid": "Task 8: Core MVP Features: Basic UI for Chat on Android (React Native)",
+        "phasePlaningTesting": "The moment of the launch is still being planned and tested. More detailed information about tasks and deadlines will be added soon.",
+        "phasePlaningLaunch": "The moment of the launch is still being planned and tested. More detailed information about tasks and deadlines will be added soon."
       },
       "date": {
-        "jan2024": "January 2024",
-        "mar2024": "March 2024",
-        "jun2024": "June 2024",
-        "sep2024": "September 2024",
-        "nov2024": "November 2024",
-        "jan2025": "January 2025",
-        "mar2025": "March 2025",
+        "dec2024": "December 2024",
         "jun2025": "June 2025",
-        "beyond2025": "Beyond 2025"
+        "jul2025": "July 2025",
+        "beyond2025": "After 2025"
       }
     },
   "faq": {
@@ -827,7 +810,18 @@
   },
     "footer": {
     "sectionTitle": {
-      "brand": "BrainMessenger"
+      "brand": "BrainMessenger",
+      "quickLinks": "Quick Links",
+      "contact": "Contact Us",
+      "social": "Follow Us"
+    },
+    "quickLinks": {
+      "home": "Home",
+      "features": "Features",
+      "news": "News",
+      "roadmap": "Roadmap",
+      "faq": "FAQ",
+      "doc": "Documentation"
     },
     "brandContent": "Your smart platform for communication.",
     "copyright": "© 2025 BrainMessenger. All rights reserved."

@@ -5,7 +5,7 @@ import { motion, useAnimation } from 'framer-motion';
 import NewsCard from './NewsCard'; // Corrected path
 import { updates } from '../data/updates'; // Corrected path
 import Link from 'next/link'; // Corrected import
-import { useLanguage } from '../app/context/LanguageContext'; // Corrected path
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 import SvgIcon from './SvgIcon'; // Corrected path
 
 interface UpdateItem {
@@ -23,7 +23,7 @@ const News: React.FC = () => {
   const wheelTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const {} = useAnimation();
 
-  const { t } = useLanguage(); // Use the translation hook
+  const { t } = useTranslation(); // Use the useTranslation hook
 
   // Take only the first 5 updates for the carousel
   const carouselUpdates: UpdateItem[] = updates.slice(0, 5); // Apply UpdateItem interface

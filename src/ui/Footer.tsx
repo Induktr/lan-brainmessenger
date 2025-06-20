@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import { useTheme } from '../app/context/ThemeContext';
 import { FaTwitter, FaLinkedin, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import Link from 'next/link';
-import { useLanguage } from '../app/context/LanguageContext';
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 import SvgIcon from './SvgIcon';
+import { FOOTER_ICONS, CONTACTS } from '../app/lib/constants'; // Adjust the import path as necessary
 
 
 
@@ -38,19 +39,9 @@ interface SectionData {
   socials?: SocialItem[];
 }
 
-const FOOTER_ICONS = {
-  home: 'home',
-  faq: 'faq',
-  features: 'features',
-  news: 'news',
-  roadmap: 'roadmap',
-  quickLinks: 'quickLinks',
-  emailIcon: 'mail'
-};
-
 const Footer = () => {
   const { } = useTheme();
-  const { t } = useLanguage();
+  const { t } = useTranslation(); // Use the useTranslation hook
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
 
   const sections = React.useMemo((): SectionData[] => [
@@ -68,7 +59,7 @@ const Footer = () => {
         { nameKey: 'footer.quickLinks.news', href: '/#updates', icon: FOOTER_ICONS.news, altKey: 'footer.quickLinks.news' },
         { nameKey: 'footer.quickLinks.roadmap', href: '/#roadmap', icon: FOOTER_ICONS.roadmap, altKey: 'footer.quickLinks.roadmap' },
         { nameKey: 'footer.quickLinks.faq', href: '/faq', icon: FOOTER_ICONS.faq, altKey: 'footer.quickLinks.faq' },
-        { nameKey: 'footer.quickLinks.doc', href: '/docs', icon: FOOTER_ICONS.quickLinks, altKey: 'footer.quickLinks.doc' }
+        { nameKey: 'footer.quickLinks.doc', href: '/docs', icon: FOOTER_ICONS.docs, altKey: 'footer.quickLinks.doc' }
       ]
     },
     {
@@ -77,7 +68,7 @@ const Footer = () => {
       contacts: [
         {
           icon: FOOTER_ICONS.emailIcon,
-          textKey: 'footer.contact.email',
+          textKey: CONTACTS.email || 'footer.contact.email',
           isCustomIcon: true,
           altKey: 'footer.iconAlt.email'
         },
@@ -139,7 +130,6 @@ const Footer = () => {
         return (
           <div className="footer-quicklinks-section">
             <div className="footer-quicklinks-header">
-              <SvgIcon iconName={FOOTER_ICONS.quickLinks} title={t('footer.iconAlt.quickLinks') as string} className="footer-quicklinks-icon" />
               <h3 className="footer-quicklinks-title">{t(section.titleKey) as string}</h3>
             </div>
             <div className="footer-quicklinks-grid">

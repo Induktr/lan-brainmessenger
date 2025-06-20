@@ -10,7 +10,7 @@ import UpdateSlider from '../../components/Updates/UpdateSlider';
 import CaseStudy from '../../components/Updates/CaseStudy';
 import { UpdateItem, updates as updatesData } from '../../data/updates';
 import { ICONS } from '../lib/constants';
-import { useLanguage } from '../../app/context/LanguageContext';
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 
 interface UpdateModalProps {
   update: UpdateItem | null;
@@ -18,7 +18,7 @@ interface UpdateModalProps {
 }
 
 const UpdateModal: React.FC<UpdateModalProps> = ({ update, onClose }) => {
-  const { t } = useLanguage();
+  const { t } = useTranslation(); // Use the useTranslation hook
   if (!update) return null;
 
   return (
@@ -124,7 +124,7 @@ interface CaseStudyItem {
 
 const Updates: React.FC = () => { // Removed UpdatesProps interface
   const { } = useTheme();
-  const { t } = useLanguage();
+  const { t } = useTranslation(); // Use the useTranslation hook
   const [selectedUpdate, setSelectedUpdate] = useState<UpdateItem | null>(null);
 
   const caseStudies: CaseStudyItem[] = [

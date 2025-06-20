@@ -1,3 +1,5 @@
+import { features } from "process";
+
 export const ICONS = {
     arrowRight: '/icons/arrowRight.svg',
     arrowLeft: '/icons/arrowLeft.svg',
@@ -41,7 +43,18 @@ export const ICONS = {
     play: '/icons/play.svg', // New icon for play button
     pause: '/icons/pause.svg', // New icon for pause button
     loop: '/icons/loop.svg', // New icon for loop button
-    android: '/icons/android.svg'
+    android: '/icons/android.svg',
+    home: '/icons/home.svg',
+    roadmap: '/icons/roadmap.svg',
+    features: '/icons/features.svg',
+    news: '/icons/news.svg',
+    faq: '/icons/faq.svg',
+    docs: '/icons/docs.svg',
+    landingPage: '/icons/landingPage.svg',
+    devStack: '/icons/devStack.svg',
+    bubble: '/icons/bubble.svg',
+    rocket: '/icons/rocket.svg',
+    launch: '/icons/launch.svg',
 };
 
 export const LINKS = {
@@ -51,6 +64,34 @@ export const LINKS = {
     downloadAndroidApp: "public/files/android-app.apk"
 }
 
+export const CONTACTS = {
+    email: 'support@brainmessenger.com',
+}
+
 export const IMAGES = {
     logoBrainMessenger: '/images/logo.png',
 }
+
+export const FOOTER_ICONS = {
+  home: 'home',
+  faq: 'faq',
+  features: 'features',
+  news: 'news',
+  roadmap: 'roadmap',
+  docs: 'docs',
+  quickLinks: 'quickLinks',
+  emailIcon: 'mail'
+};
+
+export const ROADMAP_ICONS = {
+  landingPage: 'landingPage',
+  devStack: 'devStack',
+  bubble: 'bubble',
+  rocket: 'rocket',
+  launch: 'launch',
+  authentication: 'checkmark',
+  ai: 'brain',
+  global: 'globe',
+  ecosystem: 'castle',
+  future: 'sun'
+};

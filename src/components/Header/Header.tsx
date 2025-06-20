@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { FiMenu, FiX } from 'react-icons/fi'; // Assuming these are used for mobile menu icons
 import SvgIcon from '../../ui/SvgIcon'; // Corrected path for SvgIcon
 import { useTheme } from '../../app/context/ThemeContext'; // Corrected path for ThemeContext
-import { useLanguage } from '../../app/context/LanguageContext'; // Corrected path for LanguageContext
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 
 interface Language {
   name: string;
@@ -27,14 +27,30 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const { isDark, toggleTheme } = useTheme();
-  const { language, changeLanguage, languages, t, isLoading } = useLanguage();
+  const { t, i18n, ready: isLoading } = useTranslation(); // Use useTranslation hook
   const langMenuRef = useRef<HTMLDivElement>(null);
+
+  console.log('Header isLoading:', isLoading); // Log isLoading state
+
+  // Keep the languages object with flags as it's not part of i18next instance
+  const languages: { [key: string]: Language } = {
+    en: { name: 'English', flag: '/icons/en.svg' },
+    ru: { name: 'Русский', flag: '/icons/ru.svg' },
+    ua: { name: 'Українська', flag: '/icons/ua.svg' },
+  };
 
   const menuItems: MenuItem[] = [
     { name: t('header.features') as string, to: 'features', type: 'scroll' },
     { name: t('header.faqLink') as string, to: '/faq', type: 'route' },
     { name: t('header.docs') as string, to: '/docs', type: 'route' }
   ];
+
+  // Get current language from i18n instance
+  const language = i18n.language;
+
+  const changeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+  };
 
   const renderNavLink = (item: MenuItem) => {
     if (item.type === 'scroll') {
@@ -81,11 +97,13 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
             {/* Language Selector */}
             <div className="lang-selector-wrapper" ref={langMenuRef}>
               <button
-                onClick={() => setIsLangOpen(!isLangOpen)}
+                onClick={() => {
+                  console.log('Language button clicked. Current isLangOpen:', isLangOpen, 'isLoading:', isLoading); // Log click and states
+                  setIsLangOpen(!isLangOpen);
+                }}
                 className="lang-selector-button"
                 aria-label={t('selectLanguage') as string}
                 title={t('changeLanguageTooltip') as string}
-                disabled={isLoading}
               >
                 <SvgIcon iconName="globe" title="Language" className="lang-selector-icon" />
                 <Image
@@ -189,10 +207,9 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
                         changeLanguage(code);
                         setIsOpen(false);
                       }}
-                      disabled={isLoading}
                       className={`mobile-lang-item ${
                         language === code ? 'active' : ''
-                      } ${isLoading ? 'disabled' : ''}`}
+                      }`}
                     >
                       <Image
                         width={24}

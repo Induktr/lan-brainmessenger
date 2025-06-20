@@ -4,20 +4,9 @@ import React from 'react';
 import { useTheme } from '../app/context/ThemeContext';
 import { motion, useAnimation, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useLanguage } from '../app/context/LanguageContext';
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 import SvgIcon from './SvgIcon';
-
-const ROADMAP_ICONS = {
-  projectLaunch: 'rocket',
-  security: 'shield',
-  advancedcoloboration: 'group',
-  mobile: 'mobile',
-  authentication: 'checkmark',
-  ai: 'brain',
-  global: 'globe',
-  ecosystem: 'castle',
-  future: 'sun'
-};
+import { ROADMAP_ICONS } from '@/app/lib/constants';
 
 interface Milestone {
   dateKey: string;
@@ -35,7 +24,7 @@ const Roadmap: React.FC = () => {
     triggerOnce: true,
   });
 
-  const { t } = useLanguage();
+  const { t } = useTranslation(); // Use the useTranslation hook
 
   React.useEffect(() => {
     if (inView) {
@@ -45,111 +34,66 @@ const Roadmap: React.FC = () => {
 
   const milestones: Milestone[] = [
     {
-      dateKey: 'roadmap.date.jan2024',
-      titleKey: 'roadmap.title.projectLaunch',
-      descriptionKey: 'roadmap.description.projectLaunch',
+      dateKey: 'roadmap.date.dec2024',
+      titleKey: 'roadmap.title.phase0',
+      descriptionKey: 'roadmap.description.phase0',
       status: 'completed',
-      icon: ROADMAP_ICONS.projectLaunch,
+      icon: ROADMAP_ICONS.landingPage,
       featuresKeys: [
-        'roadmap.features.secureMessagingInfrastructure',
-        'roadmap.features.crossPlatformCompatibility',
-        'roadmap.features.basicUserInterface'
-      ]
-    },
-    {
-      dateKey: 'roadmap.date.mar2024',
-      titleKey: 'roadmap.title.enhancedSecurity',
-      descriptionKey: 'roadmap.description.enhancedSecurity',
-      status: 'upcoming',
-      icon: ROADMAP_ICONS.security,
-      featuresKeys: [
-        'roadmap.features.endToEndEncryption',
-        'roadmap.features.twoFactorAuthentication',
-        'roadmap.features.fileSharingCapabilities'
-      ]
-    },
-    {
-      dateKey: 'roadmap.date.jun2024',
-      titleKey: 'roadmap.title.advancedCollaboration',
-      descriptionKey: 'roadmap.description.advancedCollaboration',
-      status: 'upcoming',
-      icon: ROADMAP_ICONS.advancedcoloboration,
-      featuresKeys: [
-        'roadmap.features.teamWorkspaces',
-        'roadmap.features.realTimeCollaboration',
-        'roadmap.features.advancedFileSharing'
-      ]
-    },
-    {
-      dateKey: 'roadmap.date.sep2024',
-      titleKey: 'roadmap.title.aiIntegration',
-      descriptionKey: 'roadmap.description.aiIntegration',
-      status: 'upcoming',
-      icon: ROADMAP_ICONS.ai,
-      featuresKeys: [
-        'roadmap.features.smartMessageCategorization',
-        'roadmap.features.automatedResponses',
-        'roadmap.features.contentAnalysis'
-      ]
-    },
-    {
-      dateKey: 'roadmap.date.nov2024',
-      titleKey: 'roadmap.title.mobileEnhancement',
-      descriptionKey: 'roadmap.description.mobileEnhancement',
-      status: 'upcoming',
-      icon: ROADMAP_ICONS.mobile,
-      featuresKeys: [
-        'roadmap.features.nativeMobileApps',
-        'roadmap.features.offlineFunctionality',
-        'roadmap.features.pushNotifications'
-      ]
-    },
-    {
-      dateKey: 'roadmap.date.jan2025',
-      titleKey: 'roadmap.title.aiIntegration',
-      descriptionKey: 'roadmap.description.aiIntegration',
-      status: 'upcoming',
-      icon: ROADMAP_ICONS.ai,
-      featuresKeys: [
-        'roadmap.features.smartMessageCategorization',
-        'roadmap.features.automatedResponses',
-        'roadmap.features.contentAnalysis'
-      ]
-    },
-    {
-      dateKey: 'roadmap.date.mar2025',
-      titleKey: 'roadmap.title.globalExpansion',
-      descriptionKey: 'roadmap.description.globalExpansion',
-      status: 'upcoming',
-      icon: ROADMAP_ICONS.global,
-      featuresKeys: [
-        'roadmap.features.multiLanguageSupport',
-        'roadmap.features.regionalDataCenters',
-        'roadmap.features.culturalAdaptations'
+        'roadmap.features.landingPageTextKey',
+        'roadmap.features.settingsNavCta',
+        'roadmap.features.basicAdaptationCrossBrowse',
+        'roadmap.features.basicLoc',
+        'roadmap.features.seoAnalytics',
       ]
     },
     {
       dateKey: 'roadmap.date.jun2025',
-      titleKey: 'roadmap.title.enterpriseSolutions',
-      descriptionKey: 'roadmap.description.enterpriseSolutions',
-      status: 'upcoming',
-      icon: ROADMAP_ICONS.ecosystem,
+      titleKey: 'roadmap.title.phase1',
+      descriptionKey: 'roadmap.description.phase1',
+      status: 'completed',
+      icon: ROADMAP_ICONS.devStack,
       featuresKeys: [
-        'roadmap.features.advancedAdminControls',
-        'roadmap.features.customIntegrations',
-        'roadmap.features.enterpriseSupport'
+        'roadmap.features.tehnoStack',
+        'roadmap.features.mvpFunc',
+        'roadmap.features.coreMvp'
       ]
     },
     {
-      dateKey: 'roadmap.date.beyond2025',
-      titleKey: 'roadmap.title.futureInnovation',
-      descriptionKey: 'roadmap.description.futureInnovation',
+      dateKey: 'roadmap.date.jul2025',
+      titleKey: 'roadmap.title.phase2',
+      descriptionKey: 'roadmap.description.phase2',
       status: 'upcoming',
-      icon: ROADMAP_ICONS.future,
+      icon: ROADMAP_ICONS.bubble,
       featuresKeys: [
-        'roadmap.features.emergingTechnologies',
-        'roadmap.features.communityDrivenFeatures',
-        'roadmap.features.platformExpansion'
+        'roadmap.features.authentication',
+        'roadmap.features.basicBackenChatLogic',
+        'roadmap.features.frontendUiChat',
+        'roadmap.features.integrationFrontBack',
+        'roadmap.features.basicTesting',
+        'roadmap.features.initAndroidProject',
+        'roadmap.features.authAndroid',
+        'roadmap.features.UiChatAndroid',
+      ]
+    },
+    {
+      dateKey: 'roadmap.date.jul2025',
+      titleKey: 'roadmap.title.phase3',
+      descriptionKey: 'roadmap.description.phase3',
+      status: 'upcoming',
+      icon: ROADMAP_ICONS.rocket,
+      featuresKeys: [
+        'roadmap.features.phasePlaningTesting'
+      ]
+    },
+    {
+      dateKey: 'roadmap.date.jul2025',
+      titleKey: 'roadmap.title.phase4',
+      descriptionKey: 'roadmap.description.phase4',
+      status: 'upcoming',
+      icon: ROADMAP_ICONS.launch,
+      featuresKeys: [
+        'roadmap.features.phasePlaningLaunch'
       ]
     }
   ];

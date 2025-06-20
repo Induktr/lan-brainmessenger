@@ -4,12 +4,12 @@ import React, { useState } from 'react';
 import Accordion from '@/components/Accordion/Accordion';
 import { faqData } from '@/data/faqData';
 import Container from '@/components/Container';
-import { useLanguage } from '@/app/context/LanguageContext'; // Import useLanguage hook
+import { useTranslation } from 'react-i18next'; // Import useTranslation hook
 import Input from '@/components/Input'; // Import Input component
 import SvgIcon from '@/ui/SvgIcon'; // Import SvgIcon component
 
 const FAQPage: React.FC = () => {
-  const { t } = useLanguage(); // Use the language hook
+  const { t } = useTranslation(); // Use the useTranslation hook
 
   // Map faqData to include translated questions and answers
   const translatedFaqData = faqData.map(category => {

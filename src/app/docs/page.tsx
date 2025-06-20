@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'; // Added useEffect for logging
 import Container from '../../components/Container';
 import Section from '../../components/Section';
 import Link from 'next/link';
-import { useLanguage } from '../../app/context/LanguageContext';
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 import SvgIcon from '../../ui/SvgIcon';
 
 interface DocSection {
@@ -15,7 +15,6 @@ interface DocSection {
   outroKey?: string;
   tableKey?: string;
   codeExampleKey?: string;
-  codeExampleKey2?: string;
   additionalContentKeys?: string[];
   subSections?: DocSection[];
 }
@@ -25,6 +24,18 @@ interface ColorApplicationItem {
   items: string[];
 }
 
+// Define interfaces for the specific nested structures in localization files
+interface LocalizedStep {
+  title: string;
+  description: string;
+}
+
+interface LocalizedNote {
+  title: string;
+  description: string;
+}
+
+
 interface DocConfigItem {
   id: string;
   titleKey: string;
@@ -33,8 +44,11 @@ interface DocConfigItem {
 }
 
 const Docs: React.FC = () => {
-  const { t, isLoading } = useLanguage();
+  const { t, i18n, ready: isLoading } = useTranslation(); // Use useTranslation hook
   const [activeDocId, setActiveDocId] = useState('general_docs');
+
+  // Get current language from i18n instance
+  const language = i18n.language;
 
   const docsConfig: DocConfigItem[] = [
     {
@@ -210,7 +224,6 @@ const Docs: React.FC = () => {
                 'faq.docs.design.section4.rn_icon_title',
               ],
               codeExampleKey: 'faq.docs.design.section4.css_ripple_code',
-              codeExampleKey2: 'faq.docs.design.section4.rn_icon_code',
             },
           ],
         },
@@ -264,7 +277,7 @@ const Docs: React.FC = () => {
           id: 'localization_section3',
           titleKey: 'faq.docs.localization_guide.section3.title',
           contentKey: 'faq.docs.localization_guide.section3.intro',
-          tableKey: 'faq.docs.localization_guide.section3.table', // Corrected key
+          tableKey: 'faq.docs.localization_guide.section3.table',
         },
         {
           id: 'localization_section4',
@@ -274,19 +287,19 @@ const Docs: React.FC = () => {
             {
               id: 'localization_subsection4_1',
               titleKey: 'faq.docs.localization_guide.section4.subsection4_1.title',
-              contentKey: 'faq.docs.localization_guide.section4.subsection4_1.description', // Corrected key
+              contentKey: 'faq.docs.localization_guide.section4.subsection4_1.description',
             },
             {
               id: 'localization_section4_2',
-              titleKey: 'faq.docs.localization_guide.section4.subsection4_2.title', // Corrected key
-              contentKey: 'faq.docs.localization_guide.section4.subsection4_2.points', // Corrected key
-              codeExampleKey: 'faq.docs.localization_guide.section4.subsection4_2.code_block', // Corrected key
+              titleKey: 'faq.docs.localization_guide.section4.subsection4_2.title',
+              listKey: 'faq.docs.localization_guide.section4.subsection4_2.points', // Changed from contentKey to listKey
+              codeExampleKey: 'faq.docs.localization_guide.section4.subsection4_2.code_block',
             },
             {
               id: 'localization_section4_3',
-              titleKey: 'faq.docs.localization_guide.section4.subsection4_3.title', // Corrected key
-              contentKey: 'faq.docs.localization_guide.section4.subsection4_3.description', // Corrected key
-              codeExampleKey: 'faq.docs.localization_guide.section4.subsection4_3.code_block', // Corrected key
+              titleKey: 'faq.docs.localization_guide.section4.subsection4_3.title',
+              contentKey: 'faq.docs.localization_guide.section4.subsection4_3.description',
+              codeExampleKey: 'faq.docs.localization_guide.section4.subsection4_3.code_block',
             },
           ],
         },
@@ -297,52 +310,52 @@ const Docs: React.FC = () => {
           subSections: [
             {
               id: 'localization_section5_1',
-              titleKey: 'faq.docs.localization_guide.section5.subsection5_1.title', // Corrected key
-              contentKey: 'faq.docs.localization_guide.section5.subsection5_1.step1_intro', // Corrected key
-              codeExampleKey: 'faq.docs.localization_guide.section5.subsection5_1.step1_code', // Corrected key
+              titleKey: 'faq.docs.localization_guide.section5.subsection5_1.title',
+              contentKey: 'faq.docs.localization_guide.section5.subsection5_1.step1_intro',
+              codeExampleKey: 'faq.docs.localization_guide.section5.subsection5_1.step1_code',
               subSections: [
                 {
                   id: 'localization_section5_1_2',
-                  titleKey: 'faq.docs.localization_guide.section5.subsection5_1.step2_title', // Corrected key
-                  contentKey: 'faq.docs.localization_guide.section5.subsection5_1.step2_intro', // Corrected key
-                  codeExampleKey: 'faq.docs.localization_guide.section5.subsection5_1.step2_code', // Corrected key
+                  titleKey: 'faq.docs.localization_guide.section5.subsection5_1.step2_title',
+                  contentKey: 'faq.docs.localization_guide.section5.subsection5_1.step2_intro',
+                  codeExampleKey: 'faq.docs.localization_guide.section5.subsection5_1.step2_code',
                 },
                 {
                   id: 'localization_section5_1_3',
-                  titleKey: 'faq.docs.localization_guide.section5.subsection5_1.step3_title', // Corrected key
-                  contentKey: 'faq.docs.localization_guide.section5.subsection5_1.step3_description', // Corrected key
+                  titleKey: 'faq.docs.localization_guide.section5.subsection5_1.step3_title',
+                  contentKey: 'faq.docs.localization_guide.section5.subsection5_1.step3_description',
                 },
               ],
             },
             {
               id: 'localization_section5_2',
-              titleKey: 'faq.docs.localization_guide.section5.subsection5_2.title', // Corrected key
-              contentKey: 'faq.docs.localization_guide.section5.subsection5_2.intro', // Corrected key
-              codeExampleKey: 'faq.docs.localization_guide.section5.subsection5_2.example_code', // Corrected key
-              outroKey: 'faq.docs.localization_guide.section5.subsection5_2.outro', // Corrected key
+              titleKey: 'faq.docs.localization_guide.section5.subsection5_2.title',
+              contentKey: 'faq.docs.localization_guide.section5.subsection5_2.intro',
+              codeExampleKey: 'faq.docs.localization_guide.section5.subsection5_2.example_code',
+              outroKey: 'faq.docs.localization_guide.section5.subsection5_2.outro',
             },
             {
               id: 'localization_section5_3',
-              titleKey: 'faq.docs.localization_guide.section5.subsection5_3.title', // Corrected key
-              contentKey: 'faq.docs.localization_guide.section5.subsection5_3.intro', // Corrected key
+              titleKey: 'faq.docs.localization_guide.section5.subsection5_3.title',
+              contentKey: 'faq.docs.localization_guide.section5.subsection5_3.intro',
               subSections: [
                 {
                   id: 'localization_section5_3_styles',
-                  titleKey: 'faq.docs.localization_guide.section5.subsection5_3.styles_title', // Corrected key
-                  contentKey: 'faq.docs.localization_guide.section5.subsection5_3.styles_description', // Corrected key
-                  codeExampleKey: 'faq.docs.localization_guide.section5.subsection5_3.styles_code', // Corrected key
+                  titleKey: 'faq.docs.localization_guide.section5.subsection5_3.styles_title',
+                  contentKey: 'faq.docs.localization_guide.section5.subsection5_3.styles_description',
+                  codeExampleKey: 'faq.docs.localization_guide.section5.subsection5_3.styles_code',
                 },
                 {
                   id: 'localization_section5_3_react_native',
-                  titleKey: 'faq.docs.localization_guide.section5.subsection5_3.react_native_title', // Corrected key
-                  contentKey: 'faq.docs.localization_guide.section5.subsection5_3.react_native_description', // Corrected key
-                  codeExampleKey: 'faq.docs.localization_guide.section5.subsection5_3.react_native_code', // Corrected key
-                  outroKey: 'faq.docs.localization_guide.section5.subsection5_3.outro', // Corrected key
+                  titleKey: 'faq.docs.localization_guide.section5.subsection5_3.react_native_title',
+                  contentKey: 'faq.docs.localization_guide.section5.subsection5_3.react_native_description',
+                  codeExampleKey: 'faq.docs.localization_guide.section5.subsection5_3.react_native_code',
+                  outroKey: 'faq.docs.localization_guide.section5.subsection5_3.outro',
                 },
                 {
                   id: 'localization_section5_3_icons',
-                  titleKey: 'faq.docs.localization_guide.section5.subsection5_3.icons_title', // Corrected key
-                  contentKey: 'faq.docs.localization_guide.section5.subsection5_3.icons_description', // Corrected key
+                  titleKey: 'faq.docs.localization_guide.section5.subsection5_3.icons_title',
+                  contentKey: 'faq.docs.localization_guide.section5.subsection5_3.icons_description',
                 },
               ],
             },
@@ -352,14 +365,14 @@ const Docs: React.FC = () => {
           id: 'localization_section6',
           titleKey: 'faq.docs.localization_guide.section6.title',
           contentKey: 'faq.docs.localization_guide.section6.intro',
-          listKey: 'faq.docs.localization_guide.section6.steps',
+          listKey: 'faq.docs.localization_guide.section6.steps', // This key returns an array of objects
         },
         {
           id: 'localization_section7',
           titleKey: 'faq.docs.localization_guide.section7.title',
           contentKey: 'faq.docs.localization_guide.section7.intro',
-          tableKey: 'faq.docs.localization_guide.section7.table', // Corrected key
-          outroKey: 'faq.docs.localization_guide.section7.expansion_description', // Corrected key
+          tableKey: 'faq.docs.localization_guide.section7.table',
+          outroKey: 'faq.docs.localization_guide.section7.expansion_description',
         },
         {
           id: 'localization_section8',
@@ -367,182 +380,114 @@ const Docs: React.FC = () => {
           subSections: [
             {
               id: 'localization_section8_1',
-              titleKey: 'faq.docs.localization_guide.section8.subsection8_1.title', // Corrected key
-              listKey: 'faq.docs.localization_guide.section8.subsection8_1.recommendations', // Corrected key
+              titleKey: 'faq.docs.localization_guide.section8.subsection8_1.title',
+              listKey: 'faq.docs.localization_guide.section8.subsection8_1.recommendations',
             },
             {
               id: 'localization_section8_2',
-              titleKey: 'faq.docs.localization_guide.section8.subsection8_2.title', // Corrected key
-              listKey: 'faq.docs.localization_guide.section8.subsection8_2.recommendations', // Corrected key
+              titleKey: 'faq.docs.localization_guide.section8.subsection8_2.title',
+              listKey: 'faq.docs.localization_guide.section8.subsection8_2.recommendations',
             },
             {
               id: 'localization_section8_3',
-              titleKey: 'faq.docs.localization_guide.section8.subsection8_3.title', // Corrected key
-              listKey: 'faq.docs.localization_guide.section8.subsection8_3.recommendations', // Corrected key
+              titleKey: 'faq.docs.localization_guide.section8.subsection8_3.title',
+              listKey: 'faq.docs.localization_guide.section8.subsection8_3.recommendations',
             },
           ],
         },
         {
           id: 'localization_section9',
-          titleKey: 'faq.docs.localization_guide.section9.title',
-          contentKey: 'faq.docs.localization_guide.section9.intro',
+          titleKey: 'faq.docs.localization_guide.section8.section9.title',
+          contentKey: 'faq.docs.localization_guide.section8.section9.intro',
           subSections: [
             {
               id: 'localization_section9_1',
-              titleKey: 'faq.docs.localization_guide.section9.dates_title', // Corrected key
-              contentKey: 'faq.docs.localization_guide.section9.dates_code', // Corrected key
+              titleKey: 'faq.docs.localization_guide.section8.section9.dates_title',
+              codeExampleKey: 'faq.docs.localization_guide.section8.section9.dates_code',
             },
             {
               id: 'localization_section9_2',
-              titleKey: 'faq.docs.localization_guide.section9.numbers_title', // Corrected key
-              contentKey: 'faq.docs.localization_guide.section9.numbers_code', // Corrected key
+              titleKey: 'faq.docs.localization_guide.section8.section9.numbers_title',
+              codeExampleKey: 'faq.docs.localization_guide.section8.section9.numbers_code',
             },
           ],
-          outroKey: 'faq.docs.localization_guide.section9.outro', // Corrected key
+          outroKey: 'faq.docs.localization_guide.section8.section9.outro',
         },
         {
           id: 'localization_section10',
-          titleKey: 'faq.docs.localization_guide.section10.title',
-          contentKey: 'faq.docs.localization_guide.section10.intro',
+          titleKey: 'faq.docs.localization_guide.section8.section10.title',
+          contentKey: 'faq.docs.localization_guide.section8.section10.intro',
           subSections: [
             {
               id: 'localization_section10_1',
-              titleKey: 'faq.docs.localization_guide.section10.scenarios_title', // Corrected key
-              listKey: 'faq.docs.localization_guide.section10.scenarios', // Corrected key
+              titleKey: 'faq.docs.localization_guide.section8.section10.scenarios_title',
+              listKey: 'faq.docs.localization_guide.section8.section10.scenarios',
             },
             {
               id: 'localization_section10_2',
-              titleKey: 'faq.docs.localization_guide.section10.tools_title', // Corrected key
-              listKey: 'faq.docs.localization_guide.section10.tools', // Corrected key
+              titleKey: 'faq.docs.localization_guide.section8.section10.tools_title',
+              listKey: 'faq.docs.localization_guide.section8.section10.tools',
             },
             {
               id: 'localization_section10_3',
-              titleKey: 'faq.docs.localization_guide.section10.success_criteria_title', // Corrected key
-              listKey: 'faq.docs.localization_guide.section10.success_criteria', // Corrected key
+              titleKey: 'faq.docs.localization_guide.section8.section10.success_criteria_title',
+              listKey: 'faq.docs.localization_guide.section8.section10.success_criteria',
             },
           ],
         },
         {
           id: 'localization_section11',
-          titleKey: 'faq.docs.localization_guide.section11.title',
-          listKey: 'faq.docs.localization_guide.section11.notes',
+          titleKey: 'faq.docs.localization_guide.section8.section11.title',
+          listKey: 'faq.docs.localization_guide.section8.section11.notes', // This key returns an array of objects
         },
       ],
-    },
-    {
-      id: 'user_guide_docs',
-      titleKey: 'faq.docs.userGuide.title',
-      subtitleKey: 'faq.docs.userGuide.subtitle',
-      sections: [
-        {
-          id: 'user_section1',
-          titleKey: 'faq.docs.userGuide.section1.title',
-          contentKey: 'faq.docs.userGuide.section1.content',
-          outroKey: 'faq.docs.userGuide.section1.outro',
-        },
-        {
-          id: 'user_section2',
-          titleKey: 'faq.docs.userGuide.section2.title',
-          contentKey: 'faq.docs.userGuide.section2.intro',
-          subSections: [
-            {
-              id: 'user_section2_1',
-              titleKey: 'faq.docs.userGuide.section2.section1.title',
-              contentKey: 'faq.docs.userGuide.section2.section1.intro',
-              listKey: 'faq.docs.userGuide.section2.section1.steps',
-              outroKey: 'faq.docs.userGuide.section2.section1.outro',
-            },
-            {
-              id: 'user_section2_2',
-              titleKey: 'faq.docs.userGuide.section2.section2.title',
-              listKey: 'faq.docs.userGuide.section2.section2.steps',
-              outroKey: 'faq.docs.userGuide.section2.section2.outro',
-            },
-            {
-              id: 'user_section2_3',
-              titleKey: 'faq.docs.userGuide.section2.section3.title',
-              listKey: 'faq.docs.userGuide.section2.section3.steps',
-              outroKey: 'faq.docs.userGuide.section2.section3.outro',
-            },
-          ],
-        },
-        {
-          id: 'user_section3',
-          titleKey: 'faq.docs.userGuide.section3.title',
-          contentKey: 'faq.docs.userGuide.section3.intro',
-          subSections: [
-            {
-              id: 'user_section3_1',
-              titleKey: 'faq.docs.userGuide.section3.section1.title',
-              listKey: 'faq.docs.userGuide.section3.section1.features',
-            },
-            {
-              id: 'user_section3_2',
-              titleKey: 'faq.docs.userGuide.section3.section2.title',
-              listKey: 'faq.docs.userGuide.section3.section2.features',
-            },
-            {
-              id: 'user_section3_3',
-              titleKey: 'faq.docs.userGuide.section3.section3.title',
-              listKey: 'faq.docs.userGuide.section3.section3.features',
-            },
-            {
-              id: 'user_section3_4',
-              titleKey: 'faq.docs.userGuide.section3.section4.title',
-              listKey: 'faq.docs.userGuide.section3.section4.features',
-            },
-            {
-              id: 'user_section3_5',
-              titleKey: 'faq.docs.userGuide.section3.section5.title',
-              contentKey: 'faq.docs.userGuide.section3.section5.intro',
-              listKey: 'faq.docs.userGuide.section3.section5.settings',
-            },
-            {
-              id: 'user_section3_6',
-              titleKey: 'faq.docs.userGuide.section3.section6.title',
-              contentKey: 'faq.docs.userGuide.section3.section6.intro',
-              listKey: 'faq.docs.userGuide.section3.section6.premium_features',
-            },
-          ],
-        },
-        {
-          id: 'user_section4',
-          titleKey: 'faq.docs.userGuide.section4.title',
-          contentKey: 'faq.docs.userGuide.section4.intro',
-          listKey: 'faq.docs.userGuide.section4.faq_list',
-        },
-        {
-          id: 'user_section5',
-          titleKey: 'faq.docs.userGuide.section5.title',
-          contentKey: 'faq.docs.userGuide.section5.intro',
-          listKey: 'faq.docs.userGuide.section5.tips',
-        },
-        {
-          id: 'user_section6',
-          titleKey: 'faq.docs.userGuide.section6.title',
-          contentKey: 'faq.docs.userGuide.section6.intro',
-          listKey: 'faq.docs.userGuide.section6.support_options',
-          outroKey: 'faq.docs.userGuide.section6.outro',
-        },
-      ],
-    },
+    }
   ];
   const activeDoc = docsConfig.find((doc: DocConfigItem) => doc.id === activeDocId);
   const sectionsToRender = activeDoc ? activeDoc.sections : [];
 
-  if (isLoading) {
-    return <div className="docs-loading">Loading documentation...</div>;
-  }
+  // Log translations and active language on mount and language change
+  useEffect(() => {
+    console.log('Docs component mounted or language/t changed. Current language:', language); // Added more specific log
+    // console.log('Current translations:', t('faq.docs.localization_guide')); // Log the entire localization guide section
+  }, [language, t]);
+
 
   const renderSectionContent = (section: DocSection) => {
+    console.log('Rendering section:', section.id); // Added general log for renderSectionContent
     // Get translated content for each potential key
     const content = section.contentKey ? t(section.contentKey) : null;
     const list = section.listKey ? t(section.listKey) : null;
     const outro = section.outroKey ? t(section.outroKey) : null;
     const table = section.tableKey ? t(section.tableKey) : null;
     const codeExample = section.codeExampleKey ? t(section.codeExampleKey) : null;
-    const codeExample2 = section.codeExampleKey2 ? t(section.codeExampleKey2) : null;
     const additionalContent = section.additionalContentKeys ? section.additionalContentKeys.map((key: string) => t(key)) : [];
+
+    // Log values for problematic sections
+    if (section.id.startsWith('localization_section')) {
+        console.log(`Section ${section.id}:`);
+        console.log(`  titleKey: ${section.titleKey}, value:`, t(section.titleKey));
+        if (section.contentKey) console.log(`  contentKey: ${section.contentKey}, value:`, t(section.contentKey));
+        if (section.listKey) console.log(`  listKey: ${section.listKey}, value:`, t(section.listKey));
+        if (section.outroKey) console.log(`  outroKey: ${section.outroKey}, value:`, t(section.outroKey));
+        if (section.tableKey) console.log(`  tableKey: ${section.tableKey}, value:`, t(section.tableKey));
+        if (section.codeExampleKey) console.log(`  codeExampleKey: ${section.codeExampleKey}, value:`, t(section.codeExampleKey));
+        if (section.additionalContentKeys) console.log(`  additionalContentKeys:`, section.additionalContentKeys.map(key => ({ key, value: t(key) })));
+
+        if (section.subSections) {
+            section.subSections.forEach(subSection => {
+                console.log(`  Sub-section ${subSection.id}:`);
+                console.log(`    titleKey: ${subSection.titleKey}, value:`, t(subSection.titleKey));
+                 if (subSection.contentKey) console.log(`    contentKey: ${subSection.contentKey}, value:`, t(subSection.contentKey));
+                 if (subSection.listKey) console.log(`    listKey: ${subSection.listKey}, value:`, t(subSection.listKey));
+                 if (subSection.outroKey) console.log(`    outroKey: ${subSection.outroKey}, value:`, t(subSection.outroKey));
+                 if (subSection.tableKey) console.log(`    tableKey: ${subSection.tableKey}, value:`, t(subSection.tableKey));
+                 if (subSection.codeExampleKey) console.log(`    codeExampleKey: ${subSection.codeExampleKey}, value:`, t(subSection.codeExampleKey));
+                 if (subSection.additionalContentKeys) console.log(`    additionalContentKeys:`, subSection.additionalContentKeys.map(key => ({ key, value: t(key) })));
+            });
+        }
+    }
+
 
     return (
       <>
@@ -567,9 +512,31 @@ const Docs: React.FC = () => {
         {/* Render list content */}
         {list && Array.isArray(list) && (
           <ul className={`docs-content-list ${section.listKey === 'faq.docs.general.section5.steps' || section.listKey === 'faq.docs.general.section9.steps' || section.listKey === 'faq.docs.localization_guide.section6.steps' || section.listKey === 'faq.docs.localization_guide.section10.scenarios' || section.listKey === 'faq.docs.localization_guide.section10.tools' || section.listKey === 'faq.docs.localization_guide.section10.success_criteria' || section.listKey === 'faq.docs.localization_guide.section11.notes' || section.listKey === 'faq.docs.userGuide.section2.section1.steps' || section.listKey === 'faq.docs.userGuide.section2.section2.steps' || section.listKey === 'faq.docs.userGuide.section2.section3.steps' || section.listKey === 'faq.docs.userGuide.section3.section1.features' || section.listKey === 'faq.docs.userGuide.section3.section2.features' || section.listKey === 'faq.docs.userGuide.section3.section3.features' || section.listKey === 'faq.docs.userGuide.section3.section4.features' || section.listKey === 'faq.docs.userGuide.section3.section5.settings' || section.listKey === 'faq.docs.userGuide.section3.section6.premium_features' || section.listKey === 'faq.docs.userGuide.section4.faq_list' || section.listKey === 'faq.docs.userGuide.section5.tips' || section.listKey === 'faq.docs.userGuide.section6.support_options' ? 'list-decimal' : ''}`}>
-            {(list as string[]).map((item, index) => (
+            {/* Handle specific list types that are arrays of objects */}
+            {section.listKey === 'faq.docs.localization_guide.section6.steps' && (list as LocalizedStep[]).map((item, index) => (
+                 <li key={index}>
+                    <strong>{item.title}:</strong> <span dangerouslySetInnerHTML={{ __html: item.description }} />
+                 </li>
+            ))}
+             {section.listKey === 'faq.docs.localization_guide.section11.notes' && (list as LocalizedNote[]).map((item, index) => (
+                 <li key={index}>
+                    <strong>{item.title}:</strong> <span dangerouslySetInnerHTML={{ __html: item.description }} />
+                 </li>
+            ))}
+            {/* Handle generic lists (arrays of strings) */}
+            {list && Array.isArray(list) && typeof list[0] === 'string' && (list as string[]).map((item, index) => (
               <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
             ))}
+             {/* Handle lists that are arrays of strings for localization guide sections */}
+             {(section.listKey === 'faq.docs.localization_guide.section2.goals' ||
+               section.listKey === 'faq.docs.localization_guide.section8.subsection8_1.recommendations' ||
+               section.listKey === 'faq.docs.localization_guide.section8.subsection8_2.recommendations' ||
+               section.listKey === 'faq.docs.localization_guide.section8.subsection8_3.recommendations' ||
+               section.listKey === 'faq.docs.localization_guide.section10.scenarios' ||
+               section.listKey === 'faq.docs.localization_guide.section10.tools' ||
+               section.listKey === 'faq.docs.localization_guide.section10.success_criteria') && Array.isArray(list) && (list as string[]).map((item, index) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
+             ))}
           </ul>
         )}
 
@@ -605,11 +572,7 @@ const Docs: React.FC = () => {
         )}
 
          {/* Render code example 2 */}
-         {codeExample2 && typeof codeExample2 === 'string' && (
-             <pre className="docs-code-block">
-                 <code dangerouslySetInnerHTML={{ __html: codeExample2 }} />
-             </pre>
-         )}
+         {/* Removed codeExampleKey2 rendering as it's no longer in the interface */}
 
         {/* Render outro string */}
         {outro && typeof outro === 'string' && (

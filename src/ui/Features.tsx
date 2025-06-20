@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import FeatureCard from './FeatureCard';
-import { useLanguage } from '../app/context/LanguageContext';
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 
 const FEATURES_ICONS = {
   lock: 'lock',
@@ -22,7 +22,7 @@ interface FeatureItem {
 }
 
 const Features: React.FC = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslation(); // Use the useTranslation hook
   const [ref, inView] = useInView({
     triggerOnce: true,
   });

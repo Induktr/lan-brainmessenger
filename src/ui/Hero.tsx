@@ -3,7 +3,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { heroVariants } from '../app/lib/animations';
-import { useLanguage } from '../app/context/LanguageContext'; // Corrected path
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 import Image from 'next/image'; // Import Image component
 import SvgIcon from './SvgIcon'; // Import SvgIcon
 import Link from 'next/link';
@@ -11,21 +11,9 @@ import { LINKS } from '../app/lib/constants';
 
 const Hero: React.FC = () => {
   const [showDownloadMenu, setShowDownloadMenu] = useState<boolean>(false);
-  // const [hoveredButton, setHoveredButton] = useState<string | null>(null); // Removed as unused
   const downloadButtonRef = useRef<HTMLDivElement>(null);
 
-  const { t } = useLanguage();
-
-  // Motion values for parallax effect
-
-  // Removed modifyIconColor as SvgIcon handles color via CSS
-
-  // const handleMouseLeave = (): void => { // Removed as unused
-  //   setHoveredButton(null);
-  //   // Reset parallax effect
-  //   rotateX.set(0);
-  //   rotateY.set(0);
-  // };
+  const { t } = useTranslation(); // Use useTranslation hook
 
   return (
     <motion.section
@@ -134,8 +122,6 @@ const Hero: React.FC = () => {
           </motion.div>
         </div>
       </div>
-
-      {/* Removed SVG filter as it's related to old circularDistort effect */}
     </motion.section>
   );
 };

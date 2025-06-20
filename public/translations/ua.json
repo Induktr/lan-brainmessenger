@@ -21,6 +21,9 @@
       "confirmDelete": "Підтвердити видалення",
       "signIn": "Увійти"
     },
+    "common": {
+      "backToHome": "Повернутися на головну"
+    },
     "hero": {
       "title": "Ласкаво просимо до BrainMessenger",
       "subtitle": "Ваша розумна платформа для спілкування",
@@ -806,7 +809,18 @@
   },
   "footer": {
     "sectionTitle": {
-    "brand": "BrainMessenger"
+    "brand": "BrainMessenger",
+    "quickLinks": "Швидкі Посилання",
+    "contact": "Контакти",
+    "social": "Соціальні Мережі"
+  },
+  "quickLinks": {
+    "home": "Головна",
+    "features": "Функції",
+    "news": "Новини",
+    "roadmap": "Дорожня Карта",
+    "faq": "FAQ",
+    "doc": "Документація"
   },
     "brandContent": "Ваша розумна платформа для спілкування",
     "copyright": "© 2025 BrainMessenger. Усі права захищено."
